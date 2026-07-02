@@ -81,6 +81,27 @@ Status as of 2026-07-02. Complements `online-openrocket-plan.md`.
 4. TS-rewrite remains the fallback if the carve hits a wall at `simulation`/`rocketcomponent`
    scale (risk: moderate; nothing found so far suggests it).
 
+## P1.2 addendum — two more TeaVM landmines (both caught by differential testing)
+
+1. **Wrong devirtualization (default optimization):** at FlightConfiguration's recursive
+   tree walk, TeaVM inlined `RocketComponent.getInstanceCount()`'s `return 1` as a literal
+   loop bound (`while (i < 1)`), ignoring `FinSet`'s override — fin instance contexts
+   silently collapsed 3->1 and aggregate masses became 0. **Fix: `optimization = NONE`.**
+2. **Dependency-analyzer under-linking:** virtual-method implementations reached only via
+   map-key dispatch or the recursive walk were pruned from the output
+   (`TypeError: $component.$getComponentBounds is not a function` at runtime — or worse,
+   silently-wrong results when a base impl existed). **Fix: `fastGlobalAnalysis = true`**
+   (class-hierarchy analysis links every override of every called method).
+
+Also hit: TeaVM's immutable empty list throws on `clear()` where the JDK no-ops
+(-> ComponentAssembly patch), TeaVM's UUID lacks `(long,long)`/`getMostSignificantBits`/
+`compareTo` (-> LongUUID shim + 2 patches), no `ConcurrentLinkedQueue` (-> LinkedList patch),
+no `java.awt.geom` (-> `--patch-module` stub sourceset). All recorded in
+`engine-java/patches/LEDGER.md`.
+
+**Config rule: never change `optimization`/`fastGlobalAnalysis` without a full
+differential pass — these two defaults silently corrupt physics.**
+
 ## Open items
 
 1. Human check of Spike A in a browser (http://localhost:8321 while the spike server runs) —

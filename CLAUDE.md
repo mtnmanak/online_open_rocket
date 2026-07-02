@@ -31,6 +31,12 @@ Engine (Java kernel → JS via TeaVM, in `engine-java/`):
   (difftest.mjs finds it automatically). Re-fetch via the Adoptium API if missing.
 - TeaVM is pinned ≥ 0.15: **0.10's JS backend silently inverts NaN comparisons**
   (see docs/phase0-findings.md). Never downgrade; differential tests are the guard.
+- engine-java/build.gradle MUST keep `optimization = NONE` and `fastGlobalAnalysis = true`:
+  TeaVM's default devirtualizer inlines wrong virtual-method impls (fin instances 3→1,
+  masses zeroed) and its precise analyzer prunes reachable methods. Details in
+  docs/phase0-findings.md "P1.2 addendum". Any change requires a full differential pass.
+- Carved files are NEVER edited; targeted changes live in `engine-java/patches/`
+  (documented in `engine-java/patches/LEDGER.md`) and are applied by carve.mjs.
 
 ## Repo location
 
