@@ -32,15 +32,14 @@ Engine (Java kernel → JS via TeaVM, in `engine-java/`):
 - TeaVM is pinned ≥ 0.15: **0.10's JS backend silently inverts NaN comparisons**
   (see docs/phase0-findings.md). Never downgrade; differential tests are the guard.
 
-## Environment hazard: this repo lives inside Dropbox
+## Repo location
 
-Dropbox's file-provider driver intermittently denies git's object writes (`Permission
-denied` on `git add`/`commit`), and the denial can stick to *specific object paths*
-(name-based) while other writes succeed. Mitigations already applied: the `com.dropbox.ignored` NTFS stream
-is set on `.git`, and `.git` is pinned. If a commit fails with `unable to write file
-.git/objects/...`: retry after a few seconds; if the same object path keeps failing,
-trivially alter the file content (different blob hash → different path). Long-term fix
-worth proposing to the user: move the repo out of Dropbox (GitHub is the sync channel).
+The repo lives at `G:\git\online_open_rocket` — deliberately OUTSIDE Dropbox. It was moved
+out on 2026-07-02 because Dropbox's file-provider driver intermittently denied git's
+object writes (`Permission denied` on `.git/objects/...`, sometimes sticking to specific
+object paths). Do not move it back under a synced folder. GitHub (origin) is the sync
+channel. The reference OpenRocket source still lives in Dropbox (read-only use) —
+`engine-java/scripts/carve.mjs` points there.
 
 ## Architecture
 
