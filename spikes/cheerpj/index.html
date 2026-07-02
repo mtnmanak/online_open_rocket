@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spike A — OpenRocket 24.12 under CheerpJ (oracle)</title>
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; }
+      #bar { padding: 8px 12px; background: #111; color: #eee; font-size: 14px; }
+      #display { width: 100vw; height: calc(100vh - 37px); }
+    </style>
+  </head>
+  <body>
+    <div id="bar">
+      Spike A: OpenRocket 24.12 (Java 17) running under CheerpJ 4.3 —
+      <span id="status">initializing…</span>
+    </div>
+    <div id="display"></div>
+    <script type="module">
+      const status = document.getElementById('status');
+      try {
+        // OpenRocket 24.12 targets Java 17.
+        await cheerpjInit({ version: 17 });
+        cheerpjCreateDisplay(-1, -1, document.getElementById('display'));
+        status.textContent = 'JVM ready, launching JAR (first load is slow — JIT + downloads)…';
+        const exitCode = await cheerpjRunJar('/app/OpenRocket-24.12.jar');
+        status.textContent = `JAR exited with code ${exitCode}`;
+      } catch (e) {
+        status.textContent = `FAILED: ${e}`;
+        console.error(e);
+      }
+    </script>
+  </body>
+</html>

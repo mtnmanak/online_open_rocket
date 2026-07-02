@@ -1,0 +1,42 @@
+// Spike B: compile a dependency-closed slice of the REAL OpenRocket physics
+// kernel (unmodified sources, referenced in place) to JavaScript via TeaVM.
+plugins {
+    id 'java'
+    id 'org.teavm' version '0.15.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+// The info.openrocket.core sources under src/main/java are UNMODIFIED copies
+// from openrocket-release-24.12 (referencing the release tree in place drags
+// in its module-info.java and breaks javac module resolution).
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+    // TeaVM's browser-compatible slf4j substitute (classpath slf4j breaks under TeaVM).
+    implementation 'org.teavm:teavm-extras-slf4j:0.15.0'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+teavm.js {
+    mainClass = 'spike.Main'
+    // Readable output for inspection.
+    obfuscated = false
+    // NOTE: does NOT fix the NaN-comparison inversion (see findings): TeaVM's JS
+    // backend compiles `a > b` branches as `!(a <= b)`, corrupting NaN semantics
+    // (ISA pressure at 0 m becomes NaN instead of 101325).
+    strict = true
+}
+
+// WASM-GC target: WASM compare ops have explicit NaN semantics — test whether
+// the NaN inversion bug is JS-backend-only.
+teavm.wasmGC {
+    mainClass = 'spike.Main'
+}
