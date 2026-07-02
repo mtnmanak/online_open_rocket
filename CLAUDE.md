@@ -20,7 +20,17 @@ module is being replaced by the web UI and should not be ported.
 - `npm run build` — build engine then app
 - `npm test` — run engine tests (vitest)
 - Single test: `npm run test -w @online-openrocket/engine -- src/index.test.ts`
-- No Java/JDK is installed on this machine; Java-side spikes must not assume one.
+
+Engine (Java kernel → JS via TeaVM, in `engine-java/`):
+- `node engine-java/scripts/carve.mjs` — copy manifest-listed OpenRocket sources in
+  (idempotent; FAILS if a carved copy was edited — carved files are never edited)
+- `engine-java/gradlew.bat generateJavaScript` (run inside `engine-java/`) — TeaVM build
+- `node engine-java/scripts/difftest.mjs` — JVM vs TeaVM-JS bit-identical differential test
+- No system JDK. A portable Temurin JDK 17 lives at
+  `C:\Users\Eric\.online-openrocket\jdk-17.0.19+10` — set `JAVA_HOME` to it for Gradle
+  (difftest.mjs finds it automatically). Re-fetch via the Adoptium API if missing.
+- TeaVM is pinned ≥ 0.15: **0.10's JS backend silently inverts NaN comparisons**
+  (see docs/phase0-findings.md). Never downgrade; differential tests are the guard.
 
 ## Architecture
 
