@@ -67,6 +67,18 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
   he called it "very valuable"; keep it working on anything new that displays
   units). Units polish candidates if he asks: fractional inches (in/64),
   stability unit selection.
+- **2026-07-03 (third pass): motor selection rewritten** after a design discussion
+  with Eric (his spec: manufacturer toggles first, then diameter classes with
+  adapter-down logic, sortable by burn time / total impulse, max-motor-length
+  flagging as warning-not-block, OOP toggle on, 75≡76 mm). Full thrustcurve.org
+  summary DB is bundled (packages/app/src/data/motors.json, `npm run
+  motors:refresh`); curves still fetched+cached on demand. Filter/sort logic in
+  services/motorDb.ts (unit-tested). Dark theme now the default at his request.
+- **Motor-domain knowledge from Eric worth keeping:** adapters let any smaller
+  class load in a bigger mount, never the reverse; 75 mm and 76 mm are the same
+  casing class (manufacturers round differently); OOP motors matter ("millions
+  still in circulation"); his search attributes are designation, diameter,
+  length, burn time, total impulse.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call.
