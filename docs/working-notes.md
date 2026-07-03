@@ -62,9 +62,11 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
   dialog. Engine/.ork stay SI; conversions live in packages/app/src/prefs/.
 - **Still open from the issue list (Eric-visible backlog):** component/material/
   parachute preset databases (browse/edit/CSV), snap-to-anchors +
-  drag-in-preview, appearance colors, attribute audit vs desktop. Units polish
-  candidates if Eric asks: fractional inches (in/64), in-place per-field unit
-  click-through like the desktop, stability unit selection.
+  drag-in-preview, appearance colors, attribute audit vs desktop. In-place
+  unit click-through shipped same day at Eric's request (UnitChip component —
+  he called it "very valuable"; keep it working on anything new that displays
+  units). Units polish candidates if he asks: fractional inches (in/64),
+  stability unit selection.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call.
