@@ -47,6 +47,13 @@ object paths). Do not move it back under a synced folder. GitHub (origin) is the
 channel. The reference OpenRocket source still lives in Dropbox (read-only use) —
 `engine-java/scripts/carve.mjs` points there.
 
+## Collaboration context
+
+Read docs/working-notes.md — it carries the project owner's working preferences,
+pending decisions, and the reasoning behind key choices. Current standing state:
+an issue list from user testing may be waiting in docs/testing/ — fix that before
+new feature work.
+
 ## Architecture
 
 npm-workspaces monorepo, licensed GPL-3.0-or-later (inherited from OpenRocket):
