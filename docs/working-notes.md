@@ -46,13 +46,25 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
 - **Done:** Phase 0 (spikes), Phase 1 (MVP: engine, API, UI, thrustcurve.org, .ork),
   Phase 2 (tree editor, 3D view, launch conditions, 12 plot series, full-tree .ork),
   plus fin cross-sections and freeform fins with the click/drag+table editor.
-- **In flight:** Eric is doing a heavy test pass and will deliver a batch issue list.
-  **Fix that list before any Phase 3 work.**
+- **2026-07-03: first batch of Eric's test issues fixed** — see
+  `docs/testing/issues-2026-07-03.md` and the item-by-item status in
+  `docs/testing/response-2026-07-03.md`. Shipped: fin default position, clear-all,
+  sliders everywhere, full design readouts (dry/loaded mass+CG, stability cal+%),
+  nose shoulders + solid flag, surface finishes, mass/CG/Cd overrides, parachute
+  deployment events. New engine bridge fields required a TeaVM rebuild
+  (differential re-passed) and the .ork writer now has **CG parity** with the
+  desktop loader too (found+fixed: hardcoded shapeparameter reshaped Haack noses
+  on save — second instance of that war story, now regression-tested).
+- **Still open from the issue list (Eric-visible backlog):** units system +
+  preferences (incl. radius/diameter, dark mode), component/material/parachute
+  preset databases (browse/edit/CSV), snap-to-anchors + drag-in-preview,
+  appearance colors, attribute audit vs desktop. Units-vs-databases ordering is
+  Eric's call.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call.
-- Verification state: all suites green (engine 8, app 9), differential 202 lines,
-  everything committed & pushed through `2231363`.
+- Verification state: all suites green (engine 8, app 11), differential 202 lines,
+  desktop-loader mass+CG parity bit-exact.
 
 ## Notable technical war stories (details in docs/phase0-findings.md)
 
