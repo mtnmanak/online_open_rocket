@@ -31,6 +31,8 @@ anything else, including Phase 3.**
 - **Issue-batch protocol (refined 2026-07-03):** one NEW dated file per test pass
   in docs/testing/ (issues-<date>.md); Claude answers with a matching
   response-<date>.md giving item-by-item status. Repro .ork files sit beside them.
+  Same-day second batch gets a letter suffix: issues-<date>b.md (then c, …),
+  with the response doc named to match.
 - **Committing/pushing:** Eric authorized pushing to origin/main as the normal
   end-of-chunk step ("go ahead and push it", then routine). Commit at each
   coherent milestone; push after.
