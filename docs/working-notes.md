@@ -55,11 +55,16 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
   (differential re-passed) and the .ork writer now has **CG parity** with the
   desktop loader too (found+fixed: hardcoded shapeparameter reshaped Haack noses
   on save — second instance of that war story, now regression-tested).
-- **Still open from the issue list (Eric-visible backlog):** units system +
-  preferences (incl. radius/diameter, dark mode), component/material/parachute
-  preset databases (browse/edit/CSV), snap-to-anchors + drag-in-preview,
-  appearance colors, attribute audit vs desktop. Units-vs-databases ordering is
-  Eric's call.
+- **2026-07-03 (second pass): units/preferences shipped** at Eric's direction —
+  desktop-mirrored unit groups (11 quantities, exact UnitGroup factors, metric/
+  imperial default sets), radius-vs-diameter input preference (defaults to
+  diameter), and light/dark/system theme, all in a persisted ⚙ Preferences
+  dialog. Engine/.ork stay SI; conversions live in packages/app/src/prefs/.
+- **Still open from the issue list (Eric-visible backlog):** component/material/
+  parachute preset databases (browse/edit/CSV), snap-to-anchors +
+  drag-in-preview, appearance colors, attribute audit vs desktop. Units polish
+  candidates if Eric asks: fractional inches (in/64), in-place per-field unit
+  click-through like the desktop, stability unit selection.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call.
