@@ -2,7 +2,11 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing).
+Last updated: 2026-07-03, end of a four-pass day (issue batch 1 + units/prefs +
+motor rewrite + databases). **Current state: Eric is doing an in-depth test pass;
+expect a NEW issue file `docs/testing/issues-<date>.md` (one file per batch —
+agreed protocol; never append to a resolved batch's file). Fix that list before
+anything else, including Phase 3.**
 
 ## How Eric works / prefers to collaborate
 
@@ -24,6 +28,19 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
   pulled forward out of Phase 3.
 - His preferred fin-design workflow: click points roughly in a visual editor, then
   refine exact values in a coordinate table. Both stay in sync (implemented).
+- **Issue-batch protocol (refined 2026-07-03):** one NEW dated file per test pass
+  in docs/testing/ (issues-<date>.md); Claude answers with a matching
+  response-<date>.md giving item-by-item status. Repro .ork files sit beside them.
+- **Committing/pushing:** Eric authorized pushing to origin/main as the normal
+  end-of-chunk step ("go ahead and push it", then routine). Commit at each
+  coherent milestone; push after.
+- **Units:** he values the in-place unit click-through ("very valuable") — any new
+  UI that displays a unit must use UnitChip. Diameter (not radius) is his default
+  input mode; dark theme is the default at his request.
+- **Motors matter most after physics** (his words). The motor-domain rules he
+  taught us (adapter-down fit, 75≡76 mm, OOP still flying, sort by burn time /
+  total impulse, max-motor-length as flag-not-block) are implemented in
+  services/motorDb.ts — don't regress them.
 
 ## Decisions made (and why)
 
@@ -90,9 +107,21 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
   pass and deliver a fresh issue list — fix that before anything else.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
-  (the flagship complex feature). Do not start either without his call.
-- Verification state: all suites green (engine 8, app 11), differential 202 lines,
-  desktop-loader mass+CG parity bit-exact.
+  (the flagship complex feature). Do not start either without his call. He wants
+  one more in-depth test pass (new issue list) before Phase 3 begins.
+- **Backlog menus for Eric to pick from:** the attribute audit's top-10 gaps
+  (docs/testing/attribute-audit-2026-07-03.md — fin tabs, motor overhang/ignition,
+  fin fillets, body-tube-as-motor-mount, rail-button geometry, tube-fin thickness,
+  packed dims), units polish (in/64 fractional inches, stability unit selection),
+  .ork appearance persistence for the display colors.
+- Verification state (end of 2026-07-03): all suites green (engine 8, app 36),
+  differential 202 lines re-passed after two engine bridge rebuilds,
+  desktop-loader mass+CG parity bit-exact. Everything pushed through `624d821`.
+- Data bundles + refresh scripts (rerun when upstream updates): motors
+  `npm run motors:refresh` (1,129 motors, thrustcurve.org API); presets
+  `node packages/app/scripts/fetch-component-presets.mjs` (3,449 parts,
+  openrocket/openrocket-database); materials generated once from the desktop's
+  Databases.java into src/data/materials.ts.
 
 ## Notable technical war stories (details in docs/phase0-findings.md)
 
