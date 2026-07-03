@@ -156,8 +156,13 @@ and still pending.**
   desktop-loader mass+CG parity bit-exact. Everything pushed through `624d821`.
 - Data bundles + refresh scripts (rerun when upstream updates): motors
   `npm run motors:refresh` (1,129 motors, thrustcurve.org API); presets
-  `node packages/app/scripts/fetch-component-presets.mjs` (3,449 parts,
-  openrocket/openrocket-database); materials generated once from the desktop's
+  `node packages/app/scripts/fetch-component-presets.mjs` (github
+  openrocket-database PLUS the desktop's own datafiles/components/internal —
+  the desktop bundles Fruity Chutes/Spherachutes/Rocketman/FlisKits etc. that
+  github does NOT have; reads the Dropbox reference source, override with
+  OPENROCKET_SRC) **then** `node packages/app/scripts/merge-rocksim-parts.mjs`
+  (re-adds Eric's RockSim CSV extras; regeneration wipes them otherwise).
+  4,700 parts total as of v0.004. Materials generated once from the desktop's
   Databases.java into src/data/materials.ts.
 
 ## Notable technical war stories (details in docs/phase0-findings.md)
