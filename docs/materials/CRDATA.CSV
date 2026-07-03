@@ -1,0 +1,250 @@
+Mfg.,Part No.,Desc.,Units,ID,OD,Length,Material,AutoSize,,,
+Aerospace Speciality Products,CR-10.5/5,Centering Ring CR-10.5/5; 13mm Engine Block,1,11.5,13,4.78,Paper,2.39,2,0.25,0
+Aerospace Speciality Products,CR-20/50,Centering Ring CR-20/50; 24mm Engine Block,1,18.9,24,6.35,Paper,3.175,2,0.9,0
+Aerospace Speciality Products,CR-5/20,Centering Ring CR-5/20; 18mm Engine Block,1,14,17.8,5.59,Paper,2.795,2,0.5,0
+Aerospace Speciality Products,CR-50/55,Centering Ring CR-50/55,1,25,32.4,7.62,G10 (PML 0.062in),3.81,2,1.7,0
+Aerospace Speciality Products,LCR-20/50,Long Centering Ring CR-20/50,1,18.9,24,25.4,Paper,12.7,2,3.25,0
+Aerospace Speciality Products,LCR-24/29,Long Centering Ring CR-24/29; 29mm Engine Block,1,25.7,28.7,25.4,Paper,12.7,2,3.25,0
+Aerospace Speciality Products,PCR-2055,Plywood Centering Ring CR-20/55,1,18.9,32.4,3.17,Aircraft plywood (Birch),1.585,2,0.75,0
+Aerospace Speciality Products,PCR-2060,Plywood Centering Ring CR-20/60,1,18.9,40.3,3.17,Aircraft plywood (Birch),1.585,2,1.1,0
+Aerospace Speciality Products,PCR-2070H,Plywood Centering Ring CR-20/70H,1,18.9,54.8,3.17,Aircraft plywood (Birch),1.585,2,2.35,0
+Aerospace Speciality Products,PCR-292.6/80,Plywood Centering Ring CR-29/2.6 or 80H,1,31.2,64.5,3.17,Aircraft plywood (Birch),1.585,2,5.8,0
+Aerospace Speciality Products,PCR-2970H,Plywood Centering Ring CR-29/70H,1,31.2,54.8,3.17,Aircraft plywood (Birch),1.585,2,3.5,0
+Aerospace Speciality Products,PCR-382.6/80,Plywood Centering Ring CR-38/2.6 or 80H,1,42.2,64.5,3.17,Aircraft plywood (Birch),1.585,2,4.15,0
+Aerospace Speciality Products,PCR-502.6/80,Plywood Centering Ring CR-50/2.6 or 80H,1,22.7,64.5,3.17,Aircraft plywood (Birch),1.585,2,5.75,0
+Aerospace Speciality Products,PCR-5060,Plywood Centering Ring CR-50/60,1,22.7,40.3,3.17,Aircraft plywood (Birch),1.585,2,1.65,0
+Aerospace Speciality Products,PCR-5070H,Plywood Centering Ring CR-50/70H,1,22.7,54.8,3.17,Aircraft plywood (Birch),1.585,2,2.25,0
+Apogee,12282,CR 56-AC66 and TBD56 Plywood,0,2.218,2.492,0.13,Plywood,0,0,?,0
+Apogee,13021,CR 10-13,0,0.453,0.51,0.188,Paper,0,0,?,0
+Apogee,13024,CR 10-18,0,0.453,0.704,0.188,Paper,0,0,?,0
+Apogee,13027,CR 10-18L,0,0.453,0.704,0.5,Paper,1,0,?,0
+Apogee,13028,CR 13-18,mm,13.9446,17.78,6.35,Paper,3.175,g,0.44,0
+Apogee,13032,CR 18-24,mm,18.796,24.003,6.35,Paper,3.175,g,0.76,0
+Apogee,13036,CR 18-29,0,0.74,1.13,0.25,Paper,0.125,2,1.64,0
+Apogee,13037,CR 24-29,mm,24.9428,28.702,6.35,Paper,3.175,g,0.76,0
+Apogee,13257,CR 2x29 Thick-66 Plywood,0,1.18,2.558,0.13,Plywood,1,0,?,0
+Apogee,13380,CR 24-56 Foam Core Board,mm,25.1968,55.245,5.08,Foam Core Board,0,g,0,0
+Apogee,13381,CR 24-66 Foam Core Board,mm,24.8412,64.8462,5.08,Foam Core Board,0,g,0,0
+Apogee,13382,CR 24-74 Foam Core Board,mm,24.9936,74.1426,3.302,Foam Core Board,0,g,0,0
+Apogee,13383,CR 29-56 Foam Core Board,mm,29.6418,55.245,3.302,Foam Core Board,1.5875,g,0.4,0
+Apogee,13384,CR 29-66 Foam Core Board,mm,29.6418,64.389,3.302,Foam Core Board,0,g,0,0
+Apogee,13385,CR 29-74 Foam,0,1.167,2.919,0.13,Plywood,0,0,?,0
+Apogee,13390,CR 13-18 Cardstock,mm,13.97,18.034,1.2192,Cardstock,0.6096,g,0.1,0
+Apogee,13391,CR 13-24 Cardstock,mm,13.8684,24.0792,1.2192,Cardstock,0.6096,g,0.3,0
+Apogee,13393,CR 13-33 Cardstock,mm,13.8684,32.512,1.2192,Cardstock,0.6096,g,0.7,0
+Apogee,13394,CR 13-41.6 Cardstock,mm,13.8684,40.4622,1.27,Cardstock,0.635,g,1,0
+Apogee,13395,CR 18-24 Cardstock,mm,18.7452,24.0792,1.2192,Cardstock,0.6096,g,0.2,0
+Apogee,13396,CR 18-33 Plywood,0,0.738,1.28,0.13,Plywood,0,0,?,0
+Apogee,13397,CR 18-41.6 Cardstock,mm,18.7452,40.2082,1.27,Cardstock,0.635,g,0.9,0
+Apogee,13398,CR 18-41.6 Plywood,mm,18.7452,40.2082,3.175,Plywood,1.5875,g,2,0
+Apogee,13400,CR 18-24 Forward Grooved Plywood,mm,18.796,24.003,3.175,Plywood,0,g,0,0
+Apogee,13401,CR 24-33 Plywood,0,0.978,1.28,0.13,Plywood,0,0,0,0
+Apogee,13402,CR 24-41.6 Plywood,0,0.983,1.588,0.13,Plywood,0,0,0,0
+Apogee,13403,CR 13-40 Cardstock,mm,13.9446,39.9796,1.27,Cardstock,0.635,g,1.1,0
+Apogee,13404,CR 18-33 Cardstock,mm,18.9484,32.131,1.2192,Cardstock,0.6096,g,0.5,0
+Apogee,13405,CR 24-33 Cardstock,mm,25.2222,32.512,1.2192,Cardstock,0.6096,g,0.3,0
+Apogee,13406,CR 29-41.6 Cardstock,mm,30.0736,40.3606,1.2192,Cardstock,0.6096,g,0.6,0
+Apogee,13407,CR 33-41.6 Cardstock,mm,33.8328,40.3098,1.2192,Cardstock,0.6096,g,0.3,0
+Apogee,13408,CR 24-54 Plywood,0,0.986,2.13,0.13,Plywood,0,0,0,0
+Apogee,13409,CR 29-54 Plywood,0,1.217,2.132,0.13,Plywood,0,0,0,0
+Apogee,13410,CR 38-54 Plywood,0,1.641,2.134,0.13,Plywood,0,0,0,0
+Apogee,13411,CR 24-56 Plywood,0,0.992,2.175,0.13,Plywood,0,0,0,0
+Apogee,13412,CR 29-56 Plywood,0,1.167,2.175,0.13,Plywood,0,0,0,0
+Apogee,13413,CR 29 Thick-56 Plywood,0,1.196,2.177,0.13,Plywood,0,0,0,0
+Apogee,13414,CR 24-66 Plywood,0,0.978,2.553,0.13,Plywood,0,0,0,0
+Apogee,13415,CR 29 Thick-66 Plywood,0,1.201,2.558,0.13,Plywood,0,0,0,0
+Apogee,13416,CR 29-66 Plywood,0,1.167,2.535,0.13,Plywood,0,0,0,0
+Apogee,13417,CR 38-66 Plywood,0,1.63,2.555,0.25,Plywood,0,0,0,0
+Apogee,13418,CR 54-66 Plywood,0,2.269,2.556,0.25,Plywood,0,0,0,0
+Apogee,13419,CR 24-75 Plywood,0,0.988,2.987,0.13,Plywood,0,0,0,0
+Apogee,13421,CR 29Thick-75 Plywood,0,1.212,2.989,0.13,Plywood,0,0,0,0
+Apogee,13422,CR 29BT-75 Plywood,0,1.281,2.993,0.13,Plywood,0,0,0,0
+Apogee,13423,CR 38-75 Plywood,0,1.641,2.994,0.13,Plywood,0,0,0,0
+Apogee,13424,CR 54-75 Plywood,0,2.264,2.991,0.25,Plywood,0,0,0,0
+Apogee,13425,CR 18-3in Thin Cardstock,0,0.747,2.921,0.05,Cardstock,0,0,0,0
+Apogee,13426,CR 24-74 Plywood,0,0.984,2.919,0.13,Plywood,0,0,0,0
+Apogee,13427,CR 29Thick-74 Plywood,0,1.219,2.923,0.13,Plywood,0,0,0,0
+Apogee,13428,CR 29-74 Plywood,0,1.176,2.917,0.13,Plywood,0,0,0,0
+Apogee,13429,CR 24-98 Plywood,0,0.986,3.891,0.13,Plywood,0,0,0,0
+Apogee,13430,CR 29BT-98 Plywood,0,1.281,3.891,0.13,Plywood,0,0,0,0
+Apogee,13431,CR 29Thick-98 Plywood,0,1.216,3.884,0.13,Plywood,0,0,0,0
+Apogee,13432,CR 38-98 Plywood,0,1.629,3.893,0.25,Plywood,0,0,0,0
+Apogee,13433,CR 54-98 Plywood,mm,57.3532,98.8568,6.35,Plywood,3.175,g,18.4,0
+Apogee,13434,CR 75BT-98 Plywood,0,3.113,3.89,0.25,Plywood,0,0,0,0
+Apogee,13435,CR 75Thick-98 Plywood,0,3.17,3.89,0.25,Plywood,0,0,0,0
+Apogee,13436,CR 24-5.38in Plywood,0,0.986,5.368,0.13,Plywood,0,0,0,0
+Apogee,13437,CR 29BT-5.38in Plywood,0,1.282,5.365,0.13,Plywood,0,0,0,0
+Apogee,13438,CR 29Thick-5.38in Plywood,0,1.218,5.367,0.13,Plywood,0,0,0,0
+Apogee,13439,CR 38-5.38in Plywood,0,1.637,5.367,0.25,Plywood,0,0,0,0
+Apogee,13440,CR 54-5.38in Plywood,0,2.259,5.364,0.25,Plywood,0,0,0,0
+Apogee,13441,CR 75BT-5.38in Plywood,0,3.107,5.367,0.25,Plywood,0,0,0,0
+Apogee,13442,CR 75LOC-5.38in Plywood,0,3.173,5.36,0.25,Plywood,0,0,0,0
+Apogee,13443,CR 98BT-5.38in Plywood,0,3.99,5.364,0.25,Plywood,0,0,0,0
+Apogee,13444,CR 98 Thick Wall -5.38in Plywood,mm,103.505,136.3218,6.35,Plywood,3.175,g,23.8,0
+Apogee,13447,CR 38-6in Plywood,0,1.626,5.969,0.25,Plywood,0,0,0,0
+Apogee,13448,CR 54-6in Plywood,0,2.258,5.98,0.25,Plywood,0,0,0,0
+Apogee,13449,CR 75BT-6in Plywood,0,3.111,5.95,0.25,Plywood,0,0,0,0
+Apogee,13450,CR 75LOC-6in Plywood,0,3.163,5.983,0.25,Plywood,0,0,0,0
+Apogee,13451,CR 98BT-6in Plywood,0,4.026,5.977,0.25,Plywood,0,0,0,0
+Apogee,13452,CR 98LOC-6in Plywood,0,4.085,5.975,0.25,Plywood,0,0,0,0
+Apogee,13455,CR 38-7.51in Plywood,0,1.626,7.51,0.25,Plywood,0,0,0,0
+Apogee,13456,CR 54-7.51in Plywood,0,2.262,7.5,0.25,Plywood,0,0,0,0
+Apogee,13457,CR 75BT-7.51in Plywood,0,3.124,7.5,0.25,Plywood,0,0,0,0
+Apogee,13458,CR 75LOC-7.51in Plywood,0,3.169,7.5,0.25,Plywood,0,0,0,0
+Apogee,13459,CR 98BT-7.51in Plywood,0,4.01,7.5,0.25,Plywood,0,0,0,0
+Apogee,13460,CR 98LOC-7.51in Plywood,0,4.085,7.5,0.25,Plywood,0,0,0,0
+Apogee,13470,CR 29-41.6 Plywood,0,1.213,1.59,0.13,Plywood,0,0,0,0
+Apogee,13471,CR 2x29-66 Plywood,0,1.18,2.558,0.13,Plywood,0,0,0,0
+Apogee,13472,CR 2x29-74 Plywood,0,1.176,2.556,0.13,Plywood,0,0,0,0
+Apogee,13473,CR 33-56 Foam Core Board,0,1.327,2.178,0.2,Foam Core Board,0,0,0,0
+Apogee,13474,CR 33-66 Foam  Core Board,0,1.327,2.548,0.2,Foam Core Board,0,0,0,0
+Apogee,13475,CR 41.6-56 Foam  Core Board,0,1.64,2.178,0.2,Foam Core Board,0,0,0,0
+Apogee,13476,CR 41.6-66 Foam Core Board,0,1.652,2.548,0.2,Foam Core Board,0,0,0,0
+Apogee,13477,CR 18-56 Foam Core Board,mm,18.034,55.245,5.08,Foam Core Board,2.54,g,0.5,0
+Apogee,13478,CR 29-38 Plywood,0,1.21,1.52,0.25,Plywood,0,0,0,0
+Apogee,13657,CR 2x29 Thick-66 Plywood,0,1.18,2.558,0.13,Plywood,0,0,0,0
+Apogee,15002,CR 10-24 Cardstock,0,0.453,0.945,0.04,Cardstock,0,0,0,0
+Apogee,15016,CR 24-41.6 Cardstock,mm,24.9428,40.3606,1.2192,Cardstock,0.6096,g,0.73,0
+Apogee,15026,CR 24-56,mm,24.9428,55.118,1.2192,Paper,0.6096,g,1.8,0
+Apogee,15028,CR 24-66 Cardstock,0,0.982,2.552,0.05,Cardstock,0,0,0,0
+Balsa Machining,CR0550-F,.946x.546x.05thk fiber,in.,0.546,0.946,0.05,Fiber,0,g,0,0
+Balsa Machining,CR0550-W,.946x.546x.125thk lite ply,in.,0.546,0.946,0.125,lite ply,0,g,0,0
+Balsa Machining,CR0555-F,1.283x.546x.05thk fiber,in.,0.546,1.283,0.05,Fiber,0,g,0,0
+Balsa Machining,CR0560-F,1.595x.546x.05thk fiber,in.,0.546,1.595,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2+3-F,.348x.281x.05thk fiber,in.,0.281,0.348,0.05,lite ply,0,g,0,0
+Balsa Machining,CR2+4-F,.420x.281x.05thk fiber,in.,0.281,0.42,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2+5-F,.518x.281x.05thk fiber,in.,0.281,0.518,0.05,Fiber,0,g,0,0
+Balsa Machining,CR20101-F,3.896x.736x.05thk fiber,in.,0.736,3.896,0.05,Fiber,0,g,0,0
+Balsa Machining,CR20204-F,2.042x.736x.05thk fiber,in.,0.736,2.024,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2050-F,.946x.736x.05thk fiber,in.,0.736,0.946,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2050-P,.946x.736x.25thk paper,in.,0.736,0.946,0.25,Paper,0,g,0,0
+Balsa Machining,CR2050-TW,.946x.736x.250thk lite ply,in.,0.736,0.946,0.25,lite ply,0,g,0,0
+Balsa Machining,CR2050-W,.946x.736x.125thk lite ply,in.,0.736,0.946,0.125,lite ply,0,g,0,0
+Balsa Machining,CR2055-F,1.283x.736x.05thk fiber,in.,0.736,1.283,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2055-W,1.283x.736x.125thk lite-ply,in.,0.736,1.283,0.125,lite ply,0,g,0,0
+Balsa Machining,CR2060-F,1.593x.736x.05thk fiber,in.,0.736,1.593,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2060-W,1.593x.736x.125thk lite ply,in.,0.736,1.593,0.125,lite ply,0,g,0,0
+Balsa Machining,CR2070-F,2.178x.736x.05thk fiber,in.,0.736,2.178,0.05,Fiber,0,g,0,0
+Balsa Machining,CR2080-F,2.558x.736x.05thk fiber,in.,0.736,2.558,0.05,Fiber,0,g,0,0
+Balsa Machining,CR220-F,.708x.250x.05thk fiber,in.,0.25,0.708,0.05,Fiber,0,g,0,0
+Balsa Machining,CR23-F,.348x.250x.05thk fiber,in.,0.25,0.348,0.05,Fiber,0,g,0,0
+Balsa Machining,CR24-F,.420x.250x.05thk fiber,in.,0.25,0.42,0.05,Fiber,0,g,0,0
+Balsa Machining,CR25-F,.516x.250x.05thk fiber,in.,0.25,0.516,0.05,Fiber,0,g,0,0
+Balsa Machining,CR320-F,.708x.376x.05thk fiber,in.,0.376,0.708,0.05,Fiber,0,g,0,0
+Balsa Machining,CR34-F,.420x.376x.05thk fiber,in.,0.376,0.42,0.05,Fiber,0,g,0,0
+Balsa Machining,CR35-F,.516x.376x.05thk fiber,in.,0.376,0.516,0.05,Fiber,0,g,0,0
+Balsa Machining,CR35-P,.516x.376x.25thk paper (mini eng thrust ring),in.,0.376,0.516,0.25,Paper,0,g,0,0
+Balsa Machining,CR420-F,.708x.450x.05thk fiber,in.,0.45,0.708,0.05,Fiber,0,g,0,0
+Balsa Machining,CR45-F,.516x.450x.05thk fiber,in.,0.45,0.516,0.05,Fiber,0,g,0,0
+Balsa Machining,CR450-F,.95x.450x.05thk fiber,in.,0.45,0.95,0.05,Fiber,0,g,0,0
+Balsa Machining,CR50101-F,3.896x.978x.05thk fiber,in.,0.978,3.896,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5052H-F,1.14x.980x.05thk fiber,in.,0.98,1.14,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5052H-P,1.137x.977x.25thk paper,in.,0.977,1.137,0.25,Paper,0,g,0,0
+Balsa Machining,CR5052H-P1,1.137x.977x.50thk paper,in.,0.977,1.137,0.5,Paper,0,g,0,0
+Balsa Machining,CR5055-F,1.283x.978x.05thk fiber,in.,0.978,1.283,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5055-W,1.283x.978x.125thk lite-ply,in.,0.978,1.283,0.125,lite ply,0,g,0,0
+Balsa Machining,CR5060-F,1.593x.978x.05thk fiber,in.,0.978,1.593,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5060-W,1.593x.978x.125thk lite-ply,in.,0.978,1.593,0.05,lite ply,0,g,0,0
+Balsa Machining,CR5070-F,2.178x.978x.05thk fiber,in.,0.978,2.178,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5070-W,2.178x.978x.125thk lite-ply,in.,0.978,2.178,0.125,lite ply,0,g,0,0
+Balsa Machining,CR5080-F,2.556x.978x.05thk fiber,in.,0.978,2.556,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5080-W,2.556x.978x.125thk lite-ply,in.,0.978,2.556,0.125,lite ply,0,g,0,0
+Balsa Machining,CR50H55-W,1.283x.990x.125thk lite-ply,in.,0.99,1.283,0.125,lite ply,0,g,0,0
+Balsa Machining,CR50H60-F,1.593x.990x.05thk fiber,in.,0.99,1.593,0.05,Fiber,0,g,0,0
+Balsa Machining,CR50H70-W,2.178x.990x.125thk lite-ply,in.,0.99,2.178,0.125,lite ply,0,g,0,0
+Balsa Machining,CR520-F,.703x.546x.05thk fiber,in.,0.546,0.703,0.05,Fiber,0,g,0,0
+Balsa Machining,CR520-P,.708x.542x.25thk paper,in.,0.546,0.708,0.25,Paper,0,g,0,0
+Balsa Machining,CR520-W,.703x.546x.125thk lite-ply,in.,0.546,0.703,0.125,lite ply,0,g,0,0
+Balsa Machining,CR52H55-F,1.283x1.215x.05thk fiber,in.,1.215,1.283,0.05,Fiber,0,g,0,0
+Balsa Machining,CR52H60-F,1.592x1.215x.05thk fiber,in.,1.215,1.592,0.05,Fiber,0,g,0,0
+Balsa Machining,CR52H80-W,2.558x1.215x.125thk lite-ply,in.,1.215,2.558,0.125,lite ply,0,g,0,0
+Balsa Machining,CR55101-F,3.896x1.283x.05thk fiber,in.,1.283,3.896,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5560-F,1.592x1.283x.05thk fiber,in.,1.283,1.592,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5570-F,2.217x1.283x.05thk fiber,in.,1.283,2.217,0.05,Fiber,0,g,0,0
+Balsa Machining,CR5570-W,2.178x1.325x.125thk lite-ply,in.,1.325,2.178,0.125,lite ply,0,g,0,0
+Balsa Machining,CR5580-F,2.558x1.283x.05thk fiber,in.,1.283,2.558,0.05,Fiber,0,g,0,0
+Balsa Machining,CR60101-F,3.896x1.595x.05thk fiber,in.,1.595,3.896,0.05,Fiber,0,g,0,0
+Balsa Machining,CR6070-F,2.217x1.595x.05thk fiber,in.,1.595,2.217,0.05,Fiber,0,g,0,0
+Balsa Machining,CR6070-W,2.175x1.637x.125thk lite-ply,in.,1.635,2.178,0.125,lite ply,0,g,0,0
+Balsa Machining,CR6080-F,2.558x1.595x.05thk fiber,in.,1.595,2.558,0.05,Fiber,0,g,0,0
+Estes,30125,CR-20-55,1,18.7,32.1,1.17,Paper,0,0,0,0
+Estes,30162-2,Eng. block BT-20,1,16.5,18,5,Paper,0,0,0,0
+Estes,Eng. Hook Sleeve,BT-20 Sleeve,1,18.7,18.9,8,Paper,0,0,0,0
+LOC,LOC FCR-1.52-1.14,Centering Ring,mm,29.21,38.5826,12.7,Paper,6.35,g,3.3,0
+LOC Precision,LOC CR-2.14-(2)0.95,Centering Ring,1,25.4,54.4,3.17,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.14-1.14,Centering Ring,0,1.21,2.14,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.14-1.52,Centering Ring,0,1.64,2.14,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.56-(2)0.95,Centering Ring,1,25.4,65,3.17,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.56-(3)0.95,Centering Ring,1,25.4,65,3.17,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.56-(4)0.95,Centering Ring,1,25.4,65,3.17,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.56-0.95,Centering Ring,0,1,2.56,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.56-1.14,Centering Ring,0,1.21,2.56,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-2.56-1.52,Centering Ring,1,41.5,65,3.17,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-3.00-1.14,Centering Ring,0,1.21,3,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-3.00-1.52,Centering Ring,0,1.64,3,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-3.00-2.14,Centering Ring,0,2.26,3,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-3.9-1.14,Centering Ring,0,1.21,3.9,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-3.9-1.52,Centering Ring,0,1.64,3.9,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-3.9-2.14,Centering Ring,0,2.26,3.9,0.125,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-5.38-(3)2.14,Centering Ring,1,57.4,137,4.78,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-5.38-1.52,Centering Ring,0,1.64,5.38,0.188,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-5.38-2.14,Centering Ring,0,2.26,5.38,0.188,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-5.38-3.00,Centering Ring,0,3.18,5.38,0.25,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-5.38-3.9,Centering Ring,0,4.08,5.38,0.25,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-7.51-1.52,Centering Ring,0,1.64,7.51,0.25,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-7.51-2.14,Centering Ring,0,2.26,7.51,0.25,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-7.51-3.00,Centering Ring,0,3.18,7.51,0.25,Aircraft plywood (LOC),0,0,0,0
+LOC Precision,LOC CR-7.51-3.9,Centering Ring,0,4.08,7.51,0.25,Aircraft plywood (LOC),0,0,0,0
+ProLine Composites,13809,CR 29-38 Fiberglass,0,1.243,1.507,0.27,Fiberglass,1,0,0,0
+ProLine Composites,13810,CR 29-54 Fiberglass,0,1.25,2.159,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13811,CR 38-54 Fiberglass,0,1.656,2.152,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13812,CR 29-2.6in Fiberglass,0,1.249,2.557,0.25,Fiberglass,1,0,0,0
+ProLine Composites,13813,CR 38-2.6in Fiberglass,0,1.651,2.557,0.09,Fiberglass,1,0,0,0
+ProLine Composites,13815,CR 29-3in Fiberglass,0,1.254,2.99,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13816,CR 38-3in Fiberglass,0,1.655,2.99,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13817,CR 54-3in Fiberglass,0,2.285,2.99,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13818,CR 29-4in Fiberglass,0,1.253,3.898,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13819,CR 38-4in Fiberglass,0,1.631,3.989,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13821,CR 75-4in Fiberglass,0,3.145,3.989,0.1,Fiberglass,1,0,0,0
+ProLine Composites,13826,CR 38-5.5in Fiberglass,0,1.637,5.38,0.12,Fiberglass,1,0,0,0
+ProLine Composites,13827,CR 54-5.5in Fiberglass,0,2.277,5.38,0.14,Fiberglass,1,0,0,0
+ProLine Composites,13828,CR 75-5.5in Fiberglass,0,3.143,5.38,0.14,Fiberglass,1,0,0,0
+ProLine Composites,13829,CR 98-5.5in Fiberglass,0,4.023,5.38,0.12,Fiberglass,1,0,0,0
+ProLine Composites,13830,CR 54-6in Fiberglass,0,2.294,6.015,0.12,Fiberglass,1,0,0,0
+ProLine Composites,13831,CR 75-6in Fiberglass,0,3.135,6.015,0.12,Fiberglass,1,0,0,0
+ProLine Composites,13832,CR 98-6in Fiberglass,0,4.046,6.015,0.13,Fiberglass,1,0,0,0
+ProLine Composites,13833,CR 54-7.5in Fiberglass,0,2.286,7.5,0.13,Fiberglass,1,0,0,0
+ProLine Composites,13834,CR 75-7.5in Fiberglass,0,3.122,7.5,0.14,Fiberglass,1,0,0,0
+ProLine Composites,13835,CR 98-7.5in Fiberglass,0,4.046,7.5,0.13,Fiberglass,1,0,0,0
+ProLine Composites,,CR 29-38 Fiberglass,0,1.243,1.507,0.27,Fiberglass,0,0,0,0
+ProLine Composites,,CR 29-54 Fiberglass,0,1.25,2.159,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 38-54 Fiberglass,0,1.656,2.152,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 29-2.6in Fiberglass,0,1.249,2.557,0.25,Fiberglass,0,0,0,0
+ProLine Composites,,CR 38-2.6in Fiberglass,0,1.651,2.557,0.09,Fiberglass,0,0,0,0
+ProLine Composites,,CR 29-3in Fiberglass,0,1.254,2.99,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 38-3in Fiberglass,0,1.655,2.99,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 54-3in Fiberglass,0,2.285,2.99,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 29-4in Fiberglass,0,1.253,3.898,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 38-4in Fiberglass,0,1.631,3.989,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 75-4in Fiberglass,0,3.145,3.989,0.1,Fiberglass,0,0,0,0
+ProLine Composites,,CR 38-5.5in Fiberglass,0,1.637,5.38,0.12,Fiberglass,0,0,0,0
+ProLine Composites,,CR 54-5.5in Fiberglass,0,2.277,5.38,0.14,Fiberglass,0,0,0,0
+ProLine Composites,,CR 75-5.5in Fiberglass,0,3.143,5.38,0.14,Fiberglass,0,0,0,0
+ProLine Composites,,CR 98-5.5in Fiberglass,0,4.023,5.38,0.12,Fiberglass,0,0,0,0
+ProLine Composites,,CR 54-6in Fiberglass,0,2.294,6.015,0.12,Fiberglass,0,0,0,0
+ProLine Composites,,CR 75-6in Fiberglass,0,3.135,6.015,0.12,Fiberglass,0,0,0,0
+ProLine Composites,,CR 98-6in Fiberglass,0,4.046,6.015,0.13,Fiberglass,0,0,0,0
+ProLine Composites,,CR 54-7.5in Fiberglass,0,2.286,7.5,0.13,Fiberglass,0,0,0,0
+ProLine Composites,,CR 75-7.5in Fiberglass,0,3.122,7.5,0.14,Fiberglass,0,0,0,0
+ProLine Composites,,CR 98-7.5in Fiberglass,0,4.046,7.5,0.13,Fiberglass,0,0,0,0
+Semroc,CR-58,Centering Ring,0,0.545,0.863,0.25,Paper,0,2,0,0
+Semroc,CR-710,Centering Ring,0,0.761,0.998,0.25,Paper,0,2,0,0
+Semroc,CR-713,Centering Ring,0,0.761,1.3,0.05,Paper,0,2,0,0
+Semroc,CR-716,Centering Ring,0,0.761,1.6,0.05,Paper,0,2,0,0
+Semroc,CR-720,Centering Ring,0,0.761,2,0.05,Paper,0,2,0,0
+Semroc,CR-78,Centering Ring,0,0.761,0.863,0.25,Paper,0,2,0,0
+Semroc,CR-79,Centering Ring,0,0.761,0.948,0.25,Paper,0,2,0,0
+Semroc,CR-9115,Centering Ring,0,1,1.12,1,Paper,0,2,0,0
+Semroc,CR-913,Centering Ring,0,1,1.3,0.05,Paper,0,2,0,0
+Semroc,CR-916,Centering Ring,0,1,1.6,0.05,Paper,0,2,0,0
+Semroc,CR-920,Centering Ring,0,1,2,0.05,Paper,0,2,0,0

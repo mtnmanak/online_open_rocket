@@ -1,0 +1,100 @@
+Mfg.,Part No.,Desc.,Units,ID,OD,Length,Material,CG,CG Units,Mass,Autosize
+Aerospace Speciality Products,BH20,"Balsa Bulkhead Size 20 x 1.5""",1,0,17.5,38.1,Balsa,0,g,0,0
+Aerospace Speciality Products,BH20T,"Balsa Bulkhead Size 20T x 1.75""",1,0,18.8,44.4,Balsa,0,g,0,0
+Aerospace Speciality Products,BH5,"Balsa Bulkhead Size 5 x 1.5""",1,0,12.4,38.1,Balsa,0,g,0,0
+Aerospace Speciality Products,BH50,"Balsa Bulkhead Size 50 x 2""",1,0,23.4,50.8,Balsa,0,g,0,0
+Aerospace Speciality Products,BH55,"Balsa Bulkhead Size 55 x 3""",1,0,31.8,76.2,Balsa,0,g,0,0
+Aerospace Speciality Products,BH60,"Balsa Bulkhead Size 60 x 4""",1,0,39.6,102,Balsa,0,g,0,0
+Aerospace Speciality Products,BH70H,"Balsa Bulkhead Size 70H x 4""",1,0,54.4,102,Balsa,0,g,0,0
+Aerospace Speciality Products,PBH-2.6/80H,Plywood Bulkhead 2.6/80H (fits TC2.6/80 Coupler),1,0,62,3.17,Aircraft plywood (Birch),0,g,0,0
+Aerospace Speciality Products,PBH-60,Plywood Bulkhead 60 (fits TC60 Coupler),1,0,38.4,3.17,Aircraft plywood (Birch),0,g,0,0
+Aerospace Speciality Products,PBH-70,Plywood Bulkhead 70 (fits TC70 Coupler),1,0,52.3,3.17,Aircraft plywood (Birch),0,g,0,0
+Apogee,12209,41.6mm Foam Coupler Bulkhead,in.,0,1.54,0.13,Foam,0,g,0,0
+Apogee,12210,13mm Paper Tube Bulkhead,0,0,0.5,0.05,Paper,0,g,0,0
+Apogee,12211,18mm Paper Tube Bulkhead,0,0,0.7,0.05,Paper,0,g,0,0
+Apogee,12212,24mm Paper Tube Bulkhead,0,0,0.94,0.05,Paper,0,g,0,0
+Apogee,12213,29mm Plywood Tube Bulkhead,0,0,1.12,0.13,Plywood,0,g,0,0
+Apogee,12214,33mm Plywood Tube Bulkhead,0,0,1.27,0.13,Plywood,0,g,0,0
+Apogee,12215,38mm Plywood Tube Bulkhead,0,0,1.52,0.13,Plywood,0,g,0,0
+Apogee,12216,41.6mm Plywood Tube Bulkhead,0,0,1.58,0.13,Plywood,0,g,0,0
+Apogee,12217,54mm Plywood Tube Bulkhead,0,0,2.13,0.25,Plywood,0,g,0,0
+Apogee,12218,56mm Plywood Tube Bulkhead,0,0,2.18,0.13,Plywood,0,g,0,0
+Apogee,12219,"2.56"" Plywood Tube Bulkhead",0,0,2.56,0.25,Plywood,0,g,0,0
+Apogee,12220,75mm Plywood Tube Bulkhead,0,0,2.99,0.25,Plywood,0,g,0,0
+Apogee,12221,98mm Plywood Tube Bulkhead,0,0,3.89,0.25,Plywood,0,g,0,0
+Apogee,12222,"5.38"" Plywood Tube Bulkhead",0,0,5.37,0.25,Plywood,0,g,0,0
+Apogee,12223,"6"" Plywood Tube Bulkhead (Fits BT)",0,0,5.99,0.25,Plywood,0,g,0,0
+Apogee,12224,"7.51"" Plywood Tube Bulkhead (Fits LOC)",0,0,7.51,0.25,Plywood,0,g,0,0
+Apogee,12225,74mm Plywood Tube Bulkhead,0,0,2.92,0.13,Plywood,0,g,0,0
+Apogee,12248,13mm Paper Coupler Bulkhead,0,0,0.48,0.05,Paper,0,g,0,0
+Apogee,12250,18mm Paper Coupler Bulkhead,0,0,0.66,0.05,Paper,0,g,0,0
+Apogee,12251,24mm Plywood Coupler Bulkhead,0,0,0.9,0.13,Plywood,0,g,0,0
+Apogee,12252,24mm Paper Coupler Bulkhead,0,0,0.91,0.05,Paper,0,g,0,0
+Apogee,12254,29mm Paper Coupler Bulkhead,0,0,1.1,0.05,Paper,0,g,0,0
+Apogee,12255,29mm Plywood Coupler Bulkhead,0,0,1,0.13,Plywood,0,g,0,0
+Apogee,12258,33mm Plywood Coupler Bulkhead,0,0,1.24,0.13,Plywood,0,g,0,0
+Apogee,12259,38mm Plywood Coupler Bulkhead (Fits BT),0,0,1.38,0.13,Plywood,0,g,0,0
+Apogee,12260,38mm Plywood Coupler Bulkhead (Fits LOC),0,0,1.42,0.13,Plywood,0,g,0,0
+Apogee,12261,41.6mm Plywood Coupler Bulkhead,0,0,1.54,0.13,Plywood,0,g,0,0
+Apogee,12262,54mm Plywood Coupler Bulkhead,0,0,1.98,0.25,Plywood,0,g,0,0
+Apogee,12263,56mm Plywood Coupler Bulkhead,0,0,2.1,0.13,Plywood,0,g,0,0
+Apogee,12264,"2.6"" - 1/4"" Plywood Coupler Bulkhead",0,0,2.47,0.25,Plywood,0,g,0,0
+Apogee,12265,75mm Plywood Coupler Bulkhead (LOC and BT),0,0,2.85,0.25,Plywood,0,g,0,0
+Apogee,12267,98mm Plywood Coupler Bulkhead (Fits Blue Tube Coupler),mm,0,94.8182,6.35,Plywood,3.175,g,52.1,0
+Apogee,12268,98mm Plywood Coupler Bulkhead (Fits LOC Coupler),mm,0.254,96.2914,6.35,Plywood,3.175,g,53.1,0
+Apogee,12269,"5.38"" Plywood Coupler Bulkhead (Fits LOC)",0,0,5.26,0.25,Plywood,0,g,0,0
+Apogee,12270,5.5 Plywood Coupler Bulkhead (Fits BT),0,0,5.18,0.25,Plywood,0,g,0,0
+Apogee,12271,"6"" Plywood Coupler Bulkhead (Fits BT)",0,0,5.82,0.25,Plywood,0,g,0,0
+Apogee,12272,98mm Plywood Coupler Bulkhead (Fits Apogee Coupler),mm,0,92.075,6.35,Plywood,3.175,g,52.8,0
+Apogee,12273,"7.51"" Plywood Coupler Bulkhead (Fits LOC)",0,0,7.38,0.25,Plywood,0,g,0,0
+Apogee,12274,"2.6"" Plywood Coupler Bulkhead (Fits BT)",0,0,2.37,0.25,Plywood,0,g,0,0
+Apogee,12275,74mm Plywood Coupler Bulkhead,0,0,2.85,0.13,Plywood,0,g,0,0
+Apogee,12276,56mm Foam Core Coupler Bulkhead,mm,0,53.4416,5.08,Foam Core Board,0,g,0,0
+Apogee,12277,66mm Foam Core Coupler Bulkhead,mm,0,62.8142,5.08,Foam Core Board,0,g,0,0
+Apogee,12278,74mm Foam Core Coupler Bulkhead,mm,0,72.3392,5.08,Foam Core Board,0,g,0,0
+Apogee,12281,"2.6"" - 1/8"" Plywood Coupler Bulkhead",0,0,2.47,0.13,Plywood,0,g,0,0
+Apogee,14805,"ARC Foam 2.6"" Single Horizontal Egg Protector (Full Set)",mm,0,63.5,104.902,Flexible Urethane Foam-soft,52.3875,g,22.963,0
+Apogee,14807,ARC Foam 3in Single Horizontal Egg Protector (Full Set),mm,0,74.422,127,Flexible Urethane Foam-soft,63.5,g,36.7,0
+Apogee,14814,"ARC Foam 2.2"" (56mm) Dual Vertical Egg Protector (Full Set)",mm,0,56.3118,165.1,Flexible Urethane Foam-soft,0,g,0,0
+Apogee,14817,"ARC Foam 2.6"" Dual Vertical Egg Protector (Full Set)",mm,2.54,63.5,154.94,Flexible Urethane Foam-soft,77.47,g,55.4,0
+Apogee,14821,ARC Foam 3in Single Vertical Egg Protector (Full Set),mm,0,74.422,86.36,Flexible Urethane Foam-soft,43.18,g,26.8,0
+Apogee,20062,40mm Foam plug,0,0,1.57,0.75,Styrofoam,0,g,0,0
+Balsa Machining,BHC70-F,2.104x.05thk fiber bulkhead,in.,0,2.178,0.05,Fiber,0,g,0,0
+Balsa Machining,BHC70-W,2.104x.125thk lite-ply bulkhead,in.,0,2.178,0.125,lite ply,0,g,0,0
+Balsa Machining,BHC80-F,2.474x.05thk fiber bulkhead,in.,0,2.556,0.05,Fiber,0,g,0,0
+Balsa Machining,BHC80-W,2.474x.125thk lite-ply bulkhead,in.,0,2.556,0.125,lite ply,0,g,0,0
+Balsa Machining,BHT70-F,2.175x.05thk fiber bulkhead,in.,0,2.175,0.05,Fiber,0,g,0,0
+Balsa Machining,BHT70-W,2.175x.125thk lite-ply bulkhead,in.,0,2.175,0.125,lite ply,0,g,0,0
+Balsa Machining,BHT80-F,2.558x.05thk fiber bulkhead,in.,0,2.558,0.05,Fiber,0,g,0,0
+Balsa Machining,BHT80-W,2.558x.125 lite-ply bulkhead,in.,0,2.558,0.125,lite ply,0,g,0,0
+LOC Precision,LOC BP-1.52,Bulkhead Plate,1,0,38.7,3.17,Aircraft plywood (LOC),0,g,0,0
+LOC Precision,LOC BP-2.14,Bulkhead Plate,0,0,2.07,0.125,Aircraft plywood (LOC),0,g,0,0
+LOC Precision,LOC BP-2.56,Bulkhead Plate,0,0,2.49,0.125,Aircraft plywood (LOC),0,g,0,0
+LOC Precision,LOC BP-3.00,Bulkhead Plate,0,0,2.93,0.188,Aircraft plywood (LOC),0,g,0,0
+LOC Precision,LOC BP-3.90,Bulkhead Plate,0,0,3.83,0.188,Aircraft plywood (LOC),0,g,0,0
+LOC Precision,LOC BP-5.38,Bulkhead Plate,0,0,5.26,0.25,Aircraft plywood (LOC),0,g,0,0
+LOC Precision,LOC BP-7.51,Bulkhead Plate,0,0,7.39,0.25,Aircraft plywood (LOC),0,g,0,0
+Madcow Rocketry,ABP38,38mm Aluminum Bulkplate,0,0,1.5,0.14,Aluminum,0,g,0,0
+Madcow Rocketry,ABP54,54mm Aluminum Bulkplate,0,0,2.13,0.25,Aluminum,0,g,0,0
+Madcow Rocketry,ABP26,"2.6"" Aluminum Bulkplate",0,0,2.56,0.2,Aluminum,0,g,0,0
+Madcow Rocketry,ABP30,"3"" Aluminum Bulkplate",0,0,2.99,0.21,Aluminum,0,g,0,0
+Madcow Rocketry,ABP40,"4"" Aluminum Bulkplate",0,0,3.88,0.27,Aluminum,0,g,0,0
+Madcow Rocketry,ABP55,"5.5"" Aluminum Bulkplate",0,0,5.37,0.27,Aluminum,0,g,0,0
+ProLine Composites,12504,38mm Fiberglass Tube Bulkhead,0,0,1.52,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12505,38mm Fiberglass Coupler Bulkhead,0,0,1.36,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12506,54mm Fiberglass Tube Bulkhead,0,0,2.16,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12507,54mm Fiberglass Coupler Bulkhead,0,0,2,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12508,"2.6"" Fiberglass Tube Bulkhead",0,0,2.57,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12509,"2.6"" Fiberglass Coupler Bulkhead",0,0,2.47,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12510,"3"" Fiberglass Tube Bulkhead",0,0,3.01,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12511,"3"" Fiberglass Coupler Bulkhead",0,0,2.87,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12512,"4"" Fiberglass Tube Bulkhead",0,0,3.9,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12513,"4"" Fiberglass Coupler Bulkhead",0,0,3.75,0.09,Fiberglass,0,g,0,0
+ProLine Composites,12516,"5.5"" Fiberglass Tube Bulkhead",0,0,5.38,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12517,"5.5"" Fiberglass Coupler Bulkhead",0,0,5.19,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12518,"6"" Fiberglass Tube Bulkhead",0,0,6,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12519,"6"" Fiberglass Coupler Bulkhead",0,0,5.5,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12520,"7.5"" Fiberglass Tube Bulkhead",0,0,7.5,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12521,"7.5"" Fiberglass Coupler Bulkhead",0,0,7.31,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12522,"8"" Fiberglass Tube Bulkkhead",0,0,7.81,0.13,Fiberglass,0,g,0,0
+ProLine Composites,12523,"8"" Fiberglass Coupler Bulkhead",0,0,7.5,0.13,Fiberglass,0,g,0,0

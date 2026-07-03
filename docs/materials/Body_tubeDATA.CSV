@@ -1,0 +1,235 @@
+Mfg.,Part No.,Desc.,Units,ID,OD,Length,Material,Engine,,
+Always Ready Rocketry,10500,"29mm x 48"" Blue Tube",0,1.14,1.28,48,Blue Tube,,2,235
+Always Ready Rocketry,10501,"38mm x 48"" Blue Tube",0,1.5,1.62,48,Blue Tube,,2,295
+Always Ready Rocketry,10502,"54mm x 48"" Blue Tube",0,2.14,2.26,48,Blue Tube,,2,410
+Always Ready Rocketry,10503,"2.56"" x 48"" Blue Tube",0,2.55,2.67,48,Blue Tube,,2,490
+Always Ready Rocketry,10504,"75mm x 48"" Blue Tube",0,3,3.1,48,Blue Tube,,2,570
+Always Ready Rocketry,10505,"98mm x 48"" Blue Tube",0,3.9,4.01,48,Blue Tube,,2,725
+Always Ready Rocketry,10506,"5.5"" x 48"" Blue Tube",0,5.36,5.52,48,Blue Tube,,2,1078.13
+Always Ready Rocketry,10507,"6"" x 48"" Blue Tube",0,5.97,6.08,48,Blue Tube,,2,1188.98
+Apogee,10063,13 mm,0,0.52,0.54,18,Paper,,2,5.8
+Apogee,10064,"18mm x 2.75"" Motor Mount",0,0.71,0.74,2.75,Paper,,2,8.1
+Apogee,10086,18 mm,0,0.71,0.74,18,Paper,,2,8.1
+Apogee,10100,24 mm,0,0.95,0.98,18,Paper,,2,10.9
+Apogee,10102,"24mm x 6"" Clear Airframe",0,0.95,0.98,6,Polycarbonate,,2,4.6
+Apogee,10111,"29mm x 13"" Motor Mount",0,1.14,1.18,13,Paper,,2,13
+Apogee,10131,"33mm x 18"" Body Tube",0,1.28,1.32,18,Paper,,2,20
+Apogee,10134,"33mm x 18"" Clear Airframe",0,1.28,1.33,18,Polycarbonate,,2,31.8
+Apogee,10139,"40mm x 9.9"" Body Tube",0,1.58,1.6,9.9,Paper,,2,8.6
+Apogee,10141,"41.6mm x 18"" Body Tube",0,1.6,1.64,18,Paper,,2,18
+Apogee,10144,"41.6mm x 18"" Clear Airframe",0,1.6,1.64,18,Polycarbonate,,2,41.3
+Apogee,10164,"56mm x 18"" Body Tube",0,2.18,2.22,18,Paper,,2,36.6
+Apogee,10165,"56mm x 10"" Clear Airframe",0,2.18,2.21,10,Polycarbonate,,2,29.3
+Apogee,10171,56mm x 18" Clear Airframe,mm,55.372000,56.311800,457.200000,Polycarbonate,0,2,0.000000
+Apogee,10190,"66mm x 18"" Clear Airframe",0,2.56,2.6,18,Polycarbonate,,2,67.5
+Apogee,10198,"66mm x 18"" Body Tube",0,2.56,2.6,18,Paper,,2,38.2
+Apogee,10202,"74mm x 18"" Body Tube",0,2.93,3,18,Paper,,2,79.2
+Apogee,10205,38mm Motor Mount,0,1.53,1.64,11,Paper,,2,41.1
+Apogee,10215,AT-98/1" (4" Dia. Thick Wall Switch Band),mm,99.060000,101.600000,25.400000,Paper,0,2,0.000000
+Apogee,10220,AT-98/18" (4" Dia. Thick Wall),mm,99.060000,101.600000,457.200000,Paper,0,2,0.000000
+Apogee,10222,"54mm x 14"" Motor Mount",0,2.14,2.26,14,Paper,,2,78.1
+Apogee,10253,29mm x 7" Thick Wall,mm,28.956000,30.734000,177.800000,Paper,0,2,0.000000
+Apogee,10251,"29mm x 34"" Thick Wall",0,1.14,1.21,34,Paper,,2,68
+Balsa Machining,T188-34,1.880x1.800x.040x34inch long (Aerotech size),0,1.8,1.88,34,Paper,,2,0
+Balsa Machining,T188-34,1.880x1.800x.040x34inch long (Aerotech size),0,1.8,1.88,34,Paper,,2,0
+Balsa Machining,T20-18,.736 x.710 x.013 x18 Estes BT20,0,0.71,0.74,18,Paper,,2,0
+Balsa Machining,T20-18,.736 x.710 x.013 x18 Estes BT20,0,0.71,0.74,18,Paper,,2,0
+Balsa Machining,T20-34,.736x.710x.013x34 Estes 18mm (white),0,0.71,0.74,34,Paper,,2,0
+Balsa Machining,T20-EMT,.736x.710x.013x2.75 Motor Tube,0,0.71,0.74,2.75,Paper,,2,0
+Balsa Machining,T204-34,2.024x2.0x.021x34 Centuri ST-20,0,2,2.02,34,Paper,,2,0
+Balsa Machining,T20Q-34,.787x.748x.039x34 MPC/Quest T20 (white),0,0.75,0.79,34,Paper,,2,0
+Balsa Machining,T38-34,1.635x1.525x.055x34 38mm Motor Mount size,0,1.53,1.64,34,Paper,,2,0
+Balsa Machining,T4-34,.448x.432x.013x34 Apogee micro (white),0,0.43,0.45,34,Paper,,2,0
+Balsa Machining,T4+34,.478x.452x.013x34 slips over T4 (white),0,0.45,0.48,34,Paper,,2,0
+Balsa Machining,T5-34,.544x.518x.013x34 Estes mini A (white),0,0.52,0.54,34,Paper,,2,0
+Balsa Machining,T5-9,.544x.518 x.013 x9 Plain Kraft,0,0.52,0.54,9,Paper,,2,0
+Balsa Machining,T5-9,.544x.518 x.013 x9 Plain Kraft,0,0.52,0.54,9,Paper,,2,0
+Balsa Machining,T50-34,.976x.950x.013x34 24mm (white),0,0.95,0.98,34,Paper,,2,0
+Balsa Machining,T50-34,.976x.950x.013x34 24mm (white),0,0.95,0.98,34,Paper,,2,0
+Balsa Machining,T50-EMT,.976x.950x.013x2.75 Motor Tube,0,0.95,0.98,2.75,Paper,,2,0
+Balsa Machining,T50H-EMT,.990x.950x.020x2.75 Motor Tube,0,0.95,0.99,2.75,Paper,,2,0
+Balsa Machining,T52H-34,1.210x1.140x.035x34 29mm Motor Mount size,0,1.14,1.21,34,Paper,,2,0
+Balsa Machining,T52H-34,1.210x1.140x.035x34 29mm Motor Mount size,0,1.14,1.21,34,Paper,,2,0
+Balsa Machining,T55-34,1.325x1.283x.021 (white),0,1.28,1.33,34,Paper,,2,0
+Balsa Machining,T60-34,1.637x1.595x.021(white),0,1.6,1.64,34,Paper,,2,0
+Balsa Machining,T70-34,2.217x2.175x.021x34,0,2.18,2.22,34,Paper,,2,0
+Balsa Machining,T70H-34,2.245x2.175x.035x34in long (white Heavy wall),0,2.18,2.25,34,Paper,,2,0
+Balsa Machining,T80-34,2.600x2.558x.021x34in long (white),0,2.56,2.6,34,Paper,,2,0
+Balsa Machining,T80H-34,2.640x2.558x.041x34in long (white Heavy wall),0,2.56,2.64,34,Paper,,2,0
+Balsa Machining,T908-34,.908x.865x.022x34 Centuri ST-8 (white),0,0.87,0.91,34,Paper,,2,0
+Estes,EST 30449,BT-101SV,0,3.9,3.94,24.7,Paper,,2,0
+Estes,EST 3084,BT-5,0,0.52,0.54,18,Paper,,2,0
+Estes,EST 3085,BT-20,0,0.71,0.74,18,Paper,,2,0
+Estes,EST 3086,BT-50,0,0.95,0.98,18,Paper,,2,0
+Estes,EST 3087,BT-55,0,1.28,1.32,18,Paper,,2,0
+Estes,EST 3088,BT-56,0,1.3,1.35,18,Paper,,2,0
+Estes,EST 3089,BT-60,0,1.59,1.64,18,Paper,,2,0
+Estes,EST 3090,BT-80,0,2.59,2.6,14.2,Paper,,2,0
+Estes,Estes,BT-70,0,2.18,2.22,17.5,Paper,,2,0
+Estes,Estes,BT-3,0,0.35,0.38,18,Paper,,2,0
+LOC/Precision,11005,38mm Body Tube,0,1.52,1.64,34,Paper,,2,118
+LOC/Precision,11010,54mm Body Tube,0,2.14,2.26,34,Paper,,2,192
+LOC/Precision,11013,"2.56"" Body Tube",0,2.56,2.63,30,Paper,,2,158
+LOC/Precision,11017,75mm Body Tube,0,3,3.1,34,Paper,,2,226
+LOC/Precision,11018,75mm Motor Mount,0,3,3.18,34,Paper,,2,392
+LOC/Precision,11021,98mm Body Tube,0,3.9,4,34,Paper,,2,298
+LOC/Precision,11021,98mm Body Tube,0,3.9,4.08,34,Paper,,2,298
+LOC/Precision,11022,98mm Motor Mount,0,3.9,4.02,34,Paper,,2,508
+LOC/Precision,11025,"5.38"" Body Tube",0,5.38,5.54,45,Paper,,2,784
+LOC/Precision,11027,"7.51"" Body Tube",0,7.52,7.68,60,Paper,,2,1726.77
+LOC/Precision,LOC MMT-0.95,Motor mount tube,0,0.95,1,34,Paper,,2,0
+LOC/Precision,LOC MMT-1.14,Motor mount tube,0,1.14,1.21,34,Paper,,2,0
+LOC/Precision,LOC MMT-1.52,Motor mount tube,0,1.52,1.64,34,Paper,,2,0
+LOC/Precision,LOC MMT-2.14,Motor mount tube,0,2.14,2.26,30,Paper,,2,0
+LOC/Precision,LOC TWT 7.01,Secondary Tube,1,173,178,272,Paper,,2,0
+Mach I,10630,"18mm x 48"" Fiberglass Body Tube",0,0.7,0.75,48,Fiberglass,,2,78.2
+Mach I,10633,"41.6mm x 48"" Fiberglass Body Tube",0,1.56,1.64,48,Fiberglass,,2,191.7
+Mach I,10634,"54mm x 48"" Fiberglass Body Tube",0,2.13,2.24,48,Fiberglass,,2,464.3
+Mach I,10635,"66mm x 48"" Fiberglass Body Tube",0,2.56,2.65,48,Fiberglass,,2,633.5
+Mach I,10636,"3 x 48"""" Fiberglass Body Tube""",0,2.99,3.09,48,Fiberglass,,2,694.6
+Mach I,10637,"98mm x 48"" Fiberglass Body Tube",0,3.89,4.04,48,Fiberglass,,2,1289.3
+Madcow Rocketry,10601,"29mm x 48"" Fiberglass Tube",0,1.14,1.25,48,Fiberglass,,2,276.9
+Madcow Rocketry,10622,"38mm x 48"" Fiberglass Tube",0,1.52,1.6,48,Fiberglass,,2,273
+Madcow Rocketry,10623,"54mm x 48"" Fiberglass Tube",0,2.15,2.23,48,Fiberglass,,2,413.2
+Madcow Rocketry,10625,"3"" x 48"" Fiberglass Tube",0,3,3.1,48,Fiberglass,,2,658
+Madcow Rocketry,10632,"33mm x 48"" Fiberglass Tube",0,1.29,1.34,48,Fiberglass,,2,160.1
+ProLine Composites,10603,"54mm x 48"" Fiberglass Tube",0,2.14,2.31,48,Fiberglass,,2,670.4
+ProLine Composites,10607,"4"" x 48"" Fiberglass Tube",0,3.89,4.08,48,Fiberglass,,2,1345.3
+ProLine Composites,10612,"5.5"" x 48"" Fiberglass Tube",0,5.38,5.56,48,Fiberglass,,2,2134
+ProLine Composites,10613,"6 x 48"""" Fiberglass Tube""",0,6.01,6.19,48,Fiberglass,,2,2766
+ProLine Composites,10616,"7.5"" x 48"" Fiberglass Tube",0,7.5,7.74,48,Fiberglass,,2,3834
+ProLine Composites,10617,"8"" x 48"" Fiberglass Tube",0,7.81,8,48,Fiberglass,,2,4122
+Quest,8062,T3524,0,1.34,1.38,24,Paper,,2,0
+Quest,8066,T3024,0,1.14,1.18,24,Paper,,2,0
+Quest,8070,T2524,0,0.94,0.98,24,Paper,,2,0
+Quest,8074,T2024,0,0.75,0.79,24,Paper,,2,0
+Quest,8078,T1524,0,0.55,0.59,24,Paper,,2,0
+Semroc,LT-085160,Large Body Tube,0,0.87,0.95,16,Spiral/Glassine,,0,?
+Semroc,LT-085220,Large Body Tube,0,0.87,0.95,22,Spiral/Glassine,,0,?
+Semroc,LT-085300,Large Body Tube,0,0.87,0.95,30,Spiral/Glassine,,0,?
+Semroc,LT-08580,Large Body Tube,0,0.87,0.95,8,Spiral/Glassine,,0,?
+Semroc,LT-115160,Large Body Tube,0,0.87,0.95,16,Spiral/Glassine,,0,?
+Semroc,LT-115220,Large Body Tube,0,1.14,1.22,22,Spiral/Glassine,,0,?
+Semroc,LT-115300,Large Body Tube,0,1.14,1.22,30,Spiral/Glassine,,0,?
+Semroc,LT-11555,Large Body Tube,0,1.14,1.22,5.5,Spiral/Glassine,,0,?
+Semroc,LT-11560,Large Body Tube,0,1.14,1.22,6,Spiral/Glassine,,0,?
+Semroc,LT-11580,Large Body Tube,0,1.14,1.22,8,Spiral/Glassine,,0,?
+Semroc,LT-125220,Large Body Tube,0,1.25,1.34,22,Spiral/Glassine,,0,?
+Semroc,LT-125300,Large Body Tube,0,1.25,1.34,30,Spiral/Glassine,,0,?
+Semroc,LT-12580,Large Body Tube,0,1.25,1.34,8,Spiral/Glassine,,0,?
+Semroc,LT-150220,Large Body Tube,0,1.5,1.59,22,Spiral/Glassine,,0,?
+Semroc,LT-150227,Large Body Tube,0,1.5,1.59,22.7,Spiral/Glassine,,0,?
+Semroc,LT-150300,Large Body Tube,0,1.5,1.59,30,Spiral/Glassine,,0,?
+Semroc,LT-15057,Large Body Tube,0,1.5,1.59,5.7,Spiral/Glassine,,0,?
+Semroc,LT-15080,Large Body Tube,0,1.5,1.59,8,Spiral/Glassine,,0,?
+Semroc,LT-175165,Large Body Tube,0,1.75,1.84,16.5,Spiral/Glassine,,0,?
+Semroc,LT-175220,Large Body Tube,0,1.75,1.84,22,Spiral/Glassine,,0,?
+Semroc,LT-175300,Large Body Tube,0,1.75,1.84,30,Spiral/Glassine,,0,?
+Semroc,LT-17560,Large Body Tube,0,1.75,1.84,6,Spiral/Glassine,,0,?
+Semroc,LT-17580,Large Body Tube,0,1.75,1.84,8,Spiral/Glassine,,0,?
+Semroc,LT-225140,Large Body Tube,0,2.25,2.34,14,Spiral/Glassine,,0,?
+Semroc,LT-225220,Large Body Tube,0,2.25,2.34,22,Spiral/Glassine,,0,?
+Semroc,LT-225300,Large Body Tube,0,2.25,2.34,30,Spiral/Glassine,,0,?
+Semroc,LT-22580,Large Body Tube,0,2.25,2.34,8,Spiral/Glassine,,0,?
+Semroc,LT-275220,Large Body Tube,0,2.75,2.84,22,Spiral/Glassine,,0,?
+Semroc,LT-275300,Large Body Tube,0,2.75,2.84,30,Spiral/Glassine,,0,?
+Semroc,LT-27580,Large Body Tube,0,2.75,2.84,8,Spiral/Glassine,,0,?
+Semroc,ST-10100,Body Tube,0,1,1.04,10,Spiral/Glassine,,0,?
+Semroc,ST-10105,Body Tube,0,1,1.04,10.5,Spiral/Glassine,,0,?
+Semroc,ST-10120,Body Tube,0,1,1.04,12,Spiral/Glassine,,0,?
+Semroc,ST-10180,Body Tube,0,1,1.04,18,Spiral/Glassine,,0,?
+Semroc,ST-1030,Body Tube,0,1,1.04,3,Spiral/Glassine,,0,?
+Semroc,ST-1050,Body Tube,0,1,1.04,5,Spiral/Glassine,,0,?
+Semroc,ST-1060,Body Tube,0,1,1.04,6,Spiral/Glassine,,0,?
+Semroc,ST-1080,Body Tube,0,1,1.04,8,Spiral/Glassine,,0,?
+Semroc,ST-1095,Body Tube,0,1,1.04,9.5,Spiral/Glassine,,0,?
+Semroc,ST-13135,Body Tube,0,1.3,1.34,13.5,Spiral/Glassine,,0,?
+Semroc,ST-13180,Body Tube,0,1.3,1.34,18,Spiral/Glassine,,0,?
+Semroc,ST-1330,Body Tube,0,1.3,1.34,3,Spiral/Glassine,,0,?
+Semroc,ST-1380,Body Tube,0,1.3,1.34,8,Spiral/Glassine,,0,?
+Semroc,ST-16120,Body Tube,0,1.6,1.64,12,Spiral/Glassine,,0,?
+Semroc,ST-16180,Body Tube,0,1.6,1.64,18,Spiral/Glassine,,0,?
+Semroc,ST-1630,Body Tube,0,1.6,1.64,3,Spiral/Glassine,,0,?
+Semroc,ST-1650,Body Tube,0,1.6,1.64,5,Spiral/Glassine,,0,?
+Semroc,ST-1660,Body Tube,0,1.6,1.64,6,Spiral/Glassine,,0,?
+Semroc,ST-1690,Body Tube,0,1.6,1.64,9,Spiral/Glassine,,0,?
+Semroc,ST-20120,Body Tube,0,2,2.04,12,Spiral/Glassine,,0,?
+Semroc,ST-20180,Body Tube,0,2,2.04,18,Spiral/Glassine,,0,?
+Semroc,ST-2060,Body Tube,0,2,2.04,6,Spiral/Glassine,,0,?
+Semroc,ST-3630,Body Tube,0,3.6,3.69,3,Spiral/Glassine,,0,?
+Semroc,ST-5120,Body Tube,0,0.52,0.54,12,Spiral/Glassine,,0,?
+Semroc,ST-5180,Body Tube,0,0.52,0.54,18,Spiral/Glassine,,0,?
+Semroc,ST-520,Body Tube,0,0.52,0.54,2,Spiral/Glassine,,0,?
+Semroc,ST-560,Body Tube,0,0.52,0.54,6,Spiral/Glassine,,0,?
+Semroc,ST-7120,Body Tube,0,0.72,0.76,12,Spiral/Glassine,,0,?
+Semroc,ST-7180,Body Tube,0,0.72,0.76,18,Spiral/Glassine,,0,?
+Semroc,ST-720,Body Tube,0,0.72,0.76,2,Spiral/Glassine,,0,?
+Semroc,ST-730,Body Tube,0,0.72,0.76,3,Spiral/Glassine,,0,?
+Semroc,ST-740,Body Tube,0,0.72,0.76,4,Spiral/Glassine,,0,?
+Semroc,ST-760,Body Tube,0,0.72,0.76,6,Spiral/Glassine,,0,?
+Semroc,ST-764,Body Tube,0,0.72,0.76,6.4,Spiral/Glassine,,0,?
+Semroc,ST-765,Body Tube,0,0.72,0.76,6.5,Spiral/Glassine,,0,?
+Semroc,ST-770,Body Tube,0,0.72,0.76,7,Spiral/Glassine,,0,?
+Semroc,ST-790,Body Tube,0,0.72,0.76,9,Spiral/Glassine,,0,?
+Semroc,ST-8100,Body Tube,0,0.87,0.91,10,Spiral/Glassine,,0,?
+Semroc,ST-8103,Body Tube,0,0.87,0.91,10.3,Spiral/Glassine,,0,?
+Semroc,ST-8120,Body Tube,0,0.87,0.91,12,Spiral/Glassine,,0,?
+Semroc,ST-8180,Body Tube,0,0.87,0.91,18,Spiral/Glassine,,0,?
+Semroc,ST-820,Body Tube,0,0.87,0.91,2,Spiral/Glassine,,0,?
+Semroc,ST-830,Body Tube,0,0.87,0.91,3,Spiral/Glassine,,0,?
+Semroc,ST-845,Body Tube,0,0.87,0.91,4.5,Spiral/Glassine,,0,?
+Semroc,ST-855,Body Tube,0,0.87,0.91,5.5,Spiral/Glassine,,0,?
+Semroc,ST-857,Body Tube,0,0.87,0.91,5.7,Spiral/Glassine,,0,?
+Semroc,ST-873,Body Tube,0,0.87,0.91,7.3,Spiral/Glassine,,0,?
+Semroc,ST-880,Body Tube,0,0.87,0.91,8,Spiral/Glassine,,0,?
+Semroc,ST-890,Body Tube,0,0.87,0.91,9,Spiral/Glassine,,0,?
+Semroc,ST-9180,Body Tube,0,0.95,1,18,Spiral/Glassine,,0,?
+Semroc,ST-930,Body Tube,0,0.95,1,3,Spiral/Glassine,,0,?
+Semroc,ST-950,Body Tube,0,0.95,1,5,Spiral/Glassine,,0,?
+Semroc,ST-990,Body Tube,0,0.95,1,9,Spiral/Glassine,,0,?
+Apogee,10131,33mm x 18" Body Tube,0,1.280,1.320,18.000,Paper,,2,20.000
+Apogee,10064,18mm x 2.75" Motor Mount,0,0.710,0.740,2.750,Paper,,2,8.100
+Apogee,10102,24mm x 6" Clear Airframe,0,0.950,0.980,6.000,Polycarbonate,,2,4.600
+Apogee,10251,29mm x 34" Thick Wall,0,1.140,1.210,34.000,Paper,,2,68.000
+Apogee,10139,40mm x 9.9" Body Tube,0,1.580,1.600,9.900,Paper,,2,8.600
+Apogee,10141,41.6mm x 18" Body Tube,0,1.600,1.640,18.000,Paper,,2,18.000
+Apogee,10144,41.6mm x 18" Clear Airframe,0,1.600,1.640,18.000,Polycarbonate,,2,41.300
+Apogee,10222,54mm x 14" Motor Mount,0,2.140,2.260,14.000,Paper,,2,78.100
+Apogee,10165,56mm x 10" Clear Airframe,0,2.180,2.210,10.000,Polycarbonate,,2,29.300
+Apogee,10164,56mm x 18" Body Tube,0,2.180,2.220,18.000,Paper,,2,36.600
+Apogee,10198,66mm x 18" Body Tube,0,2.560,2.600,18.000,Paper,,2,38.200
+Apogee,test,test,mm,13.208000,13.716000,457.200000,Paper,0,2,0.000000
+Apogee,10202,74mm x 18" Body Tube,0,2.930,3.000,18.000,Paper,,2,79.200
+Always Ready Rocketry,10500,29mm x 48" Blue Tube,0,1.140,1.280,48.000,Blue Tube,,2,235.000
+Always Ready Rocketry,10501,38mm x 48" Blue Tube,0,1.500,1.620,48.000,Blue Tube,,2,295.000
+Always Ready Rocketry,10503,2.56" x 48" Blue Tube,0,2.550,2.670,48.000,Blue Tube,,2,490.000
+Always Ready Rocketry,10504,75mm x 48" Blue Tube,0,3.000,3.100,48.000,Blue Tube,,2,570.000
+Always Ready Rocketry,10506,5.5" x 48" Blue Tube,0,5.360,5.520,48.000,Blue Tube,,2,1078.130
+Always Ready Rocketry,10507,6" x 48" Blue Tube,0,5.970,6.080,48.000,Blue Tube,,2,1188.980
+LOC/Precision,13160,"2.56"" Tube Coupler",0,2.490,2.560,5.000,Paper,,2,23.500
+LOC/Precision,13158,54mm Tube Coupler,0,2.030,2.140,5.750,Paper,,2,29.100
+LOC/Precision,13156,38mm Tube Coupler,0,1.450,1.520,4.000,Paper,,2,9.300
+LOC/Precision,13154,29mm Tube Coupler,0,1.000,1.130,2.500,Paper,,2,6.700
+LOC/Precision,13162,75mm Tube Coupler,0,2.880,2.990,6.000,Paper,,2,37.800
+LOC/Precision,13164,98mm Tube Coupler,0,3.830,3.900,6.000,Paper,,2,32.400
+LOC/Precision,13166,5.38" Tube Coupler,0,5.290,5.380,10.000,Paper,,2,111.400
+LOC/Precision,13171,"2.56"" Stiffy",0,2.250,2.480,6.000,Paper,,2,50.200
+LOC/Precision,13172,75mm Stiffy,1,68.700,74.400,146.000,Paper,,2,60.800
+LOC/Precision,13173,98mm Stiffy,1,93.400,99.100,146.000,Paper,,2,81.650
+LOC/Precision,13174,"5.38"" Stiffy",1,131.000,137.000,248.000,Paper,,2,220.700
+LOC/Precision,13168,7.51" Tube Coupler,0,7.420,7.510,12.000,Paper,,2,248.000
+LOC/Precision,13175,"7.51"" Stiffy",0,7.000,7.380,14.000,Paper,,2,676.000
+Madcow Rocketry,10601,29mm x 48" Fiberglass Tube,0,1.140,1.250,48.000,Fiberglass,,2,276.900
+Madcow Rocketry,10632,33mm x 48" Fiberglass Tube,0,1.290,1.340,48.000,Fiberglass,,2,160.100
+Madcow Rocketry,10622,38mm x 48" Fiberglass Tube,0,1.520,1.600,48.000,Fiberglass,,2,273.000
+Madcow Rocketry,10625,3" x 48" Fiberglass Tube,0,3.000,3.100,48.000,Fiberglass,,2,658.000
+ProLine Composites,10607,4" x 48" Fiberglass Tube,0,3.890,4.080,48.000,Fiberglass,,2,1345.300
+ProLine Composites,10613,"6" x 48"" Fiberglass Tube",0,6.010,6.190,48.000,Fiberglass,,2,2766.000
+ProLine Composites,10616,7.5" x 48" Fiberglass Tube,0,7.500,7.740,48.000,Fiberglass,,2,3834.000
+ProLine Composites,10617,8" x 48" Fiberglass Tube,0,7.810,8.000,48.000,Fiberglass,,2,4122.000
+Mach I,10630,18mm x 48" Fiberglass Body Tube,0,0.700,0.750,48.000,Fiberglass,,2,78.200
+Mach I,10633,41.6mm x 48" Fiberglass Body Tube,0,1.560,1.640,48.000,Fiberglass,,2,191.700
+Mach I,10634,54mm x 48" Fiberglass Body Tube,0,2.130,2.240,48.000,Fiberglass,,2,464.300
+Mach I,10635,66mm x 48" Fiberglass Body Tube,0,2.560,2.650,48.000,Fiberglass,,2,633.500
+Mach I,10636,"3" x 48"" Fiberglass Body Tube",0,2.990,3.090,48.000,Fiberglass,,2,694.600
+Mach I,10637,98mm x 48" Fiberglass Body Tube,0,3.890,4.040,48.000,Fiberglass,,2,1289.300

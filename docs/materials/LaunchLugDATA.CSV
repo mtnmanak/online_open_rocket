@@ -1,0 +1,30 @@
+Mfg.,Part No.,Desc.,Units,ID,OD,Length,Material,CG Loc,Mass Units,Mass
+Aerospace Speciality Products,LL-1/4,"1/4"" Launch Lug",1,7.19,8.1,25.4,Paper,,,
+Aerospace Speciality Products,LL-1/8,"1/8"" Launch Lug",1,3.61,4.11,28.6,Paper,,,
+Aerospace Speciality Products,LL-3/16,"3/16"" Launch Lug",1,5.56,6.1,50.8,Paper,,,
+Apogee,13052,1/8in X 1in Launch Lug,mm,3.9624,4.3688,25.4,Paper,12.7,g,0.06
+Apogee,13057,1/4in X 3in Launch Lug,mm,7.264400,8.331200,76.200000,Paper,38.100000,g,1.300000
+Apogee,13060,Rail  Button 1010 with screw and flange,mm,0.000000,9.677400,9.677400,Delrin Plastic,4.826000,g,1.900000
+Apogee,13063,Large Rail Button 1515 with screw and flange,mm,0,16.002,11.176,Delrin Plastic,8.001,g,6.7
+Balsa Machining,LL14-300,0.316x0.280x.018x34 1/4 inch Launch lug,in.,0.28,0.316,3,Paper,,,
+Balsa Machining,LL14-3400,0.316x0.280x.018x34 1/4 inch Launch lug,in.,0.28,0.316,34,Paper,,,
+Balsa Machining,LL18-1200,1/8in x 12in Launch Lug,0,0.16,0.169,12,Paper,,,
+Balsa Machining,LL18-125,1/8 x 1.25 inch Launch Lug,in.,0.16,0.169,1.25,Paper,,,
+Balsa Machining,LL316-1200,3/16 x 12 inch Launch Lug,in.,0.214,0.24,2,Paper,,,
+Balsa Machining,LL316-200,3/16 x 2 inch Launch Lug,in.,0.219,0.24,2,Paper,,,
+Estes,ESTES 2321,Launch Lug-1/8,0,0.113,0.125,1.25,Paper,,,
+Estes,ESTES 2328,Launch Lug-3/16,0,0.169,0.188,2,Paper,,,
+Giant Leap,LL,ACME Launch Lug,1,7.62,12.7,47.244,Aluminum (Al),,,
+Giant Leap,RG,ACME Rail Guide,0,0.26,0.56,1.62,Aluminum (Al),,,
+LOC,LOC LL25,Launch Lug-25,1,5.71,6.35,152,Paper,,,
+LOC,LOC LL50,Launch Lug-50,1,14.1,15.6,152,Paper,,,
+LOC,LOC LL937,Launch Lug-937,1,25.1,26.4,127,Paper,,,
+Public Missiles,LL-0.25,1/4in Brass Launch Lug,0,0.225,0.25,12,Brass,,,
+Public Missiles,LL-0.38,3/8in Brass Launch Lug,0,0.338,0.375,12,Brass,,,
+Public Missiles,LL-0.50,1/2in Brass Launch Lug,0,0.45,0.5,12,Brass,,,
+Public Missiles,LL-0.75,3/4in Copper Launch Lug,0,0.675,0.75,12,Brass,,,
+Semroc,LL-115,Launch Lug LL-115,0,0.15,0.176,1.5,Paper,,,
+Semroc,LL-117,Launch Lug LL-117,0,0.15,0.176,1.75,Paper,,,
+Semroc,LL-122,Launch Lug LL-122,0,0.15,0.176,2.25,Paper,,,
+Semroc,LL-320,Launch Lug LL-320,0,0.214,0.24,2,Paper,,,
+Semroc,LL-330,Launch Lug LL-330,0,0.214,0.24,3,Paper,,,

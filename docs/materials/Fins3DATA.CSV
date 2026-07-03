@@ -1,0 +1,27 @@
+Mfg.,Part no,Desc,Units,Root chord,Tip chord,Span,Sweep Dist.,Thickness,Shape,Tip shape,Material,Sweep Mode,Sweep Mode,Sweep Mode,Sweep Mode,Sweep Mode,Sweep Mode,Sweep Mode
+Aerospace Speciality Products,FGLE16,G10 Fin Lg Elliptical (0.016),1,38.1,11.4,46.2,8.28,0.406,1,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGLE20,G10 Fin Lg Elliptical (0.020),1,38.1,11.4,46.2,8.28,0.406,1,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGME16,G10 Fin Med Elliptical (0.016),1,27.8,11.4,31.8,8.28,0.406,1,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGMT16,G10 Fin Med Trap (0.016),1,31.8,19.1,50.8,6.35,0.406,0,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGMT20,G10 Fin Med Trap (0.020),1,31.8,19.1,50.8,6.35,0.406,0,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGSE16,G10 Fin Sm Elliptical (0.016),1,23,11.4,28.6,8.28,0.406,1,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGST16,G10 Fin Sm Trap (0.016),1,25.4,15.9,31.8,4.76,0.406,0,0,G10 phenolic,1,,,,,,
+Aerospace Speciality Products,FGST20,G10 Fin Sm Trap (0.016),1,25.4,15.9,31.8,4.76,0.406,0,0,G10 phenolic,1,,,,,,
+Apogee,15618,Blue Streak Fins,0,1.5,0.9,2.5,2.25,0.125,0,0,Balsa,1,,,,,,
+Apogee,15633,Rising Star Fins,0,6,1.5,3,3,0.125,0,0,Balsa,1,,,,,,
+Apogee,15645,Avion Fins,0,2.125,0.75,2.25,0.75,0.125,0,0,Balsa,1,,,,,,
+Apogee,15681,Plastic Apprentice Fin Can,mm,38.100000,25.400000,37.287200,6.350000,0.248900,trapezoid,square,Polystyrene PS,1,0,0.000000,0.000000,0.000000,0.000000
+Apogee,15682,Elliptical Fins,mm,88.900000,0.000000,88.900000,44.450000,3.175000,elliptical,square,Balsa,1,0,0.000000,0.000000,0.000000,0.000000
+Apogee,15683,Trapezoid Fin Shape,0,3.5,2.33,3,0.585,0.125,0,0,Balsa,1,,,,,,
+Apogee,15684,Clipped-Delta Fins,0,3.5,1.25,3,2.25,0.125,0,0,Balsa,1,,,,,,
+Apogee,15685,Stand-Up Shape,0,4,1.93,3.4,3.75,0.125,0,0,Balsa,1,,,,,,
+Apogee,15686,Eliptical Fins TTW Balsa,mm,88.900000,0.000000,88.900000,44.450000,3.175000,elliptical,square,Balsa,1,0,0.000000,6.350000,76.200000,20.828000
+Apogee,15687,Trapezoid Fins TTW Balsaod,mm,88.900000,59.182000,76.200000,14.859000,3.175000,trapezoid,square,Balsa,1,0,0.000000,6.350000,76.200000,20.828000
+Apogee,15688,Clipped Delta TTW Balsa,mm,88.9,31.75,76.2,57.15,0.25,trapezoid,square,Balsa,1,0,0,6.35,76.2,20.828,
+Apogee,15689,Stand-Up Shape TTW Balsa - Modified,mm,101.600000,49.022000,86.360000,95.250000,3.175000,trapezoid,square,Balsa,1,0,0.000000,12.700000,76.200000,20.828000
+Apogee,15690,Swept Clipped-Delta Shape,mm,152.400000,38.100000,76.200000,132.080000,3.175000,trapezoid,square,Balsa,1,0,0.000000,63.500000,76.200000,20.828000
+Apogee,15691,Eliptical Fins Plywood,0,3.5,0,3.5,1.75,0.125,1,0,Birch,1,0,0,6.35,76.2,20.828,
+Apogee,15692,Trapezoid Fins TTW Plywood,mm,88.900000,59.182000,76.200000,14.859000,3.175000,trapezoid,square,Birch,1,0,0.000000,6.350000,76.200000,20.828000
+Apogee,15693,Clipped Delta TTW Plywood,mm,88.900000,31.750000,76.200000,57.150000,3.175000,trapezoid,square,Birch,1,0,0.000000,6.350000,76.200000,20.828000
+Apogee,15694,Stand-Up Shape Plywood,0,4,1.93,3.4,3.75,0.125,0,0,Birch,1,0,0,6.35,76.2,20.828,
+Apogee,15695,Swept Clipped-Delta Plywood,0,6,1.5,3,5.2,0.125,0,0,Birch,1,0,0,6.35,76.2,20.828,

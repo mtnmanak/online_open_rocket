@@ -67,10 +67,19 @@ our protocol I don't claim UI "works" until you've seen it: please verify visual
   progress + Stop, results graded ✓ accepted / ✗ with the failed criterion,
   appended to Saved simulations, CSV download. Uploading a hand-picked list also
   works indirectly: import your EX file(s) and filter to "EX".
-- **RockSim materials & parts CSVs** — ✅ Merged (see
-  `docs/testing/rocksim-merge-report-2026-07-03.md` for per-file numbers, what was
-  duplicate vs new, and any conflicts kept on the OpenRocket side). Fin and motor-
-  retainer CSVs were skipped — we don't have preset kinds for those yet.
+- **RockSim materials & parts CSVs** — ✅ Merged: 994 rows parsed, 450 were
+  duplicates of OpenRocket data (kept OpenRocket per your rule), **487 new parts
+  added** (preset DB now 3,936), 57 dimension conflicts kept on the OpenRocket
+  side and logged. Full detail in `docs/testing/rocksim-merge-report-2026-07-03.md`;
+  re-runnable via `packages/app/scripts/merge-rocksim-parts.mjs`. Fin and
+  motor-retainer CSVs were skipped — no preset kinds for those yet (freeform fin
+  libraries would be a nice follow-up given your workflow; say the word).
+  **Two conflicts you should look at** (I kept OpenRocket per policy, but RockSim
+  looks *right*): **BMS CR5060-W and CR5080-W** centering rings — OpenRocket's
+  outer diameters (32.6 / 55.3 mm) don't fit the tubes the part names say they
+  center into, while RockSim's (40.5 / 64.9 mm) do. Also noted milder
+  exposed-vs-overall length disagreements (BMS BTC55Z, Semroc LT-115160/CR-9115,
+  Giant Leap NC-3.00/3.90) — details in the report.
 
 ### Questions
 

@@ -1,0 +1,20 @@
+Mfg.,Part No.,Desc.,Units,ID,OD,Length,Material,CG,Mass Units,Mass,AutoSize
+Apogee,13021,CR 10-13 ring,0,0.453,0.51,0.188,Paper,0.094,2,0.11,0
+Apogee,13023,CR 10-18 ring,0,0.453,0.704,0.188,Paper,0.094,2,0.49,0
+Apogee,13028,CR 13-18 ring,0,0.549,0.7,0.25,Paper,0.125,2,0.44,0
+Apogee,13032,CR 18-24 ring,0,0.74,0.945,0.25,Paper,0.125,2,0.76,0
+Apogee,13036,CR 18-29 ring,0,0.74,1.13,0.25,Paper,0.125,2,1.64,0
+Apogee,13037,CR 24-29 ring,0,0.982,1.13,0.25,Paper,0.125,2,1.8,0
+Balsa Machining,EB13-P,516x.376x.25thk paper (mini eng thrust ring),0,0.376,0.516,0.25,Paper,0,0,0,1
+Balsa Machining,EB13-P,.516x.376x.25thk paper (mini eng thrust ring),in.,0.376,0.516,0.25,Paper,,oz.,0,1
+Balsa Machining,EB18-P,.708x.542x.25thk paper (fits T20 tube),in.,0.546,0.708,0.25,Paper,,oz.,0,1
+Balsa Machining,EB24-P,.946x.736x.25thk paper (fits T50 tube),in.,0.736,0.946,0.25,Paper,,oz.,0,1
+Balsa Machining,EB29-P,1.137x.977x.50thk paper (fits T52H),in.,0.977,1.137,0.5,Paper,0,g,0,0
+Estes,30162-2,Eng. block BT-20,1,16.5,18,5,Paper,0,0,?,0
+Semroc,TB-5,Thrust Block,0,0.413,0.513,0.188,Paper,0,2,0,1
+Semroc,TB-7,Thrust Block,0,0.575,0.713,0.188,Paper,0,2,0,1
+Semroc,TR-115,Thrust Ring,0,1,1.14,1,Spiral/Glassine,0,2,0,1
+Semroc,TR-5,Thrust Ring,0,0.413,0.513,0.375,Paper,0,2,0,1
+Semroc,TR-7,Thrust Ring,0,0.575,0.713,0.375,Paper,0,2,0,1
+Semroc,TR-9,Thrust Ring,0,0.761,0.948,0.25,Paper,0,2,0,1
+Semroc,TS-9,Thrust Spacer,0,0.865,0.948,1,Spiral/Glassine,0,2,0,1
