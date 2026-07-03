@@ -2,12 +2,14 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-03, end of the fifth pass (issue batch "b" — the in-depth
-test list, all items addressed). **Current state: batch issues-2026-07-03b.md is
-fixed and answered in response-2026-07-03b.md — Eric should verify visually.
-Next batch = new dated file per protocol (never append to a resolved batch's
-file). Phase 3 decision (deployment vs staging/clusters) is still Eric's call
-and still pending.**
+Last updated: 2026-07-03, end of the sixth pass (batch "b" fixes + live
+iteration with Eric: versioning, delay handling, dual-deploy reporting, preset
+completeness — released as v0.001 through v0.004, all pushed). **Current
+state: Eric is doing another test pass and will upload a NEW dated issues file
+(one file per batch — never append to a resolved batch's file; same-day
+batches get letter suffixes). Fix that list before anything else. Phase 3
+decision (deployment vs staging/clusters) is still Eric's call and still
+pending.**
 
 ## How Eric works / prefers to collaborate
 
@@ -20,9 +22,14 @@ and still pending.**
   (verbatim error text), a repro `.ork` where relevant, tagged blocking/annoying/cosmetic.
 - **Sequential decisions.** He prefers finish-then-decide over speculative planning
   (e.g., "I'll decide about Phase 3 after testing"). Don't push him to pre-commit.
-- **He is the visual QA.** Claude cannot see the rendered UI; Eric reloads
-  http://localhost:4180 and reports. Never claim UI "works" — claim it builds, tests
-  pass, and ask him to verify.
+- **He is the visual QA — but Claude can now smoke-test too.** As of the sixth
+  pass, Claude drives Eric's Chrome via browser tools: build, serve the dist
+  (`npx vite preview --port 4180` from packages/app), navigate, click Launch,
+  screenshot, read localStorage. Use it to verify changes live before claiming
+  anything (it caught two real bugs batch-b missed: null Launch CP, finish
+  select misreporting). Eric stays the final judge on look-and-feel. His live
+  session state is readable from localStorage key `online-openrocket.session.v1`
+  — invaluable for reproducing exactly what he's testing.
 - **Real use case:** he designs almost exclusively with **freeform fins** and uses
   **rounded or airfoil (pointed) cross-sections — never square**. Anything degrading
   those paths hits his primary workflow. This is why cross-sections + freeform were
@@ -107,6 +114,18 @@ and still pending.**
   casing class (manufacturers round differently); OOP motors matter ("millions
   still in circulation"); his search attributes are designation, diameter,
   length, burn time, total impulse.
+- **Recovery-domain knowledge from Eric (sixth pass, encoded in
+  services/simReport.ts SAFETY):** ejection delays get DRILLED to the whole
+  second the flyer wants — recommendation is round(optimum), NEVER snapped to
+  the manufacturer's prescribed list (his example: prescribed 0/6/8/10/14,
+  optimal 12.7 → recommend 13); the user can always type any delay, including
+  on the main panel without reloading the motor. Dual deployment: accepted
+  descent under drogue is 60–70 ft/s (cap 70), landing target ≤ 20 ft/s;
+  safety warnings must NAME the device (drogue vs main) — a main opening
+  under a healthy drogue at 60–70 ft/s is normal, never a warning.
+- **Component-input conventions:** everywhere a tube-like dimension appears,
+  offer OD + ID + wall thickness as three synced views (body tubes, and nose
+  cone bases as of v0.002). He thinks in diameters and ft/s.
 - **2026-07-03 (fourth pass): databases + task-list completion.** Materials DB
   (80 desktop materials incl. surface/line — chute/cord materials required new
   ComponentFactory bridging + TeaVM rebuild, differential re-passed), component
@@ -142,6 +161,41 @@ and still pending.**
   patches/LEDGER.md "Determinism fixes"), turbulent golden scenario capped at
   8 s, difftest tolerances documented; 211 lines now pass stably (5×
   consecutive). Never revert that patch without re-reading the ledger entry.
+- **2026-07-03 (sixth pass): live iteration with Eric, released v0.001–v0.004**
+  (all pushed; version badge + What's-new changelog now in the app header,
+  source of truth packages/app/src/version.ts — bump 0.NNN +1 per pushed
+  build, prepend a changelog entry, until first prod release resets to 1.0.0).
+  - v0.001: batch-b fixes + versioning itself.
+  - v0.002: drill-to-fit delays (see recovery-domain notes above), main-panel
+    delay editor, motor-browser "Custom (drilled)…", nose cone OD/ID/wall sync.
+  - v0.003: dual-deployment-aware recovery reporting — engine events now carry
+    source component names (bridge change + dual-deploy golden, differential
+    213 lines stable); per-device deployment table with Eric's thresholds.
+  - v0.004: preset DB completeness — **the desktop does NOT use github
+    openrocket-database; it bundles its own richer set** in
+    core/.../datafiles/components/internal/ (Fruity_Chutes_Enhanced 42,
+    Spherachutes 46, Rocketman 107, FlisKits 160, Front Range, b2, legacy
+    files). fetch-component-presets.mjs now merges both + rocksim on top:
+    4,700 parts. Fruity Chutes 10 → 52.
+  - Investigated Eric's "215 mph descent under a 15-inch chute": calculation
+    verified correct by flying his exact Wild Child (pulled from session
+    localStorage) — the number is the main's OPENING velocity after a
+    near-ballistic descent under a 36×1 in streamer drogue; the same chute at
+    apogee descends at 26 mph. Caveat kept for honesty: OpenRocket's streamer
+    model rates extreme aspect ratios (36:1) near-zero drag; desktop-identical
+    but may undercount reality.
+  - Push permission: resolved — pushes to origin/main now go through as the
+    routine end-of-chunk step (Eric approved via manual `! git push` once;
+    subsequent pushes worked).
+- **Small follow-ups parked (not blockers):** rail-button presets skipped (no
+  RailButton preset kind yet — desktop has 8 entries incl. Wildman); consider
+  collapsing the 10 Apogee-partNo Fruity duplicates into the 42 desktop
+  entries (same physical chutes, reseller part numbers — ask Eric); fin
+  library CSVs (FinsDATA*.CSV) still unmerged (no fin preset kind; matters to
+  Eric's freeform-fin workflow, good candidate when preset kinds grow);
+  cross-parent component paste if duplicate ⧉ proves insufficient; second
+  visualization window for the edited component if the numeric readout isn't
+  enough.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call. He wants
