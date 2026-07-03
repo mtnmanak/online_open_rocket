@@ -79,6 +79,15 @@ Last updated: 2026-07-02 (end of the fin-editor work, before heavy user testing)
   casing class (manufacturers round differently); OOP motors matter ("millions
   still in circulation"); his search attributes are designation, diameter,
   length, burn time, total impulse.
+- **2026-07-03 (fourth pass): databases + task-list completion.** Materials DB
+  (80 desktop materials incl. surface/line — chute/cord materials required new
+  ComponentFactory bridging + TeaVM rebuild, differential re-passed), component
+  preset DB (3,449 parts from openrocket/openrocket-database .orc files, script
+  in packages/app/scripts/fetch-component-presets.mjs, CSV round-trip w/ custom
+  presets in localStorage), snap-to-anchor positioning (tree/position.ts) with
+  2D-preview dragging, per-component display color, and the attribute audit
+  (docs/testing/attribute-audit-2026-07-03.md). Eric will now do another test
+  pass and deliver a fresh issue list — fix that before anything else.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call.
