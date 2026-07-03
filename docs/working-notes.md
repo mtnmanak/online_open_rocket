@@ -36,7 +36,15 @@ and still pending.**
   with the response doc named to match.
 - **Committing/pushing:** Eric authorized pushing to origin/main as the normal
   end-of-chunk step ("go ahead and push it", then routine). Commit at each
-  coherent milestone; push after.
+  coherent milestone; push after. (If the permission system blocks the push,
+  Eric approves via `! git push origin main` or by adding
+  `"Bash(git push origin *)"` to .claude/settings.local.json permissions.allow.)
+- **Versioning (Eric's rule, 2026-07-03):** beta builds are `0.NNN`, NNN +1 per
+  released (pushed) build, until the first production release. Single source of
+  truth: `packages/app/src/version.ts` (APP_VERSION + CHANGELOG — rendered in
+  the app via the header version badge → What's-new dialog). Release checklist:
+  bump APP_VERSION, prepend a CHANGELOG entry, commit, push. npm package
+  versions stay independent (semver, internal only).
 - **Units:** he values the in-place unit click-through ("very valuable") — any new
   UI that displays a unit must use UnitChip. Diameter (not radius) is his default
   input mode; dark theme is the default at his request.
