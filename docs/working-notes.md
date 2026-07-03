@@ -2,11 +2,12 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-03, end of a four-pass day (issue batch 1 + units/prefs +
-motor rewrite + databases). **Current state: Eric is doing an in-depth test pass;
-expect a NEW issue file `docs/testing/issues-<date>.md` (one file per batch —
-agreed protocol; never append to a resolved batch's file). Fix that list before
-anything else, including Phase 3.**
+Last updated: 2026-07-03, end of the fifth pass (issue batch "b" — the in-depth
+test list, all items addressed). **Current state: batch issues-2026-07-03b.md is
+fixed and answered in response-2026-07-03b.md — Eric should verify visually.
+Next batch = new dated file per protocol (never append to a resolved batch's
+file). Phase 3 decision (deployment vs staging/clusters) is still Eric's call
+and still pending.**
 
 ## How Eric works / prefers to collaborate
 
@@ -107,6 +108,32 @@ anything else, including Phase 3.**
   2D-preview dragging, per-component display color, and the attribute audit
   (docs/testing/attribute-audit-2026-07-03.md). Eric will now do another test
   pass and deliver a fresh issue list — fix that before anything else.
+- **2026-07-03 (fifth pass): issue batch "b" fixed end-to-end** — see
+  docs/testing/issues-2026-07-03b.md + response-2026-07-03b.md (item-by-item).
+  Highlights: fin tabs through the whole stack (kernel bridge + UI + .ork
+  desktop-format round-trip + 2D render + centering-ring snap; "Fit tab to
+  motor tube" is Eric's real-build default); numeric inputs rebuilt (NumField —
+  typed negatives, validation with red border, ≤3-decimal display, draft
+  buffering); session autosave/restore; New-button confirm w/ save offer;
+  imported generic "Rocket" names fall back to the filename; full launch
+  report (~30 attributes incl. kernel optimumDelay from its ballistic probe);
+  saved-runs table + 33-column CSV; batch motor simulation with acceptance
+  criteria + per-motor optimal delay; "Auto (optimal)" delay option; EX motor
+  import (.eng/.rse → manufacturer "EX", .rse per-sample masses used);
+  component UX batch (wall⇄ID dual input, finish→all, per-component stats
+  readout via new engine componentInfo, two add buttons, inherit-from-previous
+  defaults, duplicate ⧉, override placeholders, color swatches, motor-mount
+  auto-name, shoulder outlines); 2D wheel-zoom/pan/reset; RockSim parts CSVs
+  merged into presets (report in docs/testing/). Answers: mass/CG overrides
+  are independent; fin-set mass override = ALL fins combined (now labelled).
+- **CRITICAL find (fifth pass): simulations were nondeterministic run-to-run**
+  — upstream's InstanceMap is identity-hash ordered, so BarrowmanCalculator's
+  per-step force summation order varied per JVM process; ULP noise
+  chaos-amplified over a flight (flipped sample counts, made the differential
+  flaky — it had passed all day on luck). Patched (HashMap→LinkedHashMap,
+  patches/LEDGER.md "Determinism fixes"), turbulent golden scenario capped at
+  8 s, difftest tolerances documented; 211 lines now pass stably (5×
+  consecutive). Never revert that patch without re-reading the ledger entry.
 - **Pending decision (Eric's):** Phase 3 opens with either **deployment**
   (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
   (the flagship complex feature). Do not start either without his call. He wants
