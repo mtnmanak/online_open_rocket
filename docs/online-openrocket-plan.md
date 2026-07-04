@@ -202,7 +202,9 @@ OpenRocket is **GPLv3+** (strong copyleft). Practical implications:
 ### Phase 3 — Toward parity
 - **Staging, clustering, pods** (hard — expect it here, per RocketForge).
 - Bundled/searchable full motor database; recovery variants; geodetic/Earth-shape models.
-- Exports: CSV, RockSim, RASAero II, OBJ (3D print), SVG (laser cut).
+- File **imports and exports** beyond CSV: RockSim (`.rkt`) and RASAero II design files
+  **both ways** (the desktop reads them; so must we), plus export-only OBJ (3D print) and
+  SVG (laser-cut fin templates).
 - **Design optimization** — the prime candidate to **offload to a server-side (b) API** if too heavy
   for the client.
 - Harden the **PWA/offline** experience for launch-site use.

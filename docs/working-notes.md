@@ -31,7 +31,12 @@ simReport unit tests. **Remaining parked: parallel/strap-on boosters + pods
 (deferred by Eric until serial staging + clusters prove out), mixed
 symmetric clusters need a second clustered mount (works now via two mounts —
 document for Eric), 2D/3D don't yet draw separation planes or per-stage
-colors.**
+colors.** Plan amended at Eric's direction (2026-07-04): the Phase 3 file
+item is now IMPORTS AND exports — RockSim (.rkt) and RASAero II design files
+must load as well as save (OBJ/SVG stay export-only). Note the desktop
+parses RockSim/RASAero via JAXB (the `file` package was NOT carved) — a
+browser import means writing our own parsers against the desktop's format
+docs, the way orkFile.ts does for .ork.
 
 ## How Eric works / prefers to collaborate
 
