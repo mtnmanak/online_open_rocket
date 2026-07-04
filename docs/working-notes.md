@@ -7,15 +7,14 @@ FIRST, then staging/clustering.** Deployment shipped as v0.006 (PWA/offline +
 manual-webhost package + dormant GitHub Pages workflow — see the Phase 3
 entry below and docs/deployment.md). Eric will manually upload the package to
 his own web host now; GitHub Pages comes later when he makes the repo public
-(it's private today). **Next up: staging/clustering — research is DONE and
-the design doc awaits Eric's review: docs/staging-clusters-design.md.**
-Headline: the carved kernel already implements everything (separation
-branching, tumble CD, cluster thrust×N); all gaps are in our bridge/app
-layers. Recommended order: Release A clusters (~1 session), B staging
-engine+.ork (~1-2), C staging UI+per-branch reports (~1-2). Five questions
-for Eric are at the end of the design doc (defaults for separation/ignition
-triggers, batch-sim scope on staged rockets, parallel-stage deferral…). Do
-not start implementing until he's reacted to the doc.
+(it's private today). **Staging/clustering: Eric answered the design
+questions (recorded in docs/staging-clusters-design.md "Eric's decisions" +
+the domain-rules bullet above). Release A (clusters) SHIPPED as v0.007.
+Next: Release B — serial staging through the engine and .ork (stage nodes in
+the tree JSON with implicit-stage back-compat, separation + ignition configs,
+multi-branch flight output, 2-stage golden), then Release C — staging UI +
+per-branch reports (per-mount motor assignment unlocks mixed symmetric
+clusters too). Power-class-aware defaults per the G80 rule.**
 
 ## How Eric works / prefers to collaborate
 
@@ -65,6 +64,21 @@ not start implementing until he's reacted to the doc.
   taught us (adapter-down fit, 75≡76 mm, OOP still flying, sort by burn time /
   total impulse, max-motor-length as flag-not-block) are implemented in
   services/motorDb.ts — don't regress them.
+- **Staging/cluster domain rules (Eric, 2026-07-03 — encode, don't regress):**
+  - **The G80 line divides low/mid power from high power.** Computable:
+    high power ⇔ avg thrust > 80 N or total impulse > 160 Ns (G80 itself =
+    low/mid). Several behaviors branch on this class:
+  - **Sustainer ignition:** electronics-timed is THE standard in HPR — nobody
+    lights an HPR sustainer off the booster's ejection charge (that's common
+    only in low/mid power). Defaults must be power-class aware.
+  - **Booster recovery:** low/mid boosters may tumble-recover (no warning);
+    HPR boosters MUST have active recovery (loud warning if chuteless).
+  - **Mixed motors in a cluster must stay symmetric** (thrust vectors balance
+    or the rocket cants) — e.g. 6-ring flown 3+3 in alternating tubes. Until
+    per-mount motor assignment (staging Release C), one motor type per
+    cluster; mixed arrays will be modeled as two clustered mounts.
+  - **No batch simulation across staged rockets** (combinatorics); batch on
+    clusters is wanted and works (candidate ×N).
 
 ## Decisions made (and why)
 

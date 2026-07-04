@@ -112,22 +112,34 @@ report changes.
 Parallel staging (side boosters) and pods exist in the kernel too but are
 deliberately out of scope for A–C (question 5).
 
-## Questions for Eric (the his-call list)
+## Eric's decisions (2026-07-03)
 
-1. **Order confirmation:** clusters first (quick win), then staging — or
-   straight to staging and clusters ride along in Release C?
-2. **Staging defaults for the UI:** desktop defaults to separation on
-   ejection charge and upper ignition AUTOMATIC (= lower stage's ejection
-   charge). For your real staged flights (electronics-timed sustainer
-   ignition?), what should the delay/trigger defaults be so the common case
-   needs no clicking? All triggers will exist; this is about defaults.
-3. **Booster recovery reporting:** anything beyond per-branch deployment
-   table + landing verdict? (e.g. a "booster lands ballistic/tumbling" HIGH
-   warning when it has no recovery device — desktop warns once per config.)
-4. **Batch simulate on a staged rocket:** vary sustainer only (recommended),
-   or also sweep booster motors (combinatorial — gets big fast)?
-5. **Parallel stages / strap-on boosters / pods:** defer? (Recommended —
-   different geometry pathway, rarely used in HPR serial work.)
+1. **Order: clusters first**, then staging. Parallel/strap-on boosters and
+   pods deferred until clusters and staging both work.
+2. **Sustainer ignition: electronics-timed is THE standard in high power.**
+   Nobody ignites an HPR sustainer off the booster's ejection charge — that
+   pattern belongs to low/mid power (where it's common). UI defaults must
+   therefore be POWER-CLASS AWARE: low/mid power → AUTOMATIC (ejection
+   charge); high power → timed ignition (booster burnout + user delay,
+   modeling the onboard timer/altimeter).
+3. **Booster recovery: also power-class dependent.** Low/mid boosters often
+   tumble-recover (fine, no warning). HIGH-POWER BOOSTERS MUST HAVE ACTIVE
+   RECOVERY — a chuteless HPR booster gets a loud HIGH warning.
+4. **The low/mid vs high power line: the G80 motor.** Anything smaller is
+   low/mid; anything larger is high power. This matches the certification
+   rule, so it's computable from motor data: **high power ⇔ average thrust
+   > 80 N or total impulse > 160 Ns** (the G80 itself sits exactly at the
+   boundary and counts as low/mid).
+5. **Batch simulation: NOT on staged rockets** (combinatorics explode).
+   Batch on clustered rockets IS wanted — one motor swept for the cluster,
+   thrust/mass ×N automatic.
+6. **Mixed motors in one cluster must stay SYMMETRIC** — thrust vectors must
+   balance or the rocket cants off axis (e.g. a 6-motor ring flown as 3+3 of
+   two types in alternating/opposite tubes). Modeling: one motor per
+   clustered mount stays the rule (desktop parity); a mixed symmetric array
+   is expressed as TWO clustered mounts (e.g. two 3-star patterns rotated
+   60°), which needs the per-mount motor assignment UI that arrives with
+   Release C. Until then: single motor type per cluster.
 
 ## Research references (file-level details)
 
