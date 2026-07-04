@@ -7,10 +7,15 @@ FIRST, then staging/clustering.** Deployment shipped as v0.006 (PWA/offline +
 manual-webhost package + dormant GitHub Pages workflow — see the Phase 3
 entry below and docs/deployment.md). Eric will manually upload the package to
 his own web host now; GitHub Pages comes later when he makes the repo public
-(it's private today). **Next up: staging/clustering** — the flagship complex
-feature (see the plan's Phase 3 section; RocketForge never shipped
-multi-stage, expect it to be hard: kernel bridge, tree model, UI, .ork format,
-differential tests all grow).
+(it's private today). **Next up: staging/clustering — research is DONE and
+the design doc awaits Eric's review: docs/staging-clusters-design.md.**
+Headline: the carved kernel already implements everything (separation
+branching, tumble CD, cluster thrust×N); all gaps are in our bridge/app
+layers. Recommended order: Release A clusters (~1 session), B staging
+engine+.ork (~1-2), C staging UI+per-branch reports (~1-2). Five questions
+for Eric are at the end of the design doc (defaults for separation/ignition
+triggers, batch-sim scope on staged rockets, parallel-stage deferral…). Do
+not start implementing until he's reacted to the doc.
 
 ## How Eric works / prefers to collaborate
 
