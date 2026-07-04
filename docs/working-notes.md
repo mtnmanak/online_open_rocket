@@ -7,7 +7,11 @@ FIRST, then staging/clustering.** Deployment shipped as v0.006 (PWA/offline +
 manual-webhost package + dormant GitHub Pages workflow — see the Phase 3
 entry below and docs/deployment.md). Eric will manually upload the package to
 his own web host now; GitHub Pages comes later when he makes the repo public
-(it's private today). **Staging/clustering: Eric answered the design
+(it's private today). **DEPLOYED LIVE 2026-07-03:
+https://www.mountainmanrockets.com/online_open_rocket/ (v0.007, SW +
+offline verified; iframe snippet delivered for his WordPress pages; see
+docs/deployment.md for the extraction war story).**
+**Staging/clustering: Eric answered the design
 questions (recorded in docs/staging-clusters-design.md "Eric's decisions" +
 the domain-rules bullet above). Release A (clusters) SHIPPED as v0.007.
 Next: Release B — serial staging through the engine and .ork (stage nodes in

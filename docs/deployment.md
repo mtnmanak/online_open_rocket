@@ -1,5 +1,12 @@
 # Deploying Online OpenRocket
 
+**LIVE:** https://www.mountainmanrockets.com/online_open_rocket/ (since
+2026-07-03, v0.007 — verified: app, service worker, offline precache).
+Deployment war story: the host's zip-extract silently skipped the assets/
+folder once (files were uploaded manually), and an earlier Compress-Archive
+zip had backslash entries — the packager now uses bsdtar. If assets/ 404s
+after an extract, check it actually exists before debugging anything else.
+
 The app is a fully static, relative-path build (`base: './'` in Vite): the
 same files work uploaded to any web host, on GitHub Pages, or inside an
 iframe. No server-side code, no database — everything runs in the browser.
