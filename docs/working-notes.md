@@ -33,10 +33,18 @@ symmetric clusters need a second clustered mount (works now via two mounts —
 document for Eric), 2D/3D don't yet draw separation planes or per-stage
 colors.** Plan amended at Eric's direction (2026-07-04): the Phase 3 file
 item is now IMPORTS AND exports — RockSim (.rkt) and RASAero II design files
-must load as well as save (OBJ/SVG stay export-only). Note the desktop
-parses RockSim/RASAero via JAXB (the `file` package was NOT carved) — a
-browser import means writing our own parsers against the desktop's format
-docs, the way orkFile.ts does for .ork.
+must load as well as save (OBJ/SVG stay export-only). **RockSim .rkt
+import/export SHIPPED v0.010** (services/rocksimFile.ts; format knowledge
+from the desktop's file/rocksim package — mm units, diameters-not-radii
+÷2000, Stage3Parts=sustainer top-down slots, <Ring> UsageCode fan-out,
+Xb sign flip for rear-referenced positions, PointList reversed vs ours).
+Beyond-desktop feature: EngineSet/EngineCode motors are imported and
+auto-loaded from the motor DB (desktop drops them; stale MountSerialNo
+links fall back to the stage's first mount — real files have them).
+Fixtures = the desktop's own test .rkt files (4 copied into
+__fixtures__/). Gotcha: happy-dom's DOMParser rejects CDATA sections —
+importRkt inline-escapes them before parsing. REMAINING in the file item:
+RASAero II both ways, OBJ export, SVG fin-template export.
 
 ## How Eric works / prefers to collaborate
 
