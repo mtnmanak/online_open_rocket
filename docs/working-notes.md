@@ -11,24 +11,27 @@ his own web host now; GitHub Pages comes later when he makes the repo public
 https://www.mountainmanrockets.com/online_open_rocket/ (v0.007, SW +
 offline verified; iframe snippet delivered for his WordPress pages; see
 docs/deployment.md for the extraction war story).**
-**Staging/clustering: Release A (clusters) shipped v0.007; Release B
-(staging ENGINE) shipped v0.008.** The bridge accepts stage nodes
-({"type":"stage", name, separationEvent/Delay/Altitude, children}) with
-implicit-stage back-compat (flat top level = one stage — old trees/sessions
-untouched); setMotorIgnitionById(id, automatic|launch|ejectioncharge|burnout|
-never, delay) covers electronics-timed HPR sustainers; staged sims return
-branches[] (name/events/series per branch; absent for single-stage). Two
-staging goldens (auto gap-staging + timed w/ booster chute) — differential
-229 lines, 5× stable. NOTE: golden locks apogee+separation time, NOT
-descent-end time/sample count (ULP noise over ~3-min chute descents — same
-class as the turbulent cap). New kernel patch in LEDGER.md: %g→%s in
-BasicEventSimulationEngine's separation log (TeaVM Formatter lacks %g —
-crashed every staged JS flight). **Next: Release C — staging UI: stage nodes
-in the app tree model ('stage' is in ComponentType now; schema has stub
-entries), per-mount motor map (unlocks mixed symmetric clusters), multi-stage
-.ork import/export (import currently still first-stage-only BY DESIGN until
-the UI can render stages), per-branch launch reports with power-class-aware
-defaults/warnings per the G80 rule.**
+**Staging/clustering COMPLETE (serial): A clusters v0.007, B engine v0.008,
+C full staging UI v0.009.** v0.009 highlights: tree.components is now ALWAYS
+stage nodes (normalizeTree wraps legacy trees/sessions at every load
+boundary — invariant enforced app-wide); per-mount motor map
+(App.MountMotor: label/spec/meta/ignition) replaced the single-motor state,
+legacy sessions migrate; ignition defaults are power-class aware (assignMotor:
+HP sustainer in staged rocket → burnout+1 s, else automatic; isHighPower in
+motorDb = >80 N avg or >160 Ns); multi-stage .ork both directions incl.
+separation + per-mount ignition (importOrk returns motors map keyed by mount
+node id; exportOrk takes a motors map — legacy single-motor arg still
+accepted); launch report has per-branch booster sections + chuteless-HPR
+warning; batch sim disabled on staged rockets (Eric's rule); auto-delay
+offered only on stage-0 mounts. Engine goldens/differential unchanged from
+v0.008 (229 lines). Browser-verified: legacy migration, staged UI (two motor
+cards w/ ignition selects), batch gating. Kernel/engine staging behavior
+covered by the 17 engine tests + 2 goldens; branch REPORT logic by 4 new
+simReport unit tests. **Remaining parked: parallel/strap-on boosters + pods
+(deferred by Eric until serial staging + clusters prove out), mixed
+symmetric clusters need a second clustered mount (works now via two mounts —
+document for Eric), 2D/3D don't yet draw separation planes or per-stage
+colors.**
 
 ## How Eric works / prefers to collaborate
 
