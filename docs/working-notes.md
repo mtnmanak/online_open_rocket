@@ -43,8 +43,12 @@ auto-loaded from the motor DB (desktop drops them; stale MountSerialNo
 links fall back to the stage's first mount — real files have them).
 Fixtures = the desktop's own test .rkt files (4 copied into
 __fixtures__/). Gotcha: happy-dom's DOMParser rejects CDATA sections —
-importRkt inline-escapes them before parsing. REMAINING in the file item:
-RASAero II both ways, OBJ export, SVG fin-template export.
+importRkt inline-escapes them before parsing. SVG fin templates SHIPPED
+v0.011 (services/finTemplate.ts — 1:1 physical-mm SVG per fin set with TTW
+tab + 50 mm calibration ruler; button in PropertyPanel; visually verified
+against the Wild Child freeform fin). REMAINING in the file item: RASAero II
+both ways, OBJ export. Phase 3 also still open: parallel boosters/pods,
+design optimization, geodesy options.
 
 ## How Eric works / prefers to collaborate
 
