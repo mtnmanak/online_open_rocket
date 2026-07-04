@@ -2,14 +2,11 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-03, end of the sixth pass (batch "b" fixes + live
-iteration with Eric: versioning, delay handling, dual-deploy reporting, preset
-completeness — released as v0.001 through v0.004, all pushed). **Current
-state: Eric is doing another test pass and will upload a NEW dated issues file
-(one file per batch — never append to a resolved batch's file; same-day
-batches get letter suffixes). Fix that list before anything else. Phase 3
-decision (deployment vs staging/clusters) is still Eric's call and still
-pending.**
+Last updated: 2026-07-03, end of the seventh pass (issue batch "c" fixed —
+released as v0.005, pushed). **Current state: batch "c"
+(docs/testing/issues-2026-07-03c.md) is fully resolved; item-by-item status in
+response-2026-07-03c.md. Awaiting Eric's next test pass or his Phase 3
+decision (deployment vs staging/clusters) — still his call, still pending.**
 
 ## How Eric works / prefers to collaborate
 
@@ -187,6 +184,26 @@ pending.**
   - Push permission: resolved — pushes to origin/main now go through as the
     routine end-of-chunk step (Eric approved via manual `! git push` once;
     subsequent pushes worked).
+- **2026-07-03 (seventh pass): issue batch "c" fixed, released v0.005** — see
+  issues-2026-07-03c.md + response-2026-07-03c.md. Highlights: max motor
+  length promoted to a rocket-level property in the main Motor panel
+  (session-persisted, seeded from the old browser filter; browser still
+  flags-not-blocks per Eric's rule, batch sim now EXCLUDES over-length motors
+  with a shown count); displayDesignation() in motorDb.ts strips Cesaroni's
+  impulse prefix + HP- prefixes everywhere motors display (raw designation
+  stays the .ork/API identity); motors.json regenerated with propInfo/caseInfo
+  (906/846 of 1,129 have them); CSV rebuilt to Eric's 14 flight-day lead
+  columns in ft/mph/Gs/g (incl. Pad Weight = launch mass, Recovery Weight =
+  new burnoutMass from the mass series at burnout), SI detail after; .ork
+  import matches motors against the bundled DB via findDbMotor() and
+  auto-loads them (the "G80T isn't built-in" nag is dead — verified with
+  Eric's own WM_Wild_Child.ork); saved-simulation rows click-to-open the
+  launch report (SimRunDetails renders from a stored run; charts still need a
+  fresh sim's series). Older stored runs predate the new SimRun fields —
+  formatters treat them as optional. Smoke-testing gotcha learned: sims run
+  inside requestAnimationFrame, which Chrome pauses in hidden/occluded tabs —
+  "Simulating…" that never finishes during browser automation means the
+  window isn't visible, not a hang.
 - **Small follow-ups parked (not blockers):** rail-button presets skipped (no
   RailButton preset kind yet — desktop has 8 entries incl. Wildman); consider
   collapsing the 10 Apogee-partNo Fruity duplicates into the 42 desktop

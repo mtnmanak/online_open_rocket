@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openrocket version="1.10" creator="Online OpenRocket">
+  <rocket>
+    <name>WM 5in Goblin</name>
+    <id>5c64895c-0814-4a2a-afc5-1cf4c0d19b9a</id>
+    <axialoffset method="absolute">0.0</axialoffset>
+    <position type="absolute">0.0</position>
+    <designtype>original</designtype>
+    <motorconfiguration configid="9b203f0b-0d88-4968-a5b3-e036aae6252b" default="true">
+      <stage number="0" active="true"/>
+    </motorconfiguration>
+    <referencetype>maximum</referencetype>
+    <subcomponents>
+      <stage>
+        <name>Sustainer</name>
+        <id>0f9c250d-0329-4aa2-a405-1069adca8302</id>
+        <subcomponents>
+          <nosecone>
+            <name>Nose cone</name>
+            <id>3b7ac342-93fd-44ea-9df2-d2fe1c02b17e</id>
+            <overridemass>0.8190000000000001</overridemass>
+            <overridesubcomponentsmass>false</overridesubcomponentsmass>
+            <finish>normal</finish>
+            <material type="bulk" density="1850">Fiberglass</material>
+            <length>0.65</length>
+            <thickness>0.0019049999999999998</thickness>
+            <shape>ogive</shape>
+            <shapeclipped>false</shapeclipped>
+            <shapeparameter>1</shapeparameter>
+            <aftradius>0.065405</aftradius>
+            <aftshoulderradius>0</aftshoulderradius>
+            <aftshoulderlength>0</aftshoulderlength>
+            <aftshoulderthickness>0</aftshoulderthickness>
+            <aftshouldercapped>false</aftshouldercapped>
+            <isflipped>false</isflipped>
+            <subcomponents>
+              <parachute>
+                <name>Fruity Chutes CFC-018-S</name>
+                <id>638f9462-649a-40ae-a418-acfd17112ca7</id>
+                <overridemass>0.03288545</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <axialoffset method="top">0.5336400045999999</axialoffset>
+                <position type="top">0.5336400045999999</position>
+                <packedlength>0.025</packedlength>
+                <packedradius>0.0125</packedradius>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <cd>auto</cd>
+                <material type="surface" density="0.035653924">Ripstop nylon, lightweight, 3 mil</material>
+                <deployevent>apogee</deployevent>
+                <deployaltitude>200</deployaltitude>
+                <deploydelay>0</deploydelay>
+                <diameter>0.4572</diameter>
+                <linecount>8</linecount>
+                <linelength>0.52578</linelength>
+                <linematerial type="line" density="0.0018" group="ThreadsLines">Elastic cord (round 2 mm, 1/16 in)</linematerial>
+              </parachute>
+            </subcomponents>
+          </nosecone>
+          <bodytube>
+            <name>Switch band</name>
+            <id>0828af0e-4547-4d52-986e-e10ec5cee983</id>
+            <overridemass>0.05</overridemass>
+            <overridesubcomponentsmass>false</overridesubcomponentsmass>
+            <finish>normal</finish>
+            <material type="bulk" density="1850">Fiberglass</material>
+            <length>0.03</length>
+            <thickness>0.0019049999999999998</thickness>
+            <radius>0.065405</radius>
+            <subcomponents>
+              <tubecoupler>
+                <name>Ebay coupler</name>
+                <id>d8ef40e7-b8e2-47fa-b28d-dd087dbe2447</id>
+                <overridemass>0.317</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <axialoffset method="top">-0.0635</axialoffset>
+                <position type="top">-0.0635</position>
+                <material type="bulk" density="1850">Fiberglass</material>
+                <length>0.1269492</length>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <outerradius>auto</outerradius>
+                <thickness>0.0019049999999999998</thickness>
+                <subcomponents>
+                  <bulkhead>
+                    <name>Bulkhead</name>
+                    <id>41d0276c-a0de-49e4-93f6-be7a0674f924</id>
+                    <overridemass>0.08</overridemass>
+                    <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                    <instancecount>1</instancecount>
+                    <instanceseparation>0.0</instanceseparation>
+                    <axialoffset method="bottom">0</axialoffset>
+                    <position type="bottom">0</position>
+                    <material type="bulk" density="1850">Fiberglass</material>
+                    <length>0.003</length>
+                    <radialposition>0.0</radialposition>
+                    <radialdirection>0.0</radialdirection>
+                    <outerradius>auto</outerradius>
+                  </bulkhead>
+                  <masscomponent>
+                    <name>Ebay components</name>
+                    <id>a0738165-7656-43e4-9ddd-063de9df7527</id>
+                    <overridemass>0.7000000000000001</overridemass>
+                    <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                    <axialoffset method="middle">0.02</axialoffset>
+                    <position type="middle">0.02</position>
+                    <packedlength>0.02</packedlength>
+                    <packedradius>0.005</packedradius>
+                    <radialposition>0.0</radialposition>
+                    <radialdirection>0.0</radialdirection>
+                    <mass>0.01</mass>
+                    <masscomponenttype>masscomponent</masscomponenttype>
+                  </masscomponent>
+                </subcomponents>
+              </tubecoupler>
+              <masscomponent>
+                <name>Ebay materials</name>
+                <id>99ff40e1-b2fa-4058-8a2e-e3de0d16c836</id>
+                <overridemass>0.7000000000000001</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <axialoffset method="top">0.02</axialoffset>
+                <position type="top">0.02</position>
+                <packedlength>0.02</packedlength>
+                <packedradius>0.005</packedradius>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <mass>0.01</mass>
+                <masscomponenttype>masscomponent</masscomponenttype>
+              </masscomponent>
+            </subcomponents>
+          </bodytube>
+          <bodytube>
+            <name>Booster tube</name>
+            <id>4c47f157-b680-4c4f-bec8-3608e10aeae5</id>
+            <overridemass>1.351</overridemass>
+            <overridesubcomponentsmass>false</overridesubcomponentsmass>
+            <finish>normal</finish>
+            <material type="bulk" density="1850">Fiberglass</material>
+            <length>0.835</length>
+            <thickness>0.0019049999999999998</thickness>
+            <radius>0.065405</radius>
+            <subcomponents>
+              <innertube>
+                <name>Inner tube</name>
+                <id>086a7bc9-5c11-4ea0-8f40-289b29e6692d</id>
+                <overridemass>0.168</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <axialoffset method="bottom">0</axialoffset>
+                <position type="bottom">0</position>
+                <material type="bulk" density="1850">Fiberglass</material>
+                <length>0.217</length>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <outerradius>0.0395</outerradius>
+                <thickness>0.0015000000000000013</thickness>
+                <clusterconfiguration>single</clusterconfiguration>
+                <clusterscale>1.0</clusterscale>
+                <clusterrotation>0.0</clusterrotation>
+                <motormount>
+                  <ignitionevent>automatic</ignitionevent>
+                  <ignitiondelay>0.0</ignitiondelay>
+                  <overhang>0.0</overhang>
+                  <motor configid="9b203f0b-0d88-4968-a5b3-e036aae6252b">
+                    <type>single</type>
+                    <manufacturer>custom</manufacturer>
+                    <designation>L900DM</designation>
+                    <diameter>0.075</diameter>
+                    <length>0.665</length>
+                    <delay>0</delay>
+                  </motor>
+                  <ignitionconfiguration configid="9b203f0b-0d88-4968-a5b3-e036aae6252b">
+                    <ignitionevent>automatic</ignitionevent>
+                    <ignitiondelay>0.0</ignitiondelay>
+                  </ignitionconfiguration>
+                </motormount>
+              </innertube>
+              <freeformfinset>
+                <name>Freeform fins</name>
+                <id>124f4e72-6dd3-4d38-b447-c1ca5bc17813</id>
+                <instancecount>4</instancecount>
+                <fincount>4</fincount>
+                <radiusoffset method="surface">0.0</radiusoffset>
+                <angleoffset method="relative">0.0</angleoffset>
+                <rotation>0.0</rotation>
+                <axialoffset method="bottom">0.021589999999999998</axialoffset>
+                <position type="bottom">0.021589999999999998</position>
+                <finish>normal</finish>
+                <material type="bulk" density="1850">Fiberglass</material>
+                <thickness>0.003175</thickness>
+                <crosssection>airfoil</crosssection>
+                <cant>0</cant>
+                <tabheight>0.025905000000000004</tabheight>
+                <tablength>0.14986</tablength>
+                <tabposition relativeto="front">0.028575</tabposition>
+                <tabposition relativeto="top">0.028575</tabposition>
+                <filletradius>0.0</filletradius>
+                <filletmaterial type="bulk" density="680.0" group="PaperProducts">Cardboard</filletmaterial>
+                <finpoints>
+                  <point x="0" y="0"/>
+                  <point x="0.098425" y="0.23177499999999998"/>
+                  <point x="0.225425" y="0.17145"/>
+                  <point x="0.2032" y="0"/>
+                </finpoints>
+              </freeformfinset>
+              <centeringring>
+                <name>Centering ring</name>
+                <id>696eecd1-fa4e-481d-89be-add0fd1b3767</id>
+                <overridemass>0.036000000000000004</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <instancecount>1</instancecount>
+                <instanceseparation>0.0</instanceseparation>
+                <axialoffset method="bottom">-0.023399999999999976</axialoffset>
+                <position type="bottom">-0.023399999999999976</position>
+                <material type="bulk" density="1850">Fiberglass</material>
+                <length>0.002</length>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <outerradius>auto</outerradius>
+                <innerradius>auto</innerradius>
+              </centeringring>
+              <centeringring>
+                <name>Centering ring (copy)</name>
+                <id>5445a315-83bd-4260-a14a-51c851cb3736</id>
+                <overridemass>0.036000000000000004</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <instancecount>1</instancecount>
+                <instanceseparation>0.0</instanceseparation>
+                <axialoffset method="bottom">-0.18211784623009386</axialoffset>
+                <position type="bottom">-0.18211784623009386</position>
+                <material type="bulk" density="1850">Fiberglass</material>
+                <length>0.002</length>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <outerradius>auto</outerradius>
+                <innerradius>auto</innerradius>
+              </centeringring>
+              <parachute>
+                <name>Fruity Chutes IFC-048-S</name>
+                <id>da3220c4-e04b-4402-a775-eb8693eee5f6</id>
+                <overridemass>0.12190295</overridemass>
+                <overridesubcomponentsmass>false</overridesubcomponentsmass>
+                <axialoffset method="top">0.02</axialoffset>
+                <position type="top">0.02</position>
+                <packedlength>0.025</packedlength>
+                <packedradius>0.0125</packedradius>
+                <radialposition>0.0</radialposition>
+                <radialdirection>0.0</radialdirection>
+                <cd>auto</cd>
+                <material type="surface" density="0.035653924">Ripstop nylon, lightweight, 3 mil</material>
+                <deployevent>altitude</deployevent>
+                <deployaltitude>152.4</deployaltitude>
+                <deploydelay>0</deploydelay>
+                <diameter>1.2192</diameter>
+                <linecount>8</linecount>
+                <linelength>1.40208</linelength>
+                <linematerial type="line" density="0.0018" group="ThreadsLines">Elastic cord (round 2 mm, 1/16 in)</linematerial>
+              </parachute>
+            </subcomponents>
+          </bodytube>
+        </subcomponents>
+      </stage>
+    </subcomponents>
+  </rocket>
+  <simulations>
+  </simulations>
+</openrocket>
