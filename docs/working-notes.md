@@ -2,8 +2,66 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-03. **Phase 3 is underway — Eric decided: deployment
-FIRST, then staging/clustering.** Deployment shipped as v0.006 (PWA/offline +
+Last updated: 2026-07-04, end of the seventh/eighth working session (v0.005
+through v0.012 — issue batch "c", deployment, the whole staging/clusters arc,
+and the whole file-format arc, ALL released and pushed).
+
+## ⚡ SESSION HANDOFF (2026-07-04) — read this first
+
+**State right now:** everything through v0.012 is pushed (`e777ba5`+docs);
+the LIVE SITE https://www.mountainmanrockets.com/online_open_rocket/ runs
+v0.012, verified (badge, all five file buttons, assets 200, SW + 11-file
+precache). **Eric is starting an IN-DEPTH TEST PASS of the live site.**
+Expect a new issue file `docs/testing/issues-2026-07-04.md` (or the next
+date; same-day batches get letter suffixes) — **fix that list before any new
+feature work** (standing rule). Response doc pattern: matching
+`response-<date>.md`, item-by-item.
+
+**Next version is v0.013** (0.NNN +1 per pushed build).
+
+**Phase 3 remaining (in likely order):**
+1. Parallel/strap-on boosters + pods — kernel supports them
+   (ParallelStage/PodSet compiled in); gaps are bridge tree-schema, app UI,
+   and off-axis 2D/3D rendering. Expect ~2-3 sessions.
+2. Design optimization — DISCUSS FIRST (Eric's style): propose in-browser
+   (batch-sim-style loop over dimension sweeps) over the plan's server-side
+   idea; the engine is fast enough.
+3. Geodesy options (flat/spherical/WGS84 exposure in launch conditions) — small.
+
+**Session gotchas worth remembering (hard-won this session):**
+- Eric's webhost: the WAF returns 403/scrambled-looking results to
+  non-browser user agents (PowerShell probes) — debug the live site through
+  the real Chrome, not Invoke-WebRequest. The host's zip-extract once
+  silently SKIPPED the assets/ folder — after any upload, check assets/
+  exists before debugging anything else. Deploy zips MUST come from
+  scripts/package-dist.mjs (bsdtar) — PowerShell Compress-Archive writes
+  backslash entries that break Linux-side extraction.
+- Browser smoke-testing protocol (localhost:4180 preview): ALWAYS snapshot
+  `online-openrocket.session.v1` before mutating (sessionStorage survives
+  reloads; window.* does not), restore + reload after, and delete any test
+  runs added to `online-openrocket.sim-runs.v1`. File-open flows are
+  drivable headlessly via DataTransfer + dispatchEvent('change') with bytes
+  fetched from a file temporarily copied into dist/ (the SW's SPA fallback
+  eats direct navigations to non-precached files — fetch() bypasses it).
+  Sims run inside requestAnimationFrame: a hidden/occluded Chrome window
+  means "Simulating…" hangs forever — that's window visibility, not a bug.
+  The extension's javascript_tool sometimes returns [BLOCKED] for responses
+  that look like credentials — return fewer/simpler fields.
+- Git on this box: multi-line commit messages via here-strings fail
+  silently in some compound commands — write the message to a scratchpad
+  file and `git commit -F <file>` (established pattern). Push directly is
+  approved (`git push origin main` as its own command; compound
+  commit+push sometimes trips the permission classifier).
+- The engine rebuild ritual (bridge/harness changes): set JAVA_HOME to the
+  portable JDK, `gradlew.bat generateJavaScript` in engine-java/, then
+  `node engine-java/scripts/build-engine.mjs`, then difftest 5× consecutive
+  (currently 229 golden lines). Kernel patches go through engine-java/
+  patches/ + LEDGER.md — never edit carved files (LEDGER gained the %g→%s
+  BasicEventSimulationEngine log patch this session).
+
+**Test totals at handoff:** 113 (engine 17, app 96), all green; differential
+229 lines 5× stable; build clean; deploy/online-openrocket-v0.012.zip is
+what's live. Deployment shipped as v0.006 (PWA/offline +
 manual-webhost package + dormant GitHub Pages workflow — see the Phase 3
 entry below and docs/deployment.md). Eric will manually upload the package to
 his own web host now; GitHub Pages comes later when he makes the repo public
