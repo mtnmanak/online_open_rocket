@@ -11,14 +11,24 @@ his own web host now; GitHub Pages comes later when he makes the repo public
 https://www.mountainmanrockets.com/online_open_rocket/ (v0.007, SW +
 offline verified; iframe snippet delivered for his WordPress pages; see
 docs/deployment.md for the extraction war story).**
-**Staging/clustering: Eric answered the design
-questions (recorded in docs/staging-clusters-design.md "Eric's decisions" +
-the domain-rules bullet above). Release A (clusters) SHIPPED as v0.007.
-Next: Release B — serial staging through the engine and .ork (stage nodes in
-the tree JSON with implicit-stage back-compat, separation + ignition configs,
-multi-branch flight output, 2-stage golden), then Release C — staging UI +
-per-branch reports (per-mount motor assignment unlocks mixed symmetric
-clusters too). Power-class-aware defaults per the G80 rule.**
+**Staging/clustering: Release A (clusters) shipped v0.007; Release B
+(staging ENGINE) shipped v0.008.** The bridge accepts stage nodes
+({"type":"stage", name, separationEvent/Delay/Altitude, children}) with
+implicit-stage back-compat (flat top level = one stage — old trees/sessions
+untouched); setMotorIgnitionById(id, automatic|launch|ejectioncharge|burnout|
+never, delay) covers electronics-timed HPR sustainers; staged sims return
+branches[] (name/events/series per branch; absent for single-stage). Two
+staging goldens (auto gap-staging + timed w/ booster chute) — differential
+229 lines, 5× stable. NOTE: golden locks apogee+separation time, NOT
+descent-end time/sample count (ULP noise over ~3-min chute descents — same
+class as the turbulent cap). New kernel patch in LEDGER.md: %g→%s in
+BasicEventSimulationEngine's separation log (TeaVM Formatter lacks %g —
+crashed every staged JS flight). **Next: Release C — staging UI: stage nodes
+in the app tree model ('stage' is in ComponentType now; schema has stub
+entries), per-mount motor map (unlocks mixed symmetric clusters), multi-stage
+.ork import/export (import currently still first-stage-only BY DESIGN until
+the UI can render stages), per-branch launch reports with power-class-aware
+defaults/warnings per the G80 rule.**
 
 ## How Eric works / prefers to collaborate
 
