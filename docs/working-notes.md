@@ -45,10 +45,19 @@ Fixtures = the desktop's own test .rkt files (4 copied into
 __fixtures__/). Gotcha: happy-dom's DOMParser rejects CDATA sections —
 importRkt inline-escapes them before parsing. SVG fin templates SHIPPED
 v0.011 (services/finTemplate.ts — 1:1 physical-mm SVG per fin set with TTW
-tab + 50 mm calibration ruler; button in PropertyPanel; visually verified
-against the Wild Child freeform fin). REMAINING in the file item: RASAero II
-both ways, OBJ export. Phase 3 also still open: parallel boosters/pods,
-design optimization, geodesy options.
+tab + 50 mm calibration ruler; button in PropertyPanel). **RASAero II .CDX1
+both ways + OBJ export SHIPPED v0.012 — the Phase 3 file item is COMPLETE.**
+rasaeroFile.ts (inches ÷39.37, flat part list → stages, Booster elements =
+lower stages, fins nested in tubes w/ bottom-referenced Location, nose-shape
+STRING map w/ shape params [Von Karman→haack 0, LV-Haack→haack 0.33,
+Parabolic→power 0.5], conical-only transitions, fins-on-boattail → freeform
+conversion, 2-slot Recovery → chutes). RASAero is aero-only: imports warn
+about 2 mm default walls and LIST the file's motors (no mounts exist to
+attach them); export requires 3-8 fins/conical transitions and writes launch
+weight/CG into the mandatory Simulation block. objExport.ts reuses
+Rocket3D.buildPieces (now exported) via three's OBJExporter — meters,
+external shell only. Desktop fixtures in __fixtures__ (3 .CDX1). Phase 3
+still open: parallel boosters/pods, design optimization, geodesy options.
 
 ## How Eric works / prefers to collaborate
 
