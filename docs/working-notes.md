@@ -2,11 +2,15 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-03, end of the seventh pass (issue batch "c" fixed —
-released as v0.005, pushed). **Current state: batch "c"
-(docs/testing/issues-2026-07-03c.md) is fully resolved; item-by-item status in
-response-2026-07-03c.md. Awaiting Eric's next test pass or his Phase 3
-decision (deployment vs staging/clusters) — still his call, still pending.**
+Last updated: 2026-07-03. **Phase 3 is underway — Eric decided: deployment
+FIRST, then staging/clustering.** Deployment shipped as v0.006 (PWA/offline +
+manual-webhost package + dormant GitHub Pages workflow — see the Phase 3
+entry below and docs/deployment.md). Eric will manually upload the package to
+his own web host now; GitHub Pages comes later when he makes the repo public
+(it's private today). **Next up: staging/clustering** — the flagship complex
+feature (see the plan's Phase 3 section; RocketForge never shipped
+multi-stage, expect it to be hard: kernel bridge, tree model, UI, .ork format,
+differential tests all grow).
 
 ## How Eric works / prefers to collaborate
 
@@ -213,10 +217,29 @@ decision (deployment vs staging/clusters) — still his call, still pending.**
   cross-parent component paste if duplicate ⧉ proves insufficient; second
   visualization window for the edited component if the numeric readout isn't
   enough.
-- **Pending decision (Eric's):** Phase 3 opens with either **deployment**
-  (standalone hosting + WordPress embed — a founding goal) or **staging/clusters**
-  (the flagship complex feature). Do not start either without his call. He wants
-  one more in-depth test pass (new issue list) before Phase 3 begins.
+- **Phase 3 decision (2026-07-03): deployment first, then staging/clusters
+  (Eric's call).** Deployment shipped as **v0.006**:
+  - **PWA/offline:** vite-plugin-pwa@0.21 (Vite 5 line), autoUpdate, precaches
+    the full app shell (11 files incl. the 2.5 MB engine chunk —
+    maximumFileSizeToCacheInBytes raised to 6 MB or workbox silently skips
+    it). Icons GDI+-generated in packages/app/public (regenerate with a
+    similar System.Drawing script if ever needed). SW registered in main.tsx
+    via virtual:pwa-register (types via src/vite-env.d.ts).
+  - **Manual-webhost flow (Eric's current choice):** `npm run package` →
+    deploy/online-openrocket-v<version>.zip (gitignored). docs/deployment.md
+    has upload steps, .htaccess cache tips, and the WordPress iframe snippet
+    (he hasn't yet said which WordPress setup he has — iframe works
+    everywhere custom HTML is allowed).
+  - **GitHub Pages later:** .github/workflows/deploy-pages.yml is
+    workflow_dispatch-ONLY because the repo is private (Pages is paid on
+    private repos). When Eric makes it public: Settings→Pages→GitHub Actions,
+    run the workflow, optionally uncomment the push trigger.
+  - **GPL:** header now links to the GitHub repo as the source offer;
+    docs/deployment.md notes the repo should go public at/soon after first
+    real deployment.
+  - Browser-automation gotcha reconfirmed: sims + SW installs stall in
+    hidden/occluded Chrome windows (rAF paused, rendering frozen) — drive
+    verification through DOM/JS, not screenshots, when the window is covered.
 - **Backlog menus for Eric to pick from:** the attribute audit's top-10 gaps
   (docs/testing/attribute-audit-2026-07-03.md — fin tabs, motor overhang/ignition,
   fin fillets, body-tube-as-motor-mount, rail-button geometry, tube-fin thickness,
