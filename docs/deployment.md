@@ -1,7 +1,8 @@
 # Deploying Online OpenRocket
 
 **LIVE:** https://www.mountainmanrockets.com/online_open_rocket/ (since
-2026-07-03, v0.007 — verified: app, service worker, offline precache).
+2026-07-03; updated to v0.010 on 2026-07-04 — verified: app, service worker,
+staging UI, RockSim open).
 Deployment war story: the host's zip-extract silently skipped the assets/
 folder once (files were uploaded manually), and an earlier Compress-Archive
 zip had backslash entries — the packager now uses bsdtar. If assets/ 404s
