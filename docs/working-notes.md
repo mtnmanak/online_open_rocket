@@ -2,22 +2,48 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-04, end of the seventh/eighth working session (v0.005
-through v0.012 — issue batch "c", deployment, the whole staging/clusters arc,
-and the whole file-format arc, ALL released and pushed).
+Last updated: 2026-07-04, end of the ninth working session (v0.013 — the
+debug/refactor/polish pass, released and pushed).
 
-## ⚡ SESSION HANDOFF (2026-07-04) — read this first
+## ⚡ SESSION HANDOFF (2026-07-04, ninth session) — read this first
 
-**State right now:** everything through v0.012 is pushed (`e777ba5`+docs);
-the LIVE SITE https://www.mountainmanrockets.com/online_open_rocket/ runs
-v0.012, verified (badge, all five file buttons, assets 200, SW + 11-file
-precache). **Eric is starting an IN-DEPTH TEST PASS of the live site.**
-Expect a new issue file `docs/testing/issues-2026-07-04.md` (or the next
-date; same-day batches get letter suffixes) — **fix that list before any new
-feature work** (standing rule). Response doc pattern: matching
-`response-<date>.md`, item-by-item.
+**State right now:** v0.013 is pushed. The LIVE SITE
+https://www.mountainmanrockets.com/online_open_rocket/ still runs **v0.012**
+— Eric uploads deploy zips manually; when he wants v0.013 live, run
+`npm run package` and hand him deploy/online-openrocket-v0.013.zip (remember:
+package-dist.mjs zips only — never Compress-Archive; check assets/ after his
+upload). **Eric's in-depth test pass of the live site is still expected** —
+watch for `docs/testing/issues-2026-07-04.md` (or next date) and fix that
+list before any new feature work (standing rule).
 
-**Next version is v0.013** (0.NNN +1 per pushed build).
+**v0.013 was a full-codebase debug/refactor/polish pass** (Eric: "take the
+time now to debug, refactor and polish"). Three parallel review agents swept
+services/components/tree; ~25 confirmed fixes + 14 new regression tests
+(suite now 127: engine 17, app 110). Highlights worth knowing when reading
+code: freshId now RESEEDS from the tree inside normalizeTree (duplicate-id
+bug after session restore — the big one); undo coalesces edits within 800 ms
+(one gesture = one Ctrl+Z step); App's engine build memo returns
+{rocket,info}|{error} instead of setState-in-render; 'absolute' axial
+positions are rewritten to parent-relative 'top' at normalizeTree (UI edits
+in parent frame; engine reads rocket frame — they used to disagree);
+RockSim masscomponent KnownMass was exported twice (imports read the first,
+0 — real data corruption, now single-emission via common() opts); RASAero
+export now throws instead of silently dropping unsupported fin sets, and
+converts trapezoid-shaped freeform fins exactly (Eric's freeform workflow);
+orkFile reads legacy <position type> (≤15.03 files) and round-trips line
+material/elliptical cant/shoulder thickness; Rocket3D disposes swapped
+geometries. Shared helpers now live in services/xmlUtil.ts (escapeXml/
+xmlText/xmlNum), services/csvUtil.ts (csvCell), treeModel.asStageNodes().
+No engine/kernel changes — differential untouched (still 229 lines).
+
+**Deliberately skipped (judgment calls, revisit if Eric asks):** CSV
+formula-injection hardening (his own local data; a leading-quote prefix
+would pollute his flight-day CSVs); engine rebuild on rocket-name
+keystrokes (cosmetic perf); FT/MPH constants in simStore/simReport left
+inline (readability beats indirection there); parseEng mid-curve zero-thrust
+split (malformed-RASP edge case).
+
+**Next version is v0.014** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
