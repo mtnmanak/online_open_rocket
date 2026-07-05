@@ -157,7 +157,42 @@ verify unit chips + maybe a nicer layout); **P4 bridge + TeaVM ENGINE REBUILD
 ⚠ (gated, needs Eric)**; P5 .ork round-trip. Then the RASAero work
 (docs/research/rasaero-gap-analysis) — Eric's stated order: pods first.
 
-**Next version is v0.021** (0.NNN +1 per pushed build).
+**PODS FEATURE COMPLETE (v0.021) — Phases 4+5 done, engine REBUILT.** Pods/
+parallel boosters now BUILD in the kernel, SIMULATE (booster = own flight
+branch), and round-trip through .ork. Differential 229→**237 lines**, 5×
+stable. Bridge changes (engine-java/src/api): ComponentFactory podset/
+parallelstage cases + applyAssembly (post-attach: setInstanceCount/
+setRadiusMethod+setRadiusOffset[gap]/setAngleOffset/[parallelstage]setAngleMethod
++separation; the position block in create() is guarded !(c instanceof
+ComponentAssembly)); OrkEngine.applySeparationConfig made package-private and
+reused. GoldenMain.podScenarios() (8 golden lines: pod.geometry/info/comp,
+mass.pod.structure, mass.pod1.offaxis, para.info/branches/summary).
+**HARD-WON BUG (the workflow critique got it WRONG): FinSet, SymmetricComponent
+(nose/body/transition) and TubeFinSet ALSO implement RingInstanceable** — so
+guarding the applyAssembly hook on `instanceof RingInstanceable` clobbered
+every fin/tube instanceCount with the pod default (2), collapsing 3 fins→2,
+breaking mass/CG/clusters/staging. The differential PASSED (JVM==JS both
+wrong via the tree API) but the engine vitest caught it (tree-API-vs-direct
+divergence). FIX: guard on `instanceof ComponentAssembly` (only PodSet/
+ParallelStage). LESSON: after an engine rebuild, run BOTH difftest AND the
+engine vitest — difftest can't catch a bug present identically in JVM+JS.
+App cleanup: treeForEngine strip REMOVED; buildTree/mounts use the real tree;
+new hasParallelStage() ORs into isStaged so batch-sim is disabled when a
+separating booster is present (podset alone keeps batch — single branch).
+Phase 5 orkFile.ts: <podset>/<parallelstage>/<boosterset> import + export
+(instancecount, radiusoffset[m], angleoffset[DEG], separation reuse; no
+color/linestyle/radialdirection). Full plan+critique in
+docs/pods-implementation-plan.md; the exact Phase-4/5 spec is in
+scratchpad/pods-phase45-spec.md (not committed). 137 tests green (engine 17,
+app 120). NOT browser-flight-verified (rAF pause on occluded window) — the
+multi-branch flight is proven by the engine "serial two-stage branch" test +
+the para.branches golden scenario.
+
+**Live site still on v0.012** — Eric deploys manually; v0.013–v0.021 all
+pushed but NOT yet uploaded. Next up per Eric: the RASAero gap work
+(docs/research/rasaero-gap-analysis) now that pods are complete.
+
+**Next version is v0.022** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
