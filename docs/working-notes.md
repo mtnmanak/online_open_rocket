@@ -77,7 +77,15 @@ Contents list. GuideDialog uses dangerouslySetInnerHTML (content is our own
 trusted static markup, never user input). Verified live: dialog opens, 11
 sections, real HTML render (no tag leak), physics formulas in <pre>.
 
-**Next version is v0.017** (0.NNN +1 per pushed build).
+**v0.017: fixed CG/CP markers invisible in the 3D view** (user report) — the
+spheres sit on the rocket axis inside the opaque shell; now render on top
+(meshStandardMaterial depthTest:false + renderOrder), larger, CG a visible
+neutral instead of near-black. Rocket3D.tsx. Browser-verified via screenshot
+(window was visible this time). NOTE: this production @react-three/fiber v8
+build does NOT expose canvas.__r3f, so the 3D scene graph can't be introspected
+headlessly — verify the 3D view by screenshot, not DOM.
+
+**Next version is v0.018** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
