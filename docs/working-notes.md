@@ -58,7 +58,26 @@ issue) — App.maxMotorLen is Record<stage id, m|null>, session key
 maxMotorLengthByStage (legacy scalar seeds all stages), Motors panel groups
 mounts under stage headers with one limit input each.
 
-**Next version is v0.016** (0.NNN +1 per pushed build).
+**v0.016 (same session): built-in USER GUIDE.** A ❓ Guide header button
+opens GuideDialog (TOC sidebar + content pane) rendering GUIDE_SECTIONS from
+src/data/userGuide.ts (11 sections: welcome, quick-start, designing,
+visualizing, motors, launch-conditions, simulating, staging/clusters, files,
+physics, limitations/references). Same content in docs/user-guide.md.
+Authored by a multi-agent Workflow (ultracode) — 4 parallel readers +
+physics draft grounded in the OpenRocket reference source + critique +
+finalize. GOTCHAS for regeneration: the physics *inventory* agent (structured
+schema) errored on the retry cap, which zeroed the adversarial Verify phase —
+the physics *draft* agent still produced source-grounded content, and I
+manually spot-checked base drag (0.12+0.13M²), ISA constants, and the WGS84
+Somigliana gravity coefficients against the real source (all exact). Also the
+finalize agent double-ESCAPED some sections' html (&lt;p&gt;); the assembler
+(scratchpad/assemble-guide.mjs, reads the workflow journal.jsonl) detects
+entity-encoded html and decodes one level, and strips the redundant in-app
+Contents list. GuideDialog uses dangerouslySetInnerHTML (content is our own
+trusted static markup, never user input). Verified live: dialog opens, 11
+sections, real HTML render (no tag leak), physics formulas in <pre>.
+
+**Next version is v0.017** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
