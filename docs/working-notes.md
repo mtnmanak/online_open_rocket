@@ -101,7 +101,38 @@ don't have to open the mount tube in the tree. App.tsx mountSizes useMemo +
 .mount-sizes / .mount-size-chip / .mount-size-inline CSS. Browser-verified
 single + 2-stage (29/38 mm) via DOM.
 
-**Next version is v0.019** (0.NNN +1 per pushed build).
+**PODS / PARALLEL STAGES — work STARTED (Eric un-deferred it 2026-07-05).**
+Full source-grounded plan + critique in **docs/pods-implementation-plan.md**
+(multi-agent pods-design workflow). The critique found TWO P0 bugs in the
+FUTURE Phase-4 bridge design — READ IT before writing ComponentFactory:
+(1) applying axial position inside create() NPEs for assemblies (setAxialMethod
+needs a parent) — apply AFTER attach; (2) use setRadiusMethod+setRadiusOffset
+(offset/gap semantics), NOT setRadius(method,val) (which is radius-from-centerline
+and double-subtracts). Also: PodSet.setAngleMethod is a no-op (pods always
+relative); ParallelStage IS an AxialStage so boosters get flight branches free;
+AFTER axial method is forbidden for assemblies.
+**v0.019 shipped Phase 1 (app-side foundation, NO engine rebuild):** added
+'podset'|'parallelstage' to ComponentType (orkEngine.ts); schema.ts
+DISPLAY_NAME/FIELDS/CONTAINMENT/POSITIONABLE/defaultParams (fields:
+instanceCount, radiusOffset [gap], radiusMethod, angleOffset, + angleMethod &
+separation on parallelstage; radiusOffset name matches kernel/.ork for 1:1
+round-trip); treeForEngine() in treeModel.ts TEMPORARILY strips assembly
+subtrees before the engine (so core rocket still builds/sims; also keeps
+pod-internal mounts out of motorMounts) — App.tsx derives engineTree and builds
+mounts+rocket from it; 2D schematic skips assemblies. 5 new tests (treeModel.test).
+Browser-verified: add-menu offers both types, a booster-bearing rocket still
+sims (stability 1.19), pod mount excluded, no errors.
+**REMAINING pods phases (all gated for Eric's review; Phase 4 is the heavy one):**
+P2 off-axis 2D/3D rendering (reuse cluster offsets + fin per-instance rotation;
+refactor renderChain/addChain); P3 config UI panel; **P4 bridge + TeaVM ENGINE
+REBUILD ⚠ (ComponentFactory podset/parallelstage cases w/ the two P0 fixes; add
+a pod golden fixture BEFORE rebuild; full difftest ritual must stay green) —
+DO NOT run autonomously, needs Eric's go-ahead**; P5 .ork round-trip
+(<podset>/<parallelstage>, radiusoffset m, angleoffset DEGREES, reuse sep).
+Open questions for Eric in the plan doc §5 (radius/angle method exposure;
+2D end-view inset; batch-sim-disabled-on-staged now also hits parallelstage).
+
+**Next version is v0.020** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
