@@ -43,7 +43,17 @@ keystrokes (cosmetic perf); FT/MPH constants in simStore/simReport left
 inline (readability beats indirection there); parseEng mid-curve zero-thrust
 split (malformed-RASP edge case).
 
-**Next version is v0.014** (0.NNN +1 per pushed build).
+**Issue batch 2026-07-04a arrived and was fixed same-session as v0.014**
+(issues-2026-07-04a.md + response-2026-07-04a.md): add-to-parent/stage
+buttons in the tree (ComponentTree targets list), the mountainmanrockets.com
+site menu (SITE_MENU in App.tsx, target="_top" to escape the iframe — keep
+that), and to-scale motor silhouettes in the 2D view (App passes motorDims
+{length,diameter} per mount id → TreeSchematic `motors` prop, drawn flush
+to the mount's aft end, per cluster offset). Eric may ask to skin the menu
+to match his WordPress theme, or to add the motor to the 3D view — both
+offered in the response doc.
+
+**Next version is v0.015** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
