@@ -2,17 +2,29 @@
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
-Last updated: 2026-07-04, end of the ninth working session (v0.013 — the
-debug/refactor/polish pass, released and pushed).
+Last updated: 2026-07-05, end of the tenth working session (v0.014–v0.021:
+issue batch a, per-stage motor length, the user guide, CG/CP-in-3D + mount
+sizes, and the COMPLETE pods/parallel-stage feature).
 
-## ⚡ SESSION HANDOFF (2026-07-04, ninth session) — read this first
+## ⚡ START HERE → read `docs/handoff-2026-07-05.md` first
 
-**State right now:** through v0.018 is pushed AND the LIVE SITE
-https://www.mountainmanrockets.com/online_open_rocket/ **runs v0.018,
-verified in Chrome 2026-07-05** (badge v0.018, no failed resources so assets/
-is present, engine ran — 10 stat tiles + real stability, mount-size chip +
-Guide + 8-link site menu + SW all live). Eric uploads deploy zips manually;
-for the next release run `npm run package` and hand him the
+That file is the current, self-contained session handoff (state, what shipped
+v0.013–v0.021, the pods architecture + the hard-won RingInstanceable bug, the
+engine-rebuild ritual, gotchas, and the RASAero work that's next). The
+per-version detail below remains as history.
+
+**One-line state:** v0.021 is pushed AND LIVE (verified in Chrome incl. pods
+building/simulating on the deployed engine); 137 tests green; differential 237
+lines 5× stable; next version v0.022; next work = the RASAero gap features.
+
+---
+
+## ⚡ SESSION HANDOFF (2026-07-04, ninth session) — historical
+
+**State (as of v0.018):** the LIVE SITE
+https://www.mountainmanrockets.com/online_open_rocket/ once ran v0.018.
+Eric uploads deploy zips manually;
+for each release run `npm run package` and hand him the
 deploy/online-openrocket-v<ver>.zip (remember: package-dist.mjs zips only —
 never Compress-Archive; check assets/ in Chrome after his upload — the WAF
 scrambles non-browser probes). Issue batch 2026-07-04a is DONE (v0.014);
