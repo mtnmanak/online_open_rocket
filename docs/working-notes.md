@@ -132,7 +132,32 @@ DO NOT run autonomously, needs Eric's go-ahead**; P5 .ork round-trip
 Open questions for Eric in the plan doc §5 (radius/angle method exposure;
 2D end-view inset; batch-sim-disabled-on-staged now also hits parallelstage).
 
-**Next version is v0.020** (0.NNN +1 per pushed build).
+**v0.020 shipped pods Phase 2 (off-axis 2D/3D rendering, NO engine rebuild).**
+New src/tree/assembly.ts (shared geometry: ringInstanceOffsets [y=r·cosθ,
+z=r·sinθ per kernel], resolveAssemblyRadius [RELATIVE = gap: offset+parentR+
+boundingR; FREE = from centerline], assemblyChainLength/BoundingRadius,
+isAssembly). Rocket3D.buildPieces refactored: place() bakes an instance
+Matrix4 into geometry (position/rotation-free pieces → OBJ export gets pods
+FREE), addChain(nodes,xform) recursion, pod case in addChildren (rotX(angle)·
+translate(podStart,podRadius,0)); fins on pods work (addFins takes xform).
+TreeSchematic refactored: renderChain(nodes,xStart,baseY) + baseY threaded
+through renderChildren/shoulderRect/renderTab/nosePath; pod case projects
+off.y onto baseY (ignores depth z — accepted projection collapse at 90°, same
+as clusters); vHalf measure walks pods so they don't clip. position.ts
+axialLength handles assemblies. 3 new buildPieces tests (Rocket3D.test.ts).
+Browser-verified 2D (boosters ringed above/below body w/ their own nose+body+
+fins, core still sims); 3D geometry proven by unit test (2D/3D share the
+helpers) — live 3D screenshot blocked by the R3F occlusion rAF-pause.
+treeForEngine still strips pods from the engine (they render but DON'T
+simulate — that's Phase 4).
+
+**REMAINING pods phases:** P3 config UI panel (expose add-menu is already on;
+the property panel already renders assembly FIELDS via data-driven schema —
+verify unit chips + maybe a nicer layout); **P4 bridge + TeaVM ENGINE REBUILD
+⚠ (gated, needs Eric)**; P5 .ork round-trip. Then the RASAero work
+(docs/research/rasaero-gap-analysis) — Eric's stated order: pods first.
+
+**Next version is v0.021** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
