@@ -53,7 +53,12 @@ to the mount's aft end, per cluster offset). Eric may ask to skin the menu
 to match his WordPress theme, or to add the motor to the 3D view — both
 offered in the response doc.
 
-**Next version is v0.015** (0.NNN +1 per pushed build).
+**v0.015 (same session): max motor length went PER-STAGE** (Eric's follow-up
+issue) — App.maxMotorLen is Record<stage id, m|null>, session key
+maxMotorLengthByStage (legacy scalar seeds all stages), Motors panel groups
+mounts under stage headers with one limit input each.
+
+**Next version is v0.016** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
