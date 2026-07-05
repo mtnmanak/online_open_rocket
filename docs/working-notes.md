@@ -7,14 +7,23 @@ debug/refactor/polish pass, released and pushed).
 
 ## ⚡ SESSION HANDOFF (2026-07-04, ninth session) — read this first
 
-**State right now:** v0.013 is pushed. The LIVE SITE
-https://www.mountainmanrockets.com/online_open_rocket/ still runs **v0.012**
-— Eric uploads deploy zips manually; when he wants v0.013 live, run
-`npm run package` and hand him deploy/online-openrocket-v0.013.zip (remember:
-package-dist.mjs zips only — never Compress-Archive; check assets/ after his
-upload). **Eric's in-depth test pass of the live site is still expected** —
-watch for `docs/testing/issues-2026-07-04.md` (or next date) and fix that
-list before any new feature work (standing rule).
+**State right now:** through v0.018 is pushed AND the LIVE SITE
+https://www.mountainmanrockets.com/online_open_rocket/ **runs v0.018,
+verified in Chrome 2026-07-05** (badge v0.018, no failed resources so assets/
+is present, engine ran — 10 stat tiles + real stability, mount-size chip +
+Guide + 8-link site menu + SW all live). Eric uploads deploy zips manually;
+for the next release run `npm run package` and hand him the
+deploy/online-openrocket-v<ver>.zip (remember: package-dist.mjs zips only —
+never Compress-Archive; check assets/ in Chrome after his upload — the WAF
+scrambles non-browser probes). Issue batch 2026-07-04a is DONE (v0.014);
+watch for the next dated issue list and fix it before new feature work
+(standing rule).
+
+**This session (2026-07-05) shipped v0.013–v0.018:** debug/polish pass
+(0.013), issue batch a (0.014: add-to-parent, site menu, motor silhouette),
+per-stage max motor length (0.015), built-in user guide (0.016, docs/
+user-guide.md + in-app GuideDialog), CG/CP visible in 3D (0.017), motor
+mount sizes surfaced (0.018).
 
 **v0.013 was a full-codebase debug/refactor/polish pass** (Eric: "take the
 time now to debug, refactor and polish"). Three parallel review agents swept
