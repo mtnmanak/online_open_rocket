@@ -85,7 +85,14 @@ neutral instead of near-black. Rocket3D.tsx. Browser-verified via screenshot
 build does NOT expose canvas.__r3f, so the 3D scene graph can't be introspected
 headlessly — verify the 3D view by screenshot, not DOM.
 
-**Next version is v0.018** (0.NNN +1 per pushed build).
+**v0.018: motor mount sizes surfaced** (user request) — the Rocket panel and
+Motors panel now show each mount's nominal size (classLabel(diameterClass(
+mountDiaMm)) — 24/29/38/54/75-76 mm), per stage with cluster count, so you
+don't have to open the mount tube in the tree. App.tsx mountSizes useMemo +
+.mount-sizes / .mount-size-chip / .mount-size-inline CSS. Browser-verified
+single + 2-stage (29/38 mm) via DOM.
+
+**Next version is v0.019** (0.NNN +1 per pushed build).
 
 **Phase 3 remaining (in likely order):**
 1. Parallel/strap-on boosters + pods — kernel supports them
