@@ -144,7 +144,7 @@ Internal and fin components are placed **axially** relative to their parent, usi
 
 ## Motor mounts and clusters
 
-A motor mount is modeled as an **inner tube** with the mount flag set. (If you import a file with a motor stuck directly in a body tube, the importer tells you to move it onto an inner tube.) An inner tube also carries a **cluster layout** — single, rows, rings, and stars up to nine motors, with a spacing multiplier (× tube diameter) and a rotation. One motor choice serves the whole cluster: thrust is multiplied by the count and mass is placed at the real tube positions, exactly matching the kernel's ClusterConfiguration.
+A motor mount is usually an **inner tube** with the mount flag set. For **minimum-diameter rockets** — where the motor case is essentially the airframe and there is no room for a mount tube — check **"Motor mount"** on the **body tube** itself and the motor loads directly in it (the same kernel path the desktop uses; imported files with body-tube mounts now come in as real mounts). An inner tube also carries a **cluster layout** — single, rows, rings, and stars up to nine motors, with a spacing multiplier (× tube diameter) and a rotation. One motor choice serves the whole cluster: thrust is multiplied by the count and mass is placed at the real tube positions, exactly matching the kernel's ClusterConfiguration.
 
 ## Pods and parallel boosters
 
