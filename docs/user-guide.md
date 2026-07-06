@@ -92,7 +92,7 @@ Everything below is organized by the order you actually work: design the rocket,
 
 The left editor is a **stage-rooted tree** of components. Each stage holds an axial chain of external body parts (nose cone → body tubes → transitions), and those in turn hold internal parts (fins, motor mounts, recovery gear, mass). Click a node to select it and open its property panel; inline buttons on each node **move, duplicate, or delete** it. The tree enforces OpenRocket's containment rules — you can only add children a parent legally accepts (for example, fins and inner tubes go inside a body tube, a parachute goes inside any body part, and an engine block goes inside an inner tube).
 
-## The seventeen component types
+## The nineteen component types
 
 | Type | Category | Key parameters |
 |---|---|---|
@@ -114,6 +114,8 @@ The left editor is a **stage-rooted tree** of components. Each stage holds an ax
 | Streamer | Recovery | strip length/width, Cd, deploy event |
 | Shock cord | Recovery | cord length |
 | Mass component | Ballast | mass, length, radius |
+| Pod set | Assembly | instance count, radial distance & reference, angle |
+| Booster (parallel stage) | Assembly | instance count, radial placement, angle, separation |
 
 ## Dimensions: diameter vs. radius
 
@@ -144,6 +146,15 @@ Internal and fin components are placed **axially** relative to their parent, usi
 
 A motor mount is modeled as an **inner tube** with the mount flag set. (If you import a file with a motor stuck directly in a body tube, the importer tells you to move it onto an inner tube.) An inner tube also carries a **cluster layout** — single, rows, rings, and stars up to nine motors, with a spacing multiplier (× tube diameter) and a rotation. One motor choice serves the whole cluster: thrust is multiplied by the count and mass is placed at the real tube positions, exactly matching the kernel's ClusterConfiguration.
 
+## Pods and parallel boosters
+
+Two assembly types place whole component chains **off-axis**, ringed around the airframe:
+
+- **Pod set** — a non-separating pod (camera bay, external raceway, side-mounted tube). It stays attached for the whole flight, contributing its mass and drag rigidly.
+- **Booster (parallel stage)** — a separable strap-on booster with its own separation trigger and delay, like the outboard boosters of a Falcon Heavy. After it separates, it flies (and lands) on its own tracked branch.
+
+Both attach to a body component (body tube, nose cone, or transition) and hold their own axial chain — nose cone, body tubes, fins, even a motor mount — exactly like a miniature rocket. Placement is controlled by an **instance count** (1–8 copies ringed evenly around the body), a **radial distance** with two reference modes (a *gap from the parent surface*, where 0 = touching, or a distance *from the centerline*), and an **angle** around the body. A booster with a motor mount takes a motor like any other mount, and its ignition follows the same trigger rules as serial stages.
+
 ## Recovery
 
 **Parachutes** take a canopy diameter, a drag coefficient (blank = automatic, defaulting to 0.8 after deployment), line count, and line length. **Streamers** take strip length and width. Both carry a **deployment trigger**: motor ejection charge, apogee, altitude (descending, with an AGL altitude), launch, or never — plus a deploy delay. A **shock cord** and a **mass component** (for nose weight, altimeters, or dead ballast) round out the bay.
@@ -166,19 +177,27 @@ The bundled catalog holds roughly **4,700 real-world parts** (tubes, nose cones,
 
 ## Visualizing the Design
 
-As you build, three views keep the design honest — a scale side view, a rotatable 3D shell, and printable 1:1 fin templates.
+As you build, four views keep the design honest — a scale side view, a rotatable 3D shell, printable 1:1 fin templates, and a drag-analysis chart.
 
 ## The 2D schematic
 
-A true-scale side view drawn from the tree. It shows tubes, lathed nose/transition profiles, fins at their real planforms, fin tabs, and motor cases drawn to scale, plus **CG and CP markers** in standard rocketry symbols. You can **drag components** to reposition them (with the snapping described earlier) and pan/zoom.
+A true-scale side view drawn from the tree. It shows tubes, lathed nose/transition profiles, fins at their real planforms, fin tabs, and motor cases drawn to scale, plus **CG and CP markers** in standard rocketry symbols. You can **drag components** to reposition them (with the snapping described earlier) and pan/zoom. Pods and parallel boosters draw off-axis where they actually sit, projected above/below the body in the side view.
 
 ## The 3D view
 
-A three.js render of the external shell you can **drag to rotate and scroll to zoom**. It marks the **CG** (a neutral sphere) and **CP** (a red sphere) so you can see the stability margin in space.
+A three.js render of the external shell you can **drag to rotate and scroll to zoom**. It marks the **CG** (a neutral sphere) and **CP** (a red sphere) so you can see the stability margin in space. Pods and boosters render ringed around the airframe at their true radius and angle — and they export to OBJ too.
 
 ## 1:1 fin templates (SVG)
 
 From any fin set you can export a **true-scale printable cutting template**. It draws the fin outline as a hairline cut path, a dashed root-chord reference line, the through-the-wall tab rectangle where present, a label block (rocket/fin name, cut count, chord/height/thickness/cross-section/tab depth), and a **50 mm calibration ruler**. Print at 100% with no fit-to-page, then check the ruler measures exactly 50 mm — printers silently rescale, and the ruler is how you catch it. The SVG uses physical millimeter units and a 0.2 mm hairline, so it feeds a laser cutter directly.
+
+## Drag analysis (CD vs Mach)
+
+Below the rocket view, the **Drag analysis** panel plots your design's drag coefficient against Mach number — a static property of the geometry, no flight needed, recomputed live as you edit. Click **Show CD vs Mach** to open it.
+
+- The main chart shows the **power-off** (coasting) drag curve. Give a stage a **nozzle exit diameter** (in the Stage property panel) and a dashed **power-on** curve appears: during the burn, the motor's exhaust plume pressurizes the base area, so boost drag is genuinely lower than coast drag. The bigger the nozzle exit relative to the base, the bigger the reduction — a minimum-diameter rocket sees a large difference, a small motor in a fat airframe almost none. For a clustered mount, enter one equivalent nozzle whose exit *area* is the sum of the individual exit areas. Zero (the default) means the two curves are identical.
+- The **breakdown chart** splits the drag **by component** (nose, body, fins…) or **by type** (friction / pressure / base), so you can see *why* the rocket is draggy and where cleanup pays — the transonic drag rise starting near Mach 0.9 is plainly visible.
+- A Max-Mach selector (1–5) and a **CSV export** round it out. Above roughly Mach 1.5 the values are Extended-Barrowman estimates, and the panel labels them as approximate.
 
 ---
 
@@ -283,6 +302,14 @@ Each staged motor has an **ignition trigger**: Automatic (launch-stage motors at
 
 Boosters get their own recovery gear and their own landing-rate verdict in the report — a chuteless high-power booster is called out. **Clusters** (see *Designing the Rocket → Motor mounts and clusters*) let one motor selection drive several tubes; thrust scales with the count and mass sits at the real pattern positions.
 
+## Parallel (strap-on) boosters and pods
+
+Serial stages stack nose-to-tail; a **parallel stage** rides alongside. Build one with the **Booster (parallel stage)** assembly (see *Designing the Rocket → Pods and parallel boosters*): it carries its own separation trigger and delay, its motor ignites by the same trigger rules as any staged motor, and after separation it descends on its **own tracked flight branch** with its own recovery verdict. A non-separating **pod set** simply adds its mass and drag for the whole flight. One planning note: batch motor simulation is disabled while a separating booster is present, just as for serial staging — the motor combinations multiply beyond what a single sweep can grade.
+
+## Power-on drag, per stage
+
+Each stage carries its own **nozzle exit diameter** (see *Visualizing the Design → Drag analysis*), so a booster and a sustainer each get the correct power-on drag reduction during their own burn — the sim picks power-on or power-off drag per stage, per time step, the same way RASAero II does. Leave it at zero and nothing changes.
+
 ---
 
 <a id="files-and-formats"></a>
@@ -297,7 +324,7 @@ The app reads and writes several formats. What survives a round-trip depends on 
 
 | Format | Import | Export | Notes |
 |---|---|---|---|
-| **.ork** (OpenRocket) | Yes | Yes | Full fidelity — all 17 types, motors, materials, overrides, tabs, clusters, shoulders, staging. Accepts zipped or bare XML; handles legacy ≤15.03 files. |
+| **.ork** (OpenRocket) | Yes | Yes | Full fidelity — all 19 types, motors, materials, overrides, tabs, clusters, shoulders, staging, pods/boosters, nozzle exit diameters. Accepts zipped or bare XML; handles legacy ≤15.03 files. |
 | **.rkt** (RockSim) | Yes | Yes | Up to **3 stages** (export throws beyond that). Uniquely keeps motor designations the desktop drops, so it auto-loads motors. Clusters split into individual tubes; spill holes unsupported. |
 | **.CDX1** (RASAero II) | Yes | Yes | Aerodynamics only — **no mass or material data**. Walls default to a faked 2 mm and the importer warns you to "review masses before trusting the numbers." No motor mounts; engine names surface as a note. Strict export validation (≤3 stages, one fin set per tube, 3–8 fins, conical transitions only). |
 | **.obj** (Wavefront) | — | Yes | External shell only — the meshes the 3D view renders. Meters, nose at x=0. Not guaranteed watertight; for print-preview/CAD reference. |
@@ -307,7 +334,7 @@ The most important domain caveat is **RASAero has no mass data** — a `.CDX1` i
 
 ## Units and preferences
 
-Open **Preferences** to switch between one-click **Metric** and **Imperial** presets, or set each quantity individually — length, motor dimensions, distance, mass, velocity, wind speed, acceleration, angle, density, temperature, and pressure. You also choose whether round parts are entered as **diameter or radius**. The same dialog sets the app's **Theme** — **Light**, **Dark**, or **Follow system** (which tracks your operating system's light/dark setting); this is what drives the theme-aware plot axes and the rest of the interface. Because everything is stored in SI internally, **switching units never changes your design** — it only changes how the numbers are displayed and entered.
+Open **Preferences** to switch between one-click **Metric** and **Imperial** presets, or set each quantity individually — length, motor dimensions, distance, mass, velocity, wind speed, acceleration, angle, density, temperature, and pressure. You also choose whether round parts are entered as **diameter or radius**. The same dialog sets the app's **Theme** — **Light**, **Dark**, or **Follow system** (which tracks your operating system's light/dark setting); this is what drives the theme-aware plot axes and the rest of the interface. An **Aerodynamics** section holds the optional **Rogers Modified Barrowman (Kbf)** stability method — what it does and when to use it is covered in *How It Works*. Because everything is stored in SI internally, **switching units never changes your design** — it only changes how the numbers are displayed and entered.
 
 ## Installing, offline, and saving your work
 
@@ -371,7 +398,9 @@ where `L` is length, `V` the enclosed volume and `A_ref` the reference area. A p
 CNα1 = 2π·s² / ( 1 + √(1 + (1 − M²)·(s²/(A_fin·cosΓ))²) ) / A_ref
 ```
 
-where `s` is the fin span, `A_fin` the fin area, `Γ` the mid-chord sweep angle and `M` the Mach number. This is the standard finite-span lifting result: aspect ratio and sweep both reduce slope, and the `(1 − M²)` term is the Prandtl–Glauert compressibility factor. Above Mach ~1.5 the kernel switches to a supersonic formula (with Mach-dependent K1, K2, K3 terms) and interpolates smoothly through the transonic gap. Multiple fins interfere with each other and with the body: fixed empirical factors reduce the per-fin slope for 4, 5, 6… fins, and a body-interference multiplier `(1 + τ)` accounts for the airflow the body diverts onto the fins.
+where `s` is the fin span, `A_fin` the fin area, `Γ` the mid-chord sweep angle and `M` the Mach number. This is the standard finite-span lifting result: aspect ratio and sweep both reduce slope, and the `(1 − M²)` term is the Prandtl–Glauert compressibility factor. Above Mach ~1.5 the kernel switches to a supersonic formula (with Mach-dependent K1, K2, K3 terms) and interpolates smoothly through the transonic gap. Multiple fins interfere with each other and with the body: fixed empirical factors reduce the per-fin slope for 4, 5, 6… fins, and a body-interference multiplier `(1 + τ)` accounts for the airflow the body diverts onto the fins (τ = r/(s+r), the body-radius-to-total-semispan ratio).
+
+**Optional: the Kbf body carryover (Rogers Modified Barrowman).** Classic Barrowman keeps the fins-in-presence-of-body factor above but drops its reciprocal — the lift the fins induce *on the body* near the fin root, the `K_B(W)` carryover of NACA Report 1307. Turning on **Preferences → Aerodynamics → Rogers Modified Barrowman (Kbf)** adds it back: slender-body theory makes the fin-plus-carryover total `(1 + τ)²` times the fin-alone value, so the added body load is `τ · (fin CNα)`, acting at the fin root quarter-chord. The result is a somewhat higher total CNα and a slightly **more aft CP** — a more conservative stability margin, matching the direction RASAero II's "Rogers Modified Barrowman" method reports. Off (the default) is exactly classic Barrowman, bit-for-bit.
 
 **Roll.** Canted fins produce a roll-driving moment proportional to the cant angle, opposed by a **roll-damping moment** that grows with roll rate — so a canted rocket spins up toward a steady-state roll rate rather than accelerating forever.
 
@@ -384,6 +413,7 @@ CD = CD_friction + CD_pressure + CD_base + CD_override
 - **Skin friction** comes from the Reynolds number and a skin-friction coefficient (laminar, turbulent or transitional), with corrections for surface roughness/finish, for compressibility near Mach 1, and a whole-rocket fineness-ratio correction `(1 + 1/(2·f_B))`.
 - **Pressure drag** for nose cones is interpolated from wind-tunnel/free-flight data (the kernel embeds experimental curves for ogive, conical, ellipsoid, power, parabolic and Haack shapes from NASA TR-R-100), plus stagnation drag at any forward-facing area increase.
 - **Base drag** on the blunt tail follows `CD_base = 0.12 + 0.13·M²` subsonic and `0.25/M` supersonic.
+- **Power-on base drag**: while a stage's motor is thrusting, its exhaust plume pressurizes the base over the nozzle-exit footprint, so the kernel subtracts the nozzle-exit area from the drag-producing base area — boost drag is lower than coast drag by `CD_base · A_nozzle/A_ref`. This is driven by the per-stage **nozzle exit diameter** (0 = no reduction, the default) and mirrors RASAero II's power-on/power-off CD distinction; the power-on curve is visible in the Drag analysis panel.
 - **Override** lets you pin a component's CD to a measured value.
 
 The drag coefficient is finally resolved into an axial component using an angle-of-attack multiplier, and pitch/yaw **damping moments** (which resist the rocket "weather-vaning" too sharply, especially the apogee turnover) are subtracted from the aerodynamic moments.
@@ -436,7 +466,7 @@ The physics above is powerful, but every simulation makes modeling choices. Know
 
 ## Assumptions and honest limitations
 
-- **Speed regime.** Extended Barrowman is at its best **subsonic and through the transonic region**. Fins get a genuine supersonic treatment, but body CNα and CP above Mach 1 are assumed equal to their subsonic values, and the engine raises a *supersonic* warning past Mach 1.1. Treat high-supersonic stability numbers as indicative, not precise.
+- **Speed regime.** Extended Barrowman is at its best **subsonic and through the transonic region**. Fins get a genuine supersonic treatment, but body CNα and CP above Mach 1 are assumed equal to their subsonic values, and the engine raises a *supersonic* warning past Mach 1.1. Treat high-supersonic stability numbers as indicative, not precise — the Drag analysis chart labels its values above ~Mach 1.5 as approximate for the same reason.
 - **Small-angle / attached-flow aerodynamics.** The method assumes slender bodies and largely attached flow. A stall angle around 17.5° caps fin normal force, and the body-lift term is damped at very low speed near apogee to avoid an artifact. Extreme angles of attack are approximations.
 - **Descent is a point mass.** Under parachute the rocket is 3DOF: drag (default Cd 0.8) and gravity only. Swinging, spilling, and canopy dynamics are not modeled, and **streamers** — especially at extreme length-to-width ratios — are represented by an effective drag area, not by true flexible-body aerodynamics.
 - **Wind is horizontal and altitude-uniform** in the standard model; real wind shear and vertical gusts are not captured here.
@@ -455,6 +485,8 @@ Online OpenRocket is **free software**, released under the **GNU General Public 
 - **Niskanen, S. (2009, rev. 2013).** *Development of an Open Source model rocket simulation software* / *OpenRocket technical documentation.* The definitive derivation of OpenRocket's extended Barrowman aerodynamics, drag build-up, mass model and simulation loop. https://openrocket.info/documentation.html
 - **Galejs, R. (2006).** *Wind instability — what Barrowman left out.* Sport Rocketry / online. Source of the body-lift extension applied to long airframes.
 - **NASA (1963).** *Collection of Zero-Lift Drag Data on Bodies of Revolution from Free-Flight Investigations,* NASA TR-R-100 (NTRS 19630004995). Source of the nose-cone pressure-drag data tables.
+- **Pitts, W. C., Nielsen, J. N., & Kaattari, G. E. (1957).** *Lift and Center of Pressure of Wing-Body-Tail Combinations at Subsonic, Transonic, and Supersonic Speeds,* NACA Report 1307. Source of the optional body-in-presence-of-fins (Kbf) interference factor.
+- **Rogers, C. E., & Cooper, D. (2011).** *RASAero Aerodynamic Analysis and Flight Simulation Program.* Rogers Aeroscience. Documents the power-on/power-off drag distinction and the Rogers Modified Barrowman method that inspired those options here.
 - **International Standard Atmosphere:** ISO 2533:1975; and the *U.S. Standard Atmosphere, 1976* (NOAA/NASA/USAF). Basis of the temperature, pressure and density model.
 - **WGS84 / Somigliana gravity formula:** *Department of Defense World Geodetic System 1984,* NIMA TR8350.2. Basis of the latitude- and altitude-dependent gravity model.
 - **Runge–Kutta integration:** Butcher, J. C., *Numerical Methods for Ordinary Differential Equations;* or Press et al., *Numerical Recipes,* ch. 16. The RK4 scheme used for the equations of motion.
