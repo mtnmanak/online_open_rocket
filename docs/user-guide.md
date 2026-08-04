@@ -471,7 +471,7 @@ Wind is modeled as **pink noise** around a mean speed. You set an average wind s
 
 There is also a deliberately tiny random perturbation (±0.0005) added to the pitch and yaw moments each step, which prevents an unnaturally perfect, knife-edge-symmetric flight from never tipping over.
 
-Here is the one intentional difference from the desktop. Desktop OpenRocket seeds these random streams from the wall clock, so two identical runs give slightly different gust histories. **Online OpenRocket seeds them deterministically** (a fixed default seed, 42, unless you choose another). Same design + same settings + same seed ⇒ **exactly the same flight, every time** — better for teaching, sharing and comparing. Change the seed to sample a different gust realization; hold it fixed to make a clean before/after comparison of a design change. (For the same reason the engine also fixes a couple of internal iteration orders that the desktop leaves free to wander at the sub-rounding-error level. Physics results stay inside the desktop's own run-to-run envelope.)
+Here is the one intentional difference from the desktop. Desktop OpenRocket seeds these random streams from the wall clock, so two identical runs give slightly different gust histories. **Online OpenRocket seeds them deterministically** (a fixed seed, 42). Same design + same settings ⇒ **exactly the same flight, every time** — better for teaching, sharing and comparing, and it makes a clean before/after comparison of a design change possible. (For the same reason the engine also fixes a couple of internal iteration orders that the desktop leaves free to wander at the sub-rounding-error level. Physics results stay inside the desktop's own run-to-run envelope.)
 
 ---
 

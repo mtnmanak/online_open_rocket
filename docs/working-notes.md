@@ -1,5 +1,44 @@
 # Working notes — collaboration style & project state
 
+## ⚡ FULL AUDIT (2026-08-04, Eric: "pause and audit/debug all work to-date") → v0.031
+
+Five parallel review agents swept engine bridge/patches, app services,
+components/UI, tree/state/deploy, and the validation harness; every confirmed
+finding was fixed same-session. **THE BIG ONE: the InstanceMap LinkedHashMap
+determinism patch (v0.013 era, LEDGER "Determinism fixes") had been DEAD since
+commit d1cc156** — it sat at `patches/rocketcomponent/` but carve.mjs resolves
+patches at the FULL manifest-relative path (`patches/info/openrocket/core/...`),
+where an older undocumented CHM→HashMap classlib swap lived instead. The
+shipped kernel iterated in identity-hash order the whole time (differential
+passed on tolerances + TeaVM's deterministic object ids). Restored at the
+right path; carve.mjs now FAILS on orphaned patch files. Full fix list
+(v0.031 changelog + commit): plugged-motor `<delay>none</delay>` import
+(was 0 s → ejection at burnout; now Infinity + "-P" labels + note),
+tube-fin thickness import, overridesubcomponents mass/CG/CD round-trip AND
+kernel application (new ComponentFactory support + engine test), RockSim
+middle-position export (desktop BasePartDTO parity) + power-nose
+ShapeParameter fallback, RASAero non-bottom fin offset, preset CSV
+lineMaterial, App triple-normalizeTree phantom-id bug (fresh users got no
+default motor; legacy maxMotorLength migration no-oped), last-stage delete
+guard, undo-coalescing-across-undo fix, parallel-booster G80 warning keying
+(branch name, not serial stage — safety hole), rename-wipes-results (reset
+effect now keys on a physics projection of the tree, names/colors excluded),
+railbutton schematic size, freeform-fin vHalf from points y-max, CSV "Aero
+model" column, guide seed-claim correction, OrkEngine escape() control chars,
+setMotorById handle leak, airfoilSection validated at build, lat/long
+degrees documented at the boundary. VALIDATION ANCHOR REVISION 137→135
+gates: ARCAS M1.19 CD rows were D-4013 base-corrected data double-counted
+under the wrong base convention — removed; scores now classic 7/135,
+supersonic 64/135 (was 8/137 / 65/137; the delta is the spurious pass);
+README scoreboard marks phase scorecards historical, current state in
+scorecard-audit-2026-08-04.md. Deliberately NOT fixed (recorded): Pages
+workflow ships no version.json (dormant), package-dist validates source not
+artifact when invoked directly, pendingRelaunch latch (unreachable), batch
+sim never auto-upgrades aero (deliberate), latitude ° not a UnitChip,
+SimResults motor-diameter hard mm, fin transonic C¹ kink at M1.5 (same
+approximation class as upstream). Suite grew 146→154 tests (8 new
+regressions); differential 258 lines 5× stable post-restore.
+
 ## ⚡ START HERE → read `docs/handoff-2026-08-04.md` first
 
 That file is the current, self-contained session handoff (v0.024–v0.029:
