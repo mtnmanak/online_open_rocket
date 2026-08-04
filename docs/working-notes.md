@@ -6,11 +6,12 @@ That file is the current, self-contained session handoff (v0.024–v0.029:
 the workspace-tabs reorg, the COMPLETE RASAero #1 supersonic build with its
 validation harness, Auto aero mode + alert, the version.json deploy channel,
 and the three-pass design refresh — plus the session's hard-won gotchas).
-**One-line state:** v0.030 BUILT+PUSHED (large-screen layout pass, 2026-08-04);
-**deploy/online-openrocket-v0.030.zip READY for Eric's upload** (after upload:
-cache-bypass check, confirm assets/ + version.json serve). 124 app+engine
-vitest green; Eric beta-testing (his next issues file gets fixed FIRST).
-Next version v0.031. The RASAero-build sections below remain as history.
+**One-line state:** v0.030 LIVE and verified (2026-08-04, cache-bypass:
+bundle index-raArmRY-.js 200 at full size, version.json serving 0.030, app
+badge v0.030, new wide layout rendering with Eric's Cherokee L1 Smart session
+intact). 124 app+engine vitest green; Eric beta-testing (his next issues file
+gets fixed FIRST). Next version v0.031. The RASAero-build sections below
+remain as history.
 
 **v0.030 (2026-08-04, one session):** Eric's request — desktop app felt cramped
 on big monitors. Thesis: chrome stays dense, the STAGE grows. 1200px workspace
