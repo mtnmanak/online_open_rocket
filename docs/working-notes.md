@@ -55,9 +55,27 @@ points), score.mjs, README, and the frozen classic baseline
 kernel CP isn't just frozen — combined CP travels forward ~2× TOO FAR
 (frozen body CP + Busemann fin falloff): ARCAS model 27 %L vs tunnel 57 %L
 at M4.63. Supersonic CD ~2× high. Harness gaps listed in validation/README
-(Re-matching, flight fixtures, Cajun span, power-on series). Next: **Phase 1
-— supersonic body CNα/CP** (spec doc area 6; SCC patch on the rogersKbf flag
-template), scored by re-running score.mjs. v0.024 LIVE; next version v0.025.
+(Re-matching, flight fixtures, Cajun span, power-on series).
+**PHASE 1 SHIPPED (2026-08-04): 8/137 → 52/137 gate points.** Opt-in
+`supersonicAero` flag (kernel patches, LEDGER "feature #1 Phase 1"):
+(1) supersonic fin CNα was HALF of 2D linear theory (K1=2/β single-surface
+Busemann used as the whole slope — THE root cause of the CP collapse); flag-on
+scales by 2·(1−1/(2·AR·β)), analytic (no M4.9 grid clamp); (2) NACA-1307 exact
+body-fin interference K_W(B)+fa·K_B(W) at all Mach (fa = afterbody carryover
+factor; supersedes rogersKbf when on); (3) nose CNα Mach growth g=0.10 cone /
+0.07 ogive (Taylor–Maccoll-bracketed surrogate; first-ever SCC patch).
+RESULT: ARCAS supersonic CP 9/9 gated BOTH configs (matches the TUNNEL incl.
+above M3.5 where RASAero diverges); Finner CP 17/23, CNα 16/23 (fails =
+transonic band → Phase 2, + shot-scatter marginals); CD series all red (Phase
+2); HB-2 flare body deferred. Finner scores at α=2° (free-flight fit
+condition, _aoaNote in anchors.json). Differential 252 lines 3×; 145 tests
+green; prototyped in scratchpad JS before porting (fast iteration pattern —
+reuse it). Flag is API-only (OrkRocket.setSupersonicAero) — NOT yet exposed in
+the app UI; expose as Preferences → Aerodynamics after Phase-2 drag work makes
+it honest end-to-end (default-off during beta per Eric). Next: **Phase 2 —
+drag fidelity** (transonic rise + per-shape wave drag + supersonic base/
+power-on; spec areas 3/4/5; also the transonic CNα overshoot). v0.024 LIVE;
+next version v0.025.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
