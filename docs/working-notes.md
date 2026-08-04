@@ -189,6 +189,10 @@ panel/chart headings, tabs, vitals labels+values, stat tiles, LAUNCH
 button (tracked caps). Body stays system-ui. THE DESIGN REFRESH IS
 COMPLETE (0.027 accent+icons → 0.028 telemetry bar+stage+empty states →
 0.029 type). Eric uploads 0.029 only (supersedes 0.027/0.028 zips).**
+**v0.029 LIVE (2026-08-04, cache-bypass verified: bundle index-_iVJtr_m.js
+matches local; Rajdhani/vitals/rocket-stage CSS present; woff2 fonts serve
+200 with correct byte size; version.json LIVE at the app root serving the
+0.029 payload — the Online Tools auto-refresh channel is operational).**
 Next version v0.030.
 GOTCHA (hit THREE times this session — stop using it): PowerShell
 `(Get-Content -Raw) -replace ... | Set-Content` MANGLES UTF-8 (em-dashes →
