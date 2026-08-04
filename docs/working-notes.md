@@ -71,10 +71,26 @@ transonic band → Phase 2, + shot-scatter marginals); CD series all red (Phase
 condition, _aoaNote in anchors.json). Differential 252 lines 3×; 145 tests
 green; prototyped in scratchpad JS before porting (fast iteration pattern —
 reuse it). Flag is API-only (OrkRocket.setSupersonicAero) — NOT yet exposed in
-the app UI; expose as Preferences → Aerodynamics after Phase-2 drag work makes
-it honest end-to-end (default-off during beta per Eric). Next: **Phase 2 —
-drag fidelity** (transonic rise + per-shape wave drag + supersonic base/
-power-on; spec areas 3/4/5; also the transonic CNα overshoot). v0.024 LIVE;
+the app UI (default-off during beta per Eric).
+**PHASE 2 SHIPPED (2026-08-04): 52/137 → 68/137.** Same flag; LEDGER Phase-2
+block: (1) sharp AIRFOIL fins lose the spurious blunt-LE cylinder-drag plateau
+(root cause of flat supersonic CD AND the early fake transonic rise) → thin-
+airfoil wave K·4(t/c)²/β; (2) boattail supersonic wave (strip −2θ/β, blended
+0.8→1.5 past the near-sonic divergence); (3) nose wave decay past table end
+(analytic branch / Fleeman shape); (4) base cap 1.2/M² above M≈4.8; (5) fin-
+body junction interference ×1.8 on fin friction (calibrated to D-4013 fins-
+on/off increment); (6) sweep machAlt option = tunnel-Re matching (harness
+uses RASAero's own ARCAS Mach-Alt table); fixtures now polished finish.
+RESULT: ARCAS-Short supersonic CD 7/7 GREEN (M1.19–4.65!), Long 5/6, subsonic
+green, CP still 9/9. Differential 256 lines 3× (new ssaerocd goldens); 145
+tests green. DOCUMENTED limitations (do not fudge-tune): transonic peak band
+M0.95–1.2 underpredicts up to ~0.3 (tunnel fin transonic drag ≈4× subsonic;
+RASAero misses same anchors by 0.10–0.22) — "transonic refinement" backlog;
+Finner Cx0 low pending wedge blunt-TE fin base drag (Phase 3 airfoils); HB-2
+flare/bluntness (hypersonic phase). Next: **Phase 3 — fin airfoils #4**
+(8 cross-sections + LE radius; closes Finner Cx0 + serves Eric's airfoil
+workflow), then Phase 4 hypersonic (MNT blend + HB-2), Phase 5 app surface
+(pref toggle + CP-vs-Mach panel + coefficient export + guide). v0.024 LIVE;
 next version v0.025.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
