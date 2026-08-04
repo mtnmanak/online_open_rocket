@@ -182,10 +182,14 @@ terminus), .rocket-stage dusk-sky gradient behind the 2D/3D viewports
 collapsed Drag/Saved panels. Self-review catch: v0.027's global accent
 link rule out-specified .site-nav a (all-orange nav) — fixed with
 .viz-root .site-nav a. Browser-verified both themes; 146 tests; zip
-ready (Eric can skip uploading 0.027 — 0.028 supersedes).** Identity
-pass 3 (OPTIONAL, Eric to decide after seeing 0.028 live): bundled
-display face for wordmark/headings/stat numerals — MUST be self-hosted
-+ added to the PWA precache, no CDN (CSP/offline). Next version v0.029.
+ready (Eric can skip uploading 0.027 — 0.028 supersedes).** **v0.029 BUILT (pass 3, FINAL): Rajdhani display face (OFL, @fontsource
+latin 600+700, ~56 KB self-hosted, woff/woff2 added to workbox
+globPatterns → precached/offline). --font-display token drives wordmark,
+panel/chart headings, tabs, vitals labels+values, stat tiles, LAUNCH
+button (tracked caps). Body stays system-ui. THE DESIGN REFRESH IS
+COMPLETE (0.027 accent+icons → 0.028 telemetry bar+stage+empty states →
+0.029 type). Eric uploads 0.029 only (supersedes 0.027/0.028 zips).**
+Next version v0.030.
 GOTCHA (hit THREE times this session — stop using it): PowerShell
 `(Get-Content -Raw) -replace ... | Set-Content` MANGLES UTF-8 (em-dashes →
 mojibake) and `git show | Set-Content` collapses newlines. For any file
