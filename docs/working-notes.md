@@ -175,8 +175,17 @@ Browser-verified both themes; 146 tests; zip ready.**
 at the app root every release (package-dist.mjs copies it post-build —
 never SW-precached — and FAILS if its version lags APP_VERSION). Update
 version+released+note (user-facing) each release; his Online Tools page
-polls it to prompt refreshes.** Next version v0.028 (identity pass 2
-queued: strip signature, schematic stage, empty states).
+polls it to prompt refreshes.** **v0.028 BUILT (pass 2): vitals strip = SIGNATURE instrument bar
+(.vitals-item label/value stations, hairline dividers, orange Launch
+terminus), .rocket-stage dusk-sky gradient behind the 2D/3D viewports
+(Design + Motors), empty-state cards (.empty-state) + .panel-dormant for
+collapsed Drag/Saved panels. Self-review catch: v0.027's global accent
+link rule out-specified .site-nav a (all-orange nav) — fixed with
+.viz-root .site-nav a. Browser-verified both themes; 146 tests; zip
+ready (Eric can skip uploading 0.027 — 0.028 supersedes).** Identity
+pass 3 (OPTIONAL, Eric to decide after seeing 0.028 live): bundled
+display face for wordmark/headings/stat numerals — MUST be self-hosted
++ added to the PWA precache, no CDN (CSP/offline). Next version v0.029.
 GOTCHA (hit THREE times this session — stop using it): PowerShell
 `(Get-Content -Raw) -replace ... | Set-Content` MANGLES UTF-8 (em-dashes →
 mojibake) and `git show | Set-Content` collapses newlines. For any file
