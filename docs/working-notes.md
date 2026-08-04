@@ -1,5 +1,15 @@
 # Working notes — collaboration style & project state
 
+## ⚡ START HERE → read `docs/handoff-2026-08-04.md` first
+
+That file is the current, self-contained session handoff (v0.024–v0.029:
+the workspace-tabs reorg, the COMPLETE RASAero #1 supersonic build with its
+validation harness, Auto aero mode + alert, the version.json deploy channel,
+and the three-pass design refresh — plus the session's hard-won gotchas).
+**One-line state:** v0.029 LIVE and verified; 146 tests green; differential
+258 lines 3×; Eric beta-testing (his next issues file gets fixed FIRST);
+next version v0.030. The RASAero-build sections below remain as history.
+
 ## ⚡ RASAero #1 build — decisions locked (2026-08-03, do not re-litigate)
 
 Eric approved starting the flagship supersonic/hypersonic aero build. Decisions:
