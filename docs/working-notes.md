@@ -1,5 +1,43 @@
 # Working notes — collaboration style & project state
 
+## ⚡ RASAero #1 build — decisions locked (2026-08-03, do not re-litigate)
+
+Eric approved starting the flagship supersonic/hypersonic aero build. Decisions:
+
+1. **Scope: full Mach 0.01–25** with EXTENDED validation anchors (beyond the
+   ARCAS 4.63 ceiling): AGARD HB-2 wind-tunnel data (~M1.5–10, body aero),
+   Army-Navy Basic Finner (~M0.5–4.5+, finned CP/CD), NASA/NTRS sounding-rocket
+   reports (M2–6), and >M4 amateur flight telemetry (Traveler IV, CSXT GoFast,
+   Daugirdas, ~M5.5) for end-to-end apogee checks. Goal: out-validate RASAero
+   (whose own published validation also stops at ARCAS 4.63 / MESOS M4.18 —
+   their "to Mach 25" is extrapolation too). Only >M10 labeled as extrapolation.
+2. **Exposure: default-OFF during beta** (Preferences → Aerodynamics toggle,
+   same pattern as rogersKbf), then **flip to default-ON once the full anchor
+   suite passes** — with: (a) every launch report/saved run recording which
+   aero model produced it, (b) a one-click "Classic OpenRocket (desktop
+   parity)" mode, (c) loud guide + changelog framing. NOTE: the differential
+   test constraint (flag-off bit-identical) is independent of the UI default —
+   the harness sets flags explicitly.
+3. **Fin airfoils (#4: 8 cross-sections + LE radius) are IN scope** as a phase
+   of this build (working assumption Eric didn't object to; wave-drag equations
+   extracted in Phase 0 regardless).
+4. **Ultracode authorized** for the research passes ("ultracode do number 1").
+
+**Phase plan:** 0a equation spec (local PDFs: RASAero Manual, Rogers&Cooper,
+ARCAS, MESOS + kernel map + open literature) / 0b validation-data hunt +
+automated scoring harness (extend getDragSweep to emit CP/CNα; ARCAS + HB-2 +
+Finner fixtures) → 1 supersonic body CP (unfreeze SymmetricComponentCalc's
+M>1 freeze — the big gap; fin CNα already has a real Busemann-style model
+above M1.5) → 2 drag fidelity (transonic rise, per-shape wave drag, boattail,
+supersonic base + large-nozzle power-on) → 3 fin airfoils → 4 hypersonic
+(modified Newtonian blend) → 5 app surface (Mach-25 drag panel w/ regime
+shading, CP-vs-Mach plot, coefficient CSV export #6, guide). ~4–6 sessions.
+
+**State:** Phase-0 research workflow launched 2026-08-03 (run wf_25b19352-aac,
+6 extractors + 4 dataset hunters + adversarial verify). Assemble results into
+docs/research/ spec + anchor docs when it lands. v0.024 (workspace-tabs UI
+reorg) is LIVE and verified; next version v0.025.
+
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
 Last updated: 2026-07-05, end of the tenth working session (v0.014–v0.021:
