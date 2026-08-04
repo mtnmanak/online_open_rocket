@@ -46,9 +46,18 @@ CP anchors track RASAero (63.5 %L), the TUNNEL says 60.7 %L — harness should
 prefer the tunnel; Short transonic peak is at M1.15 not M1.1. Kernel finding:
 body CNα/CP freeze is total (SCC never reads Mach), but nose wave drag + fin
 Busemann CNα are already RASAero-consistent below ~M4 — the build is mostly
-EXTENSION not replacement. Next: Phase 0 harness (extend getDragSweep to emit
-CP/CNα + fixtures + scoring script), then Phase 1 body CP. v0.024 LIVE;
-next version v0.025.
+EXTENSION not replacement. **Phase-0 HARNESS BUILT (2026-08-04):**
+getDragSweep now emits cp/cna (bridge change, engine rebuilt, difftest 248
+3× + vitest 20 green); validation/ has fixtures (arcas-short/long,
+basic-finner, hb2 w/ documented approximations), anchors.json (137 gate
+points), score.mjs, README, and the frozen classic baseline
+(**8/137 = 5.8%** — baseline-classic-2026-08-04.md). KEY BASELINE INSIGHT:
+kernel CP isn't just frozen — combined CP travels forward ~2× TOO FAR
+(frozen body CP + Busemann fin falloff): ARCAS model 27 %L vs tunnel 57 %L
+at M4.63. Supersonic CD ~2× high. Harness gaps listed in validation/README
+(Re-matching, flight fixtures, Cajun span, power-on series). Next: **Phase 1
+— supersonic body CNα/CP** (spec doc area 6; SCC patch on the rogersKbf flag
+template), scored by re-running score.mjs. v0.024 LIVE; next version v0.025.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
