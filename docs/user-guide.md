@@ -138,6 +138,8 @@ Four fin families are supported:
 
 Every flat-fin set also carries a **cant angle** (to induce roll), a **fin count** (1–8), and a **cross-section**: **Square**, **Rounded**, or **Airfoil (pointed)**. The cross-section is not cosmetic — a square edge produces markedly more pressure/skin drag than a streamlined airfoil, and the kernel models that difference, so choosing "Airfoil" on a carefully sanded fin gives you the lower drag you actually built.
 
+For fast flights there is also an optional **supersonic airfoil** selection (RASAero-style): **hexagonal, NACA, double wedge (diamond), biconvex, hexagonal blunt-base, and single wedge**, plus **LE/TE chamfer lengths** and a **leading-edge bluntness radius**. Each shape gets its proper supersonic thickness wave drag, blunt-base shapes add fin base drag, and a blunt LE adds swept-cylinder drag. Leave it on "Classic" and the ordinary cross-section above drives the model exactly as before. These choices also round-trip through `.ork` files (the desktop app ignores the extra tags with a warning).
+
 **Through-the-wall tabs**: a tab exists only when **both** its depth and length are greater than zero (OpenRocket's rule). You set the tab depth, length, offset, and the reference edge the offset is measured from (front / middle / end of fin). The engine clamps tab depth to the body radius, and the tab's volume counts toward fin mass and CG.
 
 ## Positioning and snapping
@@ -199,7 +201,8 @@ On the **Results** workspace, the **Drag analysis** panel plots your design's dr
 
 - The main chart shows the **power-off** (coasting) drag curve. Give a stage a **nozzle exit diameter** (in the Stage property panel) and a dashed **power-on** curve appears: during the burn, the motor's exhaust plume pressurizes the base area, so boost drag is genuinely lower than coast drag. The bigger the nozzle exit relative to the base, the bigger the reduction — a minimum-diameter rocket sees a large difference, a small motor in a fat airframe almost none. For a clustered mount, enter one equivalent nozzle whose exit *area* is the sum of the individual exit areas. Zero (the default) means the two curves are identical.
 - The **breakdown chart** splits the drag **by component** (nose, body, fins…) or **by type** (friction / pressure / base), so you can see *why* the rocket is draggy and where cleanup pays — the transonic drag rise starting near Mach 0.9 is plainly visible.
-- A Max-Mach selector (1–5) and a **CSV export** round it out. Above roughly Mach 1.5 the values are Extended-Barrowman estimates, and the panel labels them as approximate.
+- A **CP-vs-Mach chart** shows the center of pressure (as % of body length) across the whole Mach range — with the supersonic model on, this is the chart to check before a fast flight: supersonic CP moves forward, and the accepted practice (RASAero's recommendation) is to keep **≥ 2 calibers** of margin through the transonic and supersonic regime.
+- A Max-Mach selector (1–5 classic; up to **25** with the supersonic model) and a **CSV export** round it out. The CSV is a full **aerodynamic-coefficient table** (CD power-off/on, CP, CNα vs Mach) usable as input to external trajectory programs. With the classic model, values above roughly Mach 1.5 are Extended-Barrowman estimates and labeled approximate; with the **supersonic model** (Preferences → Aerodynamics) they are validated against NASA wind-tunnel data to ~Mach 4.6 and physically extrapolated to Mach 25.
 
 ---
 
@@ -336,7 +339,7 @@ The most important domain caveat is **RASAero has no mass data** — a `.CDX1` i
 
 ## Units and preferences
 
-Open **Preferences** to switch between one-click **Metric** and **Imperial** presets, or set each quantity individually — length, motor dimensions, distance, mass, velocity, wind speed, acceleration, angle, density, temperature, and pressure. You also choose whether round parts are entered as **diameter or radius**. The same dialog sets the app's **Theme** — **Light**, **Dark**, or **Follow system** (which tracks your operating system's light/dark setting); this is what drives the theme-aware plot axes and the rest of the interface. An **Aerodynamics** section holds the optional **Rogers Modified Barrowman (Kbf)** stability method — what it does and when to use it is covered in *How It Works*. Because everything is stored in SI internally, **switching units never changes your design** — it only changes how the numbers are displayed and entered.
+Open **Preferences** to switch between one-click **Metric** and **Imperial** presets, or set each quantity individually — length, motor dimensions, distance, mass, velocity, wind speed, acceleration, angle, density, temperature, and pressure. You also choose whether round parts are entered as **diameter or radius**. The same dialog sets the app's **Theme** — **Light**, **Dark**, or **Follow system** (which tracks your operating system's light/dark setting); this is what drives the theme-aware plot axes and the rest of the interface. An **Aerodynamics** section holds two optional methods: **Rogers Modified Barrowman (Kbf)** and the beta **Supersonic aerodynamics** model (RASAero-class CP and drag from Mach 0 to 25) — what they do and when to use them is covered in *How It Works*. Every saved simulation records which aero model produced it. Because everything is stored in SI internally, **switching units never changes your design** — it only changes how the numbers are displayed and entered.
 
 ## Installing, offline, and saving your work
 
@@ -419,6 +422,16 @@ CD = CD_friction + CD_pressure + CD_base + CD_override
 - **Override** lets you pin a component's CD to a measured value.
 
 The drag coefficient is finally resolved into an axial component using an angle-of-attack multiplier, and pitch/yaw **damping moments** (which resist the rocket "weather-vaning" too sharply, especially the apogee turnover) are subtracted from the aerodynamic moments.
+
+## The optional supersonic aerodynamics model (beta)
+
+Classic Extended Barrowman is honest only to roughly Mach 1.5: it freezes body CP at its Mach-1 value forever, uses half the theoretical supersonic fin lift, clamps wave-drag data flat past Mach 2–4, and lets boattails ignore Mach entirely. Turning on **Preferences → Aerodynamics → Supersonic aerodynamics** replaces those with a RASAero-class model built from the open literature:
+
+- **Fin lift** at the proper 2D Busemann level with a finite-span correction, evaluated analytically to any Mach (no grid clamp), plus the exact **NACA Report 1307** body-fin interference split with an afterbody carryover factor. This raises fin lift ~25–35% even subsonic (the physics behind RASAero's "Rogers Modified Barrowman"), so CP and stability shift slightly on all flights while the option is on.
+- **Body (nose) lift grows with Mach**, bracketed by exact Taylor–Maccoll cone theory, so the combined CP moves with Mach the way wind tunnels measure instead of racing forward.
+- **Drag**: per-shape supersonic thickness wave drag for fins, supersonic boattail/reducer wave drag, nose wave drag with its physical high-Mach decay, a vacuum-limit cap on base drag, fin-body junction interference drag, and **Van Driest II** compressible skin friction above Mach 4.
+
+The model is scored continuously against an automated validation harness of published measured data — NASA's ARCAS sounding-rocket wind-tunnel tests (Mach 0.6–4.63), the Army-Navy Basic Finner free-flight range data (Mach 1.05–4.5), and the AGARD HB-2 hypersonic standard model (to Mach 10). Supersonic CP matches the ARCAS tunnel within ±2% of body length through Mach 4.6 — including above Mach 3.5, where RASAero's own published prediction diverges from that same tunnel. Known honest limits: transonic **peak** drag (Mach 0.95–1.2) reads low against tunnel data (a regime every engineering method struggles with), and everything above Mach 10 is physically-shaped extrapolation. During the beta the option is **off by default** — off is bit-identical to the desktop app — and every saved run records which model produced it.
 
 ## Mass, center of gravity and inertia
 

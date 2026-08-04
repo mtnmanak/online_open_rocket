@@ -119,6 +119,25 @@ launch report), fin airfoil-section UI (schema fields + PropertyPanel +
 mapping), DragPanel Mach range to 25 w/ regime shading + CP-vs-Mach plot,
 coefficient CSV export (#6), guide both mirrors, changelog, package, browser
 smoke-test. v0.024 LIVE; next version v0.025.
+**PHASE 5 SHIPPED (2026-08-04): v0.025 packaged — the RASAero #1 build is
+COMPLETE end-to-end.** App surface: Preferences → Aerodynamics "Supersonic
+aerodynamics (beta)" toggle (default OFF; supersedes Kbf when on; wired into
+buildResult so staticInfo/dragSweep/simulate all agree); SimRun.aeroModel
+recorded + shown in the launch report ("Aero model" row); fin airfoil-section
+UI (schema AIRFOIL_FIELDS on all 3 finset types); .ork round-trip
+(<airfoilsection>/<airfoillediamond>/<airfoiltediamond>/<finleradius> —
+desktop warns-and-ignores); DragPanel: CP-vs-Mach chart (%L), Mach 10/25
+options (model-gated), model-aware honesty labels, CSV = full coefficient
+table (feature #6 done); guide BOTH mirrors (new How-It-Works section);
+changelog v0.025. Browser-verified on the built dist: toggle flips stability
+4.13→4.41 cal live, airfoil select + fields render, all 3 drag charts +
+Mach 25, Aero-model row renders (via stored-run path — live flight blocked
+only by window occlusion/rAF, known gotcha). 146 tests green.
+**deploy/online-openrocket-v0.025.zip READY for Eric's upload.** REMAINING
+backlog (refinement, not blocking): transonic peak band, Finner free-flight
+base drag (McCoy/RM A53D02), blunt/flare bodies, MESOS/Aftershock
+end-to-end flight fixtures, .CDX1 airfoil mapping, default-ON flip after
+Eric's beta testing. v0.024 LIVE; v0.025 AWAITING UPLOAD.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
