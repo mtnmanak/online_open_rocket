@@ -158,7 +158,25 @@ use 33ms; lightweight rocket via session-JSON overrideMass edits + reload
 beats fighting NumField DOM commits). 146 tests green.
 **v0.026 LIVE (2026-08-04, cache-bypass verified: bundle index-DY2bfBqi.js
 matches local, all v0.026 feature strings present in the served JS).**
-Next version v0.027.
+**UI DESIGN REVIEW (2026-08-04, frontend-design skill, recommendations
+Eric approved in order):** pass 1 = accent/icons/quiet-chrome/polish;
+pass 2 = vitals-strip signature + schematic "stage" backdrop + empty
+states; pass 3 (optional) = bundled display face (MUST be self-hosted +
+PWA-precached, no CDN). Deliberate non-changes: workspace structure,
+density, chart palette/discipline, dark default, unit chips, report copy.
+**v0.027 BUILT (pass 1): exhaust-orange accent (--accent per theme +
+--launch for filled buttons; series colors now data-only), Icon.tsx
+inline-SVG stroke set replaces ALL emoji (wordmark = orange rocket glyph
++ tracked-caps ONLINE OPENROCKET), session-restore demoted to fading
+.session-note, neutral tree badges, muted chart legends, site-nav skinned
+to WordPress voice, checkbox width fix, in-app links accent-colored.
+Browser-verified both themes; 146 tests; zip ready.**
+**NEW RELEASE STEP (Eric, 2026-08-04): /version.json at repo root ships
+at the app root every release (package-dist.mjs copies it post-build —
+never SW-precached — and FAILS if its version lags APP_VERSION). Update
+version+released+note (user-facing) each release; his Online Tools page
+polls it to prompt refreshes.** Next version v0.028 (identity pass 2
+queued: strip signature, schematic stage, empty states).
 GOTCHA (hit THREE times this session — stop using it): PowerShell
 `(Get-Content -Raw) -replace ... | Set-Content` MANGLES UTF-8 (em-dashes →
 mojibake) and `git show | Set-Content` collapses newlines. For any file
