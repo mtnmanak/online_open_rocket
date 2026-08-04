@@ -33,10 +33,22 @@ supersonic base + large-nozzle power-on) → 3 fin airfoils → 4 hypersonic
 (modified Newtonian blend) → 5 app surface (Mach-25 drag panel w/ regime
 shading, CP-vs-Mach plot, coefficient CSV export #6, guide). ~4–6 sessions.
 
-**State:** Phase-0 research workflow launched 2026-08-03 (run wf_25b19352-aac,
-6 extractors + 4 dataset hunters + adversarial verify). Assemble results into
-docs/research/ spec + anchor docs when it lands. v0.024 (workspace-tabs UI
-reorg) is LIVE and verified; next version v0.025.
+**State:** Phase 0a/0b research COMPLETE (2026-08-03, 14 agents, all verified
+solid). Deliverables: **docs/research/rasaero-supersonic-spec-2026-08-03.md**
+(target equation spec — NOTE: no RASAero equations exist in any source; both
+"Rogers & Cooper" PDFs are actually Users Manuals with methods-by-name only,
+so the spec is a full open-literature reconstruction scored via anchors) and
+**docs/research/validation-anchors-2026-08-03.md** (6 datasets; confirmed
+ceilings: ARCAS M4.63, Basic Finner M4.47 full set, HB-2 M10 well-populated /
+M16.5 single-run, flights M5.5 Aftershock II; NTRS primary reports retrieved
+incl. original ARCAS TN D-4013/D-4014). Key corrections vs handoff §5: the M4
+CP anchors track RASAero (63.5 %L), the TUNNEL says 60.7 %L — harness should
+prefer the tunnel; Short transonic peak is at M1.15 not M1.1. Kernel finding:
+body CNα/CP freeze is total (SCC never reads Mach), but nose wave drag + fin
+Busemann CNα are already RASAero-consistent below ~M4 — the build is mostly
+EXTENSION not replacement. Next: Phase 0 harness (extend getDragSweep to emit
+CP/CNα + fixtures + scoring script), then Phase 1 body CP. v0.024 LIVE;
+next version v0.025.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
