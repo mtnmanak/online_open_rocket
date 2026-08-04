@@ -103,11 +103,22 @@ Hoerner 0.25/M law) — refinement candidates: McCoy/BRL base-pressure
 correlation, NACA RM A53D02 digitization. ARCAS + all CP series unchanged
 green. UI for sections NOT yet exposed (Phase 5 with the pref toggle;
 schema/PropertyPanel/.ork+.CDX1 round-trip still to do there).
-Next: **Phase 4 — hypersonic** (MNT blending above Busemann/SOSE validity,
-HB-2 flare/bluntness treatment, Van Driest II friction check above M4),
-then **Phase 5 — app surface** (pref toggle, fin-section UI + file round-
-trip, CP-vs-Mach panel, coefficient CSV export #6, guide, v0.025 release).
-v0.024 LIVE; next version v0.025.
+**PHASE 4 SHIPPED (2026-08-04): hypersonic corrections, 65/137 unchanged
+but physics moved right.** Same flag: VD-II friction fit above M4 (fade
+3.5–4.5); cone wave coefficient 2.1→Cp_max(M) fade M4–8 (stagnationCpMax
+helper, Rayleigh pitot). HB-2 CA0 high-M excess cut ~45% (+0.25→+0.14);
+ARCAS M4.65 tightened to −0.003. DELIBERATE NON-GOALS documented in LEDGER:
+spherical-cap nose bluntness + flare-effectiveness decay (HB-2-specific,
+no hobby relevance, single-dataset calibration risk). Differential 258 3×;
+146 tests. Kernel model work for the RASAero build is now COMPLETE through
+hypersonic. Next: **Phase 5 — app surface + v0.025 release**: Preferences →
+Aerodynamics "Supersonic aerodynamics (beta)" toggle (default OFF per Eric,
+wire rocket.setSupersonicAero in App buildResult + record model in SimRun/
+launch report), fin airfoil-section UI (schema fields + PropertyPanel +
+2D?), .ork round-trip for airfoilSection/diamonds/finLeRadius (+ .CDX1
+mapping), DragPanel Mach range to 25 w/ regime shading + CP-vs-Mach plot,
+coefficient CSV export (#6), guide both mirrors, changelog, package, browser
+smoke-test. v0.024 LIVE; next version v0.025.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
