@@ -12,7 +12,7 @@ Online OpenRocket is the real OpenRocket flight simulator, running entirely in y
 
 The workflow is simple and always the same. You design a rocket by building up its components, hang a motor, set your launch conditions, and press **Launch** to see how high it flies, how fast it goes, and whether it will fly straight and land safely. This guide is written for model and high-power rocketry hobbyists at every level, from your first Estes kit to a multi-stage high-power project.
 
-The app is organized into **three workspaces**, selected by the tabs under the header, one per phase of that workflow: **Design** (the component tree, the 2D/3D view, and the property editor), **Motors & Launch** (motor selection, ejection delays, batch simulation, and launch conditions), and **Results** (flight stats, the launch report, plots, drag analysis, and saved runs). A **vitals strip** above the tabs stays visible everywhere — the rocket's name, stability margin, loaded mass, current motor, last apogee, and the **🚀 Launch** button — so you can tweak a fin, fly, and check the number without hunting through tabs. Launching switches you to Results automatically.
+The app is organized into **three workspaces**, selected by the tabs under the header, one per phase of that workflow: **Design** (the component tree, the 2D/3D view, and the property editor), **Motors & Launch** (motor selection, ejection delays, batch simulation, and launch conditions), and **Results** (flight stats, the launch report, plots, drag analysis, and saved runs). A **vitals strip** above the tabs stays visible everywhere — the rocket's name, stability margin, loaded mass, current motor, last apogee, and the **Launch** button — so you can tweak a fin, fly, and check the number without hunting through tabs. Launching switches you to Results automatically.
 
 The guide has three parts:
 
@@ -49,7 +49,7 @@ When the app opens, you already have a complete, flyable rocket called **My Rock
 
 **2. Check your launch conditions (optional).** Beside the Motors panel is the **Launch conditions** panel. The defaults are sensible: a 1-meter launch rod, pointed straight up, no wind, standard sea-level atmosphere. You can leave every field alone for now.
 
-**3. Press Launch.** Hit the **Launch** button — at the bottom of the Launch conditions panel, or the always-visible **🚀 Launch** in the vitals strip at the top. The simulation runs in a fraction of a second and the app switches to the **Results** workspace with your numbers.
+**3. Press Launch.** Hit the **Launch** button — at the bottom of the Launch conditions panel, or the always-visible **Launch** in the vitals strip at the top. The simulation runs in a fraction of a second and the app switches to the **Results** workspace with your numbers.
 
 That's it — you've flown a rocket.
 
@@ -343,7 +343,7 @@ Open **Preferences** to switch between one-click **Metric** and **Imperial** pre
 
 ## Installing, offline, and saving your work
 
-Online OpenRocket is a **PWA** — install it from the browser and it runs offline, since the physics kernel, the motor database metadata, and the preset catalog are all bundled locally. Only motor thrust curves fetch on demand, and once fetched they cache in your browser. Your work — the design tree, assigned motors, launch conditions, per-stage motor-length limits, run history, and motor filters — persists to local storage and survives reloads. The app **header** carries **📂 Open…** and the **💾 Save / Export** menu (.ork, .rkt, .CDX1, .obj), alongside the **Guide**, **Changelog** (the version badge), and **Preferences**; **New** sits atop the component tree in the Design workspace. For a durable archive or to move a design to another machine or to the OpenRocket desktop, **Save as .ork** — it's the format that keeps everything.
+Online OpenRocket is a **PWA** — install it from the browser and it runs offline, since the physics kernel, the motor database metadata, and the preset catalog are all bundled locally. Only motor thrust curves fetch on demand, and once fetched they cache in your browser. Your work — the design tree, assigned motors, launch conditions, per-stage motor-length limits, run history, and motor filters — persists to local storage and survives reloads. The app **header** carries **Open…** and the **Save / Export** menu (.ork, .rkt, .CDX1, .obj), alongside the **Guide**, **Changelog** (the version badge), and **Preferences**; **New** sits atop the component tree in the Design workspace. For a durable archive or to move a design to another machine or to the OpenRocket desktop, **Save as .ork** — it's the format that keeps everything.
 
 Because the whole app is a self-contained static build, the same files can also be **embedded inside another web page** — for example a WordPress post — through an `<iframe>`. If you meet Online OpenRocket living inside someone else's site rather than at its own address, it is the identical app running the identical kernel, with the same design, motor, and simulation tools described in this guide.
 
