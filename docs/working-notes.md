@@ -6,9 +6,26 @@ That file is the current, self-contained session handoff (v0.024–v0.029:
 the workspace-tabs reorg, the COMPLETE RASAero #1 supersonic build with its
 validation harness, Auto aero mode + alert, the version.json deploy channel,
 and the three-pass design refresh — plus the session's hard-won gotchas).
-**One-line state:** v0.029 LIVE and verified; 146 tests green; differential
-258 lines 3×; Eric beta-testing (his next issues file gets fixed FIRST);
-next version v0.030. The RASAero-build sections below remain as history.
+**One-line state:** v0.030 BUILT+PUSHED (large-screen layout pass, 2026-08-04);
+**deploy/online-openrocket-v0.030.zip READY for Eric's upload** (after upload:
+cache-bypass check, confirm assets/ + version.json serve). 124 app+engine
+vitest green; Eric beta-testing (his next issues file gets fixed FIRST).
+Next version v0.031. The RASAero-build sections below remain as history.
+
+**v0.030 (2026-08-04, one session):** Eric's request — desktop app felt cramped
+on big monitors. Thesis: chrome stays dense, the STAGE grows. 1200px workspace
+cap removed (fluid, clamp padding); TreeSchematic viewBox now adopts container
+width via ResizeObserver + height from the rocket's own aspect (clamped
+200–480px, `maxHeight` prop = 300 on Motors tab; the old fixed 640×210 +
+motors-svg 240px CSS cap are gone); visible + / − / ⤢ Fit zoom cluster
+(wheel/pan existed, undiscoverable); ≥1600px: rails 320/380px, charts-grid
+2-up (3-up ≥2400px), chart height scales 160→240px, 3D view 42vh, and a
+working-panel TYPE-SCALE bump (labels 12.5, inputs/tree 14, tabs 16, vitals 18,
+tile values 28). GOTCHA burned once already: the wide-screen media block MUST
+stay LAST in styles.css — equal-specificity overrides win by source order, and
+a mid-file block silently lost to later base rules (.stat-row). Verified live
+in Chrome at ~2100px CSS width (design/motors/results tabs, zoom buttons, B6-4
+flight for charts). Below 1600px the dense layout is byte-identical.
 
 ## ⚡ RASAero #1 build — decisions locked (2026-08-03, do not re-litigate)
 
