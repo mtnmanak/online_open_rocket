@@ -137,7 +137,11 @@ only by window occlusion/rAF, known gotcha). 146 tests green.
 backlog (refinement, not blocking): transonic peak band, Finner free-flight
 base drag (McCoy/RM A53D02), blunt/flare bodies, MESOS/Aftershock
 end-to-end flight fixtures, .CDX1 airfoil mapping, default-ON flip after
-Eric's beta testing. v0.024 LIVE; v0.025 AWAITING UPLOAD.
+Eric's beta testing. **v0.025 LIVE (2026-08-04, cache-bypass verified:
+bundle index-DyrG7f5k.js matches local, all feature strings present).**
+Eric now beta-testing the supersonic model; standing rule applies — his
+next dated issues file gets fixed before new feature work. Next version
+v0.026.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
