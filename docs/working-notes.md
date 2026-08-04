@@ -140,8 +140,23 @@ end-to-end flight fixtures, .CDX1 airfoil mapping, default-ON flip after
 Eric's beta testing. **v0.025 LIVE (2026-08-04, cache-bypass verified:
 bundle index-DyrG7f5k.js matches local, all feature strings present).**
 Eric now beta-testing the supersonic model; standing rule applies — his
-next dated issues file gets fixed before new feature work. Next version
-v0.026.
+next dated issues file gets fixed before new feature work.
+**v0.026 BUILT (2026-08-04, Eric's design decision): three-way aero pref
+(Classic default / Auto / Supersonic) + supersonic-flight alert.** Auto:
+fly classic, if maxMach > 0.9 (transonic onset) re-fly the WHOLE flight
+supersonic (App.autoSupersonic state; displayed statics follow, "M+ aero"
+vitals chip; resets on design/motors/launch/mode change); run recorded as
+'auto-supersonic'. Classic-mode supersonic flight → warning banner in
+Results + saved-report comment + one-click "Switch to Auto & re-fly"
+(pendingRelaunch effect). Prefs migration: supersonicAero:true →
+aeroModel 'supersonic'. Batch flies the handle's current model
+(aeroModelLabel prop). Guide both mirrors + changelog. BROWSER-VERIFIED
+end-to-end incl. the full auto-flip and one-click-switch loops (trick for
+occluded-window testing: monkeypatch requestAnimationFrame to
+setTimeout(cb,33) in the page — sims run headlessly; 0ms spins the CPU,
+use 33ms; lightweight rocket via session-JSON overrideMass edits + reload
+beats fighting NumField DOM commits). 146 tests green.
+**deploy/online-openrocket-v0.026.zip READY for upload.** Next v0.027.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
