@@ -12,6 +12,8 @@ Online OpenRocket is the real OpenRocket flight simulator, running entirely in y
 
 The workflow is simple and always the same. You design a rocket by building up its components, hang a motor, set your launch conditions, and press **Launch** to see how high it flies, how fast it goes, and whether it will fly straight and land safely. This guide is written for model and high-power rocketry hobbyists at every level, from your first Estes kit to a multi-stage high-power project.
 
+The app is organized into **three workspaces**, selected by the tabs under the header, one per phase of that workflow: **Design** (the component tree, the 2D/3D view, and the property editor), **Motors & Launch** (motor selection, ejection delays, batch simulation, and launch conditions), and **Results** (flight stats, the launch report, plots, drag analysis, and saved runs). A **vitals strip** above the tabs stays visible everywhere — the rocket's name, stability margin, loaded mass, current motor, last apogee, and the **🚀 Launch** button — so you can tweak a fin, fly, and check the number without hunting through tabs. Launching switches you to Results automatically.
+
 The guide has three parts:
 
 - **Quick Start** gets you to your first successful flight in about a minute.
@@ -43,11 +45,11 @@ This section gets you to your first successful flight in about a minute. The res
 
 When the app opens, you already have a complete, flyable rocket called **My Rocket** — a nose cone, a body tube, a fin set, a motor mount, and a parachute. You don't have to build anything to get started. All it's missing is a motor.
 
-**1. Load a motor.** In the left sidebar, find the **Motors** panel. The fastest option is the **Quick picks (built-in, offline)** dropdown — pick a classic Estes motor like **B6-4** or **C6-5** and it loads instantly, no download needed. (The number after the dash is the ejection delay in seconds.) Want something specific? Click **🔎 Browse motor database…** to search the full thrustcurve.org catalog of about 1,100 motors — but for your first flight, a quick pick is all you need.
+**1. Load a motor.** Open the **Motors & Launch** workspace (the tabs under the header) and find the **Motors** panel. The fastest option is the **Quick picks (built-in, offline)** dropdown — pick a classic Estes motor like **B6-4** or **C6-5** and it loads instantly, no download needed. (The number after the dash is the ejection delay in seconds.) Want something specific? Click **🔎 Browse motor database…** to search the full thrustcurve.org catalog of about 1,100 motors — but for your first flight, a quick pick is all you need.
 
-**2. Check your launch conditions (optional).** Below the Motors panel is the **Launch conditions** panel. The defaults are sensible: a 1-meter launch rod, pointed straight up, no wind, standard sea-level atmosphere. You can leave every field alone for now.
+**2. Check your launch conditions (optional).** Beside the Motors panel is the **Launch conditions** panel. The defaults are sensible: a 1-meter launch rod, pointed straight up, no wind, standard sea-level atmosphere. You can leave every field alone for now.
 
-**3. Press Launch.** Hit the **Launch** button at the bottom of the Launch conditions panel. The simulation runs in a fraction of a second and your results appear in the main area.
+**3. Press Launch.** Hit the **Launch** button — at the bottom of the Launch conditions panel, or the always-visible **🚀 Launch** in the vitals strip at the top. The simulation runs in a fraction of a second and the app switches to the **Results** workspace with your numbers.
 
 That's it — you've flown a rocket.
 
@@ -90,7 +92,7 @@ Everything below is organized by the order you actually work: design the rocket,
 
 ## The component tree
 
-The left editor is a **stage-rooted tree** of components. Each stage holds an axial chain of external body parts (nose cone → body tubes → transitions), and those in turn hold internal parts (fins, motor mounts, recovery gear, mass). Click a node to select it and open its property panel; inline buttons on each node **move, duplicate, or delete** it. The tree enforces OpenRocket's containment rules — you can only add children a parent legally accepts (for example, fins and inner tubes go inside a body tube, a parachute goes inside any body part, and an engine block goes inside an inner tube).
+The **Design** workspace's left column is a **stage-rooted tree** of components. Each stage holds an axial chain of external body parts (nose cone → body tubes → transitions), and those in turn hold internal parts (fins, motor mounts, recovery gear, mass). Click a node to select it and its property panel opens in the column to the right of the rocket view; inline buttons on each node **move, duplicate, or delete** it. The tree enforces OpenRocket's containment rules — you can only add children a parent legally accepts (for example, fins and inner tubes go inside a body tube, a parachute goes inside any body part, and an engine block goes inside an inner tube).
 
 ## The nineteen component types
 
@@ -193,7 +195,7 @@ From any fin set you can export a **true-scale printable cutting template**. It 
 
 ## Drag analysis (CD vs Mach)
 
-Below the rocket view, the **Drag analysis** panel plots your design's drag coefficient against Mach number — a static property of the geometry, no flight needed, recomputed live as you edit. Click **Show CD vs Mach** to open it.
+On the **Results** workspace, the **Drag analysis** panel plots your design's drag coefficient against Mach number — a static property of the geometry, no flight needed, recomputed live as you edit. Click **Show CD vs Mach** to open it.
 
 - The main chart shows the **power-off** (coasting) drag curve. Give a stage a **nozzle exit diameter** (in the Stage property panel) and a dashed **power-on** curve appears: during the burn, the motor's exhaust plume pressurizes the base area, so boost drag is genuinely lower than coast drag. The bigger the nozzle exit relative to the base, the bigger the reduction — a minimum-diameter rocket sees a large difference, a small motor in a fat airframe almost none. For a clustered mount, enter one equivalent nozzle whose exit *area* is the sum of the individual exit areas. Zero (the default) means the two curves are identical.
 - The **breakdown chart** splits the drag **by component** (nose, body, fins…) or **by type** (friction / pressure / base), so you can see *why* the rocket is draggy and where cleanup pays — the transonic drag rise starting near Mach 0.9 is plainly visible.
@@ -237,7 +239,7 @@ You can **import experimental motors** from RASP `.eng` or RockSim `.rse` files.
 
 ## Launch Conditions
 
-Before you fly, the Launch Conditions panel sets the pad and the weather. It collects eight fields: **launch rod/rail length** (default 1 m), **rod angle** (0°, range −30…30°), **average wind**, **wind gust sigma** (standard deviation of gusts about the average), **site altitude** (0–10,000 m), **latitude** (default 28.61°, roughly Florida), **temperature** (blank = ISA standard), and **pressure** (blank = ISA standard). Values display in your preferred units and convert to SI on Launch. When temperature and pressure are blank the sim uses the ISA atmosphere (288.15 K, 101325 Pa, −6.5 K/km lapse).
+Before you fly, the Launch Conditions panel (in the **Motors & Launch** workspace) sets the pad and the weather. It collects eight fields: **launch rod/rail length** (default 1 m), **rod angle** (0°, range −30…30°), **average wind**, **wind gust sigma** (standard deviation of gusts about the average), **site altitude** (0–10,000 m), **latitude** (default 28.61°, roughly Florida), **temperature** (blank = ISA standard), and **pressure** (blank = ISA standard). Values display in your preferred units and convert to SI on Launch. When temperature and pressure are blank the sim uses the ISA atmosphere (288.15 K, 101325 Pa, −6.5 K/km lapse).
 
 **Deterministic by design**: wind turbulence is seeded (default seed 42), so identical inputs always produce an identical flight. This is intentional and differs from the desktop's time-seeded randomness — re-running won't vary the result, and that is not a bug. (The physics behind the wind model and this determinism choice is covered in *How It Works*.)
 
@@ -338,7 +340,7 @@ Open **Preferences** to switch between one-click **Metric** and **Imperial** pre
 
 ## Installing, offline, and saving your work
 
-Online OpenRocket is a **PWA** — install it from the browser and it runs offline, since the physics kernel, the motor database metadata, and the preset catalog are all bundled locally. Only motor thrust curves fetch on demand, and once fetched they cache in your browser. Your work — the design tree, assigned motors, launch conditions, per-stage motor-length limits, run history, and motor filters — persists to local storage and survives reloads. The **site menu** carries the **Guide**, **Changelog**, and **Preferences**, alongside the New / Open / Save file actions. For a durable archive or to move a design to another machine or to the OpenRocket desktop, **Save as .ork** — it's the format that keeps everything.
+Online OpenRocket is a **PWA** — install it from the browser and it runs offline, since the physics kernel, the motor database metadata, and the preset catalog are all bundled locally. Only motor thrust curves fetch on demand, and once fetched they cache in your browser. Your work — the design tree, assigned motors, launch conditions, per-stage motor-length limits, run history, and motor filters — persists to local storage and survives reloads. The app **header** carries **📂 Open…** and the **💾 Save / Export** menu (.ork, .rkt, .CDX1, .obj), alongside the **Guide**, **Changelog** (the version badge), and **Preferences**; **New** sits atop the component tree in the Design workspace. For a durable archive or to move a design to another machine or to the OpenRocket desktop, **Save as .ork** — it's the format that keeps everything.
 
 Because the whole app is a self-contained static build, the same files can also be **embedded inside another web page** — for example a WordPress post — through an `<iframe>`. If you meet Online OpenRocket living inside someone else's site rather than at its own address, it is the identical app running the identical kernel, with the same design, motor, and simulation tools described in this guide.
 
