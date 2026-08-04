@@ -87,11 +87,27 @@ tests green. DOCUMENTED limitations (do not fudge-tune): transonic peak band
 M0.95–1.2 underpredicts up to ~0.3 (tunnel fin transonic drag ≈4× subsonic;
 RASAero misses same anchors by 0.10–0.22) — "transonic refinement" backlog;
 Finner Cx0 low pending wedge blunt-TE fin base drag (Phase 3 airfoils); HB-2
-flare/bluntness (hypersonic phase). Next: **Phase 3 — fin airfoils #4**
-(8 cross-sections + LE radius; closes Finner Cx0 + serves Eric's airfoil
-workflow), then Phase 4 hypersonic (MNT blend + HB-2), Phase 5 app surface
-(pref toggle + CP-vs-Mach panel + coefficient export + guide). v0.024 LIVE;
-next version v0.025.
+flare/bluntness (hypersonic phase). **PHASE 3 SHIPPED (2026-08-04): fin airfoil sections (#4), 68 → 65/137 —
+an HONEST decrease.** Input-gated (no flag; absent = bit-identical): FinSet
+patch (FIRST rocketcomponent patch) adds airfoilSection (hexagonal/naca/
+doublewedge/biconvex/hexbluntbase/singlewedge) + LE/TE diamond lengths +
+finLeRadius; FinSetCalc.sectionPressureCD implements per-shape linearized
+thickness wave τ²-family + fin base drag for blunt-base sections + LE
+bluntness (swept-cylinder fit; NACA gets implicit 1.1019τ²c radius).
+Differential 258 lines 3× (finsection goldens); 146 tests. Finner fixture
+now uses its TRUE singlewedge section — which UNMASKED a systematic Finner
+Cx0 deficit (−0.04..−0.13, decaying with M) the biconvex placeholder had
+been accidentally covering. NOT fudged; flagged: suspected free-flight
+base-drag environment (base pressure behind finned body < clean-cylinder
+Hoerner 0.25/M law) — refinement candidates: McCoy/BRL base-pressure
+correlation, NACA RM A53D02 digitization. ARCAS + all CP series unchanged
+green. UI for sections NOT yet exposed (Phase 5 with the pref toggle;
+schema/PropertyPanel/.ork+.CDX1 round-trip still to do there).
+Next: **Phase 4 — hypersonic** (MNT blending above Busemann/SOSE validity,
+HB-2 flare/bluntness treatment, Van Driest II friction check above M4),
+then **Phase 5 — app surface** (pref toggle, fin-section UI + file round-
+trip, CP-vs-Mach panel, coefficient CSV export #6, guide, v0.025 release).
+v0.024 LIVE; next version v0.025.
 
 For the project owner (Eric) and any future Claude session. Technical rules live in
 `CLAUDE.md`; this file carries the *conversational* context that doesn't fit there.
