@@ -1,5 +1,25 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.039 (2026-08-05): fin rotation + auto-interleave + pair-mode combos (batch d)
+
+issues-2026-08-05d → response-2026-08-05d.md. FIN ROTATION: 'rotation' on
+all 4 fin-set types; ENGINE REBUILD (bridge ComponentFactory wires
+setBaseRotation for FinSet AND TubeFinSet — kernel modeled it all along);
+differential 258 ×3 stable, engine vitest green. 3D+aft draw true angles
+(2D side stays stylized — check interleave in AFT view). Round-trips .ork
+<rotation> (was hard-coded 0.0!) + RockSim RadialAngle. AUTO-INTERLEAVE:
+RockSim stores NO angle (Ultra Neon: both sets at 0) — import rotates
+overlapping same-angle sets by half the other's pitch + note; verified on
+the real Ultra Neon (tube fins → 30°); editor add-second-set defaults
+between existing fins. NOTE: Eric's Ultra Neon contains a hand-rolled
+1-fin-freeform "Camera Shroud" — suggested swapping for the native
+component. PAIR-MODE COMBOS: splitClusterPairsTree (6-ring → 3×'double',
+scale ×2, φ+90/±30 — exact), batch checkbox "mixed 4+2 / 2+2+2" flying
+candidate MULTISETS minus all-same (cubic growth — warned), combo pass
+generalized to K groups, configs tagged/sorted/tabbed. 181 tests (158+23).
+AWAITING ERIC: live-fire Darkstar + Ultra Neon; RockSim audit (optional);
+shroud calibration flight.
+
 ## ⚡ v0.038 (2026-08-05): Darkstar cluster import + batch mount picker + ⏏ unload
 
 Chat batch. KEY BUG: RockSim writes the SAME tube with drifting rounding
