@@ -38,6 +38,11 @@ the 6-tube identity, slider cap, count cap 7 @30mm, align 60°→30°+banner,
 sub-min chip 38→41mm, shroud prompt+convert on real Ultra Neon, .eng import
 through the real input). deploy/online-openrocket-v0.040.zip READY.
 Cleanup verified: Eric's Wild Child session/filters/EX list restored.
+**v0.040 LIVE (2026-08-05, cache-bypass verified: served bundle
+index-8ZgGK_NG.js at full byte size = the final local build incl. both
+drive-by fixes; version.json 0.040; badge renders; Eric's live session
+already shows the filename-fallback name on his re-imported Ultra Neon).**
+Next version v0.041.
 
 ## ⚡ START HERE → read `docs/handoff-2026-08-05.md` first
 
