@@ -1,5 +1,24 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.037 (2026-08-05): combination batching + mount-level max motor length
+
+Eric's chat go-ahead (no issues file — spec was in chat): combination batch
+is OPT-IN ("mixed pairs" checkbox, 4/6-motor clusters only, default =
+same motor everywhere, count shown first). Core = treeModel.
+splitClusterTree(): 4-ring → 2×'double' (scale ×√2, ±45°), 6-ring →
+2×'3-ring' (scale ×√3, 0/60°) — exact positions, geometry-tested; combo
+pass = separate engine handle from the split tree, unordered pairs, spec
+cache reuse, per-combo auto model. Exports grouped per Eric: motorConfig
+field + CSV column, singles-then-mixed CSV sort, XLSX tabs All/Single/
+Mixed (xlsx.ts → sheetsToXlsx multi-sheet). KERNEL PROOF
+(comboFlight.test.ts): split-same ≡ original 4-ring within 1% apogee.
+Max motor length: PRIMARY on the mount tube (schema maxMotorLength +
+.ork <maxmotorlength> extension) — root cause of Eric's "doesn't
+persist" was session-only storage wiped on .ork open; Motors-tab field
+is now a per-stage override (placeholder "design: X", clear = fall
+back). 178 tests (155+23). Smoke: mixed-pairs checkbox appears only on
+4-ring, count line 161→+12,880 warns before committing.
+
 ## ⚡ v0.036 (2026-08-05): issue batch c — one model picker, batch aero, XLSX, RockSim pods
 
 Batch c (issues-2026-08-05c.md → response-2026-08-05c.md). Aero terminology
