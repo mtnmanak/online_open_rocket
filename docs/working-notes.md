@@ -1,5 +1,20 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.038 (2026-08-05): Darkstar cluster import + batch mount picker + ⏏ unload
+
+Chat batch. KEY BUG: RockSim writes the SAME tube with drifting rounding
+between cluster copies (Darkstar: OD 79.38 vs 79.375) — exact-key grouping
+split the ring; now 1%-tolerance grouping (position 1 mm). Verified against
+Eric's real file (G:\Documents\Dropbox\Rocksim Designs\Scratch Builds\
+PELTZER - 12in Darkstar.rkt): 6×75 ring → one 6-ring scale 1.2 around the
+central 98, both motors auto-load. Batch dialog gained a MOUNT PICKER
+(other mounts keep their assigned motors per flight) — this was why "3+3
+seemed missing": batch was locked to the primary mount (Darkstar primary =
+central 98). ARCHITECTURE: batch now builds its OWN engine handles and
+never mutates the shared design handle (stale-motor class gone; restore
+logic deleted). Vitals ⏏ unloads all motors (all tabs, one click).
+179 tests (156+23). End-to-end verified on the real Darkstar in Chrome.
+
 ## ⚡ v0.037 (2026-08-05): combination batching + mount-level max motor length
 
 Eric's chat go-ahead (no issues file — spec was in chat): combination batch
