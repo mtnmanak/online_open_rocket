@@ -104,7 +104,7 @@ The **Design** workspace's left column is a **stage-rooted tree** of components.
 | Trapezoidal fins | Fin set | count, root/tip chord, sweep, height, thickness, cant, cross-section, tabs |
 | Elliptical fins | Fin set | count, root chord, height, thickness, cross-section, tabs |
 | Freeform fins | Fin set | count, thickness, cross-section, tabs, polygon outline |
-| Tube fins | Fin set | count (up to 12), length, outer radius |
+| Tube fins | Fin set | count (up to 12), length, outer radius, wall thickness |
 | Inner tube | Structure / mount | length, outer radius, thickness, cluster layout |
 | Tube coupler | Structure | length, thickness |
 | Centering ring | Structure | axial thickness |
@@ -112,12 +112,34 @@ The **Design** workspace's left column is a **stage-rooted tree** of components.
 | Engine block | Structure | length, thickness |
 | Launch lug | Guide | length, outer radius, thickness |
 | Rail button | Guide | outer diameter |
-| Parachute | Recovery | canopy diameter, Cd, lines, deploy event |
+| Camera shroud / fairing | External | length, width, height, shape, as-built mass, finish |
+| Parachute | Recovery | canopy diameter, Cd, spill hole ⌀, lines, deploy event |
 | Streamer | Recovery | strip length/width, Cd, deploy event |
 | Shock cord | Recovery | cord length |
 | Mass component | Ballast | mass, length, radius |
 | Pod set | Assembly | instance count, radial distance & reference, angle |
 | Booster (parallel stage) | Assembly | instance count, radial placement, angle, separation |
+
+### Camera shrouds (fairings) — how they're modeled
+
+A camera shroud is a real aerodynamic body: it shifts CP and adds drag, and Online
+OpenRocket is (as far as we know) the only hobby simulator that computes both. The
+side profile is flown as a **slender strake** through the kernel's own
+low-aspect-ratio fin lift (which reduces to the classic Jones slender-body model —
+the right physics for a strake), so the CP shift falls out of the same Barrowman
+machinery as everything else. Drag uses **Hoerner protuberance coefficients**
+referenced to the shroud's frontal area (streamlined ≈ 0.25, half-round ≈ 0.55,
+box ≈ 1.05, body interference included). Enter the as-built mass — printed parts
+weigh what they weigh. The radial mounting angle is not modeled (same as launch
+lugs), and there is no wind-tunnel anchor for this model yet — treat the numbers
+as good engineering estimates, and add margin on small-diameter rockets where a
+shroud matters most.
+
+### Parachute spill holes
+
+A spill hole reduces the effective drag area: we fly the standard reduction
+Cd_eff = Cd · (1 − (hole ⌀ / canopy ⌀)²) — the same treatment RockSim uses, and
+spill holes round-trip through RockSim files.
 
 ## Dimensions: diameter vs. radius
 
