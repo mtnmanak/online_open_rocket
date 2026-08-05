@@ -1,5 +1,14 @@
 # Working notes — collaboration style & project state
 
+## ⚡ START HERE → read `docs/handoff-2026-08-05.md` first
+
+The current, self-contained session handoff: v0.033–v0.039 (the 2026-08-05
+marathon — five issue batches, seven releases), the live-verify state, and
+**the QUEUED NEXT-SESSION DISCUSSIONS Eric asked for: (1) camera-shroud
+import/conversion of hand-rolled 1-fin-freeform shrouds, (2) fin-rotation
+functionality follow-up.** Discuss before building — his standing style.
+The per-version blocks below remain as history.
+
 ## ⚡ v0.039 (2026-08-05): fin rotation + auto-interleave + pair-mode combos (batch d)
 
 issues-2026-08-05d → response-2026-08-05d.md. FIN ROTATION: 'rotation' on
