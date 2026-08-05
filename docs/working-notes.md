@@ -1,5 +1,26 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.036 (2026-08-05): issue batch c — one model picker, batch aero, XLSX, RockSim pods
+
+Batch c (issues-2026-08-05c.md → response-2026-08-05c.md). Aero terminology
+FIXED per Eric: ONE Preferences pulldown (EB desktop parity / Rogers Kbf
+DEFAULT / Auto = Kbf + our supersonic past M0.9 / Supersonic ours) — derives
+from and writes the existing aeroModel+rogersKbf keys, NO migration; Kbf
+checkbox gone; "RASAero-class" scrubbed from all UI (it's OUR model — no
+RASAero code/equations exist; guide keeps the historical reference). Batch
+dialog: own aero select DEFAULT AUTO, per-motor supersonic refly, restores
+the shared handle flags (handleFlags prop replaced aeroModelLabel). XLSX:
+services/xlsx.ts = minimal OOXML zip over fflate (~2 KB; typed cells/frozen
+bold header/autofilter) + runsToTable() sharing the CSV catalog; buttons in
+SimHistory + Batch. RockSim gaps CLOSED: ExternalPod↔podset/parallelstage
+both ways (desktop PodHandler semantics; Detachable↔booster; N instances
+split), fin CantAngle round-trip (radians; desktop only writes it),
+RingTail stays ignored (desktop parity). 172 tests (149+23).
+Browser-verified: pulldown kbf-default, batch auto-default, XLSX buttons.
+AWAITING ERIC: combination-batch go (his symmetry cap 4/6-motor agreed;
+"offer to split a 4-ring into 2+2" design in response doc); optional full
+RockSim audit; shroud calibration flight.
+
 ## ⚡ v0.035 (2026-08-05): HOTFIX — aft-view pan crash
 
 Eric hit it on the live site within the hour: pan the zoomed aft view →
