@@ -14,6 +14,36 @@ Reference Java source (OpenRocket release 24.12, GPLv3+) is available locally at
 `core/` module (`info.openrocket.core`) is the physics/model reference; its `swing/`
 module is being replaced by the web UI and should not be ported.
 
+## Deploying
+
+This tool is **its own Cloudflare Pages project**. It is not copied into the
+mountainmanrockets.com site any more — publishing this repo publishes the tool, and
+the site is not rebuilt or touched.
+
+| | |
+|---|---|
+| Pages project | `online-open-rocket` |
+| Live URL | https://online-open-rocket.pages.dev |
+| After DNS cutover | https://openrocket.mountainmanrockets.com |
+| Old WordPress path | `/online_open_rocket/` — 301s to the above, do not reuse |
+
+Build, then deploy:
+
+```bash
+npm run build                      # -> packages/app/dist
+npx wrangler pages deploy packages/app/dist --project-name=online-open-rocket --branch main
+```
+
+Once the GitHub integration is connected for this repo in the Cloudflare dashboard
+(build command `npm run build`, output directory `packages/app/dist`), `git push` to
+`main` is the deploy and the command above becomes a manual override.
+
+Bump `version.json` when you cut a release — `scripts/package-dist.mjs` copies it into
+`dist`. The main site prints that version on its Online Tools page from
+`src/data/tools.mjs` in the `mountainmanrockets` repo, and `node scripts/check-tools.mjs`
+there reports when the two have drifted. That check caught this repo sitting 22 releases
+ahead of what had actually been published, which is the failure mode it replaces.
+
 ## Commands
 
 - `npm run dev` — start the Vite dev server (app package)
