@@ -1,0 +1,115 @@
+Unhandled exception has occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately. 
+
+Object reference not set to an instance of an object.
+
+Details:
+See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at t.GetSimulations(XmlNode n, List`1& sims)
+   at t.ReadXMLFile(FileStream name, List`1 lb, d Recover, LaunchSiteClass ls, List`1 ma)
+   at ar.b(String A_0)
+   at ar.ah(Object A_0, EventArgs A_1)
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** Loaded Assemblies **************
+mscorlib
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9179 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/Windows/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll
+----------------------------------------
+RASAero II
+    Assembly Version: 1.0.2.0
+    Win32 Version: 1.0.2.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/RASAero%20II/RASAero%20II.exe
+----------------------------------------
+Microsoft.VisualBasic
+    Assembly Version: 8.0.0.0
+    Win32 Version: 8.0.50727.9157 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll
+----------------------------------------
+System
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9182 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9157 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System.Drawing
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9157 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+System.Runtime.Remoting
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9176 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Runtime.Remoting/2.0.0.0__b77a5c561934e089/System.Runtime.Remoting.dll
+----------------------------------------
+FarPoint.Win.Input
+    Assembly Version: 1.0.15.0
+    Win32 Version: 1.0.15.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/RASAero%20II/FarPoint.Win.Input.DLL
+----------------------------------------
+MACTrackBarLib
+    Assembly Version: 1.0.3624.23362
+    Win32 Version: 1.0.3624.23362
+    CodeBase: file:///C:/Program%20Files%20(x86)/RASAero%20II/MACTrackBarLib.DLL
+----------------------------------------
+System.Data
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9176 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_32/System.Data/2.0.0.0__b77a5c561934e089/System.Data.dll
+----------------------------------------
+System.Xml
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9182 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+System.Configuration
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9157 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Configuration/2.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Runtime.Serialization.Formatters.Soap
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.9157 (WinRelRS6.050727-9100)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Runtime.Serialization.Formatters.Soap/2.0.0.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll
+----------------------------------------
+
+************** JIT Debugging **************
+To enable just-in-time (JIT) debugging, the .config file for this
+application or computer (machine.config) must have the
+jitDebugging value set in the system.windows.forms section.
+The application must also be compiled with debugging
+enabled.
+
+For example:
+
+<configuration>
+    <system.windows.forms jitDebugging="true" />
+</configuration>
+
+When JIT debugging is enabled, any unhandled exception
+will be sent to the JIT debugger registered on the computer
+rather than be handled by this dialog box.

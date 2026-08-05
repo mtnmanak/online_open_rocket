@@ -65,8 +65,8 @@ After launching, the headline tiles across the top of the results give you the n
 
 Two health checks tell you whether the flight is actually *safe and stable*, not just how high it went:
 
-- **Stability margin** (shown in the design stats as **Stability**, in *calibers*). A healthy rocket sits between **1.0 and 3.0 cal**. Below 1.0 the rocket is *under-stable* and may wobble or go unstable — flagged with a ⚠. Above 3.0 it's *over-stable* and tends to weathercock (turn into the wind). Right in that band, marked ✓, is what you want.
-- **Landing descent rate** — you want to touch down at **20 ft/s (about 6 m/s) or slower** so nothing breaks. The report flags a faster landing.
+- **Stability margin** (shown in the design stats as **Stability**, in *calibers*). A healthy rocket sits between **1.0 and 3.0 cal**. Below 1.0 the rocket is *under-stable* and may wobble or go unstable — flagged red with a ⚠. Above 3.0 it's *over-stable* and tends to weathercock (turn into the wind) — flagged as a yellow △ caution, not a failure. Right in that band, marked ✓, is what you want. The design page, vitals strip and launch report all use this same rule.
+- **Landing descent rate** — you want to touch down at **20 ft/s (about 6 m/s) or slower** so nothing breaks. The report flags a faster landing. Parachute presets apply the manufacturer's rated drag coefficient when the catalog carries one, but a simulated descent rate is still an estimate — **always cross-check the parachute manufacturer's own sizing guidance** before you fly.
 
 Open the full launch report below the tiles for more: **thrust-to-weight at the rod** (aim for at least **5:1**), **rod-exit speed** (at least about 50 ft/s / 15 m/s so the fins have airflow to steer with), deployment timing, and plain-language safety comments that name any problem and where it is.
 
