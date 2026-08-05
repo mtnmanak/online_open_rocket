@@ -1,5 +1,44 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.040 (2026-08-05): issue batch e — fin auto-align, shroud convert, sub-minimum, EX folders
+
+issues-2026-08-05e → response-2026-08-05e.md. Both QUEUED DISCUSSIONS resolved
+by the batch itself (Eric gave direction in the issue file). NO engine rebuild.
+(1) 🧭 AUTO-ALIGN FIN SETS button (PropertyPanel, fin set w/ ≥2 sibling sets)
+→ tree/finAlign.ts autoAlignFinSets: per-parent overlap groups, grid-search
+each later set's rotation for max-min circular clearance vs earlier sets
+(generalizes import-interleave; found live that v0.039's add-second-set
+default π/exCount is a NO-OP when the new set's own pitch divides it — 6-tube
+set added to 3-fin stayed colliding at 60°; button fixes to 30°). (2) TUBE-FIN
+COLLISION CAPS now on explicit values: PropertyPanel cross-limits — OD ≤
+touching radius (slider+NumField max+SI commit clamp), count ≤ π/asin(r/(R+r));
+FIXED tubefins.ts n=2 ÷0 (sin π/2=1 → Infinity; now kernel rule n<3 = body R).
+(3) blank tube-fin OD shows `auto: <val>` placeholder (unit/diameter-pref
+aware). (4) SHROUD IMPORT PROMPT: tree/shroudConvert.ts detects 1-fin freeform
+named /shroud|camera|fairing/i on EVERY import (.rkt/.ork/.CDX1), modal offers
+convert→native fairing (same id; L/H from points bbox, W=thickness, mass=
+override else shoelace-area×thickness×density; shape defaults halfround);
+verified on the real Ultra Neon (114×41×36 mm, 88 g est). Declining is NOT
+remembered — reopen re-asks (flagged to Eric). (5) SUB-MINIMUM: bodytube
+`caseAirframe` bool (shown only when motorMount on) → mountDiaMm uses OD not
+bore (the browser fit filter was the ONLY blocker — sim never gated fit);
+AftView now draws motors in bodytube mounts (was innertube-only); .ork
+extension tag <caseairframe>; no RockSim equivalent (documented). (6) EX
+MOTORS: already existed since 2026-07-03 (e2c298a) — Eric couldn't find it.
+Renamed picker button "Browse motors / import EX (.eng, .rse)…", multi-file
+input, 📁 Import EX folder (webkitdirectory one-shot scan — PWA can't watch
+folders), import notice, guide section "EX motors & sub-minimum builds" (both
+mirrors). DRIVE-BY FIXES: import clears diameter-class chips too (persisted
+38mm chip hid a fresh 54mm EX import); GENERIC_ROCKET_NAMES gains the
+importer fallbacks 'imported rocksim/rasaero rocket' (filename fallback never
+fired for name-less .rkt — Ultra Neon showed the generic). 196 tests
+(173 app + 23 engine; new: tubefins/finAlign/shroudConvert + caseairframe
+round-trip). Browser-verified on built dist end-to-end (placeholder 40.64 on
+the 6-tube identity, slider cap, count cap 7 @30mm, align 60°→30°+banner,
+sub-min chip 38→41mm, shroud prompt+convert on real Ultra Neon, .eng import
+through the real input). deploy/online-openrocket-v0.040.zip READY.
+Cleanup verified: Eric's Wild Child session/filters/EX list restored.
+
 ## ⚡ START HERE → read `docs/handoff-2026-08-05.md` first
 
 The current, self-contained session handoff: v0.033–v0.039 (the 2026-08-05
