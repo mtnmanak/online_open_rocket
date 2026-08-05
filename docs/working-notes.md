@@ -1,5 +1,32 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.034 (2026-08-05): issue batch b — camera shrouds, spill holes, custom tiles
+
+Eric's follow-up file (issues-2026-08-05b.md) same-day; status in
+**response-2026-08-05b.md**. DECISIONS LOCKED: Rogers Kbf DEFAULT ON (his
+flight data; explicit stored false preserved, "off = desktop parity"),
+tagline = "Design, simulate, fly — OpenRocket-derived physics, validated to
+Mach 4.6 against NASA wind-tunnel data.", stability thresholds confirmed.
+THE BIG BUILD: **camera shroud 'fairing' component** — app-level type
+lowered in treeModel.engineTree() to a 1-fin freeform strake (Barrowman
+low-AR = Jones slender-strake ⇒ real kernel CP shift) + Hoerner frontal-area
+protuberance CD as overrideCD (streamlined .25/halfround .55/box 1.05) +
+as-built mass as overrideMass, same node id; NO kernel/TeaVM change (engine
+pkg tsc rebuild only for the ComponentType). THICK_FIN kernel warning
+suppressed for shrouds in App's build memo. No wind-tunnel anchor — Eric to
+fly before/after for calibration. Also: spill holes (engineTree
+cd·(1−(dh/D)²), RockSim SpillHoleDia round-trip); FlightStats → run-driven
+14-metric catalog + ⚙ picker (prefs.resultTiles; "Descent hits"→"Landing
+rate" — it was groundHitVelocity); aft-view zoom/pan; RockSim
+partial-override export writes computed other value (componentInfo map
+threaded into exportRkt); 2D glyphs (chute/mass/CR/cord) + bulkhead hatch +
+two-way selection sync (dragMoved guard so drags don't select). 168 tests
+(145 app + 23 engine). Browser-verified: Kbf flipped Wild Child 4.13→4.49
+cal; shroud add 4.49→4.78 & 825→855 g, solid accent-outlined render.
+**deploy/online-openrocket-v0.034.zip ready.** WAITING ON ERIC: RockSim gap
+audit go/no-go; mixed-motor combination batch go/no-go (~1 session, design
+in response doc); shroud calibration flight.
+
 ## ⚡ v0.033 (2026-08-05): issue batch 2026-08-05a — 16 of 19 items, one session
 
 Eric's 19-item beta list (docs/testing/issues-2026-08-05a.md) fixed same-day;
