@@ -1,5 +1,18 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.035 (2026-08-05): HOTFIX — aft-view pan crash
+
+Eric hit it on the live site within the hour: pan the zoomed aft view →
+"Cannot read properties of null (reading 'x')". AftView's onPointerMove read
+pan.current inside the setZoom UPDATER (runs after the handler; pointerup
+nulls the ref in between). Fix = capture to a local first — the pattern
+TreeSchematic already used. LESSON for any new pointer/zoom code: never read
+a mutable ref inside a state updater. Verified by scripting the exact race
+on the built dist (React batches move+up, so the deferred updater sees the
+nulled ref — reproduces old crash, passes fixed). v0.035 zip ready; Eric's
+batch-b follow-up answers still pending (gap audit, combo batch, shroud
+calibration).
+
 ## ⚡ v0.034 (2026-08-05): issue batch b — camera shrouds, spill holes, custom tiles
 
 Eric's follow-up file (issues-2026-08-05b.md) same-day; status in
