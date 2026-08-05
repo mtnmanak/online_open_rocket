@@ -1,5 +1,37 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.033 (2026-08-05): issue batch 2026-08-05a — 16 of 19 items, one session
+
+Eric's 19-item beta list (docs/testing/issues-2026-08-05a.md) fixed same-day;
+item-by-item status in **response-2026-08-05a.md** (READ IT — it carries the
+open discussion items). Root causes worth remembering: preset dragCoefficient
+was silently dropped on apply (Fruity Iris Ultra flew Cd 0.8 instead of 2.2 —
+descent 1.66× fast; presets.ts one-liner); RASAero's GetSimulations NRE was
+our 5-element Simulation block vs the 24 fields its loader reads blindly
+(+ empty SustainerEngine = second NRE; engines must be OMITTED when absent);
+RockSim masscomponent export passed the 10 g `mass` param over the override;
+the 2D coupler asymmetry was PAINT ORDER (opaque next-tube covered the aft
+overhang — inner/dashed shapes now render in an overlay pass); tube fins
+imported fine but were never DRAWN. New surface: AftView.tsx (2D/3D/Aft
+toggle + auto Motors-tab inset when cluster/pod present), plugged-delay UI
+(JSON.stringify(Infinity)=null corrupted stored plugged runs — "Infinity"
+string replacer in simStore+session), cluster reconstruction on RockSim
+import (pattern+scale+rotation fitted to CLUSTER_POINTS), cut/copy/paste,
+tiered stability (under=red, 1–3=green, over=YELLOW caution, one rule on all
+surfaces — thresholds PROVISIONAL pending Eric), per-type inner-component
+colors+tags, header Undo, unit-pref CSV detail columns (flight-day lead 14
+stay fixed ft/mph/Gs/g deliberately). 161 tests green (138 app + 23 engine);
+NO kernel change (differential untouched, 258 lines). Browser-verified on
+the built dist incl. aft view single+3-ring and the coupler overhang.
+**deploy/online-openrocket-v0.033.zip ready for Eric's upload; version.json
+bumped.** WAITING ON ERIC (response doc §"Waiting on you"): stability
+thresholds, tagline wording, results-page customization, camera-shroud
+feature go/no-go, inner-component visual upgrade pick.
+Gotcha: monkeypatching rAF in the live page then `delete
+window.requestAnimationFrame` REMOVES rAF entirely (it's an own window
+property) — reload the page to restore; also CDP screenshots time out once
+then succeed (retry, don't debug).
+
 ## ⚡ FULL AUDIT (2026-08-04, Eric: "pause and audit/debug all work to-date") → v0.031
 
 Five parallel review agents swept engine bridge/patches, app services,
