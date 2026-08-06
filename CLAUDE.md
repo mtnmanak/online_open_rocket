@@ -27,16 +27,20 @@ the site is not rebuilt or touched.
 | After DNS cutover | https://openrocket.mountainmanrockets.com |
 | Old WordPress path | `/online_open_rocket/` — 301s to the above, do not reuse |
 
-Build, then deploy:
+**`git push` to `main` is the deploy.** `.github/workflows/deploy.yml` runs
+`npm ci && npm run build` (tsc + vite only — the TeaVM engine kernel is the committed
+artifact `packages/engine/vendor/orkengine.mjs`, so CI needs no Java), copies
+`version.json` into dist the way `scripts/package-dist.mjs` does, and publishes
+`packages/app/dist` with wrangler. The workflow needs the `CLOUDFLARE_API_TOKEN`
+repo secret (account API token with "Cloudflare Pages — Edit").
+
+Manual override from this machine:
 
 ```bash
 npm run build                      # -> packages/app/dist
+cp version.json packages/app/dist/
 npx wrangler pages deploy packages/app/dist --project-name=online-open-rocket --branch main
 ```
-
-Once the GitHub integration is connected for this repo in the Cloudflare dashboard
-(build command `npm run build`, output directory `packages/app/dist`), `git push` to
-`main` is the deploy and the command above becomes a manual override.
 
 Bump `version.json` when you cut a release — `scripts/package-dist.mjs` copies it into
 `dist`. The main site prints that version on its Online Tools page from
