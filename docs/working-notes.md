@@ -45,7 +45,10 @@ NOT click-verified: 3D 📷 (GPU wedged mid-session — LIVE v0.040 3D showed
 the same 300×150 stall, so environmental; Eric to click once). GOTCHA: the
 rAF→setTimeout monkeypatch trick BREAKS R3F mounting — don't use it for the
 3D view; also repeated 2D↔3D toggles under CDP leak WebGL contexts until
-Context Lost. Deploy = git push (Actions → Cloudflare Pages). Next v0.042.
+Context Lost. Deploy = git push (Actions → Cloudflare Pages).
+**v0.041 LIVE (2026-08-11, ~80 s after push; cache-bypass verified: served
+bundle index-CwadgWxB.js byte-identical to local (2,772,207 B), version.json
+0.041, feature strings present).** Next version v0.042.
 
 ## ⚡ v0.040 (2026-08-05): issue batch e — fin auto-align, shroud convert, sub-minimum, EX folders
 
