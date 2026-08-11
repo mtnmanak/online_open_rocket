@@ -74,12 +74,16 @@ Engine (Java kernel → JS via TeaVM, in `engine-java/`):
 
 ## Repo location
 
-The repo lives at `G:\git\online_open_rocket` — deliberately OUTSIDE Dropbox. It was moved
-out on 2026-07-02 because Dropbox's file-provider driver intermittently denied git's
-object writes (`Permission denied` on `.git/objects/...`, sometimes sticking to specific
-object paths). Do not move it back under a synced folder. GitHub (origin) is the sync
-channel. The reference OpenRocket source still lives in Dropbox (read-only use) —
-`engine-java/scripts/carve.mjs` points there.
+The repo lives at `E:\git\online_open_rocket` (moved from `G:\git` on 2026-08-11) —
+deliberately OUTSIDE Dropbox. It was moved out of Dropbox on 2026-07-02 because
+Dropbox's file-provider driver intermittently denied git's object writes
+(`Permission denied` on `.git/objects/...`, sometimes sticking to specific object
+paths). Do not move it back under a synced folder. GitHub (origin) is the sync
+channel — Eric now alternates between a desktop and a laptop, so **start every
+session with `git fetch` and confirm local == origin/main** before working.
+The reference OpenRocket source still lives in Dropbox (read-only use) —
+`engine-java/scripts/carve.mjs` points there (`G:\Documents\Dropbox\...`, verified
+still valid on the desktop after the move).
 
 ## Collaboration context
 

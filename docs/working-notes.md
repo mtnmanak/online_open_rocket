@@ -1,5 +1,52 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.041 (2026-08-11): issue batch a — true shapes in 2D/3D, component export, cert drawings
+
+issues-2026-08-11a → response-2026-08-11a.md. NO engine rebuild. ENV FIRST
+(Eric's items 1-2): repo moved G:→E: — local==origin clean, BUT the npm
+workspace junction to packages/engine came through the copy as an EMPTY DIR
+(3 suites failed to resolve @online-openrocket/engine; `npm install` fixed —
+laptop clone may need the same), and the DEAD-PATH orphan
+patches/rocketcomponent/InstanceMap.java rode along (carve.mjs hard-fails on
+orphans — deleted). Session store is now localStorage (not sessionStorage) —
+the browser-test backup protocol updated accordingly. (1) SHAPE RENDERING
+(the 2 bugs): 2D drew a FIXED Bézier nose + straight-polygon transition
+(never read shape); 3D nose read shape but simplified (power hard-coded 0.5,
+no param), 3D transition = plain cylinder cone. Fix = src/tree/shapeProfile.ts,
+line-for-line port of kernel Transition.Shape.getRadius incl. secant ogive,
+per-shape param clamp, and CLIPPED transitions (ellipsoid/power/haack —
+kernel's default state; binary-search clip solve). TreeSchematic profilePath()
++ Rocket3D lathePoints() both sample it. shapeParameter FIELD added to
+PropertyPanel (shown only for ogive/power/parabolic/haack, max 1/3 for haack,
+blank placeholder "default: X"). orkFile transition export now writes
+<shapeclipped> = isClippable (was always false — desktop mismatch). QUEUED
+KERNEL GAPS (next rebuild): bridge ignores shapeParameter on TRANSITIONS
+(nose ok, 3-line fix), and imported shapeclipped=false can't be honored.
+(2) COMPONENT DATA EXPORT: services/componentTable.ts — one row per component,
+engine-computed mass/CG/position + schema-field union in USER units
+(diameter-pref aware, option labels); CSV + XLSX in Save/Export menu.
+(3) 2D/3D IMAGE EXPORT (RockSim cert-packet parity, modernized): services/
+schematicExport.ts — dataHeaderLines (name/dims/span/mass/CG/CP/margin),
+schematicSvg (bakes --surface-1/--text-primary/--accent to light values,
+identity zoom, white bg, PHYSICAL mm size = prints 100% scale — one file
+replaces RockSim's model+100% pair), svgToPng 3840px, snapshotWithHeader
+(3D canvas + header; Rocket3D gained preserveDrawingBuffer + onCreated ref).
+⬇SVG/⬇PNG on 2D view, 📷PNG on 3D view (Design tab only via exportData
+prop). Format matrix in response doc: wrl/iv/oogl/rib/pov/x3d/xbm/xpm/pnm =
+dead, skip; OFFERED glTF/STL/resolution-picker/PDF — awaiting Eric's pick.
+(4) ISSUE TRACKING: recommended separate public issues-only repo
+(online-openrocket-issues); in-app prefilled-GitHub-link + mailto next
+session once Eric creates it. 221 tests (198 app + 23 engine; new:
+shapeProfile 16, Rocket3D shapes 4, componentTable 5). Browser-verified on
+built dist: nose ogive→conical→haack distinct in 2D+3D w/ CP tracking,
+param field show/hide + placeholder, transition ogive-vs-conical in 2D, SVG
+content inspected (header/mm-size/CG-CP/no vars), 2D PNG 363KB, CSV 13 rows.
+NOT click-verified: 3D 📷 (GPU wedged mid-session — LIVE v0.040 3D showed
+the same 300×150 stall, so environmental; Eric to click once). GOTCHA: the
+rAF→setTimeout monkeypatch trick BREAKS R3F mounting — don't use it for the
+3D view; also repeated 2D↔3D toggles under CDP leak WebGL contexts until
+Context Lost. Deploy = git push (Actions → Cloudflare Pages). Next v0.042.
+
 ## ⚡ v0.040 (2026-08-05): issue batch e — fin auto-align, shroud convert, sub-minimum, EX folders
 
 issues-2026-08-05e → response-2026-08-05e.md. Both QUEUED DISCUSSIONS resolved
@@ -1048,7 +1095,9 @@ Worth remembering because they shape how we work:
 
 ## Practical bits
 
-- Resume work: `cd G:\git\online_open_rocket` → `claude` (CLAUDE.md auto-loads).
+- Resume work: `cd E:\git\online_open_rocket` → `claude` (CLAUDE.md auto-loads;
+  repo moved from `G:\git` 2026-08-11 — `git fetch` first, Eric works from two
+  machines now).
 - Run the app: `cd packages\app && npx vite preview --port 4180` (built dist), or
   `npm run dev` from the repo root for live-reload during development.
 - Batch issue lists: markdown file preferred, e.g. `docs/testing/` + repro `.ork`
