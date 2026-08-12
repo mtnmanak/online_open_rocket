@@ -1,0 +1,30 @@
+# .github/ISSUE_TEMPLATE/feature-request.yml
+name: Feature request
+description: Something the site or a tool could do
+labels: ["type:feature", "needs-triage"]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Which tool is this about?
+      options:
+        - Online OpenRocket
+        - Motor Dashboard
+        - Motor Simulator
+        - Black Powder Calculator
+        - The mountainmanrockets.com website itself
+        - Something else / a new tool idea
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: What would you like it to do?
+      description: Describe the feature and, if you can, the real task it would help with — the use case shapes the design more than the feature description does.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: How do you handle this today? (optional)
+      description: "Other software, spreadsheets, by hand… This tells me how much time the feature would actually save you."

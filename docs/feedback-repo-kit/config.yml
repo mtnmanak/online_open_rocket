@@ -1,0 +1,6 @@
+# .github/ISSUE_TEMPLATE/config.yml
+blank_issues_enabled: true
+contact_links:
+  - name: Email (no GitHub account needed)
+    url: https://www.mountainmanrockets.com/contact/
+    about: I'll file the issue here for you.

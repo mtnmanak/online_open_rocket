@@ -147,7 +147,18 @@ Internally every size is stored in **pure SI** (meters, kilograms, seconds) and 
 
 ## Nose cones and transitions
 
-Both support six mathematical **shapes**: Ogive, Conical, Ellipsoid, Parabolic, Haack, and Power. Shapes that take a free parameter (ogive, parabolic, power, Haack) show a **Shape parameter** field next to the shape picker — ogive 1 = tangent, <1 = secant; Haack 0 = Von Karman (LD), 1/3 = LV; power 0.5 = the classic ½-power — and a blank field means OpenRocket's own default (ogive/parabolic = 1, power = 0.5), so a missing parameter never silently reshapes the part. The 2D and 3D views draw the **exact mathematical profile** the physics flies, including the parameter. A nose cone can be **solid (filled)** or a hollow shell of a given wall thickness, and can carry a **shoulder** (radius, length, thickness, and an optional end cap) that plugs into the tube below. A transition is a shoulder-to-shoulder part with independent fore and aft radii plus a shoulder on **each** end — use it as a reducer, boat tail, or coupler flare.
+Both support six mathematical **shapes**: Ogive, Conical, Ellipsoid, Parabolic, Haack, and Power. The 2D and 3D views draw the **exact mathematical profile** the physics flies, including the shape parameter.
+
+Four of the shapes are really *families* of profiles, selected by a **Shape parameter** field that appears next to the shape picker (Conical and Ellipsoid have a single fixed profile, so the field hides). A blank field always means OpenRocket's own default for that shape — a missing parameter never silently reshapes the part:
+
+| Shape | What the parameter controls | Range | Blank = |
+|---|---|---|---|
+| Ogive | **1 = tangent ogive** (the circular arc meets the body tube smoothly — the classic kit profile). Below 1 it becomes a **secant ogive** (a shallower arc that meets the tube at an angle), straightening all the way to a cone at 0. | 0–1 | 1 |
+| Parabolic | Which segment of a parabola to use: **1 = full parabola** tangent to the tube, 0.75 = ¾-parabola, 0.5 = ½-parabola, **0 = cone**. | 0–1 | 1 |
+| Power | The exponent n in r ∝ (x/L)ⁿ: **0.5 = the classic ½-power** (parabola of revolution), 1 = cone, small values = increasingly blunt. | 0–1 | 0.5 |
+| Haack | **0 = LD-Haack (Von Kármán)** — minimum drag for a given length and diameter, the usual choice; **1/3 = LV-Haack** — minimum drag for a given length and volume. The field caps at 1/3 (the engine clamps there too). | 0–1/3 | 0 |
+
+Imported files keep whatever parameter they carried — RockSim designs in particular often store explicit values, which you can now see and edit. A nose cone can be **solid (filled)** or a hollow shell of a given wall thickness, and can carry a **shoulder** (radius, length, thickness, and an optional end cap) that plugs into the tube below. A transition is a shoulder-to-shoulder part with independent fore and aft radii plus a shoulder on **each** end — use it as a reducer, boat tail, or coupler flare.
 
 ## Fins
 
@@ -357,7 +368,9 @@ The app reads and writes several formats. What survives a round-trip depends on 
 | **.obj** (Wavefront) | — | Yes | External shell only — the meshes the 3D view renders. Meters, nose at x=0. Not guaranteed watertight; for print-preview/CAD reference. |
 | **.svg** (fin template) | — | Yes | True-scale 1:1 cut template with calibration ruler (see *Visualizing the Design*). |
 | **.csv / .xlsx** (component data) | — | Yes | Every component as one row — dimensions, material, shape, and the engine's computed mass/CG/position — in your preferred units. For sharing measurement data with people who don't run a simulator. |
-| **.svg / .png** (2D drawing & 3D snapshot) | — | Yes | The 2D side view with a data header (dimensions, mass, CG/CP, stability margin) via the **⬇ SVG / ⬇ PNG** buttons on the drawing. The SVG's size is physical millimetres, so it prints at true 100 % scale; the PNG is 3840 px wide. A **📷 PNG** button on the 3D view saves a snapshot with the same header. These are the drawings L3 and Tripoli Class 3 documentation packets ask for. |
+| **.svg / .png / .jpg** (2D drawing & 3D snapshot) | — | Yes | The 2D side view with a data header (dimensions, mass, CG/CP, stability margin) via **⬇ SVG** (physical-mm size — prints at true 100 % scale) and **⬇ Image** (PNG or JPG at HD / 4K / 8K width). The 3D view's **📷 Image** button re-renders the scene at the chosen resolution — an 8K snapshot is genuinely 8K — with the same data header. These are the drawings L3 and Tripoli Class 3 documentation packets ask for. |
+| **.glb** (glTF binary) | — | Yes | Modern 3D model *with your component colors as real materials* — opens directly in Windows 3D Viewer, PowerPoint, Blender, Fusion 360, and web viewers. Meters; nose at the origin, rocket along +X. |
+| **.stl** (whole rocket / per component) | — | Yes | Two very different exports, both in **millimetres**. Save/Export → whole-rocket *display shell* (reference only — not watertight). The real one: select a component and press **🖨 STL for printing** in its property panel — a *guaranteed-watertight solid* built for slicers: hollow nose cones and transitions with their shoulders and caps, single fins with the through-the-wall tab merged in, true-bore centering rings, bulkheads, and tubes. Fins print as flat prisms (airfoil shaping is left to sanding); verify fit before a long print. |
 
 The most important domain caveat is **RASAero has no mass data** — a `.CDX1` import gives you accurate geometry but placeholder masses, so treat its predicted altitudes as provisional until you add real materials and overrides. `.ork` is the only lossless format; use it as your working save.
 

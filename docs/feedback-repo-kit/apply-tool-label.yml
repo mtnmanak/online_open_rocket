@@ -1,0 +1,36 @@
+# .github/workflows/apply-tool-label.yml
+#
+# Public filers can't set labels, so this reads the issue form's
+# "Where did this happen?" / "Which tool is this about?" dropdown answer
+# and applies the matching tool:/area: label.
+name: Apply tool label
+on:
+  issues:
+    types: [opened]
+permissions:
+  issues: write
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            const map = {
+              'Online OpenRocket': 'tool:online-openrocket',
+              'Motor Dashboard': 'tool:motor-dashboard',
+              'Motor Simulator': 'tool:motor-simulator',
+              'Black Powder Calculator': 'tool:bp-calculator',
+              'The mountainmanrockets.com website itself': 'area:site',
+            };
+            // The form renders the dropdown as "### <question>\n\n<answer>".
+            const m = body.match(/### (?:Where did this happen\?|Which tool is this about\?)\s*\n+([^\n]+)/);
+            const label = m && map[m[1].trim()];
+            if (label) {
+              await github.rest.issues.addLabels({
+                ...context.repo,
+                issue_number: context.payload.issue.number,
+                labels: [label],
+              });
+            }

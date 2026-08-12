@@ -1,5 +1,47 @@
 # Working notes — collaboration style & project state
 
+## ⚡ v0.042 (2026-08-11): issue batch b — printable component STL, glTF, image picker
+
+issues-2026-08-11b → response-2026-08-11b.md. NO engine rebuild. Eric
+CONFIRMED batch-a items (CSV export, both shape bugs); all approved
+follow-ups shipped same-day. (1) 🖨 COMPONENT STL (the flagship — "no other
+sim has it"): src/tree/solidMesh.ts = watertight-solid builders
+(revolveProfile: closed (x,r)-loop about +X, signed-area winding
+normalization, pole collapse; extrudePolygon: ShapeUtils caps, concave OK)
++ componentSolid() per type: hollow nose/transition w/ shoulders+caps at
+real wall (profile from shapeProfile = kernel-exact), single fin w/ TAB
+merged (tabHeight/tabLength/finTabFront), true-bore centering ring
+(parentInnerRadius + mountOuterRadius from ctx — PropertyPanel derives from
+parent tube + sibling innertube), bulkhead/tubes/coupler/engineblock/lug/
+tubefin. isWatertight (edge-paired, direction-strict) + solidVolume + 
+analytic anchors (cone πR²L/3 etc) in 38 tests. BUILT VIA WORKFLOW
+(5 agents: 3 parallel implementers + 2 adversarial verifiers; ~380k tokens):
+verifier CAUGHT 2 real defects pre-release — fore-shoulder cap DROPPED
+(11% volume err on capped reducers) + closed-freeform-outline+tab broke
+watertightness (dup first/last point retraced root edge). Both fixed+pinned.
+(2) services/stlExport.ts: binary STL, mm (×1000 lives ONLY here), header
+never starts 'solid', winding-derived normals; piecesToStl = whole-rocket
+display shell (Save/Export, labeled reference). (3) services/gltfExport.ts:
+rocketToGlb via three GLTFExporter {binary:true}, per-piece colors as
+materials — Save/Export ".glb — 3D model with colors". (4) IMAGE PICKER:
+ImageExportMenu.tsx (PNG/JPG × HD/4K/8K) replaces fixed-PNG buttons on 2D
+(svgToImage) AND 3D — 3D snapshot RE-RENDERS at export width (r3f state ref;
+gl.setPixelRatio(1)+setSize(w,h,false)→render→capture→restore) = genuine 8K.
+(5) GUIDE: shape-parameter TABLE (Eric asked; both mirrors) + new formats
+rows. (6) RECOMMENDATIONS in response doc: STEP/CNC = DXF for flat parts
+next (cheap, covers most CNC) then STEP via opencascade.js WASM lazy chunk
+as own phase (Eric validates in Fusion/SolidWorks); ISSUE TRACKER = go
+further than other-session's proposal: ONE repo for site+tools — rename
+mountainmanrockets-site-feedback→mountainmanrockets-feedback (GitHub
+redirects), dropdown+Action auto-labeling; READY-TO-PASTE KIT in
+docs/feedback-repo-kit/ (SETUP/README/2 issue forms/config/labeler wf);
+in-app 🐞 links wired next session once Eric sends the URL. 270 tests
+(247 app + 23 engine). Live-verified on built dist: nose STL byte-exact
+260.35mm (221.23+39.12 shoulder ✓ mm scale), GLB magic/len valid, JPG@4K
+3840px real JPEG, whole-STL 184KB. 3D 📷 STILL needs Eric's click (same
+environmental WebGL wedge as v0.041 session — R3F canvas never inits under
+this CDP browser; live v0.040 identical). Next version v0.043.
+
 ## ⚡ v0.041 (2026-08-11): issue batch a — true shapes in 2D/3D, component export, cert drawings
 
 issues-2026-08-11a → response-2026-08-11a.md. NO engine rebuild. ENV FIRST

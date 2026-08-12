@@ -1,0 +1,40 @@
+# .github/ISSUE_TEMPLATE/bug-report.yml
+name: Bug report
+description: Something is broken or behaving wrong
+labels: ["type:bug", "needs-triage"]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Where did this happen?
+      options:
+        - Online OpenRocket
+        - Motor Dashboard
+        - Motor Simulator
+        - Black Powder Calculator
+        - The mountainmanrockets.com website itself
+        - Something else / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, what happened instead? A screenshot helps if it's visual.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Tool version (if shown)
+      description: "Online OpenRocket shows it next to the logo, e.g. v0.042 beta."
+  - type: input
+    id: browser
+    attributes:
+      label: Browser & device
+      placeholder: "Chrome on Windows 11 / Safari on iPhone 15"
+  - type: textarea
+    id: design
+    attributes:
+      label: Design file (optional)
+      description: For simulator issues, attaching the .ork/.rkt file (zip it first) makes the fix much faster. Only attach designs you're comfortable sharing publicly.
