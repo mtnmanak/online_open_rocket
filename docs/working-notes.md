@@ -1,5 +1,11 @@
 # Working notes — collaboration style & project state
 
+> **Latest session (2026-08-12): v0.044** — issue batch 2026-08-12a. The Nav Contract
+> is adopted (the site menu is live data now), DXF export shipped, and an elliptical-fin
+> export bug was found and fixed. Read `docs/testing/response-2026-08-12a.md` — it
+> carries SIX open questions for Eric, including two go/no-go calls (part splitting,
+> hole patterns) he has to make before that work starts.
+
 ## ⚡ START HERE → read `docs/handoff-2026-08-11.md` first
 
 The current, self-contained session handoff: v0.041 + v0.042 + v0.043 (the
@@ -15,6 +21,68 @@ pushed, v0.043 live-verified, no background work running. Eric's own live
 test of the 3D 📷 export (8K Darkstar w/ correct data header) is committed
 at docs/2D_3D_Models/Wildman_Darkstar_3_-3d.png — every v0.042 smoke item
 CONFIRMED. The per-version blocks below remain as history.
+
+## ⚡ v0.044 (2026-08-12): Nav Contract adopted + DXF export + elliptical-fin fix
+
+issues-2026-08-12a → response-2026-08-12a.md. NO engine rebuild (packages/engine
+and engine-java untouched — differential unaffected). 349 tests (326 app + 23
+engine; was 270). (1) NAV CONTRACT (JOB 1): services/useMmrNav.ts (hook adapted
+from chrome-spec §5, CONTRACT = mountainmanrockets.pages.dev/chrome/nav.v1.json
+VERBATIM per the adjudicated spec — www serves byte-identical w/ same CORS, raised
+to Eric as an open question, do NOT change unilaterally) + components/SiteBand.tsx
+(band + opt-in footer strip, each a thin wrapper over a *Body INSIDE an error
+boundary — the boundary MUST sit one level below the component that reads nav, or
+`nav.nav.map` throws while building the boundary's own element and MUST 1 fails;
+the fail-open test caught exactly that). SITE_MENU deleted; .site-nav CSS → a
+.mmr-band-* block. All 7 of §2's MUSTs verified w/ evidence by an independent
+reviewer. TWO JUDGMENT CALLS, both flagged to Eric: (a) FALLBACK = a snapshot of
+TODAY'S CONTRACT, not the old WordPress menu (those URLs 301 and the labels are
+stale — offline users now see the same 8 links as online); (b) footer github.com
+links use _blank+noopener, a scoped letter-violation of MUST 6, because
+feedback-tracker.md's standing ruling says GitHub opens a new tab — nav[] stays
+100% _top. KEY BUG CAUGHT PRE-RELEASE: parseNav rejected the WHOLE payload when an
+OPTIONAL block was malformed, so one legal site-side edit (empty footer.links)
+would have pinned this tool to its fallback PERMANENTLY + silently, and spec §7
+would then have misrouted the bug to a site session. Now degrades: hard-reject only
+schema/menuVersion/site/non-empty nav[], `delete` a failing optional block.
+(2) DXF EXPORT: services/dxfExport.ts — R12/AC1009 ASCII (NOT LWPOLYLINE, that's
+R14+ and strict readers reject it), mm, POLYLINE/VERTEX/SEQEND + CIRCLE, layers
+CUT/REFERENCE/TEXT, $INSUNITS=4, real TABLES so no entity references an undefined
+layer. Fins = ONE closed contour w/ TTW tab merged (CAM offsets a single path);
+rings take the true bore from the mount exactly as componentSolid does; also
+bulkhead/coupler/engineblock. Button ✂ (deliberately NOT 📐 — the SVG template
+owns that and they sit adjacent). solidMesh.finCutOutline EXPORTED for reuse;
+collapseLoop exported too — raw contours had duplicate vertices + zero-length
+segments on ordinary top/bottom tab anchorings, which breaks kerf compensation.
+(3) ELLIPTICAL FIN BUG (found by a verifier, not on Eric's list): finCutOutline
+built the planform as [root·u, height·sin(π·u)] — a SINE HUMP. Ground truth
+verified in EllipticalFinSet.java:17-25 (POINT_X=(cos a+1)/2, POINT_Y=sin a = a
+TRUE ELLIPSE; finTemplate.ts had it right all along). STL enclosed (2/π)·r·h
+instead of (π/4)·r·h = 19% SMALL, shipped since v0.042. EXPORT ONLY — kernel
+computes fin aero from rootChord/height, never these points. solidMesh.test.ts:246
+had ENSHRINED the wrong value; now expects (π/4) and asserts >10% divergence from
+the old one so a silent revert can't pass. (4) &tool= REMOVED everywhere (App.tsx,
+both guide mirrors) + version.ts:30 claim corrected + feedback-tracker.md's
+blockquote about this repo rewritten past-tense (it told every future session to
+chase a now-closed open item). ?template= SURVIVES everywhere — dropping it kills
+all prefill. (5) styles.css: reconciled TWO contradictory "keep me last" comments
+(wide-screen block vs Daylight block — Daylight is genuinely last and always was;
+it's safe only because it carries no layout properties, now documented in both).
+BUILT VIA 2 WORKFLOWS (9 agents): build+adversarial-verify, then fix+recheck.
+Verifiers found 13 real defects pre-release. PWA OFFLINE TESTED in Chrome on built
+dist w/ SW installed: killed the origin server → app came up ENTIRELY from precache
+(rocket, 13 tree rows, vitals, Launch, band, footer); SW scope is the app origin so
+it can NEVER swallow a cross-origin band navigation (proven by navigating — the
+search target loaded the real site page, not index.html); cache clear → refetch →
+rewrite OK. NOT exercised: true no-internet (didn't take Eric's network down) —
+unit-tested, and moot because the baked fallback == the live contract.
+AWAITING ERIC (response doc §"Waiting on you"): part-splitting go/no-go (1 session,
+full design in the doc), hole patterns on rings/bulkheads (highest-value CNC item,
+improves DXF even if STEP never ships), STEP after that (hand-written AP214 ~600
+lines, NOT opencascade.js — 48.9MB raw vs a 4.2MB app, and its .wasm wouldn't be
+precached while its .js would = a button that looks offline-ready and isn't),
+pages.dev-vs-www contract host, the MUST 6 footer exception, 3D-snapshot auto-fit.
+Next version v0.045.
 
 ## ⚡ v0.043 (2026-08-11): 🐞 Feedback links + README (adjudication scope)
 

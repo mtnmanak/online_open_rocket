@@ -108,10 +108,11 @@ field types.**
 bug to route around — the dropdown is `required`, and the labeler reads whatever they pick,
 which is what makes the routing work at all.
 
-> **Do not copy `&tool=` from Online OpenRocket.** It passes that parameter today and the
-> parameter is inert. Its release notes go further and claim *"Bug reports arrive with the
-> tool and app version prefilled"* — the **version** half is true, the **tool** half is not.
-> That copy is a known open item on that repo, not a pattern to follow.
+> **Do not reintroduce `&tool=`.** Online OpenRocket passed that inert parameter, and its
+> release notes claimed *"Bug reports arrive with the tool and app version prefilled"*,
+> through v0.043. **Both were corrected on 12 Aug 2026** — the parameter is gone and the
+> notes now say the app version is prefilled and you pick the tool from a dropdown. Nothing
+> to chase here; the table above is why, and it still holds.
 
 A working example:
 
