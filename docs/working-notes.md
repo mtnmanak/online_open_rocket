@@ -40,7 +40,10 @@ in-app 🐞 links wired next session once Eric sends the URL. 270 tests
 260.35mm (221.23+39.12 shoulder ✓ mm scale), GLB magic/len valid, JPG@4K
 3840px real JPEG, whole-STL 184KB. 3D 📷 STILL needs Eric's click (same
 environmental WebGL wedge as v0.041 session — R3F canvas never inits under
-this CDP browser; live v0.040 identical). Next version v0.043.
+this CDP browser; live v0.040 identical).
+**v0.042 LIVE (2026-08-11, ~90 s after push; cache-bypass verified: served
+bundle index-ADHolj8P.js byte-identical to local (2,823,250 B), version.json
+0.042, feature strings present).** Next version v0.043.
 
 ## ⚡ v0.041 (2026-08-11): issue batch a — true shapes in 2D/3D, component export, cert drawings
 
