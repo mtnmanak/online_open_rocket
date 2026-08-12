@@ -2,6 +2,21 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> ## 🎫 Feedback / issue tracking — settled, do NOT rebuild it
+>
+> Bug reports and feature requests for this tool go to **one central public tracker**,
+> `mtnmanak/mountainmanrockets-feedback`, routed by label from a dropdown on the issue form.
+> It is implemented and live as of 12 Aug 2026.
+>
+> **Read `docs/feedback-tracker.md` before writing anything feedback-shaped** — a button, a
+> link, help copy, a report page. It has the URLs, the label taxonomy, the exact prefill
+> rules (dropdowns **cannot** be prefilled — that one wastes an afternoon), and the standing
+> UI rulings.
+>
+> **Do not create a feedback repo, labels, issue templates, or a labeling workflow in this
+> repo.** Several older docs here still recommend exactly that; they are stale and
+> `docs/feedback-tracker.md` overrides them.
+
 ## What this is
 
 A browser-based re-creation of **OpenRocket** (the Java/Swing model-rocketry design and
