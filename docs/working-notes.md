@@ -1,10 +1,13 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-12): v0.044** — issue batch 2026-08-12a. The Nav Contract
-> is adopted (the site menu is live data now), DXF export shipped, and an elliptical-fin
-> export bug was found and fixed. Read `docs/testing/response-2026-08-12a.md` — it
-> carries SIX open questions for Eric, including two go/no-go calls (part splitting,
-> hole patterns) he has to make before that work starts.
+> **Latest session (2026-08-12): v0.044 then v0.045** — issue batches 2026-08-12a and -12b.
+> a: Nav Contract adopted, DXF export, elliptical-fin export bug fixed.
+> b: printable-part SPLITTING built (Eric: "build it"), 3D snapshot auto-fit, and the two
+> Nav Contract corrections Eric sent back. Read `docs/testing/response-2026-08-12b.md` —
+> it carries three band findings that belong UPSTREAM in chrome.ref.js (not fixable here
+> without diverging from the other three tools), a warn-or-refuse question on fin-set
+> clocking, and one pre-existing app-header overflow bug found but deliberately not fixed.
+> STEP + fabrication geometry are BACKLOGGED by Eric's decision — do not start them.
 
 ## ⚡ START HERE → read `docs/handoff-2026-08-11.md` first
 
@@ -21,6 +24,51 @@ pushed, v0.043 live-verified, no background work running. Eric's own live
 test of the 3D 📷 export (8K Darkstar w/ correct data header) is committed
 at docs/2D_3D_Models/Wildman_Darkstar_3_-3d.png — every v0.042 smoke item
 CONFIRMED. The per-version blocks below remain as history.
+
+## ⚡ v0.045 (2026-08-12): part SPLITTING for 3D printing + snapshot auto-fit + nav fixes
+
+issues-2026-08-12b → response-2026-08-12b.md. NO engine rebuild. 515 tests (492 app +
+23 engine; was 349). (1) NAV, two fixes Eric sent back — BOTH were SPEC corrections that
+landed after v0.044 shipped (site repo f2a85eb "Band: one row at every width" and 4537e11
+"the reference still pointed at the pre-cutover pages.dev"): CONTRACT → www (my open
+question, answered by him correcting the spec — raising it beat deviating), and the
+nowrap/overflow-x scroll treatment moved to BASE selectors. GOTCHA: Eric's CSS block is
+written against chrome.ref.js's markup, NOT ours — `.mmr-band-nav li` (we render bare
+<a>) and `.mmr-band-search form` (our `.mmr-band-search` IS the form) would both be
+SILENT NO-OPS, and the second would have left the 130px input visible at 375px. Translated
+w/ comments naming the reference selector. THREE findings deliberately NOT fixed here
+because they'd diverge from the other three tools — reported for chrome.ref.js instead:
+focus-ring gutter is vertical-only so it still clips horizontally; hiding the scrollbar
+removes the only overflow affordance at 768–924px (measured: 2 labels silently gone at
+800px); `gap:.6em` resolves per-tool. (2) PART SPLITTING (the flagship — Eric: "build
+it"): tree/splitSolid.ts + services/printPack.ts + prefs/printers.ts. Cheap ONLY because
+every revolved part comes from one closed (x,r) loop — Sutherland-Hodgman half-plane
+clip + generated spigot + re-revolve, so each segment inherits revolveProfile's
+watertightness proof. NO CSG, no dependency. Spigot is a RUNNING MINIMUM of the bore, not
+an offset (a nose bore widens aft, so an offset copy is fatter at its tip than the socket
+mouth and cannot enter). Cuts legal only in the body span (bodyLoop doubles back inside
+shoulders → non-manifold); refusal refuses the SPLIT, never the export. **THE MARGIN
+TRAP, fixed here and worth remembering: usableBox() took the margin off Z TWICE.** X/Y
+correctly lose 2m (inset from both bed edges) but a part sits ON the bed at z=0. The
+agent chose 2m *only to reproduce a segment count I had asserted in its brief* (MK4S=3),
+and that count came from the design doc's 25 mm spigot estimate where spigotLengthFor()
+gives 19.05 mm on Ø76.2. Corrected to z−m: H2D usable 317 (not 309), the 3" nose is 2
+pieces on BOTH machines, and the headline is "64 mm too long" not 72. usableBox is now
+EXPORTED and the tests derive from it — 17 tests had pinned the old value. LESSON: do not
+assert expected numbers in an agent brief unless you have re-derived them; it will fit the
+model to your assertion. (3) SNAPSHOT AUTO-FIT: renders through a THROWAWAY camera rather
+than mutate-and-restore (OrbitControls owns the live one and an 8K encode takes seconds —
+a restore pair would show a jumped view for that whole window), w/ its own near/far
+because fitting a 5 cm part pulls inside the default 0.1 m near plane and exported blank.
+Per-corner fit bound, NOT summed extents — the summed version framed stubby rockets
+SMALLER than no fit at all. BUILT VIA 3 WORKFLOWS (13 agents). Verifiers found 16 defects
+pre-release. PWA offline re-tested (origin killed → full app from precache; baked fallback
+proven byte-identical to the live contract in the shipped bundle). Band measured one row
+1400→375px. NOT click-verified: the auto-fit snapshot (R3F canvas never inits under CDP —
+same environmental wedge as v0.041; 25 unit tests cover the maths). FOUND NOT FIXED: the
+APP HEADER overflows horizontally at narrow widths (~950px at a 375px viewport) — the
+band is clean, this is pre-existing. BACKLOGGED BY ERIC: STEP + fabrication geometry.
+Next version v0.046.
 
 ## ⚡ v0.044 (2026-08-12): Nav Contract adopted + DXF export + elliptical-fin fix
 
