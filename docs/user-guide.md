@@ -31,7 +31,8 @@ The guide has three parts:
 7. [Multi-Stage and Clustered Rockets](#multi-stage-and-clusters)
 8. [Files, Units, and Offline Use](#files-and-formats)
 9. [How It Works: Physics & Math](#how-it-works-physics)
-10. [Assumptions, Limitations & References](#limitations-and-references)
+10. [Feedback & Bug Reports](#feedback)
+11. [Assumptions, Limitations & References](#limitations-and-references)
 
 ---
 
@@ -513,6 +514,17 @@ Here is the one intentional difference from the desktop. Desktop OpenRocket seed
 ---
 
 <a id="limitations-and-references"></a>
+
+## Feedback & Bug Reports
+
+Found something broken, or want the app to do something it doesn't? Both are genuinely wanted — beta reports directly shape what gets built next. The **🐞 Feedback** button in the header offers every route, or use these links directly:
+
+- **[Report a bug](https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=bug-report.yml&tool=Online%20OpenRocket)** — what you did, what you expected, what happened instead. The app version (next to the logo) and your browser help a lot; attaching the .ork file (zipped) makes most fixes far faster. Only attach designs you're comfortable sharing publicly.
+- **[Request a feature](https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=feature-request.yml&tool=Online%20OpenRocket)** — describe the real task it would help with; the use case shapes the design more than the feature description does.
+- **[Browse open issues](https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen%20label%3Atool%3Aonline-openrocket)** — see what's already filed before adding a duplicate. The tracker covers mountainmanrockets.com and all of its online tools; a dropdown routes your report to the right one.
+- **No GitHub account?** Email [admin@mountainmanrockets.com](mailto:admin@mountainmanrockets.com) and it gets filed for you — you don't need an account to *read* anything on the tracker.
+
+The open-issues list is the real queue — anything filed there is logged, visible, and not forgotten.
 
 ## Assumptions, Limitations & References
 

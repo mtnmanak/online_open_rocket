@@ -1,5 +1,38 @@
 # Working notes — collaboration style & project state
 
+## ⚡ START HERE → read `docs/handoff-2026-08-11.md` first
+
+The current, self-contained session handoff: v0.041 + v0.042 + v0.043 (the
+2026-08-11 marathon — both issue batches AND the tracker adjudication). THE
+TRACKER QUESTION IS SETTLED — one public tracker `mountainmanrockets-feedback`,
+adjudicated in E:\git\mountainmanrockets\docs\issue-tracking-consolidation.md
+(rev.3); our kit files were ADOPTED, the setup runs CENTRALLY (never from
+here), and this repo's assigned scope shipped as **v0.043**: header 🐞
+Feedback menu (bug/feature forms w/ tool+version prefill, browse, mailto —
+new-tab/mailto rulings honored), guide Feedback section (both mirrors), and
+the repo's first README.md. SESSION CLOSED CLEAN 2026-08-11: tree clean,
+pushed, v0.043 live-verified, no background work running. Eric's own live
+test of the 3D 📷 export (8K Darkstar w/ correct data header) is committed
+at docs/2D_3D_Models/Wildman_Darkstar_3_-3d.png — every v0.042 smoke item
+CONFIRMED. The per-version blocks below remain as history.
+
+## ⚡ v0.043 (2026-08-11): 🐞 Feedback links + README (adjudication scope)
+
+Eric's central adjudication landed mid-wrap-up (SETUP.md gained a ⛔ banner;
+full decision in the site repo's issue-tracking-consolidation.md rev.3 —
+READ IT before any tracker work). This repo's only scope: (1) header 🐞
+Feedback menu (Icon.tsx gained 'bug'; FEEDBACK_REPO const in App.tsx;
+GitHub links window.open _blank noopener per standing ruling, mailto via
+location.href, bug form prefills tool + version, browse link goes to
+/issues?label:tool:online-openrocket); (2) guide section 'feedback' before
+limitations (both mirrors, md TOC renumbered); (3) README.md authored
+(repo had NONE — adjudication correction) w/ the tracker line. NOT DONE
+DELIBERATELY: LICENSE (adjudication §9.5 leaves it as Eric's open item —
+raise, don't add). 247+23 tests green; DOM-verified on built dist (menu
+items, bug URL params, guide TOC). NOTE for next session: if the 🐞 links
+404, the CENTRAL tracker setup (rename/templates/labels) hadn't finished —
+not ours to fix. Next version v0.044.
+
 ## ⚡ v0.042 (2026-08-11): issue batch b — printable component STL, glTF, image picker
 
 issues-2026-08-11b → response-2026-08-11b.md. NO engine rebuild. Eric
@@ -43,7 +76,13 @@ environmental WebGL wedge as v0.041 session — R3F canvas never inits under
 this CDP browser; live v0.040 identical).
 **v0.042 LIVE (2026-08-11, ~90 s after push; cache-bypass verified: served
 bundle index-ADHolj8P.js byte-identical to local (2,823,250 B), version.json
-0.042, feature strings present).** Next version v0.043.
+0.042, feature strings present).** POST-RELEASE: Eric clicked 3D 📷 on the
+live site himself — genuine 8K Darkstar export w/ correct header
+(docs/2D_3D_Models/Wildman_Darkstar_3_-3d.png) — the last smoke item is
+CONFIRMED. He also reorganized docs/2D_3D_Models/ (RockSim examples →
+Rocksim/ subfolder). issues-2026-08-11c.md = a copy of response-b with an
+issues header (no new issues; likely his annotation template — check for
+annotations next session). Next version v0.043.
 
 ## ⚡ v0.041 (2026-08-11): issue batch a — true shapes in 2D/3D, component export, cert drawings
 
