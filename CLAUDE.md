@@ -59,7 +59,8 @@ the site is not rebuilt or touched.
 **`mmrsim.mountainmanrockets.com` is the ONLY address to hand out** — anywhere: docs,
 invites, links, help copy. It is the address on the beta invite (`docs/beta-invite.md`)
 and the one testers will bookmark. The retired `openrocket.*` subdomain still serves the
-app behind a moved notice so already-invited testers aren't stranded; never hand it out.
+app behind a moved notice so already-invited testers aren't stranded; never hand it out as
+the app's address — the beta invite's migration note is the one sanctioned mention.
 
 **`git push` to `main` is the deploy.** `.github/workflows/deploy.yml` runs
 `npm ci && npm run build` (the user-guide generator, then tsc + vite — the TeaVM
