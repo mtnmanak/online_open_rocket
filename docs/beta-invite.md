@@ -30,6 +30,10 @@ numbers or the workflow don't match your experience.
 
 **Getting out of your way**
 
+- **Free, open source, and no account — ever.** Nothing to sign up for, nothing to log
+  in to: your designs live in your browser and in the `.ork` files you save, not on
+  someone's server. The whole app is free software (GPL, full source public), it costs
+  nothing, and it will stay that way.
 - **Nothing to install, on anything.** It runs in a browser tab — Windows, Mac, Linux,
   iPad, phone. No Java runtime, no version to keep current.
 - **Works with no internet.** The whole app — physics engine, motor database, component
