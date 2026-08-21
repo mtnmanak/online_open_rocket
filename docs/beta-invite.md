@@ -1,6 +1,10 @@
 # MMRocket Sim — beta invitation
 
-*Copy for emails, forum posts and club announcements. Version as of v0.047 (August 2026).*
+*Copy for emails, forum posts and club announcements. Version as of v0.050 (August 2026).
+Cleared for the public forum post — Eric closed both open copy calls on 2026-08-21
+(batch 08-21d): no non-affiliation clause added, and the pre-rename migration note is
+dropped from the message ("move on from the old subdomain"). The old address 301s here,
+so pre-rename testers are covered without a word of copy.*
 
 **Link to send:** <https://mmrsim.mountainmanrockets.com>
 
@@ -123,11 +127,6 @@ which aerodynamic model flew each simulation.
 **Found something, or want it to do something it doesn't?** There's a 🐞 Feedback button in
 the header — it files to a public tracker, and there's an email option if you'd rather not
 use a GitHub account.
-
-**Testing since before the rename?** The app was called *Online OpenRocket* and lived at
-`openrocket.mountainmanrockets.com`. Same app, same physics — new name, new address, and
-the old address now forwards here automatically. If you installed it to a home screen
-before the rename, delete that install and reinstall from the new address.
 
 ---
 
