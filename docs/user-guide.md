@@ -223,7 +223,7 @@ A true-scale side view drawn from the tree. On a desktop the canvas is the hero 
 
 ## The 3D view
 
-A three.js render you can **drag to rotate and scroll to zoom**, with soft studio lighting and a slightly translucent shell so the internals — including the loaded motor in its mount — read through the wall. It marks the **CG** (a neutral sphere) and **CP** (a red sphere) on the axis, and a **floating callout** beside the rocket repeats the two markers at their true stations with the color-coded stability margin between them, readable from any angle. Pods and boosters render ringed around the airframe at their true radius and angle — and they export to OBJ too. The **📷 Image** button exports a hi-res snapshot of the view (see *Files, Units, and Offline Use → File formats*); its **Fit rocket to frame** option is on by default, so the export spends its pixels on the rocket rather than the background.
+A three.js render you can **drag to rotate and scroll to zoom**, with soft studio lighting and a genuinely translucent shell so the internals — mounts, inner tubes, and the loaded motor — read through the wall. **Reset / Side / Aft** buttons in the corner jump the camera to known-good views (Reset is the way back if a zoom or pan ever loses the rocket; zoom is also distance-limited now so the camera can't bury itself in the hull). It marks the **CG** (a neutral sphere) and **CP** (a red sphere) on the axis, and a **floating callout** beside the rocket repeats the two markers at their true stations with the color-coded stability margin between them, readable from any angle. Pods and boosters render ringed around the airframe at their true radius and angle — and they export to OBJ too. The **📷 Image** button exports a hi-res snapshot of the view (see *Files, Units, and Offline Use → File formats*); its **Fit rocket to frame** option is on by default, so the export spends its pixels on the rocket rather than the background.
 
 ## 1:1 fin templates (SVG)
 
@@ -245,6 +245,10 @@ On the **Results** workspace, the **Drag analysis** panel plots your design's dr
 ## Motors
 
 With the airframe drawn, the next step is choosing a motor. The app bundles the full thrustcurve.org catalog metadata and downloads the actual thrust curves on demand.
+
+## Flight configurations (.ork)
+
+Desktop OpenRocket lets one design carry several **flight configurations** — "club field C6", "demo day D12" — each with its own motors and ignition settings. Those now travel: opening a multi-configuration `.ork` asks **which configuration you want** (or **"Open with no motors loaded"** to bring the design in clean), applying the desktop's own default-and-override rules for motors, ignition, deployment and stage separation. A **Flight configurations** panel then appears here on Motors & Launch listing every configuration — apply any one with a click, switch freely, or pick **None**; whatever you load stays loaded until you change or unload it. Your motor edits belong to the configuration you're flying, and **saving writes every configuration back** to the `.ork` with its names and ids intact — desktop OpenRocket sees them all, with the one you were flying marked default. Share links carry the whole set. (Per-configuration deployment/separation overrides apply at file-open for the configuration you chose; switching in the panel switches motors — reopen the file to switch those overrides too.)
 
 ## The database and browser
 
