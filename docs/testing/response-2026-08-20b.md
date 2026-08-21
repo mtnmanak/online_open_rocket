@@ -40,9 +40,11 @@ that drive the real TeaVM kernel.
   history rewritten with git-filter-repo so the public repo never distributed them. **The
   desktop must re-sync before its next session** — instructions in
   `docs/handoff-2026-08-20.md`.
-- The flip itself (`gh repo edit --visibility public` + `--enable-issues=false` together,
-  per `docs/feedback-tracker.md`'s one-sitting rule) runs at the end of this session;
-  result recorded in the handoff.
+- The flip itself is **ready but needs your hand**: the session's permission layer
+  (correctly) refused to let an agent change repo visibility. Everything is staged —
+  history purged, force-pushed, deploy verified — so run the two commands together
+  (one sitting, per `docs/feedback-tracker.md`): see "Waiting on you" below and
+  `docs/handoff-2026-08-20.md`.
 
 ### §2.2 Uncommitted docs — pushed
 
@@ -84,7 +86,9 @@ Measured after: `scrollWidth == clientWidth` at every width 320→1400; before: 
 
 1. **Share link** — built (§2.3).
 2. **Header treatment** — wrap, delegated call, rationale above (§2.4).
-3. **Go public** — executed this session (§2.1); you send the invite.
+3. **Go public** — fully staged this session (§2.1); the final `gh repo edit` pair is
+   yours to run (the permission layer rightly refused an agent that switch), then you
+   send the invite.
 4. **Upstream band findings blurb** — written: **`docs/chrome-ref-band-findings.md`**,
    self-contained for a session in the site repo (names files by role, carries the
    measurements, the exact CSS asks, the re-translation rules for each tool's markup,
@@ -219,13 +223,21 @@ the phantom `setup-jdk.ps1` reference is gone).
 
 ## Waiting on you
 
-1. **Send the invite** (`docs/beta-invite.md`) — everything it claims is now true and
-   live.
-2. **Desktop re-sync** after the history rewrite — see `docs/handoff-2026-08-20.md`
+1. **Flip the repo public** — run these two together (one sitting; Issues can never be
+   transferred later if someone files while public with Issues on):
+
+   ```bash
+   gh repo edit mtnmanak/online_open_rocket --visibility public --accept-visibility-change-consequences
+   gh repo edit mtnmanak/online_open_rocket --enable-issues=false
+   ```
+
+2. **Send the invite** (`docs/beta-invite.md`) — everything it claims is now true and
+   live (the "source (GPL)" link goes live the moment you run the commands above).
+3. **Desktop re-sync** after the history rewrite — see `docs/handoff-2026-08-20.md`
    (two commands; your local work is all pushed, nothing to lose).
-3. The **chrome-ref blurb** (`docs/chrome-ref-band-findings.md`) whenever you next open
+4. The **chrome-ref blurb** (`docs/chrome-ref-band-findings.md`) whenever you next open
    a session in the site repo.
-4. Queued, untouched: supersonic default-ON (anchor gate not met), design optimization
+5. Queued, untouched: supersonic default-ON (anchor gate not met), design optimization
    (discuss first).
 
 ## Verification

@@ -1,15 +1,23 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-12): v0.044 then v0.045** — issue batches 2026-08-12a and -12b.
-> a: Nav Contract adopted, DXF export, elliptical-fin export bug fixed.
-> b: printable-part SPLITTING built (Eric: "build it"), 3D snapshot auto-fit, and the two
-> Nav Contract corrections Eric sent back. Read `docs/testing/response-2026-08-12b.md` —
-> it carries three band findings that belong UPSTREAM in chrome.ref.js (not fixable here
-> without diverging from the other three tools), a warn-or-refuse question on fin-set
-> clocking, and one pre-existing app-header overflow bug found but deliberately not fixed.
-> STEP + fabrication geometry are BACKLOGGED by Eric's decision — do not start them.
+> **Latest session (2026-08-20): v0.046** — issue batch 2026-08-20a (Eric answered every
+> open decision). Share links built, .ork launch-conditions round-trip, engine rebuilt
+> (sim warnings + landing drift + roll rate + flight-data CSV, series summary/full),
+> phone header fixed (wrap), quota failures surfaced, guide generator real, LICENSE
+> added, GIT HISTORY REWRITTEN (copyright purge) and force-pushed — BOTH MACHINES must
+> be on the rewritten history (laptop is; desktop must reset, see handoff). THE PUBLIC
+> FLIP IS STAGED, NOT EXECUTED — two gh commands wait for Eric. STEP + fabrication
+> geometry remain BACKLOGGED; supersonic default-ON and design optimization queued.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-12.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-20.md` first
+
+The current, self-contained session handoff: v0.046, the history rewrite and the
+desktop re-sync it requires, the staged public flip, the adversarial-verification
+blockers (deflate bomb, +44% perf regression, the purge list that nearly missed 46 MB
+at pre-rename paths), and the session's hard-won lessons. The older handoffs below
+remain as history.
+
+## ⚡ (historical) `docs/handoff-2026-08-12.md`
 
 The current, self-contained session handoff: v0.044 + v0.045, the DNS cutover, the three
 band findings that belong UPSTREAM (not fixable here), what is deliberately uncommitted,
@@ -31,6 +39,39 @@ pushed, v0.043 live-verified, no background work running. Eric's own live
 test of the 3D 📷 export (8K Darkstar w/ correct data header) is committed
 at docs/2D_3D_Models/Wildman_Darkstar_3_-3d.png — every v0.042 smoke item
 CONFIRMED. The per-version blocks below remain as history.
+
+## ⚡ v0.046 (2026-08-20): share links + .ork conditions + sim warnings/drift + phone header + PUBLIC-REPO PREP
+
+issues-2026-08-20a → response-2026-08-20b.md. TWO engine rebuilds, differential passed
+both. Test suite 492+23 → 555+26. Built: (1) SHARE LINKS — #d=1.<base64url(deflate-raw
+xml)> fragment, loader shares Open…'s applyImported, confirm-before-replace, DEFLATE
+BOMB CAPPED (verifier's 49KB link inflated to 122MB; 4MB cap + 1MB fragment pre-check).
+(2) .ork <simulations> round-trip (desktop-exact: rod angle DEG on disk, wind direction
+RAD, turbulence = intensity ratio w/ 0/1 zero-wind mapping, extendedisa K/Pa) +
+multi-config note + masscomponenttype/shapeclipped preserve-through. (3) Kernel bridge:
+WarningSet surfaced (29 keys, simWarnings.ts labels), transition shapeParameter +
+setClipped honored incl. BOTH renderers, series behind summary|full — first cut dumped
+all 58 unconditionally, measured +44%/sim, now default=+4.5% (friendly 12 + Pl/θl/Px/
+Py/dΦ) and full is opt-in for the flight-data CSV which RE-FLIES the shown flight
+(deterministic after excluding tc, the wall-clock series that broke same-seed
+byte-equality). Landing drift: θl IS a compass bearing (atan2(x,y), 0=north); downwind
+for the kernel's π/2 met-convention wind is compass 270 — the e2e test caught the 90°
+assumption. (4) HEADER WRAP <980px, dropdowns re-anchor via containing-block swap,
+tabs wrap, .design-layout>*{min-width:0}; ≥980 pixel-identical. (5) Quota: persist
+returns stored truth, self-clearing banners, clearRuns via removeItem. (6) GUIDE:
+docs/user-guide.md single source → scripts/build-user-guide.mjs generates userGuide.ts
+in the build; drift is now impossible; the "documentation workflow" header was fiction.
+(7) PUBLIC PREP: LICENSE (GPLv3), README feedback landing, two-machine CLAUDE.md,
+docs/archive/, deploy-pages.yml DELETED, pages.dev scrubbed + canonical-host redirect,
+deploy.yml version gate, PURGE: 5 third-party PDFs + 19 RockSim exports → Dropbox
+online_open_rocket_reference, git filter-repo (CRITICAL: the RockSim files' pre-v0.043
+FLAT paths docs/2D_3D_Models/Rocksim_* had to be globbed too — current-path purging
+would have left all 46MB reachable), force-pushed, 27→3.9MiB. DECISIONS RECORDED:
+header=wrap; MUST 6 GitHub _blank exception STANDS (upstream ask in
+chrome-ref-band-findings.md); clocking stays WARN (recommendation + one-branch refuse
+documented); docs/materials CSVs stay. FLIP STAGED NOT EXECUTED (permission layer
+refused the agent — Eric runs the two gh commands together). Adversarial pass: 8
+dimensions, 22 findings, 3 CONFIRMED BLOCKERS all fixed pre-ship. Next version v0.047.
 
 ## ⚡ v0.045 (2026-08-12): part SPLITTING for 3D printing + snapshot auto-fit + nav fixes
 
