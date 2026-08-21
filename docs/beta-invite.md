@@ -142,4 +142,4 @@ from the new address.
 with the v0.047 rename) is the only address to hand out. The previous address,
 `openrocket.mountainmanrockets.com`, still serves the app behind a moved notice so the
 testers invited before the rename aren't stranded; it 301s to the new subdomain once the
-phase-2 redirect lands. Every older address already redirects to that previous subdomain.*
+phase-2 redirect lands. Every older address (like the old `mountainmanrockets.com/online_open_rocket/` path) already redirects to the new address above.*

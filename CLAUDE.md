@@ -54,7 +54,7 @@ the site is not rebuilt or touched.
 |---|---|
 | Pages project | `online-open-rocket` |
 | Live URL (canonical) | https://mmrsim.mountainmanrockets.com — cutover 2026-08 (old `openrocket.*` subdomain serves a moved notice until the phase-2 301) |
-| Old WordPress path | `/online_open_rocket/` — 301s to the old `openrocket.*` subdomain, do not reuse |
+| Old WordPress path | `/online_open_rocket/` — 301s directly to `mmrsim.mountainmanrockets.com`, do not reuse |
 
 **`mmrsim.mountainmanrockets.com` is the ONLY address to hand out** — anywhere: docs,
 invites, links, help copy. It is the address on the beta invite (`docs/beta-invite.md`)
