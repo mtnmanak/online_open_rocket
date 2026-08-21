@@ -1,6 +1,27 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-21, fourth sitting): batch 08-21c BUILT — v0.049
+> **Latest session (2026-08-21, fifth sitting): batch 08-21d BUILT — v0.050
+> SHIPPED; THE FORUM POST IS UNGATED.** Multi-config **Stage B** live (Eric:
+> "build it" — ConfigPanel on Motors & Launch when a file carries >1 config,
+> working-set+presets model: mountMotors stays the live set, savedConfigs/
+> activeConfigId ride sessions, export writes ALL configs back with stable
+> ids + default on active, picker gains "Open with no motors loaded",
+> SimRun.flightConfig + trailing CSV column). Eric's "why open with a motor
+> loaded?" answered in response-2026-08-21d.md: default-loaded kept for
+> desktop parity/field-flow/share links, with the no-motors escape hatches —
+> flipping the default is one line if he converts. 3D per his notes: axis
+> balls 0.45×, Reset/Side/Aft buttons + OrbitControls distance limits, and
+> REAL see-through (shell 0.55 + glassy inner tubes 0.5, depthWrite off,
+> renderOrder layering — 0.88-with-depth-writes looked opaque, and the
+> opaque mount hid the motor entirely). S1 vertical+drawer collision fixed
+> (hero view lifts above the measured drawer). Invite: BOTH copy calls
+> closed per Eric (no non-affiliation clause, migration note dropped) —
+> beta-invite.md is copy-paste ready, forum post is Eric's manual step.
+> E2E-verified against a real two-config .ork. 26 engine + 628 app tests.
+> Known cosmetic nit: vertical margin text can brush the CG label on
+> degenerate close-lane designs.
+>
+> **Previous (2026-08-21, fourth sitting): batch 08-21c BUILT — v0.049
 > SHIPPED, everything Eric green-lit is live.** S1 hero canvas (chip picks kept,
 > drawer default CLOSED per Eric, ⟳ 90° nose-up toggle); 3D CG/CP callout gadget
 > (from Eric's rocket_forge_3d_screenshot.png, now in the Dropbox reference
@@ -78,13 +99,19 @@
 > optimization still queued. Next: plan + execute the one-version rename release
 > (v0.047) per the audit in handoff-2026-08-21.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-21d.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-21e.md` first
 
-The current, self-contained handoff (fourth 08-21 sitting): batch 08-21c built —
-v0.049 shipped (S1 hero canvas, 3D callout gadget, S5 richness, S4 Fly screen,
-tour spotlight, multi-config Stage A, labeled Unload), live-verified, site tools
-page synced — plus the short "Waiting on you" list in
-`docs/testing/response-2026-08-21c.md`.
+The current, self-contained handoff (fifth 08-21 sitting): batch 08-21d built —
+v0.050 shipped (multi-config Stage B, real 3D see-through + view recovery,
+drawer deconfliction), the invite cleared for the forum post, live-verified,
+site synced — plus the "Waiting on you" list in
+`docs/testing/response-2026-08-21d.md`.
+
+## ⚡ (historical) `docs/handoff-2026-08-21d.md`
+
+The fourth 08-21 sitting: batch 08-21c built — v0.049 (S1 hero canvas, 3D
+callout gadget, S5 richness, S4 Fly screen, tour spotlight, multi-config
+Stage A, labeled Unload).
 
 ## ⚡ (historical) `docs/handoff-2026-08-21c.md`
 
