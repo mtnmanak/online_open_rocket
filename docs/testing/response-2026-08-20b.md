@@ -223,16 +223,11 @@ the phantom `setup-jdk.ps1` reference is gone).
 
 ## Waiting on you
 
-1. **Flip the repo public** — run these two together (one sitting; Issues can never be
-   transferred later if someone files while public with Issues on):
-
-   ```bash
-   gh repo edit mtnmanak/online_open_rocket --visibility public --accept-visibility-change-consequences
-   gh repo edit mtnmanak/online_open_rocket --enable-issues=false
-   ```
+1. ~~Flip the repo public~~ — **DONE, you ran it this session**: visibility PUBLIC,
+   Issues disabled, verified anonymously (repo page 200, raw LICENSE 200).
 
 2. **Send the invite** (`docs/beta-invite.md`) — everything it claims is now true and
-   live (the "source (GPL)" link goes live the moment you run the commands above).
+   live, including the "source (GPL)" link.
 3. **Desktop re-sync** after the history rewrite — see `docs/handoff-2026-08-20.md`
    (two commands; your local work is all pushed, nothing to lose).
 4. The **chrome-ref blurb** (`docs/chrome-ref-band-findings.md`) whenever you next open
