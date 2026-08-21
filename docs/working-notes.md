@@ -1,6 +1,26 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-21, third sitting): batch 08-21b EXECUTED — v0.048
+> **Latest session (2026-08-21, fourth sitting): batch 08-21c BUILT — v0.049
+> SHIPPED, everything Eric green-lit is live.** S1 hero canvas (chip picks kept,
+> drawer default CLOSED per Eric, ⟳ 90° nose-up toggle); 3D CG/CP callout gadget
+> (from Eric's rocket_forge_3d_screenshot.png, now in the Dropbox reference
+> folder); S5 both halves (2D motor tint+label + hover name tag; 3D studio
+> lighting + translucent shell with inner tubes/motor rendered); S4 Fly screen
+> (phone home: vertical rocket, four field numbers, motor swap, rod/angle/wind,
+> thumb LAUNCH, bottom-docked tabs, slim field header — stage 2 bottom sheets
+> still post-beta); tour spotlight + note-surface card + replay moved to a
+> HEADER button (⟲ Tour — Eric: out of the Guide); multi-config Stage A live
+> (config-aware parse w/ desktop default/override semantics incl. deployment,
+> picker modal on multi-config files; Stage B awaits Eric/beta, Stage C rides
+> the engine rebuild); ⏏ Unload is a labeled vitals button; band chrome.ref
+> 1.3.0 re-translated here (closes yesterday's queued follow-up). 26 engine +
+> 613 app tests; site tools page v0.049 + card retaken. Hard-won lessons: the
+> adaptive-height schematic must NEVER size its own container (measure→draw→
+> grow loop hit 2900px — the view box is position:absolute now), and the S2
+> margin callout moved to the LOWER lane because the upper-right corner belongs
+> to the export/zoom controls.
+>
+> **Previous (2026-08-21, third sitting): batch 08-21b EXECUTED — v0.048
 > SHIPPED (first-run tour S3, CG/CP leader-line callouts S2, mass-component type
 > picker) and the PHASE-2 301 IS LIVE** (Cloudflare zone Single Redirect per rename
 > plan Task 10, fired on Eric's confirmation that all invitees moved;
@@ -58,13 +78,19 @@
 > optimization still queued. Next: plan + execute the one-version rename release
 > (v0.047) per the audit in handoff-2026-08-21.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-21c.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-21d.md` first
 
-The current, self-contained handoff (third 08-21 sitting): batch 08-21b executed —
-v0.048 shipped (tour, CG/CP callouts, mass-type picker), phase-2 301 live and verified,
-multi-config import scoped, mockups on the design canvas awaiting Eric's verdicts, site
-repo fixed and pushed — plus the new (much shorter) "Waiting on you" list in
-`docs/testing/response-2026-08-21b.md`.
+The current, self-contained handoff (fourth 08-21 sitting): batch 08-21c built —
+v0.049 shipped (S1 hero canvas, 3D callout gadget, S5 richness, S4 Fly screen,
+tour spotlight, multi-config Stage A, labeled Unload), live-verified, site tools
+page synced — plus the short "Waiting on you" list in
+`docs/testing/response-2026-08-21c.md`.
+
+## ⚡ (historical) `docs/handoff-2026-08-21c.md`
+
+The third 08-21 sitting: batch 08-21b executed — v0.048 shipped (tour, CG/CP
+callouts, mass-type picker), phase-2 301 live and verified, multi-config import
+scoped, mockups on the design canvas, site repo fixed and pushed.
 
 ## ⚡ (historical) `docs/handoff-2026-08-21b.md`
 
