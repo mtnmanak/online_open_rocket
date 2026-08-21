@@ -24,8 +24,10 @@ flight-simulation desktop app). The full technical plan, strategy comparison, an
 roadmap live in `docs/online-openrocket-plan.md` — read it before making architectural
 decisions.
 
-Reference Java source (OpenRocket release 24.12, GPLv3+) is available locally at
-`G:\Documents\Dropbox\Open_Rocket_Source_Code\openrocket-release-24.12`. Its
+Reference Java source (OpenRocket release 24.12, GPLv3+) is available locally on both
+machines — desktop `G:\Documents\Dropbox\Open_Rocket_Source_Code\openrocket-release-24.12`,
+laptop `C:\Users\peltz\Dropbox\Open_Rocket_Source_Code\openrocket-release-24.12` (see
+"Two machines" below; the scripts that consume it probe both paths). Its
 `core/` module (`info.openrocket.core`) is the physics/model reference; its `swing/`
 module is being replaced by the web UI and should not be ported.
 
@@ -38,18 +40,22 @@ the site is not rebuilt or touched.
 | | |
 |---|---|
 | Pages project | `online-open-rocket` |
-| Live URL | https://online-open-rocket.pages.dev |
-| After DNS cutover | https://openrocket.mountainmanrockets.com |
-| Old WordPress path | `/online_open_rocket/` — 301s to the above, do not reuse |
+| Live URL (canonical) | https://openrocket.mountainmanrockets.com — DNS cutover DONE 12 Aug 2026 |
+| Old WordPress path | `/online_open_rocket/` — 301s to the subdomain, do not reuse |
+
+**The canonical subdomain is the ONLY address to hand out** — anywhere: docs, invites,
+links, help copy. It is the address on the beta invite (`docs/beta-invite.md`) and the
+one testers will bookmark.
 
 **`git push` to `main` is the deploy.** `.github/workflows/deploy.yml` runs
-`npm ci && npm run build` (tsc + vite only — the TeaVM engine kernel is the committed
-artifact `packages/engine/vendor/orkengine.mjs`, so CI needs no Java), copies
+`npm ci && npm run build` (the user-guide generator, then tsc + vite — the TeaVM
+engine kernel is the committed artifact `packages/engine/vendor/orkengine.mjs`, so
+CI still needs no Java), copies
 `version.json` into dist the way `scripts/package-dist.mjs` does, and publishes
 `packages/app/dist` with wrangler. The workflow needs the `CLOUDFLARE_API_TOKEN`
 repo secret (account API token with "Cloudflare Pages — Edit").
 
-Manual override from this machine:
+Manual override from either machine:
 
 ```bash
 npm run build                      # -> packages/app/dist
@@ -62,6 +68,10 @@ Bump `version.json` when you cut a release — `scripts/package-dist.mjs` copies
 `src/data/tools.mjs` in the `mountainmanrockets` repo, and `node scripts/check-tools.mjs`
 there reports when the two have drifted. That check caught this repo sitting 22 releases
 ahead of what had actually been published, which is the failure mode it replaces.
+
+Serving the app to browsers is GPL **distribution**: the app is a derivative of
+OpenRocket (GPL-3.0-or-later, full text in `LICENSE`), and the in-app link to this
+public GitHub repository is what satisfies the corresponding-source offer.
 
 ## Commands
 
@@ -76,8 +86,11 @@ Engine (Java kernel → JS via TeaVM, in `engine-java/`):
 - `engine-java/gradlew.bat generateJavaScript` (run inside `engine-java/`) — TeaVM build
 - `node engine-java/scripts/difftest.mjs` — JVM vs TeaVM-JS bit-identical differential test
 - No system JDK. A portable Temurin JDK 17 lives at
-  `C:\Users\Eric\.online-openrocket\jdk-17.0.19+10` — set `JAVA_HOME` to it for Gradle
-  (difftest.mjs finds it automatically). Re-fetch via the Adoptium API if missing.
+  `C:\Users\Eric\.online-openrocket\jdk-17.0.19+10` (desktop) /
+  `C:\Users\peltz\.online-openrocket\jdk-17.0.20+8` (laptop) — set `JAVA_HOME` to it
+  for Gradle (difftest.mjs finds it automatically). If it is missing on either
+  machine, re-fetch Temurin 17 via the Adoptium API (that is how the laptop's was
+  installed).
 - TeaVM is pinned ≥ 0.15: **0.10's JS backend silently inverts NaN comparisons**
   (see docs/phase0-findings.md). Never downgrade; differential tests are the guard.
 - engine-java/build.gradle MUST keep `optimization = NONE` and `fastGlobalAnalysis = true`:
@@ -87,18 +100,30 @@ Engine (Java kernel → JS via TeaVM, in `engine-java/`):
 - Carved files are NEVER edited; targeted changes live in `engine-java/patches/`
   (documented in `engine-java/patches/LEDGER.md`) and are applied by carve.mjs.
 
-## Repo location
+## Two machines
 
-The repo lives at `E:\git\online_open_rocket` (moved from `G:\git` on 2026-08-11) —
-deliberately OUTSIDE Dropbox. It was moved out of Dropbox on 2026-07-02 because
-Dropbox's file-provider driver intermittently denied git's object writes
-(`Permission denied` on `.git/objects/...`, sometimes sticking to specific object
-paths). Do not move it back under a synced folder. GitHub (origin) is the sync
-channel — Eric now alternates between a desktop and a laptop, so **start every
-session with `git fetch` and confirm local == origin/main** before working.
-The reference OpenRocket source still lives in Dropbox (read-only use) —
-`engine-java/scripts/carve.mjs` points there (`G:\Documents\Dropbox\...`, verified
-still valid on the desktop after the move).
+Eric alternates between a desktop and a laptop. GitHub (origin) is the sync channel,
+so **start every session with `git fetch` and confirm local == origin/main** before
+working.
+
+| | Desktop | Laptop |
+|---|---|---|
+| Repo | `E:\git\online_open_rocket` | `C:\git\online_open_rocket` |
+| Windows user | `Eric` | `peltz` |
+| Portable JDK 17 | `C:\Users\Eric\.online-openrocket\jdk-17.0.19+10` | `C:\Users\peltz\.online-openrocket\jdk-17.0.20+8` |
+| OpenRocket reference source | `G:\Documents\Dropbox\Open_Rocket_Source_Code\openrocket-release-24.12` | `C:\Users\peltz\Dropbox\Open_Rocket_Source_Code\openrocket-release-24.12` |
+
+On both machines the repo lives deliberately OUTSIDE any synced folder. It was moved
+out of Dropbox on 2026-07-02 because Dropbox's file-provider driver intermittently
+denied git's object writes (`Permission denied` on `.git/objects/...`, sometimes
+sticking to specific object paths). Do not move it back under a synced folder.
+Dropbox is fine for read-only reference material: the OpenRocket source above, and
+the bulk third-party reference files (RASAero PDFs, RockSim export samples) that were
+pulled out of the repo before it went public — those live in
+`online_open_rocket_reference` in Dropbox and must not be re-committed.
+`engine-java/scripts/carve.mjs` and `packages/app/scripts/fetch-component-presets.mjs`
+probe both machines' reference-source paths and accept an `OPENROCKET_SRC` override
+(the openrocket-release-24.12 root).
 
 ## Collaboration context
 
@@ -117,7 +142,19 @@ npm-workspaces monorepo, licensed GPL-3.0-or-later (inherited from OpenRocket):
   a WordPress embed.
 - `packages/app` — `@online-openrocket/app`. Vite + React + TS front-end. `base: './'`
   in `vite.config.ts` keeps builds embeddable — don't change it to an absolute path.
-- `docs/` — plan and Phase 0 findings.
+- `engine-java/` — the Java kernel and its TeaVM→JS build: carved OpenRocket sources
+  (copied in by `scripts/carve.mjs`, NEVER edited) plus `patches/` (the only place
+  kernel changes live, ledgered in `patches/LEDGER.md`). Its committed build output is
+  `packages/engine/vendor/orkengine.mjs`.
+- `validation/` — the supersonic-aero validation harness: published-data anchors
+  (`anchors.json`), fixtures, `score.mjs`, dated scorecards. Standing rule: **never
+  widen a tolerance to make a phase pass** — tolerances come from the datasets' own
+  stated accuracies (see `validation/README.md`).
+- `scripts/` — repo-level build/packaging scripts (`package-dist.mjs`).
+- `docs/` — the plan (`online-openrocket-plan.md`), Phase 0 findings, user guide,
+  beta invite, working notes, research notes (`research/`), user-testing batches
+  (`testing/`), the current session handoff (`handoff-*.md`), and `archive/` for
+  superseded docs.
 - `spikes/` — throwaway experiments (e.g. CheerpJ oracle). JARs there are fetched, not
   committed (gitignored).
 

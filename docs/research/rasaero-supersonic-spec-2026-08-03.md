@@ -2,7 +2,7 @@
 
 Date: 2026-08-03. Assembled from the multi-agent research workflow (RASAero II Users Manual extraction, RASAero 2011 manual extraction, open-literature equation recovery, and the carved-kernel aero map). Companion document: `docs/research/validation-anchors-2026-08-03.md`.
 
-**Critical provenance finding, up front:** neither RASAero document in `docs/` contains equations. `RASAero II Users Manual.pdf` (v1.0.2.0, © 2019, 154 pp.) and `Rogers_Cooper_2011.pdf` (which is **not** a methods paper — it is the *RASAero v1.0.2.0 Users Manual, © 2011*, 62 pp.) both describe methods only by name, behavior, regime boundaries, and worked-example outputs. Every closed-form equation in section (b) below is therefore from the **open literature** (NACA/NASA/Hoerner/Fleeman/DATCOM lineage) — the same lineage RASAero's outputs are consistent with — not transcribed from Rogers & Cooper. The RASAero-side content in each area's subsection (a) is what the manuals *do* state, plus the numeric output anchors they print. Where the two manuals differ in wording or content, both are recorded.
+**Critical provenance finding, up front:** neither RASAero document (local copies: `online_open_rocket_reference` in Dropbox) contains equations. `RASAero II Users Manual.pdf` (v1.0.2.0, © 2019, 154 pp.) and `Rogers_Cooper_2011.pdf` (which is **not** a methods paper — it is the *RASAero v1.0.2.0 Users Manual, © 2011*, 62 pp.) both describe methods only by name, behavior, regime boundaries, and worked-example outputs. Every closed-form equation in section (b) below is therefore from the **open literature** (NACA/NASA/Hoerner/Fleeman/DATCOM lineage) — the same lineage RASAero's outputs are consistent with — not transcribed from Rogers & Cooper. The RASAero-side content in each area's subsection (a) is what the manuals *do* state, plus the numeric output anchors they print. Where the two manuals differ in wording or content, both are recorded.
 
 Open-literature provenance codes (carried over from the extraction): **[T]** = transcribed verbatim from an accessible copy of the cited source; **[R]** = standard closed form as reprinted in the named secondary source, cross-checked against limiting cases. SI/dimensionless throughout; angles in radians unless noted. `M` = freestream Mach, `beta = sqrt(M^2-1)`, `gamma = 1.4`, `q = 0.5*rho*V^2`.
 
@@ -613,16 +613,16 @@ Primary methods sources (open literature):
 
 RASAero-side sources (methods named / calibration data exhibited):
 
-21. Rogers & Cooper, *RASAero II Users Manual*, v1.0.2.0, © 2019 (local: `docs/RASAero II Users Manual.pdf`).
-22. Rogers & Cooper, *RASAero Users Manual*, v1.0.2.0, © 2011 (local: `docs/Rogers_Cooper_2011.pdf` — mislabeled as a methods paper; it is a users manual).
+21. Rogers & Cooper, *RASAero II Users Manual*, v1.0.2.0, © 2019 (local: `online_open_rocket_reference/RASAero II Users Manual.pdf` in Dropbox).
+22. Rogers & Cooper, *RASAero Users Manual*, v1.0.2.0, © 2011 (local: `online_open_rocket_reference/Rogers_Cooper_2011.pdf` in Dropbox — mislabeled as a methods paper; it is a users manual).
 23. Centuri Report TIR-33 (Barrowman) — default subsonic CP method.
 24. NACA RM A53D02 — free-flight CD calibration, M≈0.7–10 (2011 manual Figs. 1–2).
 25. NASA TR R-100 — transonic/boattail calibration (2011 manual Fig. 3); source of rb/R < 0.5 limit.
 26. Vought Astronautics AST/E1R-13319, *Performance Summary for the Aerobee 150A*, April 1961; Aerojet-General Report 1784, *Wind Tunnel Tests of the Aerobee 150A (AJ60-13)*, March 1960 (2011 manual Fig. 5 validation data).
 27. Rogers, "Departures from Ideal Performance" (Rogers Aeroscience technical article, rasaero.com Technical Report Downloads) — nozzle/thrust-curve methodology used in the MESOS comparison.
 28. 1976 US Standard Atmosphere (extended to 1,000,000 ft in RASAero).
-29. Rogers, *RASAero II Comparisons with ARCAS CP and CD Wind Tunnel Data* (local: `docs/RASAero II Comparisons with ARCAS CP and CD Data.pdf`; https://www.rasaero.com/dloads/RASAero%20II%20Comparisons%20with%20ARCAS%20CP%20and%20CD%20Data.pdf)
-30. Rogers, *RASAero II Comparison with MESOS 293K Flight Data — Rev B*, Jan 18, 2023 (local + https://www.rasaero.com/dloads/RASAero%20II%20Comparison%20with%20MESOS%20293K%20Flight%20Data%20-%20Rev%20B.pdf)
+29. Rogers, *RASAero II Comparisons with ARCAS CP and CD Wind Tunnel Data* (local: `online_open_rocket_reference/RASAero II Comparisons with ARCAS CP and CD Data.pdf` in Dropbox; https://www.rasaero.com/dloads/RASAero%20II%20Comparisons%20with%20ARCAS%20CP%20and%20CD%20Data.pdf)
+30. Rogers, *RASAero II Comparison with MESOS 293K Flight Data — Rev B*, Jan 18, 2023 (local: `online_open_rocket_reference` in Dropbox; https://www.rasaero.com/dloads/RASAero%20II%20Comparison%20with%20MESOS%20293K%20Flight%20Data%20-%20Rev%20B.pdf)
 
 ---
 

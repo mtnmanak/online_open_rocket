@@ -161,7 +161,7 @@ goes public, and not when it leaves beta.
 
 ## ⚠️ Stale docs in this repo — do not follow them
 
-- `docs/feedback-repo-kit/SETUP.md` is superseded as a PLAN (its files were adopted, its steps were not) and its `.yml` files still carry all five pre-edit defects, including the node20 `github-script@v7`. Do not copy that directory anywhere.
+- `docs/archive/feedback-repo-kit/SETUP.md` is superseded as a PLAN (its files were adopted, its steps were not) and its `.yml` files still carry all five pre-edit defects, including the node20 `github-script@v7`. Do not copy that directory anywhere.
 
 They predate the adjudication and were left in place rather than rewritten, because each
 edit here is a production deploy. **This file overrides all of them.**

@@ -9,7 +9,14 @@
 > clocking, and one pre-existing app-header overflow bug found but deliberately not fixed.
 > STEP + fabrication geometry are BACKLOGGED by Eric's decision — do not start them.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-11.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-12.md` first
+
+The current, self-contained session handoff: v0.044 + v0.045, the DNS cutover, the three
+band findings that belong UPSTREAM (not fixable here), what is deliberately uncommitted,
+and the hard-won lessons — including why you must never assert expected numbers in an
+agent brief without re-deriving them first. The older handoff below remains as history.
+
+## ⚡ (historical) `docs/archive/handoff-2026-08-11.md`
 
 The current, self-contained session handoff: v0.041 + v0.042 + v0.043 (the
 2026-08-11 marathon — both issue batches AND the tracker adjudication). THE
@@ -183,7 +190,7 @@ as own phase (Eric validates in Fusion/SolidWorks); ISSUE TRACKER = go
 further than other-session's proposal: ONE repo for site+tools — rename
 mountainmanrockets-site-feedback→mountainmanrockets-feedback (GitHub
 redirects), dropdown+Action auto-labeling; READY-TO-PASTE KIT in
-docs/feedback-repo-kit/ (SETUP/README/2 issue forms/config/labeler wf);
+docs/archive/feedback-repo-kit/ (SETUP/README/2 issue forms/config/labeler wf);
 in-app 🐞 links wired next session once Eric sends the URL. 270 tests
 (247 app + 23 engine). Live-verified on built dist: nose STL byte-exact
 260.35mm (221.23+39.12 shoulder ✓ mm scale), GLB magic/len valid, JPG@4K
@@ -294,7 +301,7 @@ drive-by fixes; version.json 0.040; badge renders; Eric's live session
 already shows the filename-fallback name on his re-imported Ultra Neon).**
 Next version v0.041.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-05.md` first
+## ⚡ START HERE → read `docs/archive/handoff-2026-08-05.md` first
 
 The current, self-contained session handoff: v0.033–v0.039 (the 2026-08-05
 marathon — five issue batches, seven releases), the live-verify state, and
@@ -489,7 +496,7 @@ SimResults motor-diameter hard mm, fin transonic C¹ kink at M1.5 (same
 approximation class as upstream). Suite grew 146→154 tests (8 new
 regressions); differential 258 lines 5× stable post-restore.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-04.md` first
+## ⚡ START HERE → read `docs/archive/handoff-2026-08-04.md` first
 
 That file is the current, self-contained session handoff (v0.024–v0.029:
 the workspace-tabs reorg, the COMPLETE RASAero #1 supersonic build with its
@@ -723,7 +730,7 @@ Last updated: 2026-07-05, end of the tenth working session (v0.014–v0.021:
 issue batch a, per-stage motor length, the user guide, CG/CP-in-3D + mount
 sizes, and the COMPLETE pods/parallel-stage feature).
 
-## ⚡ START HERE → read `docs/handoff-2026-07-05.md` first
+## ⚡ START HERE → read `docs/archive/handoff-2026-07-05.md` first
 
 That file is the current, self-contained session handoff (state, what shipped
 v0.013–v0.021, the pods architecture + the hard-won RingInstanceable bug, the
@@ -967,12 +974,12 @@ pushed but NOT yet uploaded. Next up per Eric: the RASAero gap work
 229 lines 5× stable; build clean; deploy/online-openrocket-v0.012.zip is
 what's live. Deployment shipped as v0.006 (PWA/offline +
 manual-webhost package + dormant GitHub Pages workflow — see the Phase 3
-entry below and docs/deployment.md). Eric will manually upload the package to
+entry below and docs/archive/deployment.md). Eric will manually upload the package to
 his own web host now; GitHub Pages comes later when he makes the repo public
 (it's private today). **DEPLOYED LIVE 2026-07-03:
 https://www.mountainmanrockets.com/online_open_rocket/ (v0.007, SW +
 offline verified; iframe snippet delivered for his WordPress pages; see
-docs/deployment.md for the extraction war story).**
+docs/archive/deployment.md for the extraction war story).**
 **Staging/clustering COMPLETE (serial): A clusters v0.007, B engine v0.008,
 C full staging UI v0.009.** v0.009 highlights: tree.components is now ALWAYS
 stage nodes (normalizeTree wraps legacy trees/sessions at every load
@@ -1250,7 +1257,7 @@ still open: parallel boosters/pods, design optimization, geodesy options.
     similar System.Drawing script if ever needed). SW registered in main.tsx
     via virtual:pwa-register (types via src/vite-env.d.ts).
   - **Manual-webhost flow (Eric's current choice):** `npm run package` →
-    deploy/online-openrocket-v<version>.zip (gitignored). docs/deployment.md
+    deploy/online-openrocket-v<version>.zip (gitignored). docs/archive/deployment.md
     has upload steps, .htaccess cache tips, and the WordPress iframe snippet
     (he hasn't yet said which WordPress setup he has — iframe works
     everywhere custom HTML is allowed).
@@ -1259,7 +1266,7 @@ still open: parallel boosters/pods, design optimization, geodesy options.
     private repos). When Eric makes it public: Settings→Pages→GitHub Actions,
     run the workflow, optionally uncomment the push trigger.
   - **GPL:** header now links to the GitHub repo as the source offer;
-    docs/deployment.md notes the repo should go public at/soon after first
+    docs/archive/deployment.md notes the repo should go public at/soon after first
     real deployment.
   - Browser-automation gotcha reconfirmed: sims + SW installs stall in
     hidden/occluded Chrome windows (rAF paused, rendering frozen) — drive
