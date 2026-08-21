@@ -1,14 +1,14 @@
-# Online OpenRocket — User Guide
+# MMRocket Sim — User Guide
 
-> The complete guide to Online OpenRocket: a quick start, a full feature
+> The complete guide to MMRocket Sim: a quick start, a full feature
 > reference, and the physics, math, and citations behind the numbers. This is
 > also available inside the app via the **❓ Guide** button in the header.
 
 <a id="welcome"></a>
 
-## Welcome to Online OpenRocket
+## Welcome to MMRocket Sim
 
-Online OpenRocket is the real OpenRocket flight simulator, running entirely in your web browser. There is nothing to install: the same **24.12 physics kernel** that powers the OpenRocket desktop application has been compiled to JavaScript and verified bit-for-bit against the desktop program. When your browser reports an apogee, it ran the same code, in the same order, with the same rounding as the desktop app.
+MMRocket Sim runs the real OpenRocket flight physics entirely in your web browser. There is nothing to install: the same **24.12 physics kernel** that powers the OpenRocket desktop application has been compiled to JavaScript and verified bit-for-bit against the desktop program. When your browser reports an apogee, it ran the same code, in the same order, with the same rounding as the desktop app.
 
 The workflow is simple and always the same. You design a rocket by building up its components, hang a motor, set your launch conditions, and press **Launch** to see how high it flies, how fast it goes, and whether it will fly straight and land safely. This guide is written for model and high-power rocketry hobbyists at every level, from your first Estes kit to a multi-stage high-power project.
 
@@ -123,8 +123,8 @@ The **Design** workspace's left column is a **stage-rooted tree** of components.
 
 ### Camera shrouds (fairings) — how they're modeled
 
-A camera shroud is a real aerodynamic body: it shifts CP and adds drag, and Online
-OpenRocket is (as far as we know) the only hobby simulator that computes both. The
+A camera shroud is a real aerodynamic body: it shifts CP and adds drag, and
+MMRocket Sim is (as far as we know) the only hobby simulator that computes both. The
 side profile is flown as a **slender strake** through the kernel's own
 low-aspect-ratio fin lift (which reduces to the classic Jones slender-body model —
 the right physics for a strake), so the CP shift falls out of the same Barrowman
@@ -402,9 +402,9 @@ Open **Preferences** to switch between one-click **Metric** and **Imperial** pre
 
 ## Installing, offline, and saving your work
 
-Online OpenRocket is a **PWA** — install it from the browser and it runs offline, since the physics kernel, the motor database metadata, and the preset catalog are all bundled locally. Only motor thrust curves fetch on demand, and once fetched they cache in your browser. Your work — the design tree, assigned motors, launch conditions, per-stage motor-length limits, run history, and motor filters — persists to local storage and survives reloads. The app **header** carries **Open…** and the **Save / Export** menu (.ork, .rkt, .CDX1, .obj), alongside the **Guide**, **Changelog** (the version badge), and **Preferences**; **New** sits atop the component tree in the Design workspace. For a durable archive or to move a design to another machine or to the OpenRocket desktop, **Save as .ork** — it's the format that keeps everything.
+MMRocket Sim is a **PWA** — install it from the browser and it runs offline, since the physics kernel, the motor database metadata, and the preset catalog are all bundled locally. Only motor thrust curves fetch on demand, and once fetched they cache in your browser. Your work — the design tree, assigned motors, launch conditions, per-stage motor-length limits, run history, and motor filters — persists to local storage and survives reloads. The app **header** carries **Open…** and the **Save / Export** menu (.ork, .rkt, .CDX1, .obj), alongside the **Guide**, **Changelog** (the version badge), and **Preferences**; **New** sits atop the component tree in the Design workspace. For a durable archive or to move a design to another machine or to the OpenRocket desktop, **Save as .ork** — it's the format that keeps everything.
 
-Because the whole app is a self-contained static build, the same files can also be **embedded inside another web page** — for example a WordPress post — through an `<iframe>`. If you meet Online OpenRocket living inside someone else's site rather than at its own address, it is the identical app running the identical kernel, with the same design, motor, and simulation tools described in this guide.
+Because the whole app is a self-contained static build, the same files can also be **embedded inside another web page** — for example a WordPress post — through an `<iframe>`. If you meet MMRocket Sim living inside someone else's site rather than at its own address, it is the identical app running the identical kernel, with the same design, motor, and simulation tools described in this guide.
 
 ---
 
@@ -412,7 +412,7 @@ Because the whole app is a self-contained static build, the same files can also 
 
 ## How It Works: Physics & Math
 
-Online OpenRocket is not an approximation *of* OpenRocket — it **is** OpenRocket. The simulation engine is the real OpenRocket 24.12 physics kernel (the Java `info.openrocket.core` package), compiled to JavaScript with TeaVM and verified bit-for-bit against the desktop program by an automated differential test. Every number below comes from that kernel: when your browser reports an apogee, it ran the same code, in the same order, with the same rounding as the desktop app. This section explains what that code does so you can decide how far to trust it — and where its honest limits are.
+MMRocket Sim does not approximate OpenRocket's physics — it runs it. The simulation engine is the real OpenRocket 24.12 physics kernel (the Java `info.openrocket.core` package), compiled to JavaScript with TeaVM and verified bit-for-bit against the desktop program by an automated differential test. Every number below comes from that kernel: when your browser reports an apogee, it ran the same code, in the same order, with the same rounding as the desktop app. This section explains what that code does so you can decide how far to trust it — and where its honest limits are.
 
 Throughout, the engine works in **pure SI units** (metres, kilograms, seconds, newtons) and **radians**. Degrees, feet and grams exist only at the file-format and screen boundaries.
 
@@ -530,7 +530,7 @@ Wind is modeled as **pink noise** around a mean speed. You set an average wind s
 
 There is also a deliberately tiny random perturbation (±0.0005) added to the pitch and yaw moments each step, which prevents an unnaturally perfect, knife-edge-symmetric flight from never tipping over.
 
-Here is the one intentional difference from the desktop. Desktop OpenRocket seeds these random streams from the wall clock, so two identical runs give slightly different gust histories. **Online OpenRocket seeds them deterministically** (a fixed seed, 42). Same design + same settings ⇒ **exactly the same flight, every time** — better for teaching, sharing and comparing, and it makes a clean before/after comparison of a design change possible. (For the same reason the engine also fixes a couple of internal iteration orders that the desktop leaves free to wander at the sub-rounding-error level. Physics results stay inside the desktop's own run-to-run envelope.)
+Here is the one intentional difference from the desktop. Desktop OpenRocket seeds these random streams from the wall clock, so two identical runs give slightly different gust histories. **MMRocket Sim seeds them deterministically** (a fixed seed, 42). Same design + same settings ⇒ **exactly the same flight, every time** — better for teaching, sharing and comparing, and it makes a clean before/after comparison of a design change possible. (For the same reason the engine also fixes a couple of internal iteration orders that the desktop leaves free to wander at the sub-rounding-error level. Physics results stay inside the desktop's own run-to-run envelope.)
 
 ---
 
@@ -542,7 +542,7 @@ Found something broken, or want the app to do something it doesn't? Both are gen
 
 - **[Report a bug](https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=bug-report.yml)** — what you did, what you expected, what happened instead. The app version (next to the logo) and your browser help a lot; attaching the .ork file (zipped) makes most fixes far faster. Only attach designs you're comfortable sharing publicly.
 - **[Request a feature](https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=feature-request.yml)** — describe the real task it would help with; the use case shapes the design more than the feature description does.
-- **[Browse open issues](https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen%20label%3Atool%3Aonline-openrocket)** — see what's already filed before adding a duplicate. The tracker covers mountainmanrockets.com and all of its online tools; a dropdown routes your report to the right one.
+- **[Browse open issues](https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen%20label%3Atool%3Ammrocket-sim)** — see what's already filed before adding a duplicate. The tracker covers mountainmanrockets.com and all of its online tools; a dropdown routes your report to the right one.
 - **No GitHub account?** Email [admin@mountainmanrockets.com](mailto:admin@mountainmanrockets.com) and it gets filed for you — you don't need an account to *read* anything on the tracker.
 
 The open-issues list is the real queue — anything filed there is logged, visible, and not forgotten.
@@ -568,7 +568,7 @@ None of these are bugs — they are the modeling choices of a mature, widely val
 
 ## Licensing and source code
 
-Online OpenRocket is **free software**, released under the **GNU General Public License, version 3 or later (GPL v3+)** — the same license as OpenRocket itself, which it inherits. You are free to use, study, share, and modify it under that license. Because the GPL requires that anyone running a distributed build be offered its corresponding source code, the app's header carries a **source (GPL)** link — titled *"This app is free software under the GPL v3 or later — source code for this build"* — that opens the public source repository. If you want to see exactly what the app does, that link is the front door.
+MMRocket Sim is **free software**, released under the **GNU General Public License, version 3 or later (GPL v3+)** — the same license as OpenRocket itself, which it inherits. You are free to use, study, share, and modify it under that license. Because the GPL requires that anyone running a distributed build be offered its corresponding source code, the app's header carries a **source (GPL)** link — titled *"This app is free software under the GPL v3 or later — source code for this build"* — that opens the public source repository. If you want to see exactly what the app does, that link is the front door.
 
 ## References & further reading
 
@@ -581,4 +581,4 @@ Online OpenRocket is **free software**, released under the **GNU General Public 
 - **International Standard Atmosphere:** ISO 2533:1975; and the *U.S. Standard Atmosphere, 1976* (NOAA/NASA/USAF). Basis of the temperature, pressure and density model.
 - **WGS84 / Somigliana gravity formula:** *Department of Defense World Geodetic System 1984,* NIMA TR8350.2. Basis of the latitude- and altitude-dependent gravity model.
 - **Runge–Kutta integration:** Butcher, J. C., *Numerical Methods for Ordinary Differential Equations;* or Press et al., *Numerical Recipes,* ch. 16. The RK4 scheme used for the equations of motion.
-- **OpenRocket project:** https://openrocket.info — source at https://github.com/openrocket/openrocket. Licensed under the **GNU General Public License v3.0-or-later**: https://www.gnu.org/licenses/gpl-3.0.html . Online OpenRocket inherits this license.
+- **OpenRocket project:** https://openrocket.info — source at https://github.com/openrocket/openrocket. Licensed under the **GNU General Public License v3.0-or-later**: https://www.gnu.org/licenses/gpl-3.0.html . MMRocket Sim inherits this license.

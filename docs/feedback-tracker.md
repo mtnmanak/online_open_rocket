@@ -2,8 +2,9 @@
 
 **Status:** ✅ Implemented and live, 12 August 2026. There is nothing to set up.
 **Tracker:** https://github.com/mtnmanak/mountainmanrockets-feedback
-**This tool's label:** `tool:online-openrocket`
-**This tool's queue:** https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen+label%3Atool%3Aonline-openrocket
+**This tool's label:** `tool:mmrocket-sim` (renamed from `tool:online-openrocket` with the
+product, 2026-08 — GitHub renamed the label in place, so older issues keep it)
+**This tool's queue:** https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen+label%3Atool%3Ammrocket-sim
 
 ## Why this file exists
 
@@ -39,7 +40,7 @@ workflow in the tracker that reads the issue form's dropdown answers.
 
 | Dropdown option (byte-exact) | Label |
 |---|---|
-| `Online OpenRocket` | `tool:online-openrocket` |
+| `MMRocket Sim` | `tool:mmrocket-sim` |
 | `Motor Dashboard` | `tool:motor-dashboard` |
 | `Motor Simulator` | `tool:motor-simulator` |
 | `Black Powder Calculator` | `tool:bp-calculator` |
@@ -83,7 +84,7 @@ This repo **is** the reference implementation. The 🐞 Feedback button in the a
 ```
 Report a bug        https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=bug-report.yml
 Request a feature   https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=feature-request.yml
-Browse this tool    https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen+label%3Atool%3Aonline-openrocket
+Browse this tool    https://github.com/mtnmanak/mountainmanrockets-feedback/issues?q=is%3Aopen+label%3Atool%3Ammrocket-sim
 All open issues     https://github.com/mtnmanak/mountainmanrockets-feedback/issues
 No GitHub account   admin@mountainmanrockets.com
 ```
@@ -108,11 +109,11 @@ field types.**
 bug to route around — the dropdown is `required`, and the labeler reads whatever they pick,
 which is what makes the routing work at all.
 
-> **Do not reintroduce `&tool=`.** Online OpenRocket passed that inert parameter, and its
-> release notes claimed *"Bug reports arrive with the tool and app version prefilled"*,
-> through v0.043. **Both were corrected on 12 Aug 2026** — the parameter is gone and the
-> notes now say the app version is prefilled and you pick the tool from a dropdown. Nothing
-> to chase here; the table above is why, and it still holds.
+> **Do not reintroduce `&tool=`.** This tool (then called Online OpenRocket) passed that
+> inert parameter, and its release notes claimed *"Bug reports arrive with the tool and
+> app version prefilled"*, through v0.043. **Both were corrected on 12 Aug 2026** — the
+> parameter is gone and the notes now say the app version is prefilled and you pick the
+> tool from a dropdown. Nothing to chase here; the table above is why, and it still holds.
 
 A working example:
 

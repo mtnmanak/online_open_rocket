@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 >
 > Bug reports and feature requests for this tool go to **one central public tracker**,
 > `mtnmanak/mountainmanrockets-feedback`, routed by label from a dropdown on the issue form.
-> It is implemented and live as of 12 Aug 2026.
+> It is implemented and live as of 12 Aug 2026. This tool's dropdown option is
+> **MMRocket Sim** and its label is `tool:mmrocket-sim` (both renamed with the product in
+> 2026-08; the dropdown string is byte-matched by the tracker's labeling workflow).
 >
 > **Read `docs/feedback-tracker.md` before writing anything feedback-shaped** — a button, a
 > link, help copy, a report page. It has the URLs, the label taxonomy, the exact prefill
@@ -19,10 +21,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A browser-based re-creation of **OpenRocket** (the Java/Swing model-rocketry design and
-flight-simulation desktop app). The full technical plan, strategy comparison, and phased
-roadmap live in `docs/online-openrocket-plan.md` — read it before making architectural
-decisions.
+**MMRocket Sim** — a browser-based re-creation of **OpenRocket** (the Java/Swing
+model-rocketry design and flight-simulation desktop app). The full technical plan,
+strategy comparison, and phased roadmap live in `docs/online-openrocket-plan.md` — read
+it before making architectural decisions (it predates the rename and still says "Online
+OpenRocket"; that is history, leave it).
+
+**Naming rule (2026-08 rename).** The product was *Online OpenRocket* through v0.046 and
+is **MMRocket Sim** from v0.047. Only the product identifier changed: every OpenRocket
+*attribution* stays as written — the 24.12 kernel, `.ork` compatibility, the project
+links, the GPL lineage. Never write copy implying this app **is** OpenRocket or is
+published by the OpenRocket project; that implication is why it was renamed. History
+keeps the old name (past CHANGELOG entries, `docs/handoff-*.md`, `docs/testing/*`,
+`docs/archive/**`, `docs/working-notes.md` history). Also unchanged by the rename: the
+`online-openrocket.*` localStorage keys, the `@online-openrocket/*` package names, the
+`online-open-rocket` Cloudflare Pages project, and local repo folder paths.
 
 Reference Java source (OpenRocket release 24.12, GPLv3+) is available locally on both
 machines — desktop `G:\Documents\Dropbox\Open_Rocket_Source_Code\openrocket-release-24.12`,
@@ -40,12 +53,13 @@ the site is not rebuilt or touched.
 | | |
 |---|---|
 | Pages project | `online-open-rocket` |
-| Live URL (canonical) | https://openrocket.mountainmanrockets.com — DNS cutover DONE 12 Aug 2026 |
-| Old WordPress path | `/online_open_rocket/` — 301s to the subdomain, do not reuse |
+| Live URL (canonical) | https://mmrsim.mountainmanrockets.com — cutover 2026-08 (old `openrocket.*` subdomain serves a moved notice until the phase-2 301) |
+| Old WordPress path | `/online_open_rocket/` — 301s to the old `openrocket.*` subdomain, do not reuse |
 
-**The canonical subdomain is the ONLY address to hand out** — anywhere: docs, invites,
-links, help copy. It is the address on the beta invite (`docs/beta-invite.md`) and the
-one testers will bookmark.
+**`mmrsim.mountainmanrockets.com` is the ONLY address to hand out** — anywhere: docs,
+invites, links, help copy. It is the address on the beta invite (`docs/beta-invite.md`)
+and the one testers will bookmark. The retired `openrocket.*` subdomain still serves the
+app behind a moved notice so already-invited testers aren't stranded; never hand it out.
 
 **`git push` to `main` is the deploy.** `.github/workflows/deploy.yml` runs
 `npm ci && npm run build` (the user-guide generator, then tsc + vite — the TeaVM
@@ -71,7 +85,9 @@ ahead of what had actually been published, which is the failure mode it replaces
 
 Serving the app to browsers is GPL **distribution**: the app is a derivative of
 OpenRocket (GPL-3.0-or-later, full text in `LICENSE`), and the in-app link to this
-public GitHub repository is what satisfies the corresponding-source offer.
+public GitHub repository (`mtnmanak/mmrocket-sim`) is what satisfies the
+corresponding-source offer — if the repo is ever renamed again, that link moves with it
+in the same sitting.
 
 ## Commands
 

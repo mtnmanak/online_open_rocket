@@ -1,15 +1,15 @@
-# Online OpenRocket — beta invitation
+# MMRocket Sim — beta invitation
 
-*Copy for emails, forum posts and club announcements. Version as of v0.046 (August 2026).*
+*Copy for emails, forum posts and club announcements. Version as of v0.047 (August 2026).*
 
-**Link to send:** <https://openrocket.mountainmanrockets.com>
+**Link to send:** <https://mmrsim.mountainmanrockets.com>
 
 ---
 
 ## The message
 
-Online OpenRocket is a browser-based rocket design and flight simulator, and it's now open
-for beta testing at **https://openrocket.mountainmanrockets.com**. It's built on the real
+MMRocket Sim is a browser-based rocket design and flight simulator, and it's now open
+for beta testing at **https://mmrsim.mountainmanrockets.com**. It's built on the real
 OpenRocket physics kernel — the same Java simulation code the desktop app runs, compiled to
 run in your browser and checked against the original to make sure the numbers match — so
 what you already know about designing and flying in OpenRocket carries straight over. The
@@ -55,8 +55,8 @@ numbers or the workflow don't match your experience.
   README covering orientation, clearance and glue-up. A 3" 4:1 nose cone is 381 mm printed —
   taller than most machines — and arrives as two pieces that each print support-free.
 - **DXF export for CNC and laser cutting** of the flat parts people actually cut: fins,
-  centering rings, bulkheads, couplers. One closed contour per part, so CAM offsets it
-  correctly in a single pass.
+  centering rings, bulkheads, couplers. One closed contour per part outline — a ring's
+  bore comes through as a true circle — so CAM offsets it correctly in a single pass.
 - **1:1 printable fin templates** with a calibration ruler, so you can confirm your printer
   didn't quietly rescale the page.
 - **Drawings sized for a cert packet** — a 2D drawing at true 100% physical scale with a
@@ -120,6 +120,12 @@ which aerodynamic model flew each simulation.
 the header — it files to a public tracker, and there's an email option if you'd rather not
 use a GitHub account.
 
+**Testing since before the rename?** The app was called *Online OpenRocket* and lived at
+`openrocket.mountainmanrockets.com`. Same app, same physics — new name, new address. Work
+saved in your browser belongs to the old address, so open it there, **Save / Export → .ork**,
+and load that file at the new address. If you installed it to a home screen, reinstall it
+from the new address.
+
 ---
 
 ## A short version, if you just need a couple of lines
@@ -128,10 +134,12 @@ use a GitHub account.
 > OpenRocket physics engine — nothing to install, works offline at the launch site, and it
 > exports parts straight to a 3D printer or laser cutter (including splitting parts that are
 > too big for your printer). It's in beta and I'd love a second set of eyes:
-> https://openrocket.mountainmanrockets.com
+> https://mmrsim.mountainmanrockets.com
 
 ---
 
-*Note for whoever maintains this file: `openrocket.mountainmanrockets.com` (live since
-the 12 Aug 2026 DNS cutover) is the only address to hand out; every older address
-redirects there.*
+*Note for whoever maintains this file: `mmrsim.mountainmanrockets.com` (live August 2026,
+with the v0.047 rename) is the only address to hand out. The previous address,
+`openrocket.mountainmanrockets.com`, still serves the app behind a moved notice so the
+testers invited before the rename aren't stranded; it 301s to the new subdomain once the
+phase-2 redirect lands. Every older address already redirects.*
