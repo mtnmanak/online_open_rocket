@@ -40,7 +40,15 @@
 > optimization still queued. Next: plan + execute the one-version rename release
 > (v0.047) per the audit in handoff-2026-08-21.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-21.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-21b.md` first
+
+The current, self-contained handoff (second 08-21 sitting): the rename SHIPPED as
+v0.047 and verified, issue batch 08-21a answered both ways (RocketForge note + annotated
+survey — see `docs/testing/response-2026-08-21a.md` and its "Waiting on you" list:
+S1–S5 design proposals, invite copy calls, phase-2 301 trigger), desktop re-sync steps
+(repo renamed to `mtnmanak/mmrocket-sim`), and the facts future sessions need.
+
+## ⚡ (historical) `docs/handoff-2026-08-21.md`
 
 The current, self-contained session handoff: why the rename, the full audit facts
 execution will need (name surfaces, the three lockstep external surfaces, subdomain/
