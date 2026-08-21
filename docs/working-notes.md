@@ -1,15 +1,30 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-21): RENAME in flight, no code shipped** — user feedback
-> (correct, Eric concurs): "Online OpenRocket" is wrong twice — "online" contradicts
-> the offline-capable PWA, "OpenRocket" implies official affiliation (exceeds
-> nominative fair use; common-law rights exist even without a registered mark). Full
-> rename audit done (blast radius, trademark research, subdomain/PWA/repo mechanics);
-> two-round naming brainstorm done: 92 candidates, 24 collision-vetted, 5 survivors —
-> **Midchord (recommended), Ogivane, Apsivex, Ogivon, MMR Sim** — Eric is deciding
-> offline. ⚠️ **BETA INVITE ON HOLD** (supersedes 08-20's "clear to send") until the
-> rename ships. STEP + fabrication geometry still BACKLOGGED; supersonic default-ON
-> and design optimization still queued.
+> **Latest session (2026-08-21, second sitting): NAME DECIDED — "MMRocket Sim" @
+> `mmrsim.mountainmanrockets.com`.** Eric steered a third brainstorm round into the
+> MM-prefix/descriptive lane (instant "rocket sim" legibility now outranks mark
+> ownability — supersedes round-two's rejection of descriptive compounds); 12 more
+> names web-vetted. His "MMAero Sim" proposal KILLED (M&M Aerospace Hardware owns
+> mmaero.com inside aerospace; "MMA Sim" is a live fight-management game holding
+> mmasim.co.uk/.net). MMRocket Sim vetted MEDIUM with only out-of-space collisions
+> (an "MM Rocket" crypto token holds mmrocket.com; "MMR" = gaming matchmaking-rating
+> search pollution); Eric ran the manual USPTO TESS check 2026-08-21: **no records
+> for "MMRocket" or "MM Rocket"**. Subdomain ruling: `mmrsim` NOT generic `sim.` —
+> the tool family already contains a separate **Motor Simulator**
+> (`tool:motor-simulator` in the tracker), so the generic label would be ambiguous;
+> each tool gets its own specific token. ⚠️ Vetting also surfaced a direct
+> competitor nobody knew about: **rocketforge.space** (free browser model-rocket
+> design + 6DOF sim, imports .ork, early access). Prior coined-lane survivors
+> (Midchord, Ogivane, Apsivex, Ogivon) stand down but stay recorded in
+> handoff-2026-08-21. ⚠️ **CORRECTION (from docs/testing/issues-2026-08-21a.md, Eric
+> 2026-08-20): the beta invite WAS already sent** to a number of people who are
+> actively using the OLD address — the handoff's "never sent" verification was wrong.
+> A PUBLIC beta via the rocketry forum is planned for ~week of 08-24: the rename must
+> ship first, the forum post uses the new name/URL, and the old-origin moved banner
+> now serves real invitees, not a hypothetical.
+> STEP + fabrication geometry still BACKLOGGED; supersonic default-ON and design
+> optimization still queued. Next: plan + execute the one-version rename release
+> (v0.047) per the audit in handoff-2026-08-21.
 
 ## ⚡ START HERE → read `docs/handoff-2026-08-21.md` first
 
