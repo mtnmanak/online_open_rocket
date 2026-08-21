@@ -19,9 +19,23 @@
 > handoff-2026-08-21. ⚠️ **CORRECTION (from docs/testing/issues-2026-08-21a.md, Eric
 > 2026-08-20): the beta invite WAS already sent** to a number of people who are
 > actively using the OLD address — the handoff's "never sent" verification was wrong.
-> A PUBLIC beta via the rocketry forum is planned for ~week of 08-24: the rename must
-> ship first, the forum post uses the new name/URL, and the old-origin moved banner
-> now serves real invitees, not a hypothetical.
+> A PUBLIC beta via the rocketry forum is planned for ~week of 08-24: the forum post
+> uses the new name/URL, and the old-origin moved banner now serves real invitees,
+> not a hypothetical.
+>
+> **v0.047 SHIPPED 2026-08-21: the rename is LIVE.** mmrsim.mountainmanrockets.com
+> serves v0.047 (manifest name/short_name "MMRocket Sim", id "/"); the old subdomain
+> serves the same build behind a persistent moved banner (SW self-dismantles there;
+> verified against a real restored autosave). GitHub repo renamed to
+> `mtnmanak/mmrocket-sim` (⚠️ DESKTOP: run
+> `git remote set-url origin https://github.com/mtnmanak/mmrocket-sim.git`).
+> Tracker dropdown/label/workflow/README renamed and live-verified
+> (`tool:mmrocket-sim`). Execution plan + per-task record:
+> `docs/superpowers/plans/2026-08-21-mmrocket-sim-rename.md`. **Still pending:
+> phase-2 301** (old→new subdomain, only after Eric confirms testers migrated —
+> mechanics in the plan's Task 10; no carve-outs needed, the app-level dismantle
+> replaced the audit's SW-carve-out idea) and the **forum beta post** (invite
+> rewritten and accuracy-checked; two owner copy calls flagged in the plan record).
 > STEP + fabrication geometry still BACKLOGGED; supersonic default-ON and design
 > optimization still queued. Next: plan + execute the one-version rename release
 > (v0.047) per the audit in handoff-2026-08-21.
