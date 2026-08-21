@@ -1,21 +1,30 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-20): v0.046** — issue batch 2026-08-20a (Eric answered every
-> open decision). Share links built, .ork launch-conditions round-trip, engine rebuilt
-> (sim warnings + landing drift + roll rate + flight-data CSV, series summary/full),
-> phone header fixed (wrap), quota failures surfaced, guide generator real, LICENSE
-> added, GIT HISTORY REWRITTEN (copyright purge) and force-pushed — BOTH MACHINES must
-> be on the rewritten history (laptop is; desktop must reset, see handoff). THE PUBLIC
-> FLIP IS STAGED, NOT EXECUTED — two gh commands wait for Eric. STEP + fabrication
-> geometry remain BACKLOGGED; supersonic default-ON and design optimization queued.
+> **Latest session (2026-08-21): RENAME in flight, no code shipped** — user feedback
+> (correct, Eric concurs): "Online OpenRocket" is wrong twice — "online" contradicts
+> the offline-capable PWA, "OpenRocket" implies official affiliation (exceeds
+> nominative fair use; common-law rights exist even without a registered mark). Full
+> rename audit done (blast radius, trademark research, subdomain/PWA/repo mechanics);
+> two-round naming brainstorm done: 92 candidates, 24 collision-vetted, 5 survivors —
+> **Midchord (recommended), Ogivane, Apsivex, Ogivon, MMR Sim** — Eric is deciding
+> offline. ⚠️ **BETA INVITE ON HOLD** (supersedes 08-20's "clear to send") until the
+> rename ships. STEP + fabrication geometry still BACKLOGGED; supersonic default-ON
+> and design optimization still queued.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-20.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-21.md` first
 
-The current, self-contained session handoff: v0.046, the history rewrite and the
-desktop re-sync it requires, the staged public flip, the adversarial-verification
-blockers (deflate bomb, +44% perf regression, the purge list that nearly missed 46 MB
-at pre-rename paths), and the session's hard-won lessons. The older handoffs below
-remain as history.
+The current, self-contained session handoff: why the rename, the full audit facts
+execution will need (name surfaces, the three lockstep external surfaces, subdomain/
+PWA-migration mechanics, what NOT to rename), the vetted naming shortlist with kill
+list, and the exact resume point (Eric picks a name → TESS check → plan the rename
+release). The older handoffs below remain as history.
+
+## ⚡ (historical) `docs/handoff-2026-08-20.md`
+
+v0.046, the history rewrite and the desktop re-sync it requires (STILL APPLIES if the
+desktop hasn't re-synced), the public flip (executed 2026-08-20), the
+adversarial-verification blockers (deflate bomb, +44% perf regression, the purge list
+that nearly missed 46 MB at pre-rename paths), and that session's hard-won lessons.
 
 ## ⚡ (historical) `docs/handoff-2026-08-12.md`
 
