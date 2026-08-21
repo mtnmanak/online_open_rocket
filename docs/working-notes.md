@@ -55,7 +55,7 @@ desktop hasn't re-synced), the public flip (executed 2026-08-20), the
 adversarial-verification blockers (deflate bomb, +44% perf regression, the purge list
 that nearly missed 46 MB at pre-rename paths), and that session's hard-won lessons.
 
-## ⚡ (historical) `docs/handoff-2026-08-12.md`
+## ⚡ (historical) `docs/archive/handoff-2026-08-12.md`
 
 The current, self-contained session handoff: v0.044 + v0.045, the DNS cutover, the three
 band findings that belong UPSTREAM (not fixable here), what is deliberately uncommitted,

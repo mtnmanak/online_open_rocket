@@ -1,5 +1,7 @@
 # Three band findings for chrome.ref.js — handoff from Online OpenRocket v0.045
 
+> **Rename note (2026-08-21):** the tool described below has since been renamed **Online OpenRocket → MMRocket Sim** (v0.047, repo `github.com/mtnmanak/mmrocket-sim`, live at mmrsim.mountainmanrockets.com). The findings and measurements are unchanged and still current — historical name mentions below are kept as written.
+
 Paste-ready context for a session working in the repo that owns **chrome.ref.js** (the
 reference implementation of the shared site band) and **docs/chrome-spec.md** (its spec).
 You don't need to have seen the Online OpenRocket repo; everything relevant is below.

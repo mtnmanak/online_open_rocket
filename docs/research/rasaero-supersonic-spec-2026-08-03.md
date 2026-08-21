@@ -10,10 +10,10 @@ Kernel file key (absolute paths; `[P]` = patch overlay is current truth per `eng
 
 | ID | Path | Status |
 |---|---|---|
-| BC | `G:\git\online_open_rocket\engine-java\patches\info\openrocket\core\aerodynamics\BarrowmanCalculator.java` | [P] |
-| FC | `G:\git\online_open_rocket\engine-java\patches\info\openrocket\core\aerodynamics\FlightConditions.java` | [P] |
-| FSC | `G:\git\online_open_rocket\engine-java\patches\info\openrocket\core\aerodynamics\barrowman\FinSetCalc.java` | [P] |
-| SCC | `G:\git\online_open_rocket\engine-java\src\carved\java\info\openrocket\core\aerodynamics\barrowman\SymmetricComponentCalc.java` | carved, unpatched |
+| BC | `engine-java/patches/info/openrocket/core/aerodynamics/BarrowmanCalculator.java` | [P] |
+| FC | `engine-java/patches/info/openrocket/core/aerodynamics/FlightConditions.java` | [P] |
+| FSC | `engine-java/patches/info/openrocket/core/aerodynamics/barrowman/FinSetCalc.java` | [P] |
+| SCC | `engine-java/src/carved/java/info/openrocket/core/aerodynamics/barrowman/SymmetricComponentCalc.java` | carved, unpatched |
 | TC/TFC/LLC | `...\barrowman\TubeCalc.java`, `TubeFinSetCalc.java`, `LaunchLugCalc.java` | carved, unpatched |
 | ASS | `...\simulation\AbstractSimulationStepper.java` | [P] |
 
