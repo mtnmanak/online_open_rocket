@@ -1,5 +1,11 @@
 # Working notes — collaboration style & project state
 
+> **v0.051 addendum (same fifth sitting):** Eric's chat report ("giant black
+> panel"): the stats chip is now genuinely floating — draggable (clamped to the
+> canvas), foldable to a stability pill, position+fold persisted
+> (`online-openrocket.chip.v1`), opacity 0.78. 632 app tests. Deployed + site
+> synced (0.051).
+>
 > **Latest session (2026-08-21, fifth sitting): batch 08-21d BUILT — v0.050
 > SHIPPED; THE FORUM POST IS UNGATED.** Multi-config **Stage B** live (Eric:
 > "build it" — ConfigPanel on Motors & Launch when a file carries >1 config,
