@@ -105,13 +105,19 @@
 > optimization still queued. Next: plan + execute the one-version rename release
 > (v0.047) per the audit in handoff-2026-08-21.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-21e.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-21f.md` first
 
-The current, self-contained handoff (fifth 08-21 sitting): batch 08-21d built —
-v0.050 shipped (multi-config Stage B, real 3D see-through + view recovery,
-drawer deconfliction), the invite cleared for the forum post, live-verified,
-site synced — plus the "Waiting on you" list in
-`docs/testing/response-2026-08-21d.md`.
+The session-close handoff (21 Aug, consolidated): v0.050 (Stage B + 3D
+see-through + drawer fix) → v0.051 (floating chip) → v0.052 (full-canvas
+drawing surface) all live-verified, site synced, both trees clean — **the
+public forum post is the next move and nothing gates it**. Full fifth-sitting
+detail remains in `docs/handoff-2026-08-21e.md` (historical).
+
+## ⚡ (historical) `docs/handoff-2026-08-21e.md`
+
+The fifth 08-21 sitting in full: batch 08-21d built — v0.050 (multi-config
+Stage B, real 3D see-through + view recovery, drawer deconfliction), the
+invite cleared, plus the v0.051/v0.052 addendums.
 
 ## ⚡ (historical) `docs/handoff-2026-08-21d.md`
 

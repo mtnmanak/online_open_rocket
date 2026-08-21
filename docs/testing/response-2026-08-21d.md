@@ -1,5 +1,11 @@
 # Response 2026-08-21d — the polish batch + Stage B, live as v0.050
 
+*(Addendum, same day: two chat reports followed and shipped as **v0.051** — the stats
+chip is genuinely floating: drag anywhere, fold to a stability pill, position
+remembered — and **v0.052** — the hero drawing surface now spans the full canvas; the
+"black box the rocket slid under" was the drawing's invisible clip edge. Both
+live-verified. Session record: `docs/handoff-2026-08-21f.md`.)*
+
 Everything in your batch is addressed: the vertical/drawer collision is fixed, all
 three 3D notes are in, both invite copy calls are closed the way you called them, and
 **Stage B is built** — flight configurations are now first-class, switchable state.
