@@ -125,10 +125,9 @@ the header — it files to a public tracker, and there's an email option if you'
 use a GitHub account.
 
 **Testing since before the rename?** The app was called *Online OpenRocket* and lived at
-`openrocket.mountainmanrockets.com`. Same app, same physics — new name, new address. Work
-saved in your browser belongs to the old address, so open it there, **Save / Export → .ork**,
-and load that file at the new address. If you installed it to a home screen, reinstall it
-from the new address.
+`openrocket.mountainmanrockets.com`. Same app, same physics — new name, new address, and
+the old address now forwards here automatically. If you installed it to a home screen
+before the rename, delete that install and reinstall from the new address.
 
 ---
 
@@ -144,6 +143,7 @@ from the new address.
 
 *Note for whoever maintains this file: `mmrsim.mountainmanrockets.com` (live August 2026,
 with the v0.047 rename) is the only address to hand out. The previous address,
-`openrocket.mountainmanrockets.com`, still serves the app behind a moved notice so the
-testers invited before the rename aren't stranded; it 301s to the new subdomain once the
-phase-2 redirect lands. Every older address (like the old `mountainmanrockets.com/online_open_rocket/` path) already redirects to the new address above.*
+`openrocket.mountainmanrockets.com`, 301-redirects to the new subdomain (phase-2 redirect
+fired 2026-08-21, after every pre-rename tester confirmed they had migrated). Every older
+address (like the old `mountainmanrockets.com/online_open_rocket/` path) also redirects to
+the new address above.*

@@ -433,7 +433,16 @@ git remote set-url origin https://github.com/mtnmanak/mmrocket-sim.git && git re
 
 ---
 
-### Task 10: Phase 2 — the 301 (DEFERRED — do not execute in this release)
+### Task 10: Phase 2 — the 301 (✅ EXECUTED 2026-08-21, second sitting after the release)
+
+**Executed 2026-08-21** on Eric's confirmation in `docs/testing/issues-2026-08-21b.md`
+("all invitees have confirmed they have moved"). Rule created via the Cloudflare
+dashboard exactly as specified below (rule name: "openrocket subdomain 301 to mmrsim
+(rename phase 2)", placed last, after the root→WWW template rule). Verified by curl:
+`https://openrocket.mountainmanrockets.com/` → `301` `Location:
+https://mmrsim.mountainmanrockets.com/`; `/some/path?x=1&y=2` → 301 preserving both path
+and query; the canonical host still 200s. Original trigger + mechanics kept below for
+the record:
 
 **Trigger:** Eric confirms the handful of testers have moved (suggest ~2 weeks after Task 8, or after direct confirmation). Recorded here so the mechanics don't get lost:
 

@@ -53,14 +53,15 @@ the site is not rebuilt or touched.
 | | |
 |---|---|
 | Pages project | `online-open-rocket` |
-| Live URL (canonical) | https://mmrsim.mountainmanrockets.com — cutover 2026-08 (old `openrocket.*` subdomain serves a moved notice until the phase-2 301) |
+| Live URL (canonical) | https://mmrsim.mountainmanrockets.com — cutover 2026-08 (old `openrocket.*` subdomain 301s here since 2026-08-21, the phase-2 redirect) |
 | Old WordPress path | `/online_open_rocket/` — 301s directly to `mmrsim.mountainmanrockets.com`, do not reuse |
 
 **`mmrsim.mountainmanrockets.com` is the ONLY address to hand out** — anywhere: docs,
 invites, links, help copy. It is the address on the beta invite (`docs/beta-invite.md`)
-and the one testers will bookmark. The retired `openrocket.*` subdomain still serves the
-app behind a moved notice so already-invited testers aren't stranded; never hand it out as
-the app's address — the beta invite's migration note is the one sanctioned mention.
+and the one testers will bookmark. The retired `openrocket.*` subdomain 301-redirects
+here (phase-2 redirect, live 2026-08-21 — a Cloudflare zone Single Redirect rule, path +
+query preserved); never hand it out as the app's address — the beta invite's migration
+note is the one sanctioned mention.
 
 **`git push` to `main` is the deploy.** `.github/workflows/deploy.yml` runs
 `npm ci && npm run build` (the user-guide generator, then tsc + vite — the TeaVM

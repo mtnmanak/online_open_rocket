@@ -1,6 +1,24 @@
 # Working notes — collaboration style & project state
 
-> **Latest session (2026-08-21, second sitting): NAME DECIDED — "MMRocket Sim" @
+> **Latest session (2026-08-21, third sitting): batch 08-21b EXECUTED — v0.048
+> SHIPPED (first-run tour S3, CG/CP leader-line callouts S2, mass-component type
+> picker) and the PHASE-2 301 IS LIVE** (Cloudflare zone Single Redirect per rename
+> plan Task 10, fired on Eric's confirmation that all invitees moved;
+> curl-verified, docs updated — the old `openrocket.*` address now 301s to mmrsim
+> with path+query preserved). Also this sitting: RocketForge screenshots moved to
+> `Dropbox\online_open_rocket_reference\`; multi-config .ork import SCOPED
+> (`docs/multi-config-import-scope.md` — recommend Stage A alone); S1/S5/S4
+> mockups on a design canvas for Eric (link in `response-2026-08-21b.md`), with
+> S4 REFRAMED launch-centered per Eric's steer (phone home = Fly screen, not
+> Design); site repo fixed per "just fix it" (band ref 1.3.0, MUST 6 exception,
+> old-name comments, tools screenshot — NOTE: bp_calculator/motor_dashboard now
+> trail ref 1.3.0, their sessions pick that up). ⚠️ CLARIFICATION recorded (Eric):
+> the beta invite went to SELECTED individuals, not a public send — the public
+> forum post is still pending, gated on the two invite copy calls (which the 301
+> makes mostly moot for the migration-note half). Clocking stays WARN
+> (re-confirmed).
+>
+> **Previous (2026-08-21, second sitting): NAME DECIDED — "MMRocket Sim" @
 > `mmrsim.mountainmanrockets.com`.** Eric steered a third brainstorm round into the
 > MM-prefix/descriptive lane (instant "rocket sim" legibility now outranks mark
 > ownability — supersedes round-two's rejection of descriptive compounds); 12 more
@@ -40,13 +58,20 @@
 > optimization still queued. Next: plan + execute the one-version rename release
 > (v0.047) per the audit in handoff-2026-08-21.
 
-## ⚡ START HERE → read `docs/handoff-2026-08-21b.md` first
+## ⚡ START HERE → read `docs/handoff-2026-08-21c.md` first
 
-The current, self-contained handoff (second 08-21 sitting): the rename SHIPPED as
-v0.047 and verified, issue batch 08-21a answered both ways (RocketForge note + annotated
-survey — see `docs/testing/response-2026-08-21a.md` and its "Waiting on you" list:
-S1–S5 design proposals, invite copy calls, phase-2 301 trigger), desktop re-sync steps
-(repo renamed to `mtnmanak/mmrocket-sim`), and the facts future sessions need.
+The current, self-contained handoff (third 08-21 sitting): batch 08-21b executed —
+v0.048 shipped (tour, CG/CP callouts, mass-type picker), phase-2 301 live and verified,
+multi-config import scoped, mockups on the design canvas awaiting Eric's verdicts, site
+repo fixed and pushed — plus the new (much shorter) "Waiting on you" list in
+`docs/testing/response-2026-08-21b.md`.
+
+## ⚡ (historical) `docs/handoff-2026-08-21b.md`
+
+The second 08-21 sitting: the rename SHIPPED as v0.047 and verified, issue batch
+08-21a answered both ways (RocketForge note + annotated survey — see
+`docs/testing/response-2026-08-21a.md`), desktop re-sync steps (repo renamed to
+`mtnmanak/mmrocket-sim`), and the facts future sessions need.
 
 ## ⚡ (historical) `docs/handoff-2026-08-21.md`
 
