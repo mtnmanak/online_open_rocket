@@ -22,8 +22,14 @@ this isn't an attempt to replace any of them; it started as a question about wha
 possible when a simulator has no install step, runs on whatever's in your pocket at the
 launch site, and can talk directly to the machines in your workshop. That led somewhere
 interesting: designs that open from a link, a sim that keeps working when the cell signal
-doesn't, exports that go straight to a 3D printer or a laser cutter, and an aerodynamics
-model checked against published NASA wind-tunnel data with the scoring left out in the open.
+doesn't, exports that go straight to a 3D printer or a laser cutter, and a **second
+aerodynamics model** built for the speeds where the classic method starts to drift — scored
+against published NASA wind-tunnel data, with the scoring left out in the open.
+
+That second model is the one thing I most want beta testers to weigh in on, because
+**I haven't decided which model should be switched on by default** — there's a section
+below asking you specifically to try both.
+
 It's beta, so there will be rough edges — and honestly, finding them is the most useful
 thing you can do right now. Bring a design you know well, fly it, and tell me where the
 numbers or the workflow don't match your experience.
@@ -72,19 +78,34 @@ numbers or the workflow don't match your experience.
 - **3D models with your colors** (.glb) that open in Blender, Fusion 360, PowerPoint or
   Windows 3D Viewer, plus image export up to 8K.
 
-**Physics you can check**
+**Physics you can check — and a default I need your help choosing**
 
-- **The real OpenRocket kernel**, verified against the desktop app run-for-run, so classic
-  simulations are the ones you'd get on your desktop.
-- **An extended supersonic aerodynamics model** for high-performance flights, developed from
-  the open literature and scored against published NASA wind-tunnel data (ARCAS, the
-  Army-Navy Basic Finner) out to roughly Mach 4.6.
-- **The scoring is published, including where it falls short.** There's an automated
-  validation harness in the repository that scores every physics change against those
-  anchors, and the gaps it hasn't closed yet — transonic peak drag, blunt and flared bodies
-  — are written down rather than smoothed over.
+One pulldown in *Preferences → Aerodynamics* picks the model, and there are four choices:
+
+- **OpenRocket — Extended Barrowman** — the desktop program's exact physics, bit-for-bit.
+  Pick this when you want a number you can hand to someone running the desktop app.
+- **Rogers Modified Barrowman (Kbf)** — adds the body-in-presence-of-fins lift carryover
+  (NACA 1307) that classic Barrowman drops: a slightly more aft, more conservative CP that
+  tracks real flight data better. **This is the current default.**
+- **Our supersonic model** — the same kernel extended with corrected supersonic fin lift,
+  the exact NACA 1307 interference, Mach-dependent nose lift, per-shape wave drag with
+  physical hypersonic decay, and Van Driest II friction, so CP and drag move with Mach the
+  way wind tunnels actually measure. Built from the open literature and scored against
+  published NASA data (ARCAS, the Army–Navy Basic Finner) out to roughly **Mach 4.6**.
+- **Auto** — flies Rogers Kbf, and re-flies the whole flight on the supersonic model only
+  when it's projected past Mach 0.9.
+
+One important thing: **a model applies to the entire flight**, subsonic portions included —
+so expect stability and apogee to shift when you change it, not just the fast part.
+
+Around the choice:
+
+- **The scoring is published, including where it falls short.** An automated validation
+  harness in the repository scores every physics change against those anchors, and the gaps
+  it hasn't closed — transonic peak drag around Mach 1.5, blunt and flared bodies — are
+  written down rather than smoothed over.
 - **Every saved flight records which model produced it**, so you always know what you're
-  comparing.
+  comparing, and a flight that goes supersonic on the classic model says so in the report.
 - **Deterministic runs** — the same design and conditions give the same answer every time.
 
 **Workflow experiments**
@@ -120,11 +141,32 @@ it really did, and tell me where they disagree — that's worth more than any sy
 case. Beyond that: open your existing `.ork` or `.rkt` files and check nothing was lost, try
 an export in whatever your workshop uses, and use it once on your phone at a launch.
 
+**The one thing I'd most like data on: which aerodynamics model should be the default?**
+
+This is a real open question, and I'd rather answer it with your flights than my opinion.
+Rogers Kbf is the safe answer and it's what's on now. The supersonic model should be better
+once a flight gets fast — but "should be" is exactly what I want checked. So:
+
+1. Fly a design you've actually flown, on the default (**Rogers Modified Barrowman**), and
+   note the apogee and stability margin.
+2. Open *Preferences → Aerodynamics*, switch to **Our supersonic model**, and fly the same
+   design again.
+3. Tell me **which one landed closer to what the rocket really did** — and please include the
+   design's **peak Mach**, because that's the number the answer probably turns on.
+
+If you fly mostly low and mid power, that's still useful data — arguably the most useful.
+If the two models agree down there, making the supersonic one the default costs nothing; if
+they *don't*, that's precisely what I need to know before switching it on for everyone. Try
+**Auto** as well if the idea appeals: part of what I'm trying to learn is whether a model
+that switches itself mid-flight is reassuring or unsettling.
+
+I'd rather hear "I couldn't tell the difference" than get no answer — that's a result too.
+
 **Getting oriented:** the **Guide** button in the header has a your-first-flight-in-three-steps
 quick start, the full feature reference, and the physics documentation — including exactly
 which aerodynamic model flew each simulation.
 
-**Found something, or want it to do something it doesn't?** There's a 🐞 Feedback button in
+**Found something, or want it to do something it doesn't?** There's a **Feedback** button in
 the header — it files to a public tracker, and there's an email option if you'd rather not
 use a GitHub account.
 
@@ -135,8 +177,11 @@ use a GitHub account.
 > I've been building a browser-based rocket design and flight sim on top of the real
 > OpenRocket physics engine — nothing to install, works offline at the launch site, and it
 > exports parts straight to a 3D printer or laser cutter (including splitting parts that are
-> too big for your printer). It's in beta and I'd love a second set of eyes:
-> https://mmrsim.mountainmanrockets.com
+> too big for your printer). It also has a second, supersonic aerodynamics model validated
+> against NASA wind-tunnel data to about Mach 4.6, and I'm genuinely undecided about which
+> model should be the default — so if you fly a design on both and tell me which one matched
+> reality better, that's the single most useful thing you could do. It's in beta and I'd love
+> a second set of eyes: https://mmrsim.mountainmanrockets.com
 
 ---
 

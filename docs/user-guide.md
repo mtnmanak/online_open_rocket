@@ -2,7 +2,7 @@
 
 > The complete guide to MMRocket Sim: a quick start, a full feature
 > reference, and the physics, math, and citations behind the numbers. This is
-> also available inside the app via the **❓ Guide** button in the header.
+> also available inside the app via the **Guide** button in the header.
 
 <a id="welcome"></a>
 
@@ -546,7 +546,7 @@ Here is the one intentional difference from the desktop. Desktop OpenRocket seed
 
 ## Feedback & Bug Reports
 
-Found something broken, or want the app to do something it doesn't? Both are genuinely wanted — beta reports directly shape what gets built next. The **🐞 Feedback** button in the header offers every route, or use these links directly:
+Found something broken, or want the app to do something it doesn't? Both are genuinely wanted — beta reports directly shape what gets built next. The **Feedback** button in the header offers every route, or use these links directly:
 
 - **[Report a bug](https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=bug-report.yml)** — what you did, what you expected, what happened instead. The app version (next to the logo) and your browser help a lot; attaching the .ork file (zipped) makes most fixes far faster. Only attach designs you're comfortable sharing publicly.
 - **[Request a feature](https://github.com/mtnmanak/mountainmanrockets-feedback/issues/new?template=feature-request.yml)** — describe the real task it would help with; the use case shapes the design more than the feature description does.
