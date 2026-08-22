@@ -1,5 +1,61 @@
 # Working notes — collaboration style & project state
 
+> **THE BETA IS OUT (2026-08-22).** Eric posted the invite to The Rocketry Forum:
+> <https://www.rocketryforum.com/threads/mmrocket-sim-browser-based-rocket-simulator.198622/>
+> (thread live, 0 replies at the time of writing). Feedback now arrives on that
+> thread and on the central tracker (`docs/feedback-tracker.md`). **The plan's new
+> Status + Phase 4 section (`docs/online-openrocket-plan.md`) is the live roadmap
+> from here** — read it before picking up new work.
+>
+> **The question the beta exists to answer: which aerodynamics model should be the
+> DEFAULT** (Rogers Kbf, today's, vs. our supersonic model). The invite asks testers
+> to fly a rocket they have really flown on both and report which matched, plus peak
+> Mach. Decide it from THAT, not from the validation harness alone — the harness was
+> never going to settle it, which is why the ask exists.
+>
+> **Session 2026-08-21/22 (sixth sitting): pre-beta audit + six releases,
+> v0.053 → v0.058, all live.** An 11-dimension multi-agent audit with adversarial
+> verification returned 37 confirmed findings (11 refuted as false positives); most
+> are fixed. Tests 633 → 665.
+>
+> Crashes a tester would have hit: 146 bundled motors publish no mass and one lists
+> more propellant than loaded mass — picking Estes 1/2A6 or Klima B2 (both visible by
+> default) threw a raw BigInt error and BLANKED the design, persisted by autosave;
+> RockSim fins on a transition and RASAero zero-tip-chord fins imported fine then
+> failed to build; RASAero transitions imported as CYLINDERS (`<Diameter>` duplicates
+> the REAR diameter — the fore radius is implicit), feeding wrong CP and drag.
+>
+> Data loss: saving a multi-config `.ork` under one configuration REWROTE every other
+> configuration's recovery deployment — a chute set for apogee could come back at
+> 300 m. Fin fillets were written back as 0 and instanced rings/rail buttons collapsed
+> to one. Imported RockSim chutes weighed 2.9× too much (bulk density × thickness was
+> never converted); exported ones weighed nothing.
+>
+> Also: three.js left the initial bundle (835 → 578 kB gzip, −31%); every dialog now
+> closes on Escape and manages focus (there was not ONE Escape handler in the app);
+> three contrast pairs that failed AA, worst of them the "Motor mount:" label at
+> 1.41:1 in Daylight — the mode built for sunlight; CI now runs the suite BEFORE
+> deploying, and `npm test` works on a fresh clone.
+>
+> **The click-to-select bug, and the lesson from it.** Eric: clicking a nose cone or
+> body tube in the horizontal 2D view never selected it in the tree; other components
+> were fine. I shipped two wrong fixes first (a real dragMoved latch, real
+> click-absorbing CG/CP markers) because I "reproduced" it with SYNTHESIZED clicks —
+> which press and release at the identical coordinate. Real clicks jitter 1–3 px, and
+> `onMove` panned the canvas on the FIRST pixel with no threshold, sliding the drawing
+> out from under the pointer between press and release so the click landed on the svg.
+> **Eric's own observation cracked it — "vertical works, horizontal doesn't" — because
+> vertical is the one mode that attaches no pan handler.** Fixed in v0.058 with a 4 px
+> slop and lazy pointer capture.
+>
+> Two standing lessons: **a synthesized click is not a click** (use `left_click_drag`
+> over a few px to model a real one), and **when the reporter's conditions do not match
+> your repro, your repro is wrong** — I shipped anyway and cost us two rounds.
+>
+> **Tell testers to reload once if the version looks old.** The PWA's offline cache can
+> serve the previous build on the first load after a deploy; that is exactly how Eric
+> ended up testing a fix that was already superseded.
+
 > **v0.051 addendum (same fifth sitting):** Eric's chat report ("giant black
 > panel"): the stats chip is now genuinely floating — draggable (clamped to the
 > canvas), foldable to a stability pill, position+fold persisted

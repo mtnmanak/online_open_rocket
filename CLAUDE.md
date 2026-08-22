@@ -145,6 +145,13 @@ probe both machines' reference-source paths and accept an `OPENROCKET_SRC` overr
 
 ## Collaboration context
 
+**This is in PUBLIC BETA** — the invite went out 2026-08-22 on The Rocketry Forum
+(<https://www.rocketryforum.com/threads/mmrocket-sim-browser-based-rocket-simulator.198622/>).
+Real people are flying real rockets on it, so a regression is now visible to users.
+`docs/online-openrocket-plan.md` § **Status / Phase 4** is the live roadmap, and it
+names the decision the beta exists to make (which aerodynamics model is the default
+— answer it from tester flights, not from the validation harness).
+
 Read docs/working-notes.md — it carries the project owner's working preferences,
 pending decisions, and the reasoning behind key choices. Current standing state:
 an issue list from user testing may be waiting in docs/testing/ — fix that before

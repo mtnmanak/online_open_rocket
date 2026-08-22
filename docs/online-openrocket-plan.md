@@ -13,6 +13,65 @@
 
 ---
 
+## Status — PUBLIC BETA, live since 22 August 2026
+
+This document is the original research-grade plan and is kept as written (it predates the
+2026-08 rename, so it still says "Online OpenRocket" throughout — that is history, not a
+to-do). Read it for the *why*; read this section for *where things actually stand*.
+
+**Phases 0–3 are delivered.** The engine track was decided in Phase 0 (TeaVM-compiled
+`info.openrocket.core`, differentially tested against the JVM) and everything through
+Phase 3 has shipped: staging, clustering and pods; the bundled motor database; `.ork`,
+`.rkt` and `.CDX1` both ways; OBJ/STL/glTF/DXF/SVG exports with oversized-part splitting;
+the PWA; and a second, supersonic aerodynamics model validated against NASA wind-tunnel
+data to ~Mach 4.6. Design optimization is the one Phase 3 item deliberately still open.
+
+**The beta invite went out 22 August 2026** on The Rocketry Forum:
+<https://www.rocketryforum.com/threads/mmrocket-sim-browser-based-rocket-simulator.198622/>
+That thread and the central tracker (`docs/feedback-tracker.md`) are now the two inbound
+feedback channels. Live at <https://mmrsim.mountainmanrockets.com>.
+
+### Phase 4 — Public beta (current)
+
+The beta is not just a bug hunt; it exists to answer questions that cannot be answered
+from this side of the screen.
+
+**The decision the beta is FOR:**
+- **Which aerodynamics model should be the default?** Rogers Modified Barrowman (today's
+  default) or the supersonic model. The invite asks testers directly: fly a rocket you
+  have really flown on both, report which matched reality and the design's peak Mach.
+  This is what unblocks "supersonic default-ON", which was previously gated on the ARCAS
+  anchor alone. **Do not decide it from the validation harness alone — that was the point
+  of asking.**
+
+**Also being learned from testers:**
+- Whether "open with no motors loaded" should become the default (one-line flip; the
+  reasoning is in `docs/testing/response-2026-08-21d.md`).
+- Whether Auto — a model that switches itself mid-flight — reads as reassuring or
+  unsettling.
+- Where predicted apogee/stability diverge from real flights, which is worth more than
+  any synthetic test case.
+
+**Queued, ordered by what unblocks what:**
+1. **Next engine rebuild** carries the items that need `ComponentFactory` changes:
+   multi-config **Stage C** (per-configuration deployment/separation/stage activeness),
+   the geodetic selector, recovery `<packedlength>`/`<packedradius>`, and fin-fillet MASS.
+   The `.ork` reader already PRESERVES the last two and says so in an import note — the
+   file is safe, the simulation just does not count them yet. Landing the reader/writer
+   half alone would make the file disagree with the stability number on screen.
+2. **Design optimization** — the last Phase 3 item, and still the prime candidate to
+   offload to a server-side API if it is too heavy for the client.
+3. **Performance**: the simulation runs on the main thread (287–521 ms measured, no
+   worker), and the 3D view repaints every frame while open — a battery cost at the pad.
+4. **S4 stage-2 bottom sheets and S5 polish**, both explicitly deferred to beta feedback.
+5. **Accessibility remainder**: MotorBrowser's sortable column headers claim
+   `role="button"` without being focusable.
+
+**Standing rule for the beta:** an issue list from testing may be waiting in
+`docs/testing/` — fix that before new feature work.
+
+---
+
 ## 1. What OpenRocket actually is (what must be re-created)
 
 ### 1.1 Module split — the single most important architectural fact
@@ -177,14 +236,18 @@ OpenRocket is **GPLv3+** (strong copyleft). Practical implications:
 
 ## 6. Phased delivery roadmap
 
-### Phase 0 — Foundations & engine decision (spikes)
+> **As planned in 2026-06; Phases 0–3 are delivered and the app is in public beta.**
+> Kept verbatim as the original plan of record — see [Status](#status--public-beta-live-since-22-august-2026)
+> at the top for what actually shipped, what is still open, and Phase 4.
+
+### Phase 0 — Foundations & engine decision (spikes) — DONE (TeaVM track chosen)
 - Scaffold repo: Vite + React + TypeScript; engine as a separate package.
 - **Spike A:** run the real OpenRocket JAR under **CheerpJ** → quick demo **and** numerical **oracle**.
 - **Spike B:** attempt **TeaVM** compile of `info.openrocket.core`; assess dependency/reflection gaps.
 - **Decide engine track** (TeaVM-reuse vs TS-rewrite). Lock the SI-units / radians invariants and a
   `.ork` (zip+XML) parse/serialize contract.
 
-### Phase 1 — MVP
+### Phase 1 — MVP — DONE
 - Minimal component model (nose cone, body tube, trapezoidal fins, motor mount); **`.ork` import/export**.
 - Barrowman **CP/CG + stability margin** and mass properties.
 - **6-DOF RK4 flight sim**: single stage, ISA atmosphere, simple/no wind; events: ignition → burnout →
@@ -194,12 +257,12 @@ OpenRocket is **GPLv3+** (strong copyleft). Practical implications:
 - Deploy **standalone** and a **WordPress embed** (block/shortcode or iframe). Validate outputs against
   the CheerpJ oracle.
 
-### Phase 2 — Design editor + 3D
+### Phase 2 — Design editor + 3D — DONE
 - Full component editor with real-time CG/CP; more fin types (elliptical, free-form, tube, canted).
 - **3-D rocket view** via react-three-fiber.
 - Realistic wind (pink-noise / multi-level); launch conditions (lat/lon/alt, launch rod).
 
-### Phase 3 — Toward parity
+### Phase 3 — Toward parity — DONE except design optimization
 - **Staging, clustering, pods** (hard — expect it here, per RocketForge).
 - Bundled/searchable full motor database; recovery variants; geodetic/Earth-shape models.
 - File **imports and exports** beyond CSV: RockSim (`.rkt`) and RASAero II design files
