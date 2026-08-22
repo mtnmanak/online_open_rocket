@@ -52,6 +52,14 @@
 > over a few px to model a real one), and **when the reporter's conditions do not match
 > your repro, your repro is wrong** — I shipped anyway and cost us two rounds.
 >
+> **Parked idea (Eric, 2026-08-22 close): loading designs from public design
+> repositories.** Not decided — discuss before building. Written up in
+> `docs/online-openrocket-plan.md` § Phase 4 "Parked for discussion". Short form:
+> the cheap 90 % is "Open from URL" (the importers already exist); CORS decides
+> whether it can stay client-side or needs this project's first server dependency;
+> other people's designs are other people's work; and arbitrary URLs widen the
+> importer trust boundary the pre-beta audit just found three holes in.
+>
 > **Tell testers to reload once if the version looks old.** The PWA's offline cache can
 > serve the previous build on the first load after a deploy; that is exactly how Eric
 > ended up testing a fix that was already superseded.

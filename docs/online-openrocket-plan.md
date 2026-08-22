@@ -70,6 +70,43 @@ from this side of the screen.
 **Standing rule for the beta:** an issue list from testing may be waiting in
 `docs/testing/` — fix that before new feature work.
 
+### Parked for discussion — loading designs from public design repositories
+
+Eric's idea (2026-08-22), **not decided, not scheduled** — worth a conversation
+before any work. The pitch: let a user pull a design straight from the public
+places rocketeers already share them, instead of downloading a file and then
+opening it.
+
+Why it is attractive here specifically: this app opens in a browser with no
+install, so "see this design, open this design" could be one click — something the
+desktop cannot really offer. It also compounds with share links, which already
+encode a whole design in a URL.
+
+**Start with the cheap 90 %:** "Open from URL" — paste a link to a `.ork`/`.rkt`/
+`.CDX1` and we fetch and import it. That needs no partnership, no index and no
+curation, and the importers already exist. Most of the value, almost none of the
+cost. A repository *browser* is a much bigger thing and should only follow if
+people actually ask for it.
+
+**The questions to settle before building anything:**
+- **CORS is the gating technical fact.** A browser can only fetch a file another
+  site chooses to allow. If the sources do not send permissive headers we need a
+  proxy — and that would be **this project's first server dependency**, against a
+  design that is deliberately 100 % client-side and works offline at the pad.
+  Check real sources with a `HEAD` before assuming either way.
+- **Licensing and permission.** Someone else's design file is someone else's work.
+  Hotlinking with attribution is a different proposition from mirroring an index,
+  and "it was on a public forum" is not a licence. Worth being conservative — the
+  project's own GPL posture only makes carelessness here more conspicuous.
+- **Trust boundary.** Arbitrary files from the internet, parsed by our importers.
+  The pre-beta audit found three separate importer inputs that imported cleanly and
+  then failed to build; a paste-a-URL feature turns a local file chooser into an
+  open input. Fuzz the importers before, not after.
+- **Which sources actually carry designs**, and in what formats — verify rather
+  than assume. thrustcurve.org is motors, not designs, and is already integrated.
+- **Does it earn its place?** The beta will say whether people want this or whether
+  their friction is elsewhere. Let feedback decide the priority.
+
 ---
 
 ## 1. What OpenRocket actually is (what must be re-created)
